@@ -120,11 +120,11 @@ export default function Footer() {
       <hr className="border-neutral-800 mt-5" />
 
       {/* bottom-end */}
-      <div className="flex justify-between mt-5 text-xs">
+      <div className="flex justify-between mt-5 text-xs text-neutral-600">
         <p>&copy; 2024, munraitoo13</p>
         <a
           href="https://github.com/munraitoo13/munraitoo13-personal-website/tree/dev"
-          className="text-neutral-600 ">
+          target="_blank">
           development repository
         </a>
       </div>
