@@ -90,7 +90,7 @@ export default function Footer() {
             href="https://github.com/munraitoo13/"
             target="_blank"
             className="hover:opacity-75">
-            <IconBrandGithub stroke={1.25} />
+            <IconBrandGithub stroke={1.25} size={24} />
           </a>
 
           <a
@@ -125,7 +125,7 @@ export default function Footer() {
         <a
           href="https://github.com/munraitoo13/munraitoo13-personal-website/tree/dev"
           target="_blank">
-          development repository
+          Development Repository
         </a>
       </div>
     </footer>
