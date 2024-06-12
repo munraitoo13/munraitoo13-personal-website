@@ -33,7 +33,7 @@ export default function Navbar() {
               <IconMoodLookRight size={14} stroke={2} />
             </button>
 
-            <ul className="flex gap-5">
+            <ul className="flex gap-5 items-center">
               <li className="hover:opacity-75">
                 <a href="/professional/projects">Projects</a>
               </li>
@@ -55,7 +55,7 @@ export default function Navbar() {
               <IconMoodLookRight size={14} stroke={2} />
             </button>
 
-            <ul className="flex gap-5">
+            <ul className="flex gap-5 items-center">
               <li className="hover:opacity-75">
                 <a href="/personal/contact">Contact</a>
               </li>
