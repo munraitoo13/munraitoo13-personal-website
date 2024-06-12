@@ -7,23 +7,26 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="w-screen fixed bottom-0 flex flex-col mt-24 p-10">
+    <footer className="w-screen bottom-0 flex flex-col mt-24 p-10">
       {/* navigation */}
       <div className="flex">
         {/* Professional */}
         <div className="mr-20">
           <b className="">Professional</b>
+
           <ul className="mt-5">
             <li>
               <a href="/professional/projects" className="hover:opacity-75">
                 Projects
               </a>
             </li>
+
             <li>
               <a href="/professional/experience" className="hover:opacity-75">
                 Experience
               </a>
             </li>
+
             <li>
               <a
                 href="/professional/skills-and-tools"
@@ -37,12 +40,14 @@ export default function Footer() {
         {/* Personal */}
         <div className="mr-20">
           <b className="">Personal</b>
+
           <ul className="mt-5">
             <li>
               <a href="/personal/contact" className="hover:opacity-75">
                 Contact
               </a>
             </li>
+
             <li>
               <a href="/personal/blog" className="hover:opacity-75">
                 Blog
@@ -54,12 +59,14 @@ export default function Footer() {
         {/* This Website */}
         <div className="mr-20">
           <b className="">This Website</b>
+
           <ul className="mt-5">
             <li>
               <a href="#" target="_blank" className="hover:opacity-75">
                 Concept
               </a>
             </li>
+
             <li>
               <a href="#" target="_blank" className="hover:opacity-75">
                 Source Code
@@ -72,10 +79,12 @@ export default function Footer() {
       {/* about-me */}
       <div className="mt-10 flex flex-col gap-5 w-1/3">
         <b>About-me</b>
+
         <p>
           What's up! My name is Augusto. Also known as munraitoo13, I'm a
           passionate software engineer from Brazil.
         </p>
+
         <div className="flex gap-2">
           <a
             href="https://github.com/munraitoo13/"
@@ -105,6 +114,19 @@ export default function Footer() {
             <IconBrandX stroke={1.25} />
           </a>
         </div>
+      </div>
+
+      {/* separator */}
+      <hr className="border-neutral-800 mt-5" />
+
+      {/* bottom-end */}
+      <div className="flex justify-between mt-5 text-xs">
+        <p>&copy; 2024, munraitoo13</p>
+        <a
+          href="https://github.com/munraitoo13/munraitoo13-personal-website/tree/dev"
+          className="text-neutral-600 ">
+          development repository
+        </a>
       </div>
     </footer>
   );
