@@ -8,7 +8,7 @@ import {
 
 export default function Navbar() {
   return (
-    <nav className="fixed w-screen top-0">
+    <nav className="fixed w-screen top-0 z-50">
       <div className="flex justify-between items-center p-5 bg-neutral-800 mx-10 mt-5 rounded-2xl backdrop-filter backdrop-blur-md bg-opacity-10">
         {/* left */}
         <div className="flex gap-10 items-center">

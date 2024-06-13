@@ -13,9 +13,9 @@ import {
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-t from-neutral-999 via-neutral-999">
+    <main className=" ">
       {/* header */}
-      <header className="pt-48 pb-24 w-screen flex flex-col items-center justify-center">
+      <header className="bg-gradient-to-t from-neutral-999 via-neutral-999 pt-48 pb-24 w-screen flex flex-col items-center justify-center">
         {/* presentation */}
         <div className="w-1/2 flex flex-col items-center justify-center text-center">
           <h1 className="text-6xl font-bold mb-5">
@@ -95,7 +95,7 @@ export default function Home() {
       </header>
 
       {/* phrase */}
-      <div className="pb-20 text-center w-screen flex items-center justify-center">
+      <div className="bg-gradient-to-b from-neutral-999 via-neutral-999 pb-20 text-center w-screen flex items-center justify-center">
         <blockquote className="text-2xl w-1/2 flex flex-col gap-1">
           <div className="flex items-end justify-center">
             <IconQuote
@@ -122,6 +122,18 @@ export default function Home() {
             </span>
           </div>
         </blockquote>
+      </div>
+
+      {/* qualities */}
+      <div className="w-screen flex justify-evenly mt-20">
+        {/* competent */}
+        <div>competent</div>
+
+        {/* detail-oriented */}
+        <div>detail-oriented</div>
+
+        {/* comunicative */}
+        <div>comunicative</div>
       </div>
     </main>
   );
