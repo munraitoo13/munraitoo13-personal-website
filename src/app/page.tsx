@@ -9,11 +9,12 @@ import {
   IconQuote,
   IconBrandNodejs,
   IconBrandMongodb,
+  IconBriefcase2,
 } from "@tabler/icons-react";
 
 export default function Home() {
   return (
-    <main className=" ">
+    <main className="">
       {/* header */}
       <header className="bg-gradient-to-t from-neutral-999 via-neutral-999 pt-48 pb-24 w-screen flex flex-col items-center justify-center">
         {/* presentation */}
@@ -51,7 +52,7 @@ export default function Home() {
         </div>
 
         {/* tech stacks */}
-        <div className="mt-10 flex flex-col items-center gap-1">
+        <div className="mt-20 flex flex-col items-center gap-1">
           <span className="text-sm opacity-75">Favorite Stacks & Tools</span>
           <div className="flex gap-2 items-center">
             <IconBrandTypescript
@@ -94,8 +95,70 @@ export default function Home() {
         </div>
       </header>
 
+      {/* qualities */}
+      <div className="bg-gradient-to-t from-neutral-999 via-neutral-999 w-screen pb-20 px-20 flex justify-center">
+        <div className="flex justify-evenly gap-5 max-w-screen-xl">
+          {/* competent */}
+          <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
+            <div className="flex items-center ">
+              <IconBriefcase2
+                size={24}
+                stroke={1.25}
+                className="rounded-full bg-red-600 p-3 box-content min-w-fit z-10"
+              />
+
+              <h3 className="bg-neutral-900 py-2 pl-10 rounded-r-full font-bold w-full relative right-5">
+                Competent
+              </h3>
+            </div>
+            <p className="p-3">
+              A must-have trait that significantly enhances the overall working
+              experience.
+            </p>
+          </div>
+
+          {/* detail-oriented */}
+          <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
+            <div className="flex items-center ">
+              <IconBriefcase2
+                size={24}
+                stroke={1.25}
+                className="rounded-full bg-red-600 p-3 box-content min-w-fit z-10"
+              />
+
+              <h3 className="bg-neutral-900 py-2 pl-10 rounded-r-full font-bold w-full relative right-5">
+                Competent
+              </h3>
+            </div>
+            <p className="p-3">
+              A must-have trait that significantly enhances the overall working
+              experience.
+            </p>
+          </div>
+
+          {/* comunicative */}
+          <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
+            <div className="flex items-center ">
+              <IconBriefcase2
+                size={24}
+                stroke={1.25}
+                className="rounded-full bg-red-600 p-3 box-content min-w-fit z-10"
+              />
+
+              <h3 className="bg-neutral-900 py-2 pl-10 rounded-r-full font-bold w-full relative right-5">
+                Competent
+              </h3>
+            </div>
+            <p className="p-3">
+              A must-have trait that significantly enhances the overall working
+              experience.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* phrase */}
-      <div className="bg-gradient-to-b from-neutral-999 via-neutral-999 pb-20 text-center w-screen flex items-center justify-center">
+      <div className="bg-gradient-to-b from-neutral-999 py-20 text-center w-screen flex items-center justify-center">
         <blockquote className="text-2xl w-1/2 flex flex-col gap-1">
           <div className="flex items-end justify-center">
             <IconQuote
@@ -122,18 +185,6 @@ export default function Home() {
             </span>
           </div>
         </blockquote>
-      </div>
-
-      {/* qualities */}
-      <div className="w-screen flex justify-evenly mt-20">
-        {/* competent */}
-        <div>competent</div>
-
-        {/* detail-oriented */}
-        <div>detail-oriented</div>
-
-        {/* comunicative */}
-        <div>comunicative</div>
       </div>
     </main>
   );
