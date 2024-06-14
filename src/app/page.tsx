@@ -111,6 +111,7 @@ export default function Home() {
                 Competent
               </h3>
             </div>
+
             <p className="p-3">
               A must-have trait that significantly enhances the overall working
               experience.
@@ -127,12 +128,13 @@ export default function Home() {
               />
 
               <h3 className="bg-neutral-900 py-2 pl-10 rounded-r-full font-bold w-full relative right-5">
-                Competent
+                Detail-oriented
               </h3>
             </div>
+
             <p className="p-3">
-              A must-have trait that significantly enhances the overall working
-              experience.
+              Awareness to good coding and security practises, consistency and
+              flawless UX/UI.
             </p>
           </div>
 
@@ -146,11 +148,12 @@ export default function Home() {
               />
 
               <h3 className="bg-neutral-900 py-2 pl-10 rounded-r-full font-bold w-full relative right-5">
-                Competent
+                Communicative
               </h3>
             </div>
+
             <p className="p-3">
-              A must-have trait that significantly enhances the overall working
+              Another must-have quality that enhances the overall team working
               experience.
             </p>
           </div>
