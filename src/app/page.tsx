@@ -10,11 +10,13 @@ import {
   IconBrandNodejs,
   IconBrandMongodb,
   IconBriefcase2,
+  IconStars,
+  IconBrandHipchat,
 } from "@tabler/icons-react";
 
 export default function Home() {
   return (
-    <main className="">
+    <main>
       {/* header */}
       <header className="bg-gradient-to-t from-neutral-999 via-neutral-999 pt-48 pb-24 w-screen flex flex-col items-center justify-center">
         {/* presentation */}
@@ -38,14 +40,16 @@ export default function Home() {
         <div className="mt-10 flex font-semibold">
           <a
             href="/personal/contact"
-            className="bg-red-600 px-5 py-3 rounded-2xl hover:opacity-75">
+            className="bg-red-600 px-5 py-3 rounded-2xl hover:opacity-75"
+          >
             Get in touch
           </a>
 
           <a
             href="#"
             target="_blank"
-            className="px-5 py-3 rounded-2xl hover:opacity-75 flex items-center">
+            className="px-5 py-3 rounded-2xl hover:opacity-75 flex items-center"
+          >
             <IconFile size={20} stroke={2} className="mr-2" />
             RESUME
           </a>
@@ -112,7 +116,7 @@ export default function Home() {
               </h3>
             </div>
 
-            <p className="p-3">
+            <p className="p-3 opacity-75">
               A must-have trait that significantly enhances the overall working
               experience.
             </p>
@@ -121,7 +125,7 @@ export default function Home() {
           {/* detail-oriented */}
           <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
             <div className="flex items-center ">
-              <IconBriefcase2
+              <IconStars
                 size={24}
                 stroke={1.25}
                 className="rounded-full bg-red-600 p-3 box-content min-w-fit z-10"
@@ -132,7 +136,7 @@ export default function Home() {
               </h3>
             </div>
 
-            <p className="p-3">
+            <p className="p-3 opacity-75">
               Awareness to good coding and security practises, consistency and
               flawless UX/UI.
             </p>
@@ -141,7 +145,7 @@ export default function Home() {
           {/* comunicative */}
           <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
             <div className="flex items-center ">
-              <IconBriefcase2
+              <IconBrandHipchat
                 size={24}
                 stroke={1.25}
                 className="rounded-full bg-red-600 p-3 box-content min-w-fit z-10"
@@ -152,7 +156,7 @@ export default function Home() {
               </h3>
             </div>
 
-            <p className="p-3">
+            <p className="p-3 opacity-75">
               Another must-have quality that enhances the overall team working
               experience.
             </p>

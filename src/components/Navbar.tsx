@@ -6,6 +6,9 @@ import {
   IconMoodLookRight,
 } from "@tabler/icons-react";
 
+import Dropdown from "./navbar/Dropdown";
+import Link from "./navbar/Link";
+
 export default function Navbar() {
   return (
     <nav className="fixed w-screen top-0 z-50 justify-center m-auto px-10">
@@ -26,43 +29,25 @@ export default function Navbar() {
           {/* pages */}
           <div className="flex gap-5 items-center">
             {/* professional */}
-            <button
-              disabled
-              className="bg-neutral-900 px-5 py-2 rounded-2xl flex items-center gap-1">
-              Professional
-              <IconMoodLookRight size={14} stroke={2} />
-            </button>
+            <Dropdown name="Professional" />
 
             <ul className="flex gap-5 items-center">
-              <li className="hover:opacity-75">
-                <a href="/professional/projects">Projects</a>
-              </li>
+              <Link name="Projects" destination="/professional/projects" />
 
-              <li className="hover:opacity-75">
-                <a href="/professional/experience">Experience</a>
-              </li>
+              <Link name="Experience" destination="/professional/experience" />
 
-              <li className="hover:opacity-75">
-                <a href="/professional/skills-and-tools">Skills & Tools</a>
-              </li>
+              <Link
+                name="Skills & Tools"
+                destination="/professional/skills-and-tools"
+              />
             </ul>
 
             {/* personal */}
-            <button
-              disabled
-              className="bg-neutral-900 px-5 py-2 rounded-2xl flex items-center gap-1">
-              Personal
-              <IconMoodLookRight size={14} stroke={2} />
-            </button>
+            <Dropdown name="Personal" />
 
             <ul className="flex gap-5 items-center">
-              <li className="hover:opacity-75">
-                <a href="/personal/contact">Contact</a>
-              </li>
-
-              <li className="hover:opacity-75">
-                <a href="/personal/blog">Blog</a>
-              </li>
+              <Link name="Contact" destination="/personal/contact" />
+              <Link name="Blog" destination="/personal/blog" />
             </ul>
           </div>
         </div>
@@ -72,28 +57,32 @@ export default function Navbar() {
           <a
             href="https://github.com/munraitoo13/"
             target="_blank"
-            className="hover:opacity-75">
+            className="hover:opacity-75"
+          >
             <IconBrandGithub stroke={1.25} />
           </a>
 
           <a
             href="https://www.linkedin.com/in/munraitoo13/"
             target="_blank"
-            className="hover:opacity-75">
+            className="hover:opacity-75"
+          >
             <IconBrandLinkedin stroke={1.25} />
           </a>
 
           <a
             href="https://www.instagram.com/munraitoo13"
             target="_blank"
-            className="hover:opacity-75">
+            className="hover:opacity-75"
+          >
             <IconBrandInstagram stroke={1.25} />
           </a>
 
           <a
             href="https://x.com/munraitoo13"
             target="_blank"
-            className="hover:opacity-75">
+            className="hover:opacity-75"
+          >
             <IconBrandX stroke={1.25} />
           </a>
         </div>

@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="flex">
         {/* Professional */}
         <div className="mr-20">
-          <b className="">Professional</b>
+          <b>Professional</b>
 
           <ul className="mt-5">
             <li>
@@ -39,7 +39,7 @@ export default function Footer() {
 
         {/* Personal */}
         <div className="mr-20">
-          <b className="">Personal</b>
+          <b>Personal</b>
 
           <ul className="mt-5">
             <li>
@@ -58,7 +58,7 @@ export default function Footer() {
 
         {/* This Website */}
         <div className="mr-20">
-          <b className="">This Website</b>
+          <b>This Website</b>
 
           <ul className="mt-5">
             <li>
