@@ -13,31 +13,22 @@ import {
   IconStars,
   IconBrandHipchat,
 } from "@tabler/icons-react";
+import { motion } from "framer-motion";
+
+import ScrollToTop from "@/components/ScrollToTop";
+import Presentation from "@/components/Home/Presentation";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-gradient-to-t from-neutral-999 via-neutral-999">
       {/* header */}
-      <header className="bg-gradient-to-t from-neutral-999 via-neutral-999 pt-48 pb-24 w-screen flex flex-col items-center justify-center">
+      <header className=" pt-48 pb-24 w-screen flex flex-col items-center justify-center">
         {/* presentation */}
-        <div className="w-1/2 flex flex-col items-center justify-center text-center">
-          <h1 className="text-6xl font-bold mb-5">
-            What's up!
-            <br />
-            My name is <span className="text-red-600">Augusto</span>.
-          </h1>
-
-          <p className="text-lg">
-            <span className="opacity-75">
-              Also known as munraitoo13, I'm a passionate
-            </span>
-            <b> Software Engineer </b>
-            <span className="opacity-75">from Brazil!</span>
-          </p>
-        </div>
+        <Presentation />
 
         {/* buttons */}
         <div className="mt-10 flex font-semibold">
+          {/* contact */}
           <a
             href="/personal/contact"
             className="bg-red-600 px-5 py-3 rounded-2xl hover:opacity-75"
@@ -45,6 +36,7 @@ export default function Home() {
             Get in touch
           </a>
 
+          {/* resume */}
           <a
             href="#"
             target="_blank"
@@ -100,8 +92,28 @@ export default function Home() {
       </header>
 
       {/* qualities */}
-      <div className="bg-gradient-to-t from-neutral-999 via-neutral-999 w-screen pb-20 px-20 flex justify-center">
+      <div className="w-screen pb-20 px-20 flex justify-center">
         <div className="flex justify-evenly gap-5 max-w-screen-xl">
+          {/* comunicative */}
+          <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
+            <div className="flex items-center ">
+              <IconBrandHipchat
+                size={24}
+                stroke={1.25}
+                className="rounded-full bg-red-600 p-3 box-content min-w-fit z-10"
+              />
+
+              <h3 className="bg-neutral-900 py-2 pl-10 rounded-r-full font-bold w-full relative right-5">
+                Communicative
+              </h3>
+            </div>
+
+            <p className="p-3 opacity-75">
+              I can communicate clearly. A must-have quality that enhances the
+              entire team working experience.
+            </p>
+          </div>
+
           {/* competent */}
           <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
             <div className="flex items-center ">
@@ -117,8 +129,8 @@ export default function Home() {
             </div>
 
             <p className="p-3 opacity-75">
-              A must-have trait that significantly enhances the overall working
-              experience.
+              I'm dedicated. Another must-have trait that significantly enhances
+              the overall working experience.
             </p>
           </div>
 
@@ -137,35 +149,15 @@ export default function Home() {
             </div>
 
             <p className="p-3 opacity-75">
-              Awareness to good coding and security practises, consistency and
-              flawless UX/UI.
-            </p>
-          </div>
-
-          {/* comunicative */}
-          <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
-            <div className="flex items-center ">
-              <IconBrandHipchat
-                size={24}
-                stroke={1.25}
-                className="rounded-full bg-red-600 p-3 box-content min-w-fit z-10"
-              />
-
-              <h3 className="bg-neutral-900 py-2 pl-10 rounded-r-full font-bold w-full relative right-5">
-                Communicative
-              </h3>
-            </div>
-
-            <p className="p-3 opacity-75">
-              Another must-have quality that enhances the overall team working
-              experience.
+              I have good coding and security practises. A very important
+              quality that ensures the success of the final product.
             </p>
           </div>
         </div>
       </div>
 
       {/* phrase */}
-      <div className="bg-gradient-to-b from-neutral-999 py-20 text-center w-screen flex items-center justify-center">
+      <div className="py-20 text-center w-screen flex items-center justify-center">
         <blockquote className="text-2xl w-1/2 flex flex-col gap-1">
           <div className="flex items-end justify-center">
             <IconQuote

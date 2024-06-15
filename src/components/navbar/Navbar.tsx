@@ -6,8 +6,8 @@ import {
   IconMoodLookRight,
 } from "@tabler/icons-react";
 
-import Dropdown from "./navbar/Dropdown";
-import Link from "./navbar/Link";
+import Dropdown from "./Dropdown";
+import Link from "./Link";
 
 export default function Navbar() {
   return (
