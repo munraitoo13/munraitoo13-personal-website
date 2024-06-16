@@ -15,12 +15,16 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 
-import ScrollToTop from "@/components/ScrollToTop";
+import BackToTop from "@/components/BackToTop";
 import Presentation from "@/components/Home/Presentation";
+import Qualities from "@/components/Home/Qualities";
 
 export default function Home() {
   return (
     <main className="bg-gradient-to-t from-neutral-999 via-neutral-999">
+      {/* back to top */}
+      <BackToTop />
+
       {/* header */}
       <header className=" pt-48 pb-24 w-screen flex flex-col items-center justify-center">
         {/* presentation */}
@@ -92,69 +96,7 @@ export default function Home() {
       </header>
 
       {/* qualities */}
-      <div className="w-screen pb-20 px-20 flex justify-center">
-        <div className="flex justify-evenly gap-5 max-w-screen-xl">
-          {/* comunicative */}
-          <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
-            <div className="flex items-center ">
-              <IconBrandHipchat
-                size={24}
-                stroke={1.25}
-                className="rounded-full bg-red-600 p-3 box-content min-w-fit z-10"
-              />
-
-              <h3 className="bg-neutral-900 py-2 pl-10 rounded-r-full font-bold w-full relative right-5">
-                Communicative
-              </h3>
-            </div>
-
-            <p className="p-3 opacity-75">
-              I can communicate clearly. A must-have quality that enhances the
-              entire team working experience.
-            </p>
-          </div>
-
-          {/* competent */}
-          <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
-            <div className="flex items-center ">
-              <IconBriefcase2
-                size={24}
-                stroke={1.25}
-                className="rounded-full bg-red-600 p-3 box-content min-w-fit z-10"
-              />
-
-              <h3 className="bg-neutral-900 py-2 pl-10 rounded-r-full font-bold w-full relative right-5">
-                Competent
-              </h3>
-            </div>
-
-            <p className="p-3 opacity-75">
-              I'm dedicated. Another must-have trait that significantly enhances
-              the overall working experience.
-            </p>
-          </div>
-
-          {/* detail-oriented */}
-          <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
-            <div className="flex items-center ">
-              <IconStars
-                size={24}
-                stroke={1.25}
-                className="rounded-full bg-red-600 p-3 box-content min-w-fit z-10"
-              />
-
-              <h3 className="bg-neutral-900 py-2 pl-10 rounded-r-full font-bold w-full relative right-5">
-                Detail-oriented
-              </h3>
-            </div>
-
-            <p className="p-3 opacity-75">
-              I have good coding and security practises. A very important
-              quality that ensures the success of the final product.
-            </p>
-          </div>
-        </div>
-      </div>
+      <Qualities />
 
       {/* phrase */}
       <div className="py-20 text-center w-screen flex items-center justify-center">
