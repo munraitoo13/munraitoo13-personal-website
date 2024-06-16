@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="w-screen pt-24 p-10 bg-gradient-to-b from-neutral-999">
       <div className="flex flex-col">
         {/* links and about */}
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col lg:flex-row justify-between gap-10">
           {/* navigation */}
           <div className="flex gap-10">
             {/* Professional */}
@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
 
           {/* about-me */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 max-w-lg">
             <p className="opacity-75">About-me</p>
 
             <p>
