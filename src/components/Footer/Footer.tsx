@@ -1,16 +1,9 @@
-import {
-  IconBrandX,
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconBrandInstagram,
-} from "@tabler/icons-react";
-
 export default function Footer() {
   return (
     <footer className="w-screen pt-24 p-10 bg-gradient-to-b from-neutral-999">
-      <div className="mx-auto max-w-screen-xl relative">
+      <div className="flex flex-col">
         {/* links and about */}
-        <div className="flex justify-between">
+        <div className="flex flex-col gap-10">
           {/* navigation */}
           <div className="flex gap-10">
             {/* Professional */}
@@ -84,7 +77,7 @@ export default function Footer() {
           </div>
 
           {/* about-me */}
-          <div className="flex flex-col gap-2 w-1/3">
+          <div className="flex flex-col gap-2">
             <p className="opacity-75">About-me</p>
 
             <p>

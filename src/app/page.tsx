@@ -100,13 +100,8 @@ export default function Home() {
 
       {/* phrase */}
       <div className="py-20 text-center w-screen flex items-center justify-center">
-        <blockquote className="text-2xl w-1/2 flex flex-col gap-1">
+        <blockquote className="text-2xl flex flex-col gap-1">
           <div className="flex items-end justify-center">
-            <IconQuote
-              size={32}
-              stroke={1.25}
-              className="transform scale-x-[-1] scale-y-[-1] mb-2"
-            />
             <span className="opacity-75">
               <span className="italic">Three responses</span> to a piece of
               product:

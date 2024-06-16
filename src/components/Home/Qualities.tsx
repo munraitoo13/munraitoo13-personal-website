@@ -11,12 +11,16 @@ export default function Qualities() {
   return (
     <div className="w-screen pb-20 px-20 flex justify-center">
       <motion.div
-        initial={{ opacity: 0, y: -100 }}
-        whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          transition: { duration: 0.5, delay: 0.4 },
+        }}
       >
-        <div className="flex justify-evenly gap-5 max-w-screen-xl">
+        <div className="flex flex-col gap-5">
           {/* comunicative */}
-          <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
+          <div className="border border-neutral-900 rounded-xl p-3 text-white">
             <div className="flex items-center ">
               <IconBrandHipchat
                 size={24}
@@ -36,7 +40,7 @@ export default function Qualities() {
           </div>
 
           {/* competent */}
-          <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
+          <div className="border border-neutral-900 rounded-xl p-3 text-white">
             <div className="flex items-center ">
               <IconBriefcase2
                 size={24}
@@ -56,7 +60,7 @@ export default function Qualities() {
           </div>
 
           {/* detail-oriented */}
-          <div className="border border-neutral-900 rounded-xl p-3 w-1/3 text-white">
+          <div className="border border-neutral-900 rounded-xl p-3 text-white">
             <div className="flex items-center ">
               <IconStars
                 size={24}

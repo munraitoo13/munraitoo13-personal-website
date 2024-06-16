@@ -35,17 +35,16 @@ export default function ScrollToTop() {
   }, []);
 
   return (
-    <div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isVisible ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <IconArrowMoveUp
-          onClick={scrollToTop}
-          className="bg-red-600 fixed box-content bottom-10 right-10 p-2 rounded-full shadow-md cursor-pointer z-50"
-        />
-      </motion.div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isVisible ? 1 : 0 }}
+      transition={{ duration: 0.25 }}
+      className="fixed w-screen flex justify-center bottom-10 z-50"
+    >
+      <IconArrowMoveUp
+        onClick={scrollToTop}
+        className="bg-red-600 box-content p-2 rounded-full shadow-md cursor-pointer"
+      />
+    </motion.div>
   );
 }

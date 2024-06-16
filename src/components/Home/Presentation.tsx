@@ -6,7 +6,7 @@ export default function Presentation() {
   return (
     <div className="w-1/2 flex flex-col items-center justify-center text-center">
       <motion.div
-        initial={{ opacity: 0, scale: 0 }}
+        initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1, transition: { duration: 0.5 } }}
       >
         <h1 className="text-6xl font-bold mb-5">
@@ -17,11 +17,11 @@ export default function Presentation() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, scale: 0 }}
+        initial={{ opacity: 0, scale: 0.5 }}
         animate={{
           opacity: 1,
           scale: 1,
-          transition: { duration: 0.5, delay: 0.5 },
+          transition: { duration: 0.5, delay: 0.2 },
         }}
       >
         <p className="text-lg">
