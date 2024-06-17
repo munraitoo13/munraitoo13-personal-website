@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="w-screen pt-24 p-10 bg-gradient-to-b from-neutral-999">
+    <footer className="w-full bg-gradient-to-b from-neutral-999 p-10 pt-24">
       <div className="flex flex-col">
         {/* links and about */}
-        <div className="flex flex-col lg:flex-row justify-between gap-10">
+        <div className="flex flex-col justify-between gap-10 lg:flex-row">
           {/* navigation */}
           <div className="flex gap-10">
             {/* Professional */}
@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
 
           {/* about-me */}
-          <div className="flex flex-col gap-2 max-w-lg">
+          <div className="flex max-w-lg flex-col gap-2">
             <p className="opacity-75">About-me</p>
 
             <p>
@@ -88,10 +88,10 @@ export default function Footer() {
         </div>
 
         {/* separator */}
-        <hr className="border-neutral-800 mt-5" />
+        <hr className="mt-5 border-neutral-800" />
 
         {/* bottom-end */}
-        <div className="flex justify-between mt-5 text-xs">
+        <div className="mt-5 flex justify-between text-xs">
           <p>&copy; 2024, munraitoo13</p>
 
           <a

@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 export default function Presentation() {
   return (
-    <div className="w-1/2 flex flex-col items-center justify-center text-center">
+    <div className="flex w-1/2 flex-col items-center justify-center text-center">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1, transition: { duration: 0.5 } }}
       >
-        <h1 className="text-6xl font-bold mb-5">
+        <h1 className="mb-5 text-6xl font-bold">
           What's up!
           <br />
           My name is <span className="text-red-600">Augusto</span>.
