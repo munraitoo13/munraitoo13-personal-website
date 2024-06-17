@@ -16,19 +16,19 @@ export default function Qualities() {
         scale: 1,
         transition: { duration: 0.5 },
       }}
-      className="w-screen pb-20 px-20 flex justify-center"
+      className="flex w-full justify-center px-20 pb-20"
     >
-      <div className="flex items-center flex-col lg:flex-row gap-5">
+      <div className="flex flex-col items-center gap-5 lg:flex-row">
         {/* comunicative */}
-        <div className="border border-neutral-900 rounded-xl p-3 text-white max-w-sm">
-          <div className="flex items-center ">
+        <div className="max-w-sm rounded-xl border border-neutral-900 p-3 text-white">
+          <div className="flex items-center">
             <IconBrandHipchat
               size={24}
               stroke={1.25}
-              className="rounded-full bg-red-600 p-3 box-content min-w-fit z-10"
+              className="z-10 box-content min-w-fit rounded-full bg-red-600 p-3"
             />
 
-            <h3 className="bg-neutral-900 py-2 pl-10 rounded-r-full font-bold w-full relative right-5">
+            <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900 py-2 pl-10 font-bold">
               Communicative
             </h3>
           </div>
@@ -40,15 +40,15 @@ export default function Qualities() {
         </div>
 
         {/* competent */}
-        <div className="border border-neutral-900 rounded-xl p-3 text-white max-w-sm">
-          <div className="flex items-center ">
+        <div className="max-w-sm rounded-xl border border-neutral-900 p-3 text-white">
+          <div className="flex items-center">
             <IconBriefcase2
               size={24}
               stroke={1.25}
-              className="rounded-full bg-red-600 p-3 box-content min-w-fit z-10"
+              className="z-10 box-content min-w-fit rounded-full bg-red-600 p-3"
             />
 
-            <h3 className="bg-neutral-900 py-2 pl-10 rounded-r-full font-bold w-full relative right-5">
+            <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900 py-2 pl-10 font-bold">
               Competent
             </h3>
           </div>
@@ -60,15 +60,15 @@ export default function Qualities() {
         </div>
 
         {/* detail-oriented */}
-        <div className="border border-neutral-900 rounded-xl p-3 text-white max-w-sm">
-          <div className="flex items-center ">
+        <div className="max-w-sm rounded-xl border border-neutral-900 p-3 text-white">
+          <div className="flex items-center">
             <IconStars
               size={24}
               stroke={1.25}
-              className="rounded-full bg-red-600 p-3 box-content min-w-fit z-10"
+              className="z-10 box-content min-w-fit rounded-full bg-red-600 p-3"
             />
 
-            <h3 className="bg-neutral-900 py-2 pl-10 rounded-r-full font-bold w-full relative right-5">
+            <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900 py-2 pl-10 font-bold">
               Detail-oriented
             </h3>
           </div>

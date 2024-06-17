@@ -26,7 +26,7 @@ export default function Home() {
       <BackToTop />
 
       {/* header */}
-      <header className=" pt-48 pb-24 w-screen flex flex-col items-center justify-center">
+      <header className="flex w-full flex-col items-center justify-center pb-24 pt-48">
         {/* presentation */}
         <Presentation />
 
@@ -35,7 +35,7 @@ export default function Home() {
           {/* contact */}
           <a
             href="/personal/contact"
-            className="bg-red-600 px-5 py-3 rounded-2xl hover:opacity-75"
+            className="rounded-2xl bg-red-600 px-5 py-3 hover:opacity-75"
           >
             Get in touch
           </a>
@@ -44,7 +44,7 @@ export default function Home() {
           <a
             href="#"
             target="_blank"
-            className="px-5 py-3 rounded-2xl hover:opacity-75 flex items-center"
+            className="flex items-center rounded-2xl px-5 py-3 hover:opacity-75"
           >
             <IconFile size={20} stroke={2} className="mr-2" />
             RESUME
@@ -54,7 +54,7 @@ export default function Home() {
         {/* tech stacks */}
         <div className="mt-20 flex flex-col items-center gap-1">
           <span className="text-sm opacity-75">Favorite Stacks & Tools</span>
-          <div className="flex gap-2 items-center">
+          <div className="flex items-center gap-2">
             <IconBrandTypescript
               stroke={1.25}
               className="opacity-75 hover:cursor-pointer hover:opacity-100"
@@ -99,8 +99,8 @@ export default function Home() {
       <Qualities />
 
       {/* phrase */}
-      <div className="py-20 text-center w-screen flex items-center justify-center">
-        <blockquote className="text-2xl flex flex-col gap-1">
+      <div className="flex w-full items-center justify-center py-20 text-center">
+        <blockquote className="flex flex-col gap-1 text-2xl">
           <div className="flex items-end justify-center">
             <span className="opacity-75">
               <span className="italic">Three responses</span> to a piece of
@@ -116,7 +116,7 @@ export default function Home() {
 
           <div>
             <span className="opacity-75">Wow is the one </span>
-            <span className="font-bold p-1 bg-neutral-900 rounded-md">
+            <span className="rounded-md bg-neutral-900 p-1 font-bold">
               I aim for.
             </span>
           </div>

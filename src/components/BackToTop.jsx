@@ -39,11 +39,11 @@ export default function ScrollToTop() {
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.25 }}
-      className="fixed w-screen flex justify-center bottom-10 z-50"
+      className="fixed bottom-10 z-50 flex w-full justify-center"
     >
       <IconArrowMoveUp
         onClick={scrollToTop}
-        className="bg-red-600 box-content p-2 rounded-full shadow-md cursor-pointer"
+        className="box-content cursor-pointer rounded-full bg-red-600 p-2 shadow-md"
       />
     </motion.div>
   );
