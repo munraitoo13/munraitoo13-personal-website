@@ -12,9 +12,9 @@ import {
 import { motion } from "framer-motion";
 
 import ScrollTop from "@/components/ScrollTop";
-import Presentation from "@/components/Home/Presentation";
-import Qualities from "@/components/Home/Qualities";
-import Phrase from "@/components/Home/Phrase";
+import Presentation from "@/components/Homepage/Presentation";
+import Qualities from "@/components/Homepage/Qualities";
+import Phrase from "@/components/Homepage/Phrase";
 
 export default function Home() {
   return (
