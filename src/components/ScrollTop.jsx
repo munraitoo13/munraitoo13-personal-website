@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { IconArrowMoveUp } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 
-export default function ScrollToTop() {
+export default function ScrollTop() {
   // state to manage the visibility of the back to top button
   const [isVisible, setIsVisible] = useState(false);
 
