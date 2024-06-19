@@ -1,22 +1,41 @@
-export default function Project() {
-  return (
-    <div className="flex w-full flex-col items-center p-5">
-      {/* project */}
-      <div className="flex flex-col items-center gap-5">
-        <div className="flex flex-col gap-5">
-          {/* project repo name */}
-          <p className="font-bold text-red-600">repository-name</p>
+"use client";
 
-          {/* project function */}
-          <h2 className="text-3xl font-bold">Project function</h2>
+import { motion } from "framer-motion";
+
+export default function Project({
+  repo,
+  projectTitle,
+  projectDescription,
+  href,
+}: {
+  repo: string;
+  projectTitle: string;
+  projectDescription: string;
+  href: string;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      className="flex w-full flex-col items-center p-5"
+    >
+      {/* project */}
+      <div className="flex w-full flex-col gap-5">
+        <div className="flex flex-col">
+          {/* project repo name */}
+          <a
+            href={href}
+            target="_blank"
+            className="font-bold text-red-600"
+          >
+            {repo}
+          </a>
+
+          {/* project title */}
+          <h2 className="text-3xl font-bold">{projectTitle}</h2>
 
           {/* project description */}
-          <p className="opacity-75">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            ultricies, mi vitae scelerisque luctus, eros orci accumsan libero,
-            nec fermentum purus mi vel sapien. Nulla facilisi. Nullam in nunc
-            tincidunt, ultricies nunc sit amet, vestibulum justo.
-          </p>
+          <p className="opacity-75">{projectDescription}</p>
         </div>
 
         <div className="h-96 w-full rounded-xl bg-neutral-900">
@@ -26,6 +45,6 @@ export default function Project() {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

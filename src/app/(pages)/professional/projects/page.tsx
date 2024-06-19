@@ -7,7 +7,14 @@ export const metadata: Metadata = {
   description: "munraitoo13's projects",
 };
 
-export default function Projects() {
+async function getRepos() {
+  const res = await fetch("https://api.github.com/users/munraitoo13/repos");
+  return res.json();
+}
+
+export default async function Projects() {
+  const repos = await getRepos();
+
   return (
     <>
       <Header
@@ -15,7 +22,16 @@ export default function Projects() {
         pageDescription="All of my wip and finished projects in one place."
       />
 
-      <Project />
+      {repos.map((repo: any) => {
+        return (
+          <Project
+            href={repo.html_url}
+            repo={repo.full_name}
+            projectTitle="Project Title"
+            projectDescription={repo.description}
+          />
+        );
+      })}
     </>
   );
 }

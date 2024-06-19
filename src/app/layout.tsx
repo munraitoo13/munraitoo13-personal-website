@@ -15,8 +15,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <main className="flex w-full flex-col items-center bg-gradient-to-t from-neutral-999 via-neutral-999">
-          <div className="max-w-screen-xl">{children}</div>
+        <main className="flex w-full flex-col items-center bg-gradient-to-t from-neutral-999 from-90%">
+          <div className="w-full max-w-screen-xl">{children}</div>
         </main>
         <Footer />
       </body>
