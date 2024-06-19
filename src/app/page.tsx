@@ -8,7 +8,7 @@ import ButtonLink from "@/components/ButtonLink";
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-t from-neutral-999 via-neutral-999">
+    <>
       {/* back to top */}
       <ScrollTop />
 
@@ -38,6 +38,6 @@ export default function Home() {
 
       {/* phrase */}
       <Phrase />
-    </main>
+    </>
   );
 }

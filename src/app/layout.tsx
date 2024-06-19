@@ -20,7 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        {children}
+        <main className="bg-gradient-to-t from-neutral-999 via-neutral-999">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
