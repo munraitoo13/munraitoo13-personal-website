@@ -1,6 +1,9 @@
 export default function Logo() {
   return (
-    <a href="/" className="h-6 text-nowrap">
+    <a
+      href="/"
+      className="text-nowrap"
+    >
       <span className="font-bold text-red-600">&lt;</span>
 
       <b>munraitoo13</b>

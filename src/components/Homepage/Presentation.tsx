@@ -6,8 +6,8 @@ export default function Presentation() {
   return (
     <div className="flex w-1/2 flex-col items-center justify-center text-center">
       <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1, transition: { duration: 0.5 } }}
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
       >
         <h1 className="mb-5 text-6xl font-bold">
           What's up!
@@ -17,10 +17,10 @@ export default function Presentation() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
+        initial={{ opacity: 0, x: -50 }}
         animate={{
           opacity: 1,
-          scale: 1,
+          x: 0,
           transition: { duration: 0.5, delay: 0.2 },
         }}
       >

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { IconMenu, IconX } from "@tabler/icons-react";
+import { IconMenu2, IconX } from "@tabler/icons-react";
 import Logo from "@/components/Logo";
 import Socials from "@/components/Socials";
 import Links from "@/components/Navbar/Links";
@@ -12,19 +12,41 @@ export default function Navbar() {
   return (
     <nav className="fixed z-50 mt-5 flex w-full flex-col">
       {/* navbar */}
-      <div className="mx-5 flex justify-between rounded-xl p-5 backdrop-blur-md">
-        <Logo />
+      <div className="mx-5 flex h-20 max-w-screen-2xl items-center justify-between gap-10 rounded-xl p-5 backdrop-blur-md">
+        {/* logo and links */}
+        <div className="flex items-center gap-10">
+          {/* logo */}
+          <div>
+            <Logo />
+          </div>
 
-        {isOpen ? (
-          <IconX onClick={() => setIsOpen(!isOpen)} />
-        ) : (
-          <IconMenu onClick={() => setIsOpen(!isOpen)} />
-        )}
+          {/* links lg */}
+          <div className="hidden lg:flex">
+            <Links />
+          </div>
+        </div>
+
+        {/* socials and menu */}
+        <div className="gap-10">
+          {/* socials md */}
+          <div className="hidden lg:inline">
+            <Socials />
+          </div>
+
+          {/* menu sm md */}
+          <div className="lg:hidden">
+            {isOpen ? (
+              <IconX onClick={() => setIsOpen(!isOpen)} />
+            ) : (
+              <IconMenu2 onClick={() => setIsOpen(!isOpen)} />
+            )}
+          </div>
+        </div>
       </div>
 
       {/* dropdown mobile */}
       {isOpen && (
-        <div className="mt-5 flex w-full flex-col">
+        <div className="mt-5 flex w-full flex-col lg:hidden">
           <div className="mx-10 flex flex-col items-center space-y-5 rounded-xl p-5 backdrop-blur-md">
             {/* links */}
             <Links />

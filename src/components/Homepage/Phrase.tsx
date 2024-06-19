@@ -1,6 +1,18 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Phrase() {
   return (
-    <div className="w-full py-20 text-center">
+    <motion.div
+      className="w-full py-20 text-center"
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.5, delay: 1 },
+      }}
+    >
       <blockquote className="flex flex-col space-y-1 text-2xl">
         <div className="flex justify-center">
           <span className="opacity-75">
@@ -22,6 +34,6 @@ export default function Phrase() {
           </span>
         </div>
       </blockquote>
-    </div>
+    </motion.div>
   );
 }
