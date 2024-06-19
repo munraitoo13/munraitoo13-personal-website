@@ -17,28 +17,28 @@ export default function Project({
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      className="flex w-full flex-col items-center p-5"
     >
       {/* project */}
       <div className="flex w-full flex-col gap-5">
         <div className="flex flex-col">
           {/* project repo name */}
-          <a
+          <motion.a
+            whileHover={{ x: 5 }}
             href={href}
             target="_blank"
             className="font-bold text-red-600"
           >
             {repo}
-          </a>
+          </motion.a>
 
           {/* project title */}
           <h2 className="text-3xl font-bold">{projectTitle}</h2>
 
           {/* project description */}
-          <p className="opacity-75">{projectDescription}</p>
+          <p className="text-lg opacity-75">{projectDescription}</p>
         </div>
 
-        <div className="h-96 w-full rounded-xl bg-neutral-900">
+        <div className="h-96 w-full rounded-xl border-b-2 border-red-600 bg-neutral-950 drop-shadow-lg">
           <img
             src=""
             alt=""

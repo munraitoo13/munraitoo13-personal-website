@@ -11,10 +11,10 @@ export default function Qualities() {
   return (
     <motion.div
       initial={{ opacity: 0, x: -50 }}
-      whileInView={{
+      animate={{
         opacity: 1,
         x: 0,
-        transition: { duration: 0.5 },
+        transition: { duration: 0.5, delay: 0.8 },
       }}
       className="flex w-full justify-center px-20 pb-20"
     >

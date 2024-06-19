@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <nav className="fixed z-50 mt-5 flex w-full flex-col items-center px-5">
       {/* navbar */}
-      <div className="mx-10 flex h-20 w-full max-w-screen-xl items-center justify-between gap-10 rounded-xl p-5 backdrop-blur-md">
+      <div className="mx-10 flex h-20 w-full max-w-screen-xl items-center justify-between gap-10 rounded-xl bg-neutral-900 bg-opacity-25 p-5 backdrop-blur-md">
         {/* logo and links */}
         <div className="flex items-center gap-10">
           {/* logo */}

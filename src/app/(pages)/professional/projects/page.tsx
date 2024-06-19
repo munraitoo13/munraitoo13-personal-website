@@ -8,7 +8,12 @@ export const metadata: Metadata = {
 };
 
 async function getRepos() {
-  const res = await fetch("https://api.github.com/users/munraitoo13/repos");
+  const res = await fetch("https://api.github.com/users/munraitoo13/repos", {
+    next: {
+      revalidate: 0, // refresh data every 30 seconds
+    },
+  });
+
   return res.json();
 }
 
@@ -22,16 +27,18 @@ export default async function Projects() {
         pageDescription="All of my wip and finished projects in one place."
       />
 
-      {repos.map((repo: any) => {
-        return (
-          <Project
-            href={repo.html_url}
-            repo={repo.full_name}
-            projectTitle="Project Title"
-            projectDescription={repo.description}
-          />
-        );
-      })}
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
+        {repos.map((repo: any) => {
+          return (
+            <Project
+              href={repo.html_url}
+              repo={repo.full_name}
+              projectTitle={repo.name}
+              projectDescription={repo.description}
+            />
+          );
+        })}
+      </div>
     </>
   );
 }

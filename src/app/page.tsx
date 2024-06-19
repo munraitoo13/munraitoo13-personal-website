@@ -15,9 +15,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* back to top */}
-      <ScrollTop />
-
       {/* header */}
       <header className="flex w-full flex-col items-center justify-center pb-24 pt-36">
         {/* presentation */}

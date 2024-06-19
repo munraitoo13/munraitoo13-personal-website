@@ -7,7 +7,7 @@ export default function Phrase() {
     <motion.div
       className="w-full py-20 text-center"
       initial={{ opacity: 0, x: -50 }}
-      whileInView={{
+      animate={{
         opacity: 1,
         x: 0,
         transition: { duration: 0.5, delay: 1 },
