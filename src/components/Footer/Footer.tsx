@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="w-full bg-gradient-to-b from-neutral-999 p-10 pt-24">
-      <div className="mx-auto flex max-w-screen-xl flex-col">
+    <footer className="flex w-full flex-col items-center bg-gradient-to-b from-neutral-999 p-10 px-5 pt-24">
+      <div className="flex w-full max-w-screen-xl flex-col">
         {/* links and about */}
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
           {/* navigation */}

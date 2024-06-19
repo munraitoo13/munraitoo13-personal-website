@@ -10,7 +10,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed z-50 mt-5 flex w-full flex-1 flex-col items-center px-10">
+    <nav className="fixed z-50 mt-5 flex w-full flex-col items-center px-5">
       {/* navbar */}
       <div className="mx-10 flex h-20 w-full max-w-screen-xl items-center justify-between gap-10 rounded-xl p-5 backdrop-blur-md">
         {/* logo and links */}

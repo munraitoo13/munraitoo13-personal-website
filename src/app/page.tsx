@@ -5,6 +5,12 @@ import Qualities from "@/components/Homepage/Qualities";
 import Phrase from "@/components/Homepage/Phrase";
 import Stacks from "@/components/Homepage/Stacks";
 import ButtonLink from "@/components/ButtonLink";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home | munraitoo13",
+  description: "munraitoo13's personal website home page.",
+};
 
 export default function Home() {
   return (
