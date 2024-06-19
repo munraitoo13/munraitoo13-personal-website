@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="w-full bg-gradient-to-b from-neutral-999 p-10 pt-24">
-      <div className="flex flex-col">
+      <div className="mx-auto flex max-w-screen-xl flex-col">
         {/* links and about */}
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
           {/* navigation */}
@@ -12,7 +12,10 @@ export default function Footer() {
 
               <ul className="flex flex-col gap-2">
                 <li>
-                  <a href="/professional/projects" className="hover:opacity-75">
+                  <a
+                    href="/professional/projects"
+                    className="hover:opacity-75"
+                  >
                     Projects
                   </a>
                 </li>
@@ -43,13 +46,19 @@ export default function Footer() {
 
               <ul className="flex flex-col gap-2">
                 <li>
-                  <a href="/personal/contact" className="hover:opacity-75">
+                  <a
+                    href="/personal/contact"
+                    className="hover:opacity-75"
+                  >
                     Contact
                   </a>
                 </li>
 
                 <li>
-                  <a href="/personal/blog" className="hover:opacity-75">
+                  <a
+                    href="/personal/blog"
+                    className="hover:opacity-75"
+                  >
                     Blog
                   </a>
                 </li>
@@ -62,13 +71,21 @@ export default function Footer() {
 
               <ul className="flex flex-col gap-2">
                 <li>
-                  <a href="#" target="_blank" className="hover:opacity-75">
+                  <a
+                    href="#"
+                    target="_blank"
+                    className="hover:opacity-75"
+                  >
                     Concept
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" target="_blank" className="hover:opacity-75">
+                  <a
+                    href="#"
+                    target="_blank"
+                    className="hover:opacity-75"
+                  >
                     Source Code
                   </a>
                 </li>

@@ -10,9 +10,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed z-50 mt-5 flex w-full flex-col">
+    <nav className="fixed z-50 mt-5 flex w-full flex-1 flex-col items-center px-10">
       {/* navbar */}
-      <div className="mx-5 flex h-20 max-w-screen-2xl items-center justify-between gap-10 rounded-xl p-5 backdrop-blur-md">
+      <div className="mx-10 flex h-20 w-full max-w-screen-xl items-center justify-between gap-10 rounded-xl p-5 backdrop-blur-md">
         {/* logo and links */}
         <div className="flex items-center gap-10">
           {/* logo */}
@@ -47,7 +47,7 @@ export default function Navbar() {
       {/* dropdown mobile */}
       {isOpen && (
         <div className="mt-5 flex w-full flex-col lg:hidden">
-          <div className="mx-10 flex flex-col items-center space-y-5 rounded-xl p-5 backdrop-blur-md">
+          <div className="flex flex-col items-center space-y-5 rounded-xl p-5 backdrop-blur-md">
             {/* links */}
             <Links />
 
