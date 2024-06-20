@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
+import { motion } from "framer-motion";
 import Logo from "@/components/Logo";
 import Socials from "@/components/Socials";
 import Links from "@/components/Navbar/Links";
@@ -26,34 +27,35 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* socials and menu */}
-        <div className="gap-10">
-          {/* socials md */}
-          <div className="hidden lg:inline">
-            <Socials />
-          </div>
+        {/* socials md */}
+        <div className="hidden lg:flex">
+          <Socials />
+        </div>
 
-          {/* menu sm md */}
-          <div className="lg:hidden">
-            {isOpen ? (
-              <IconX onClick={() => setIsOpen(!isOpen)} />
-            ) : (
-              <IconMenu2 onClick={() => setIsOpen(!isOpen)} />
-            )}
-          </div>
+        {/* menu sm md */}
+        <div className="cursor-pointer lg:hidden">
+          {isOpen ? (
+            <IconX onClick={() => setIsOpen(!isOpen)} />
+          ) : (
+            <IconMenu2 onClick={() => setIsOpen(!isOpen)} />
+          )}
         </div>
       </div>
 
       {/* dropdown mobile */}
       {isOpen && (
         <div className="mt-5 flex w-full flex-col lg:hidden">
-          <div className="flex flex-col items-center space-y-5 rounded-xl p-5 backdrop-blur-md">
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-col items-center space-y-5 rounded-xl p-5 backdrop-blur-md"
+          >
             {/* links */}
             <Links />
 
             {/* socials */}
             <Socials />
-          </div>
+          </motion.div>
         </div>
       )}
     </nav>

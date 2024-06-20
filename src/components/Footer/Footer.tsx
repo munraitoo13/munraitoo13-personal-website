@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="flex w-full flex-col items-center bg-gradient-to-b from-neutral-999 p-10 px-5 pt-24">
+    <footer className="flex w-full flex-col items-center bg-gradient-to-b from-neutral-999 px-10 pb-5 pt-36">
       <div className="flex w-full max-w-screen-xl flex-col">
         {/* links and about */}
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
@@ -22,7 +22,7 @@ export default function Footer() {
 
                 <li>
                   <a
-                    href="/professional/experience"
+                    href="/professional/experiences"
                     className="hover:opacity-75"
                   >
                     Experience

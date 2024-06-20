@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 export default function Phrase() {
   return (
     <motion.div
-      className="w-full py-20 text-center"
+      className="w-full text-center"
       initial={{ opacity: 0, x: -50 }}
       animate={{
         opacity: 1,
         x: 0,
-        transition: { duration: 0.5, delay: 1 },
+        transition: { delay: 0.5 },
       }}
     >
       <blockquote className="flex flex-col space-y-1 text-2xl">

@@ -16,13 +16,16 @@ export default function Home() {
   return (
     <>
       {/* header */}
-      <header className="flex w-full flex-col items-center justify-center pb-24 pt-36">
+      <header className="flex w-full flex-col justify-center gap-5 pt-44">
         {/* presentation */}
         <Presentation />
 
-        {/* buttons */}
+        {/* stacks & tools */}
+        <Stacks />
+
+        {/* contact and resume */}
         <div className="mt-10 flex">
-          <ButtonLink href="/personal/contact">Get in touch</ButtonLink>
+          <ButtonLink href="/personal/contact">Contact me</ButtonLink>
           <ButtonLink
             className="bg-transparent"
             href="#"
@@ -31,9 +34,6 @@ export default function Home() {
             RESUME
           </ButtonLink>
         </div>
-
-        {/* tech stacks */}
-        <Stacks />
       </header>
 
       {/* qualities */}

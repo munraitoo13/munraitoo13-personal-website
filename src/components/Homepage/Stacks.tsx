@@ -15,37 +15,37 @@ import { motion } from "framer-motion";
 export default function Stacks() {
   return (
     <motion.div
-      className="mt-20 flex flex-col items-center gap-1"
+      className="flex flex-col gap-1"
       initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.6 } }}
+      animate={{ opacity: 1, x: 0, transition: { delay: 0.2 } }}
     >
-      <span className="text-sm opacity-75">Favorite Stacks & Tools</span>
+      <span>My Stacks & Tools</span>
 
       <div className="flex items-center gap-2">
         <IconBrandTypescript
           stroke={1.25}
-          className="opacity-75 hover:cursor-pointer hover:opacity-100"
+          className="hover:cursor-pointer hover:opacity-75"
         />
         <IconBrandReact
           stroke={1.25}
-          className="opacity-75 hover:cursor-pointer hover:opacity-100"
+          className="hover:cursor-pointer hover:opacity-75"
         />
         <IconBrandNextjs
           stroke={1.25}
-          className="opacity-75 hover:cursor-pointer hover:opacity-100"
+          className="hover:cursor-pointer hover:opacity-75"
         />
         <IconBrandTailwind
           stroke={1.25}
-          className="opacity-75 hover:cursor-pointer hover:opacity-100"
+          className="hover:cursor-pointer hover:opacity-75"
         />
         <IconBrandNodejs
           stroke={1.25}
-          className="opacity-75 hover:cursor-pointer hover:opacity-100"
+          className="hover:cursor-pointer hover:opacity-75"
         />
         <IconBrandMongodb
           size={24}
           stroke={1.25}
-          className="opacity-75 hover:cursor-pointer hover:opacity-100"
+          className="hover:cursor-pointer hover:opacity-75"
         />
 
         <span className="opacity-75">|</span>
@@ -53,12 +53,12 @@ export default function Stacks() {
         <IconBrandVscode
           size={24}
           stroke={1.25}
-          className="opacity-75 hover:cursor-pointer hover:opacity-100"
+          className="hover:cursor-pointer hover:opacity-75"
         />
         <IconBrandFigma
           size={24}
           stroke={1.25}
-          className="opacity-75 hover:cursor-pointer hover:opacity-100"
+          className="hover:cursor-pointer hover:opacity-75"
         />
       </div>
     </motion.div>

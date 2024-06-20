@@ -1,7 +1,7 @@
 export default function Links() {
   const professional = [
     { name: "Projects", href: "/professional/projects" },
-    { name: "Experience", href: "/professional/experience" },
+    { name: "Experiences", href: "/professional/experiences" },
     { name: "Skills & Tools", href: "/professional/skills-and-tools" },
   ];
 

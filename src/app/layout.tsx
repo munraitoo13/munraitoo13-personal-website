@@ -18,7 +18,9 @@ export default function RootLayout({
         <ScrollTop />
         <Navbar />
         <main className="flex w-full flex-col items-center overflow-x-hidden overflow-y-hidden bg-gradient-to-t from-neutral-999 from-80%">
-          <div className="w-full max-w-screen-xl px-10">{children}</div>
+          <div className="w-full max-w-screen-xl space-y-36 px-10">
+            {children}
+          </div>
         </main>
         <Footer />
       </body>
