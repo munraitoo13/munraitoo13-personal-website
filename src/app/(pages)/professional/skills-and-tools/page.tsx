@@ -1,3 +1,13 @@
+import Header from "@/components/Header";
+
 export default function SkillsAndTools() {
-  return <div>skills and tools</div>;
+  return (
+    <>
+      <Header
+        cathegory="Professional"
+        pageTitle="Skills & Tools"
+        pageDescription="All the tools I use to build those beautiful websites."
+      />
+    </>
+  );
 }

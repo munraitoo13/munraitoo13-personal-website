@@ -1,3 +1,13 @@
+import Header from "@/components/Header";
+
 export default function Experience() {
-  return <div>experience</div>;
+  return (
+    <>
+      <Header
+        cathegory="Professional"
+        pageTitle="Experience"
+        pageDescription="All the professional experiences I had in the past."
+      />
+    </>
+  );
 }

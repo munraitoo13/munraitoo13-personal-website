@@ -1,3 +1,13 @@
+import Header from "@/components/Header";
+
 export default function Contact() {
-  return <div>contact</div>;
+  return (
+    <>
+      <Header
+        cathegory="Personal"
+        pageTitle="Contact"
+        pageDescription="All the ways you can contact me."
+      />
+    </>
+  );
 }

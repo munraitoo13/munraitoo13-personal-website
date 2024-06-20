@@ -20,6 +20,7 @@ export default function Project({
     >
       {/* project */}
       <div className="flex w-full flex-col gap-5">
+        {/* infos */}
         <div className="flex flex-col">
           {/* project repo name */}
           <motion.a
@@ -38,6 +39,7 @@ export default function Project({
           <p className="text-lg opacity-75">{projectDescription}</p>
         </div>
 
+        {/* image */}
         <div className="h-96 w-full rounded-xl border-b-2 border-red-600 bg-neutral-950 drop-shadow-lg">
           <img
             src=""
