@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.2.4",
     "@tabler/icons-react": "^3.5.0",
     "framer-motion": "^11.2.10",
     "next": "14.2.3",

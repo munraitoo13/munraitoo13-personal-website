@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Content from "./content.mdx";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export default function SkillsAndTools() {
         pageTitle="Skills & Tools"
         pageDescription="All the tools I use to build those beautiful websites."
       />
+      <Content />
     </>
   );
 }
