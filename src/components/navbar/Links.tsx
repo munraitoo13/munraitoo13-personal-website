@@ -19,11 +19,7 @@ export default function Links() {
         {professional.map((item) => (
           // put a dot after each link if not the last one
 
-          <a
-            key={item.name}
-            href={item.href}
-            className="hover:opacity-75"
-          >
+          <a key={item.name} href={item.href} className="hover:opacity-75">
             {item.name}
           </a>
         ))}
@@ -34,11 +30,7 @@ export default function Links() {
         <h1 className="rounded-full bg-neutral-900 px-5 py-2">Personal</h1>
 
         {personal.map((item) => (
-          <a
-            key={item.name}
-            href={item.href}
-            className="hover:opacity-75"
-          >
+          <a key={item.name} href={item.href} className="hover:opacity-75">
             {item.name}
           </a>
         ))}

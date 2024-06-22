@@ -16,8 +16,7 @@ export default function Phrase() {
       <blockquote className="flex flex-col space-y-1 text-2xl">
         <div className="flex justify-center">
           <span className="opacity-75">
-            There are <span className="italic">three responses</span> to a
-            product:
+            There are <span className="italic">three responses</span> to a product:
           </span>
         </div>
 
@@ -29,9 +28,7 @@ export default function Phrase() {
 
         <div>
           <span className="opacity-75">Wow is the one </span>
-          <span className="rounded-xl bg-neutral-900 p-1 font-bold">
-            I aim for.
-          </span>
+          <span className="rounded-xl bg-neutral-900 p-1 font-bold">I aim for.</span>
         </div>
       </blockquote>
     </motion.div>

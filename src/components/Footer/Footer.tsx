@@ -12,28 +12,19 @@ export default function Footer() {
 
               <ul className="flex flex-col gap-2">
                 <li>
-                  <a
-                    href="/professional/projects"
-                    className="hover:opacity-75"
-                  >
+                  <a href="/professional/projects" className="hover:opacity-75">
                     Projects
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="/professional/experiences"
-                    className="hover:opacity-75"
-                  >
+                  <a href="/professional/experiences" className="hover:opacity-75">
                     Experience
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="/professional/skills-and-tools"
-                    className="hover:opacity-75"
-                  >
+                  <a href="/professional/skills-and-tools" className="hover:opacity-75">
                     Skills & Tools
                   </a>
                 </li>
@@ -46,19 +37,13 @@ export default function Footer() {
 
               <ul className="flex flex-col gap-2">
                 <li>
-                  <a
-                    href="/personal/contact"
-                    className="hover:opacity-75"
-                  >
+                  <a href="/personal/contact" className="hover:opacity-75">
                     Contact
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="/personal/blog"
-                    className="hover:opacity-75"
-                  >
+                  <a href="/personal/blog" className="hover:opacity-75">
                     Blog
                   </a>
                 </li>
@@ -71,21 +56,13 @@ export default function Footer() {
 
               <ul className="flex flex-col gap-2">
                 <li>
-                  <a
-                    href="#"
-                    target="_blank"
-                    className="hover:opacity-75"
-                  >
+                  <a href="#" target="_blank" className="hover:opacity-75">
                     Concept
                   </a>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    target="_blank"
-                    className="hover:opacity-75"
-                  >
+                  <a href="#" target="_blank" className="hover:opacity-75">
                     Source Code
                   </a>
                 </li>
@@ -98,8 +75,8 @@ export default function Footer() {
             <p className="opacity-75">About-me</p>
 
             <p>
-              What's up! My name is Augusto. Also known as munraitoo13, I'm a
-              passionate software engineer from Brazil.
+              What's up! My name is Augusto. Also known as munraitoo13, I'm a passionate software
+              engineer from Brazil.
             </p>
           </div>
         </div>

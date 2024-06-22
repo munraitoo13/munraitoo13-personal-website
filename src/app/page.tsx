@@ -4,7 +4,7 @@ import Presentation from "@/components/Homepage/Presentation";
 import Qualities from "@/components/Homepage/Qualities";
 import Phrase from "@/components/Homepage/Phrase";
 import Stacks from "@/components/Homepage/Stacks";
-import ButtonLink from "@/components/ButtonLink";
+import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -25,14 +25,11 @@ export default function Home() {
 
         {/* contact and resume */}
         <div className="mt-10 flex">
-          <ButtonLink href="/personal/contact">Contact me</ButtonLink>
-          <ButtonLink
-            className="bg-transparent"
-            href="#"
-          >
+          <Link href="/personal/contact">Contact me</Link>
+          <Link className="bg-transparent" href="#">
             <IconFile stroke={1.25} />
             RESUME
-          </ButtonLink>
+          </Link>
         </div>
       </header>
 

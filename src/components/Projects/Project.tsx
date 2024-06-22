@@ -14,10 +14,7 @@ export default function Project({
   href: string;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.5 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-    >
+    <motion.div initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }}>
       {/* project */}
       <div className="flex w-full flex-col gap-5">
         {/* infos */}
@@ -41,10 +38,7 @@ export default function Project({
 
         {/* image */}
         <div className="h-96 w-full rounded-xl border-b-2 border-red-600 bg-neutral-950 drop-shadow-lg">
-          <img
-            src=""
-            alt=""
-          />
+          <img src="" alt="" />
         </div>
       </div>
     </motion.div>

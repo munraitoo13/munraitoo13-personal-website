@@ -8,7 +8,7 @@ export default function () {
       <motion.div
         initial={{ x: -10, opacity: 0 }}
         animate={{ x: 0, opacity: 1, transition: { delay: 0.3 } }}
-        className=""
+        className="rounded-xl bg-neutral-900 p-5"
       >
         <Content />
       </motion.div>

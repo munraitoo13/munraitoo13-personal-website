@@ -22,26 +22,11 @@ export default function Stacks() {
       <span>My Stacks & Tools</span>
 
       <div className="flex items-center gap-2">
-        <IconBrandTypescript
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
-        <IconBrandReact
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
-        <IconBrandNextjs
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
-        <IconBrandTailwind
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
-        <IconBrandNodejs
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
+        <IconBrandTypescript stroke={1.25} className="hover:cursor-pointer hover:opacity-75" />
+        <IconBrandReact stroke={1.25} className="hover:cursor-pointer hover:opacity-75" />
+        <IconBrandNextjs stroke={1.25} className="hover:cursor-pointer hover:opacity-75" />
+        <IconBrandTailwind stroke={1.25} className="hover:cursor-pointer hover:opacity-75" />
+        <IconBrandNodejs stroke={1.25} className="hover:cursor-pointer hover:opacity-75" />
         <IconBrandMongodb
           size={24}
           stroke={1.25}
@@ -55,11 +40,7 @@ export default function Stacks() {
           stroke={1.25}
           className="hover:cursor-pointer hover:opacity-75"
         />
-        <IconBrandFigma
-          size={24}
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
+        <IconBrandFigma size={24} stroke={1.25} className="hover:cursor-pointer hover:opacity-75" />
       </div>
     </motion.div>
   );
