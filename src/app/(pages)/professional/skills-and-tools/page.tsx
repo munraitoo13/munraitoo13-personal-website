@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import Content from "./content.mdx";
+import Markdown from "@/components/SkillsAndTools/Markdown";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,9 +13,10 @@ export default function SkillsAndTools() {
       <Header
         cathegory="Professional"
         pageTitle="Skills & Tools"
-        pageDescription="All the tools I use to build those beautiful websites."
+        pageDescription="All the skills I have and tools I use to build those beautiful websites."
       />
-      <Content />
+
+      <Markdown />
     </>
   );
 }

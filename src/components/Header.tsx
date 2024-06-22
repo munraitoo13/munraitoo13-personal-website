@@ -11,7 +11,7 @@ export default function Header({
   cathegory: string;
 }) {
   return (
-    <header className="flex w-full flex-col justify-center gap-5 pb-20 pt-48">
+    <header className="flex w-full flex-col justify-center gap-5 pt-48">
       <div>
         {/* red above title */}
         <motion.p

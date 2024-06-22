@@ -105,7 +105,7 @@ export default function Footer() {
         </div>
 
         {/* separator */}
-        <hr className="mt-5 border-neutral-800" />
+        <hr className="mt-5 border-neutral-700" />
 
         {/* bottom-end */}
         <div className="mt-5 flex justify-between text-xs">
