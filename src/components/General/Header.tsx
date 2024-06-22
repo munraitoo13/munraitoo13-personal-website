@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 
 export default function Header({
@@ -15,7 +16,7 @@ export default function Header({
       <div>
         {/* red above title */}
         <motion.p
-          initial={{ x: -10, opacity: 0 }}
+          initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           className="text-lg font-bold text-red-600"
         >
@@ -24,7 +25,7 @@ export default function Header({
 
         {/* title */}
         <motion.h1
-          initial={{ x: -10, opacity: 0 }}
+          initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1, transition: { delay: 0.1 } }}
           className="text-6xl font-bold"
         >
@@ -34,7 +35,7 @@ export default function Header({
 
       {/* description */}
       <motion.p
-        initial={{ x: -10, opacity: 0 }}
+        initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 0.75, transition: { delay: 0.2 } }}
         className="text-lg"
       >

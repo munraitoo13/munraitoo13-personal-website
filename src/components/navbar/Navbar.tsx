@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { motion } from "framer-motion";
-import Logo from "@/components/Logo";
-import Socials from "@/components/Socials";
-import Links from "@/components/Navbar/Links";
+import Logo from "@/components/General/Logo";
+import Socials from "@/components/General/Socials";
+import NavItems from "@/components/Navbar/NavItems";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,7 @@ export default function Navbar() {
 
           {/* links lg */}
           <div className="hidden lg:flex">
-            <Links />
+            <NavItems />
           </div>
         </div>
 
@@ -51,7 +51,7 @@ export default function Navbar() {
             className="flex flex-col items-center space-y-5 rounded-xl p-5 backdrop-blur-md"
           >
             {/* links */}
-            <Links />
+            <NavItems />
 
             {/* socials */}
             <Socials />

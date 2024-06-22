@@ -5,28 +5,18 @@ import { IconArrowMoveUp } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 
 export default function ScrollTop() {
-  // state to manage the visibility of the back to top button
+  // button visibility
   const [isVisible, setIsVisible] = useState(false);
-
-  // function to scroll to the top of the page
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   // function to check if the user has scrolled down the page
   useEffect(() => {
-    const toggleVisibility = () => {
+    window.addEventListener("scroll", () => {
       if (window.scrollY > 300) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
-    };
-
-    window.addEventListener("scroll", toggleVisibility);
+    });
   }, []);
 
   // scroll to top if page realod
@@ -42,7 +32,12 @@ export default function ScrollTop() {
       className="fixed bottom-10 z-50 flex w-full justify-center"
     >
       <IconArrowMoveUp
-        onClick={scrollToTop}
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }}
         className="box-content cursor-pointer rounded-full bg-red-600 p-2 shadow-md"
       />
     </motion.div>

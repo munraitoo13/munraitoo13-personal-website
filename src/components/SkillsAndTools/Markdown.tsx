@@ -1,6 +1,7 @@
 "use client";
+
 import { motion } from "framer-motion";
-import Content from "@/app/(pages)/professional/skills-and-tools/content.mdx";
+import Content from "@/app/professional/skills-and-tools/content.mdx";
 
 export default function () {
   return (

@@ -14,17 +14,12 @@
   }
 }
 
-:root {
-  color-scheme: dark;
-}
 body {
+  color-scheme: dark;
   color: var(--foreground-color);
   background: var(--background-color);
   background-image: linear-gradient(#121212 0.1em, transparent 0.1em),
     linear-gradient(90deg, #121212 0.1em, transparent 0.1em);
-  background-size: 2em 2em;
+  background-size: 1em 1em;
   font-size: 14px;
-}
-*:focus-visible {
-  outline: none !important;
 }

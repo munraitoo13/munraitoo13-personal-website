@@ -1,6 +1,10 @@
 "use client";
 
-import { IconBrandHipchat, IconBriefcase2, IconStars } from "@tabler/icons-react";
+import {
+  IconBrandHipchat,
+  IconBriefcase2,
+  IconStars,
+} from "@tabler/icons-react";
 import { motion } from "framer-motion";
 
 export default function Qualities() {
@@ -10,7 +14,7 @@ export default function Qualities() {
       animate={{
         opacity: 1,
         x: 0,
-        transition: { delay: 0.4 },
+        transition: { delay: 0.5 },
       }}
       className="flex w-full flex-col items-stretch justify-center gap-5 lg:flex-row"
     >
@@ -29,8 +33,8 @@ export default function Qualities() {
         </div>
 
         <p className="p-3 opacity-75">
-          I can communicate clearly. A must-have quality that enhances the entire team working
-          experience.
+          I can communicate clearly. A must-have quality that enhances the
+          entire team working experience.
         </p>
       </div>
 
@@ -49,8 +53,8 @@ export default function Qualities() {
         </div>
 
         <p className="p-3 opacity-75">
-          I'm dedicated. Another must-have trait that significantly enhances the overall working
-          experience.
+          I'm dedicated. Another must-have trait that significantly enhances the
+          overall working experience.
         </p>
       </div>
 
@@ -69,8 +73,8 @@ export default function Qualities() {
         </div>
 
         <p className="p-3 opacity-75">
-          I have good coding and security practises. A very important quality that ensures the
-          success of the final product.
+          I have good coding and security practises. A very important quality
+          that ensures the success of the final product.
         </p>
       </div>
     </motion.div>

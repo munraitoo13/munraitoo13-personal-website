@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/General/Header";
 import Project from "@/components/Projects/Project";
 import { Metadata } from "next";
 

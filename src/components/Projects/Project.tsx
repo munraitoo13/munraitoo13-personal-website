@@ -14,7 +14,10 @@ export default function Project({
   href: string;
 }) {
   return (
-    <motion.div initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }}>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+    >
       {/* project */}
       <div className="flex w-full flex-col gap-5">
         {/* infos */}

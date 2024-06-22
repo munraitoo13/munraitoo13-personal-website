@@ -1,16 +1,16 @@
-export default function TableOfContents({ headings }: { headings: any }) {
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+export default function TableOfContents() {
   return (
-    <nav className="h-fit rounded-xl bg-neutral-900 p-5">
-      <h2>Table of Contents</h2>
-      <ul>
-        {headings.map((heading: any) => {
-          return (
-            <li key={heading.id}>
-              <a href={`#${heading.id}`}>{heading.value}</a>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
+    <motion.nav
+      className="h-fit rounded-xl bg-neutral-900 p-5"
+      initial={{ x: 50, opacity: 0 }}
+      animate={{ x: 0, opacity: 1, transition: { delay: 0.5 } }}
+    >
+      <h2 className="text-lg font-bold">Table of Contents</h2>
+    </motion.nav>
   );
 }

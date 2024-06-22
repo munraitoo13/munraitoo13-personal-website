@@ -1,11 +1,9 @@
-import { IconFile } from "@tabler/icons-react";
-import ScrollTop from "@/components/ScrollTop";
-import Presentation from "@/components/Homepage/Presentation";
-import Qualities from "@/components/Homepage/Qualities";
-import Phrase from "@/components/Homepage/Phrase";
-import Stacks from "@/components/Homepage/Stacks";
-import Link from "next/link";
 import { Metadata } from "next";
+import Presentation from "@/components/Home/Presentation";
+import Qualities from "@/components/Home/Qualities";
+import Phrase from "@/components/Home/Phrase";
+import Stacks from "@/components/Home/Stacks";
+import ContactAndResume from "@/components/Home/ContactAndResume";
 
 export const metadata: Metadata = {
   title: "Home | munraitoo13",
@@ -24,13 +22,7 @@ export default function Home() {
         <Stacks />
 
         {/* contact and resume */}
-        <div className="mt-10 flex">
-          <Link href="/personal/contact">Contact me</Link>
-          <Link className="bg-transparent" href="#">
-            <IconFile stroke={1.25} />
-            RESUME
-          </Link>
-        </div>
+        <ContactAndResume />
       </header>
 
       {/* qualities */}
