@@ -1,5 +1,5 @@
 import Header from "@/components/General/Header";
-import Project from "@/components/Projects/Project";
+import Project from "@/components/Pages/Professional/Projects/Project";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,9 +1,9 @@
 import { Metadata } from "next";
-import Presentation from "@/components/Home/Presentation";
-import Qualities from "@/components/Home/Qualities";
-import Phrase from "@/components/Home/Phrase";
-import Stacks from "@/components/Home/Stacks";
-import ContactAndResume from "@/components/Home/ContactAndResume";
+import Presentation from "@/components/Pages/Home/Presentation";
+import Qualities from "@/components/Pages/Home/Qualities";
+import Phrase from "@/components/Pages/Home/Phrase";
+import Stacks from "@/components/Pages/Home/Stacks";
+import ContactAndResume from "@/components/Pages/Home/ContactAndResume";
 
 export const metadata: Metadata = {
   title: "Home | munraitoo13",
