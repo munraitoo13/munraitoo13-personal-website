@@ -29,8 +29,7 @@ export default function TableOfContents() {
     <motion.nav
       className="flex h-fit flex-col gap-5 rounded-xl bg-neutral-900 p-5 lg:w-1/4"
       initial={{ x: 50, opacity: 0 }}
-      animate={{ x: 0, opacity: 0.25, transition: { delay: 0.3 } }}
-      whileHover={{ opacity: 1 }}
+      animate={{ x: 0, opacity: 1, transition: { delay: 0.3 } }}
     >
       <h2 className="text-xl font-bold">Contents</h2>
 

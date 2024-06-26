@@ -6,7 +6,7 @@ export default function ContactForm() {
           type="text"
           id="name"
           name="name"
-          className="rounded-xl p-3"
+          className="rounded-xl bg-neutral-900 p-3"
           placeholder="Name"
         />
       </div>
@@ -16,7 +16,7 @@ export default function ContactForm() {
           type="email"
           id="email"
           name="email"
-          className="rounded-xl p-3"
+          className="rounded-xl bg-neutral-900 p-3"
           placeholder="Email"
         />
       </div>
@@ -25,7 +25,7 @@ export default function ContactForm() {
         <textarea
           id="message"
           name="message"
-          className="h-48 resize-none rounded-xl p-3"
+          className="h-48 resize-none rounded-xl bg-neutral-900 p-3"
           placeholder="Message"
         />
       </div>
