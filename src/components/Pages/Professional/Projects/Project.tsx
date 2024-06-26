@@ -8,32 +8,43 @@ export default function Project({
   projectTitle,
   projectDescription,
   href,
+  language,
 }: {
   repo: string;
   projectTitle: string;
   projectDescription: string;
   href: string;
+  language: string;
 }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      className="flex h-96 w-full flex-col gap-5 rounded-xl bg-neutral-900 p-5"
+      className="flex h-64 w-full flex-col justify-between rounded-xl bg-neutral-900 p-5"
     >
       <div>
         {/* project repo name */}
         <motion.div whileHover={{ x: 5 }}>
-          <Link href={href} target="_blank" className="font-bold text-red-600">
+          <Link
+            href={href}
+            target="_blank"
+            className="font-bold text-red-600 no-underline"
+          >
             {repo}
           </Link>
         </motion.div>
 
         {/* project title */}
-        <h2 className="text-3xl font-bold">{projectTitle}</h2>
+        <h3 className="m-0 text-3xl font-bold">{projectTitle}</h3>
+
+        {/* project description */}
+        <p className="text-lg opacity-75">{projectDescription}</p>
       </div>
 
-      {/* project description */}
-      <p className="text-lg opacity-75">{projectDescription}</p>
+      {/* main language */}
+      <div>
+        <small>{language}</small>
+      </div>
     </motion.div>
   );
 }

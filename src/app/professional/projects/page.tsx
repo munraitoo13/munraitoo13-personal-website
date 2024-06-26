@@ -1,5 +1,7 @@
 import Header from "@/components/General/Header";
-import Project from "@/components/Pages/Professional/Projects/Project";
+import Markdown from "@/components/Pages/Markdown";
+import Contents from "@/components/Pages/TableOfContents";
+import Content from "@/app/professional/projects/content.mdx";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -30,18 +32,11 @@ export default async function Projects() {
         pageDescription="All of my wip and finished projects in one place."
       />
 
-      <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
-        {repos.map((repo: any) => {
-          return (
-            <Project
-              key={repo.id}
-              href={repo.html_url}
-              repo={repo.full_name}
-              projectTitle={repo.name}
-              projectDescription={repo.description}
-            />
-          );
-        })}
+      <div className="flex flex-col gap-3 lg:flex-row-reverse lg:justify-between">
+        <Contents />
+        <Markdown>
+          <Content />
+        </Markdown>
       </div>
     </>
   );
