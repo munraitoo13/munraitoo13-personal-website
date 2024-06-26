@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Contents() {
+export default function TableOfContents() {
   const [headings, setHeadings] = useState<
     { id: string; text: string; headingLevel: string }[]
   >([]);
@@ -27,9 +27,10 @@ export default function Contents() {
 
   return (
     <motion.nav
-      className="flex h-fit flex-col gap-5 rounded-xl bg-neutral-900 p-5"
+      className="flex h-fit flex-col gap-5 rounded-xl bg-neutral-900 p-5 lg:w-1/4"
       initial={{ x: 50, opacity: 0 }}
-      animate={{ x: 0, opacity: 1, transition: { delay: 0.3 } }}
+      animate={{ x: 0, opacity: 0.25, transition: { delay: 0.3 } }}
+      whileHover={{ opacity: 1 }}
     >
       <h2 className="text-xl font-bold">Contents</h2>
 
@@ -38,12 +39,14 @@ export default function Contents() {
       <div className="flex flex-col gap-3">
         {headings.map((heading) => {
           return (
-            <Link
-              className={`${heading.headingLevel === "H2" ? "font-medium" : "ml-3 opacity-75 hover:opacity-100"} hover:opacity-75`}
-              href={`#${heading.id}`}
-            >
-              {heading.text}
-            </Link>
+            <motion.div whileHover={{ x: 5 }}>
+              <Link
+                className={`${heading.headingLevel === "H2" ? "font-medium" : "ml-3 opacity-75 hover:opacity-100"} hover:text-red-600`}
+                href={`#${heading.id}`}
+              >
+                {heading.text}
+              </Link>
+            </motion.div>
           );
         })}
       </div>

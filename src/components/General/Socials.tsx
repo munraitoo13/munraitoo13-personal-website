@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import {
   IconBrandGithub,
   IconBrandLinkedin,
@@ -8,42 +10,50 @@ import Link from "next/link";
 
 export default function Socials() {
   return (
-    <div className="flex space-x-1">
+    <div className="flex gap-1">
       {/* github */}
-      <Link
-        className="hover:opacity-75"
-        href="https://github.com/munraitoo13"
-        target="_blank"
-      >
-        <IconBrandGithub stroke={1.25} />
-      </Link>
+      <motion.div whileHover={{ scale: 1.1 }}>
+        <Link
+          href="https://github.com/munraitoo13"
+          target="_blank"
+          className="hover:text-red-600"
+        >
+          <IconBrandGithub stroke={1.25} />
+        </Link>
+      </motion.div>
 
       {/* linkedin */}
-      <Link
-        className="hover:opacity-75"
-        href="https://www.linkedin.com/in/munraitoo13/"
-        target="_blank"
-      >
-        <IconBrandLinkedin stroke={1.25} />
-      </Link>
+      <motion.div whileHover={{ scale: 1.1 }}>
+        <Link
+          href="https://www.linkedin.com/in/munraitoo13/"
+          target="_blank"
+          className="hover:text-red-600"
+        >
+          <IconBrandLinkedin stroke={1.25} />
+        </Link>
+      </motion.div>
 
       {/* instagram */}
-      <Link
-        className="hover:opacity-75"
-        href="https://www.instagram.com/munraitoo13/"
-        target="_blank"
-      >
-        <IconBrandInstagram stroke={1.25} />
-      </Link>
+      <motion.div whileHover={{ scale: 1.1 }}>
+        <Link
+          href="https://www.instagram.com/munraitoo13/"
+          target="_blank"
+          className="hover:text-red-600"
+        >
+          <IconBrandInstagram stroke={1.25} />
+        </Link>
+      </motion.div>
 
       {/* twitter */}
-      <Link
-        className="hover:opacity-75"
-        href="https://twitter.com/munraitoo13"
-        target="_blank"
-      >
-        <IconBrandX stroke={1.25} />
-      </Link>
+      <motion.div whileHover={{ scale: 1.1 }}>
+        <Link
+          href="https://twitter.com/munraitoo13"
+          target="_blank"
+          className="hover:text-red-600"
+        >
+          <IconBrandX stroke={1.25} />
+        </Link>
+      </motion.div>
     </div>
   );
 }

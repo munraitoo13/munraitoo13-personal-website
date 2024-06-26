@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Header from "@/components/General/Header";
-import Markdown from "@/components/Pages/Personal/Contact/Markdown";
-import Contents from "@/components/Pages/Contents";
+import Markdown from "@/components/Pages/Markdown";
+import TableOfContents from "@/components/Pages/TableOfContents";
+import Content from "@/app/personal/contact/content.mdx";
 
 export const metadata: Metadata = {
   title: "Contact | munraitoo13",
@@ -18,8 +19,10 @@ export default function SkillsAndTools() {
       />
 
       <div className="flex flex-col gap-3 lg:flex-row-reverse lg:justify-between">
-        <Contents />
-        <Markdown />
+        <TableOfContents />
+        <Markdown>
+          <Content />
+        </Markdown>
       </div>
     </>
   );
