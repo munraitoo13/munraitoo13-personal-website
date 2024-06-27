@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Header from "@/components/General/Header";
 import Markdown from "@/components/Pages/Markdown";
 import Contents from "@/components/Pages/TableOfContents";
-import Content from "@/app/professional/skills-and-tools/content.mdx";
+import Content from "./content.mdx";
 
 export const metadata: Metadata = {
   title: "Skills & Tools | munraitoo13",

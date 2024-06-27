@@ -1,7 +1,7 @@
 import Header from "@/components/General/Header";
 import Markdown from "@/components/Pages/Markdown";
 import Contents from "@/components/Pages/TableOfContents";
-import Content from "@/app/professional/projects/content.mdx";
+import Content from "./content.mdx";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
