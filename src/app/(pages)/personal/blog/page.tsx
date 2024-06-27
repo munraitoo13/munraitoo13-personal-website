@@ -1,6 +1,6 @@
 import Header from "@/components/General/Header";
 import Markdown from "@/components/Pages/Markdown";
-import Contents from "@/components/Pages/TableOfContents";
+import Sorting from "@/components/Pages/Personal/Blog/Sorting";
 import Content from "./content.mdx";
 import { Metadata } from "next";
 
@@ -19,7 +19,7 @@ export default async function Blog() {
       />
 
       <div className="flex flex-col gap-3 lg:flex-row-reverse lg:justify-between">
-        <Contents />
+        <Sorting />
         <Markdown>
           <Content />
         </Markdown>
