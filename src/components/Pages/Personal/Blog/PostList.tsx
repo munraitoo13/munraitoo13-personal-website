@@ -1,46 +1,33 @@
+import { prisma } from "@/app/lib/prisma";
 import SinglePost from "./SinglePost";
 
-const posts = [
-  {
-    id: 1,
-    title: "Why I love coding",
-    date: "2021-09-18",
-    description: "Why I love coding? Because it's fun!",
-    post: "Why I love coding? Because it's fun! And I love fun! Because of that I love coding.",
-    language: "English",
-    tags: ["css", "html", "js"],
-  },
-  {
-    id: 2,
-    title: "Second post",
-    date: "2021-09-19",
-    description: "This is the second post on this blog.",
-    post: "This is the second post on this blog. It's a very good post.",
-    language: "Português",
-    tags: ["coding"],
-  },
-  {
-    id: 3,
-    title: "Third post",
-    date: "2021-09-20",
-    description: "This is the third post on this blog.",
-    post: "This is the third post on this blog. It's a very good post.",
-    language: "Deutsch",
-    tags: ["css", "html"],
-  },
-];
+export async function getStaticProps() {
+  const posts = await prisma.post.findMany({
+    select: {
+      title: true,
+      date: true,
+      desc: true,
+      lang: true,
+      tags: true,
+      id: true,
+    },
+  });
+  return posts;
+}
 
-export default function PostList() {
+export default async function PostList() {
+  const posts = await getStaticProps();
   return (
     <div className="flex flex-col gap-3">
       {posts.map((post) => {
         return (
           <SinglePost
             title={post.title}
-            date={post.date}
-            description={post.description}
-            language={post.language}
+            date={post.date.toString()}
+            desc={post.desc}
+            lang={post.lang}
             tags={post.tags}
+            id={post.id}
           />
         );
       })}
