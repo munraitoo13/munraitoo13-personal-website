@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { IconLanguage, IconCalendarEvent } from "@tabler/icons-react";
 
 interface SinglePostProps {
   title: string;
@@ -21,28 +22,35 @@ export default function SinglePost({
   id,
 }: SinglePostProps) {
   return (
-    <div className="rounded-xl bg-neutral-900 p-5">
-      <small>
-        {date} | {lang}
-      </small>
-      <motion.div initial={{ x: 0 }} whileHover={{ x: 10 }}>
-        <Link
-          className="text-xl font-bold no-underline hover:text-red-600"
-          href={`/personal/blog/posts/${id}`}
-        >
-          {title}
-        </Link>
+    <Link className="mb-10 no-underline" href={`/personal/blog/posts/${id}`}>
+      <motion.div className="flex flex-col gap-1 rounded-xl p-5">
+        <small className="flex gap-3 opacity-75">
+          {/* date */}
+          <div className="flex items-center justify-center gap-1">
+            <IconCalendarEvent size={20} />
+            {date}
+          </div>
+          |{/* language */}
+          <div className="flex items-center justify-center gap-1">
+            <IconLanguage size={20} />
+            {lang}
+          </div>
+        </small>
+
+        <h2 className="m-0">{title}</h2>
+
+        <p className="opacity-75">{desc}</p>
+
+        <div className="flex flex-wrap gap-2">
+          {tags.map((tag) => {
+            return (
+              <span className="rounded-full bg-neutral-800 px-3 py-1 text-sm opacity-75">
+                {tag}
+              </span>
+            );
+          })}
+        </div>
       </motion.div>
-      <p>{desc}</p>
-      <div className="flex flex-wrap gap-2">
-        {tags.map((tag) => {
-          return (
-            <span className="rounded-full bg-neutral-800 px-3 py-1 text-sm">
-              {tag}
-            </span>
-          );
-        })}
-      </div>
-    </div>
+    </Link>
   );
 }

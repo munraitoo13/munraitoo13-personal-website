@@ -18,15 +18,17 @@ export default function Home() {
         {/* presentation */}
         <Presentation />
 
-        {/* stacks & tools */}
-        <Stacks />
-
         {/* contact and resume */}
         <ContactAndResume />
       </header>
 
-      {/* qualities */}
-      <Qualities />
+      <div className="flex flex-col gap-10">
+        {/* stacks & tools */}
+        <Stacks />
+
+        {/* qualities */}
+        <Qualities />
+      </div>
 
       {/* phrase */}
       <Phrase />
