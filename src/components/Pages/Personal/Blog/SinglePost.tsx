@@ -2,17 +2,30 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { IconLanguage, IconCalendarEvent } from "@tabler/icons-react";
+import { IconCaretRight } from "@tabler/icons-react";
 
+// framer motion variants
+const cardVariants = {
+  rest: { x: -50, opacity: 0 },
+  hover: { x: 10 },
+  view: { x: 0, opacity: 1 },
+};
+const caretVariants = {
+  rest: { x: 0 },
+  hover: { x: 10 },
+};
+
+// SinglePost component props
 interface SinglePostProps {
   title: string;
   date: string;
   desc: string;
   lang: string;
-  tags: string[];
+  tags: any;
   id: number;
 }
 
+// SinglePost component
 export default function SinglePost({
   title,
   date,
@@ -22,35 +35,49 @@ export default function SinglePost({
   id,
 }: SinglePostProps) {
   return (
-    <Link className="mb-10 no-underline" href={`/personal/blog/posts/${id}`}>
-      <motion.div className="flex flex-col gap-1 rounded-xl p-5">
+    <motion.div
+      className="flex flex-col gap-1 rounded-xl"
+      variants={cardVariants}
+      initial={"rest"}
+      whileInView={"view"}
+      whileHover={"hover"}
+    >
+      <Link className="mb-10 no-underline" href={`/personal/blog/posts/${id}`}>
         <small className="flex gap-3 opacity-75">
           {/* date */}
-          <div className="flex items-center justify-center gap-1">
-            <IconCalendarEvent size={20} />
-            {date}
-          </div>
-          |{/* language */}
-          <div className="flex items-center justify-center gap-1">
-            <IconLanguage size={20} />
-            {lang}
-          </div>
+          <div className="flex items-center justify-center gap-1">{date}</div>
+
+          <span>|</span>
+
+          {/* lang */}
+          <div className="flex items-center justify-center gap-1">{lang}</div>
         </small>
 
+        {/* title */}
         <h2 className="m-0">{title}</h2>
 
-        <p className="opacity-75">{desc}</p>
+        {/* description */}
+        <p className="m-0 opacity-75">{desc}</p>
 
-        <div className="flex flex-wrap gap-2">
-          {tags.map((tag) => {
+        {/* tags */}
+        <div className="mt-5 flex flex-wrap gap-1">
+          {tags.map((tag: { id: Number; name: string }) => {
             return (
               <span className="rounded-full bg-neutral-800 px-3 py-1 text-sm opacity-75">
-                {tag}
+                {tag.name}
               </span>
             );
           })}
         </div>
-      </motion.div>
-    </Link>
+
+        {/* view more */}
+        <div className="mt-5 flex items-center font-bold text-red-600">
+          view more
+          <motion.div variants={caretVariants}>
+            <IconCaretRight size={20} />
+          </motion.div>
+        </div>
+      </Link>
+    </motion.div>
   );
 }

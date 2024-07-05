@@ -2,7 +2,8 @@ import { prisma } from "@/app/lib/prisma";
 
 export async function getAllPosts() {
   const posts = await prisma.post.findMany({
-    where: { id: { not: 0 } },
+    include: { tags: true },
+    where: { posted: true },
   });
   return posts;
 }

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function TableOfContents() {
   return (
     <motion.nav
-      className="flex h-fit flex-col gap-5 rounded-xl bg-neutral-900 p-5 lg:w-1/4"
+      className="mb-10 flex h-fit flex-col gap-5 rounded-xl bg-neutral-900 p-5 lg:w-1/4"
       initial={{ x: 50, opacity: 0 }}
       animate={{ x: 0, opacity: 1, transition: { delay: 0.3 } }}
     >

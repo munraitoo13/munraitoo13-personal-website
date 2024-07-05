@@ -4,6 +4,7 @@ import { formatDate } from "@/app/lib/utils";
 
 export default async function PostList() {
   const posts = await getAllPosts();
+
   return (
     <div className="flex flex-col gap-3">
       {posts.map((post) => {
