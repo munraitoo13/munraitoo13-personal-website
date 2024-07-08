@@ -72,7 +72,7 @@ export default function SinglePost({
 
         {/* view more */}
         <div className="mt-5 flex items-center font-bold text-red-600">
-          view more
+          See more...
           <motion.div variants={caretVariants}>
             <IconCaretRight size={20} />
           </motion.div>

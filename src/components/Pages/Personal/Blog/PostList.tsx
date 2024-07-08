@@ -10,6 +10,7 @@ export default async function PostList() {
       {posts.map((post) => {
         return (
           <SinglePost
+            key={post.id}
             title={post.title}
             date={formatDate(post.date)}
             desc={post.desc}
