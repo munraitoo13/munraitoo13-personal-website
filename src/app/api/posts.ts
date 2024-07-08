@@ -1,7 +1,7 @@
 import { prisma } from "@/app/lib/prisma";
 
 export async function getAllPosts() {
-  const posts = await prisma.posts.findMany({
+  const posts = await prisma.post.findMany({
     include: { tags: true },
     where: { posted: true },
   });
@@ -9,7 +9,7 @@ export async function getAllPosts() {
 }
 
 export async function getPost(id: number) {
-  const post = await prisma.posts.findUnique({
+  const post = await prisma.post.findUnique({
     where: { id: id },
   });
   return post;
