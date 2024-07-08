@@ -17,6 +17,7 @@ model PostTags {
 model Post {
   id        Int      @id @default(autoincrement())
   posted    Boolean  @default(false)
+  cathegory String   @default("Post")
   title     String
   desc      String
   post      String
