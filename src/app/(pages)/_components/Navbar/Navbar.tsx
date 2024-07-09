@@ -46,6 +46,7 @@ export default function Navbar() {
       {isOpen && (
         <div className="mt-5 flex w-full flex-col lg:hidden">
           <motion.div
+            onClick={() => setIsOpen(!isOpen)}
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center space-y-5 rounded-xl p-5 backdrop-blur-md"
