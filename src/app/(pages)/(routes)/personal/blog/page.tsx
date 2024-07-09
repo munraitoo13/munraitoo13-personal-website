@@ -1,17 +1,12 @@
 import Header from "@/app/(pages)/(routes)/_components/Header";
 import Markdown from "@/app/(pages)/(routes)/_components/Markdown";
-import Sorting from "@/app/(pages)/personal/blog/_components/Sorting";
+import Sorting from "@/app/(pages)/(routes)/personal/blog/_components/Sorting";
 import Content from "./content.mdx";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog | munraitoo13",
   description: "munraitoo13's blog",
-};
-const post = {
-  title: "Blog",
-  description: "All of my blog posts in one place.",
 };
 
 export default async function Page() {

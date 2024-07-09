@@ -1,6 +1,6 @@
 import SinglePost from "./SinglePost";
-import { formatDate } from "@/app/lib/utils";
-import { prisma } from "@/app/lib/prisma";
+import formatDate from "@/app/(pages)/(routes)/personal/blog/_lib/formatDate";
+import { prisma } from "@/app/_lib/prisma";
 
 async function getAllPosts() {
   const posts = await prisma.post.findMany({

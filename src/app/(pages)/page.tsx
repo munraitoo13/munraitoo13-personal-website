@@ -3,7 +3,7 @@ import Presentation from "@/app/(pages)/_components/Homepage/Presentation";
 import Qualities from "@/app/(pages)/_components/Homepage/Qualities";
 import Phrase from "@/app/(pages)/_components/Homepage/Phrase";
 import Stacks from "@/app/(pages)/_components/Homepage/Stacks";
-import ContactAndResume from "@/components/Pages/Home/ContactAndResume";
+import ContactAndResume from "@/app/(pages)/_components/Homepage/ContactAndResume";
 
 export const metadata: Metadata = {
   title: "Home | munraitoo13",
