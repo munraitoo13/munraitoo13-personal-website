@@ -1,13 +1,21 @@
 import SinglePost from "./SinglePost";
-import { getAllPosts } from "@/app/api/posts";
 import { formatDate } from "@/app/lib/utils";
+import { prisma } from "@/app/lib/prisma";
+
+async function getAllPosts() {
+  const posts = await prisma.post.findMany({
+    where: { posted: true },
+    include: { tags: true },
+  });
+  return posts;
+}
 
 export default async function PostList() {
   const posts = await getAllPosts();
 
   return (
     <div className="flex flex-col gap-3">
-      {posts.map((post) => {
+      {posts.map((post: any) => {
         return (
           <SinglePost
             key={post.id}

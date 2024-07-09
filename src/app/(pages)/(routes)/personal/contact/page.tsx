@@ -1,7 +1,7 @@
 import { Metadata } from "next";
-import Header from "@/components/General/Header";
-import Markdown from "@/components/Pages/Markdown";
-import TableOfContents from "@/components/Pages/TableOfContents";
+import Header from "@/app/(pages)/(routes)/_components/Header";
+import Markdown from "@/app/(pages)/(routes)/_components/Markdown";
+import TableOfContents from "@/app/(pages)/(routes)/_components/TableOfContents";
 import Content from "./content.mdx";
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "munraitoo13's contact.",
 };
 
-export default function SkillsAndTools() {
+export default function Page() {
   return (
     <>
       <Header

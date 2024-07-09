@@ -1,6 +1,6 @@
-import Header from "@/components/General/Header";
-import Markdown from "@/components/Pages/Markdown";
-import Sorting from "@/components/Pages/Personal/Blog/Sorting";
+import Header from "@/app/(pages)/(routes)/_components/Header";
+import Markdown from "@/app/(pages)/(routes)/_components/Markdown";
+import Sorting from "@/app/(pages)/personal/blog/_components/Sorting";
 import Content from "./content.mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Metadata } from "next";
@@ -14,7 +14,7 @@ const post = {
   description: "All of my blog posts in one place.",
 };
 
-export default async function Blog() {
+export default async function Page() {
   return (
     <>
       <Header

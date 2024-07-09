@@ -1,6 +1,6 @@
-import Header from "@/components/General/Header";
-import Markdown from "@/components/Pages/Markdown";
-import Contents from "@/components/Pages/TableOfContents";
+import Header from "@/app/(pages)/(routes)/_components/Header";
+import Markdown from "@/app/(pages)/(routes)/_components/Markdown";
+import Contents from "@/app/(pages)/(routes)/_components/TableOfContents";
 import Content from "./content.mdx";
 import { Metadata } from "next";
 
@@ -21,7 +21,7 @@ async function getRepos() {
   return res.json();
 }
 
-export default async function Projects() {
+export default async function Page() {
   const repos = await getRepos();
 
   return (

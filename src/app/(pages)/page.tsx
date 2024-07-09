@@ -1,8 +1,8 @@
 import { Metadata } from "next";
-import Presentation from "@/components/Pages/Home/Presentation";
-import Qualities from "@/components/Pages/Home/Qualities";
-import Phrase from "@/components/Pages/Home/Phrase";
-import Stacks from "@/components/Pages/Home/Stacks";
+import Presentation from "@/app/(pages)/_components/Homepage/Presentation";
+import Qualities from "@/app/(pages)/_components/Homepage/Qualities";
+import Phrase from "@/app/(pages)/_components/Homepage/Phrase";
+import Stacks from "@/app/(pages)/_components/Homepage/Stacks";
 import ContactAndResume from "@/components/Pages/Home/ContactAndResume";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "munraitoo13's personal website home page.",
 };
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       {/* header */}
