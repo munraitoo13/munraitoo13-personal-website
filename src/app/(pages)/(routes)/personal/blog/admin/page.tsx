@@ -1,9 +1,10 @@
 "use client";
 import Header from "@/app/(pages)/(routes)/_components/Header";
 import TextareaAutosize from "react-textarea-autosize";
+import { prisma } from "@/app/_lib/prisma";
 import { useState } from "react";
 
-export default function Page() {
+export default async function Page() {
   const [formData, setFormData] = useState({
     posted: false,
     lang: "",
@@ -36,6 +37,9 @@ export default function Page() {
   };
 
   const languages = ["English", "French", "German", "Italian", "Portuguese"];
+  const users = await prisma.user.findMany({
+    select: { name: true, id: true },
+  });
 
   return (
     <>
@@ -50,18 +54,21 @@ export default function Page() {
         className="flex flex-col gap-3"
         onSubmit={handleSubmit}
       >
-        <select className="rounded-xl p-5" id="lang" onChange={handleChange}>
+        <select
+          className="rounded-xl p-5"
+          id="language"
+          onChange={handleChange}
+        >
           {languages.map((language) => (
             <option key={language}>{language}</option>
           ))}
         </select>
 
-        <TextareaAutosize
-          onChange={handleChange}
-          className="resize-none rounded-xl p-5"
-          id="cathegory"
-          placeholder="Cathegory"
-        />
+        <select className="rounded-xl p-5" id="author" onChange={handleChange}>
+          {users.map((user: any) => (
+            <option key={user.id}>{user.name}</option>
+          ))}
+        </select>
 
         <TextareaAutosize
           onChange={handleChange}
@@ -73,20 +80,20 @@ export default function Page() {
         <TextareaAutosize
           onChange={handleChange}
           className="resize-none rounded-xl p-5"
-          id="desc"
+          id="description"
           placeholder="Description"
         />
 
         <TextareaAutosize
           onChange={handleChange}
           className="resize-none rounded-xl p-5"
-          id="post"
-          placeholder="Post"
+          id="content"
+          placeholder="Content"
         />
 
         <div className="ml-5 flex items-center gap-3">
-          <input onChange={handleChange} type="checkbox" id="posted" />
-          <label htmlFor="posted">Posted</label>
+          <input onChange={handleChange} type="checkbox" id="published" />
+          <label htmlFor="published">Published</label>
         </div>
 
         <button

@@ -6,12 +6,12 @@ export async function POST(req: Request) {
 
   await prisma.post.create({
     data: {
-      posted: res.posted,
-      lang: res.lang,
-      cathegory: res.cathegory,
+      published: res.posted,
+      language: res.lang,
       title: res.title,
-      desc: res.desc,
-      post: res.post,
+      description: res.desc,
+      content: res.post,
+      author: res.author,
     },
   });
 
