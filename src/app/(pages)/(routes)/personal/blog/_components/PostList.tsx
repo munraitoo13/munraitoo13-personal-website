@@ -4,7 +4,7 @@ import { prisma } from "@/app/_lib/prisma";
 
 async function getAllPosts() {
   const posts = await prisma.post.findMany({
-    where: { posted: true },
+    where: { published: true },
     include: { tags: true },
   });
   return posts;
@@ -20,9 +20,9 @@ export default async function PostList() {
           <SinglePost
             key={post.id}
             title={post.title}
-            date={formatDate(post.date)}
-            desc={post.desc}
-            lang={post.lang}
+            date={formatDate(post.createdAt)}
+            desc={post.description}
+            lang={post.language}
             tags={post.tags}
             id={post.id}
           />

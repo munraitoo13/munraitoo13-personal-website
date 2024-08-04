@@ -6,7 +6,6 @@ import { IconLanguage, IconCalendarEvent } from "@tabler/icons-react";
 interface BlogHeaderProps {
   pageTitle: string;
   pageDescription: string;
-  cathegory: string;
   lang: string;
   date: string;
 }
@@ -14,26 +13,16 @@ interface BlogHeaderProps {
 export default function BlogHeader({
   pageTitle,
   pageDescription,
-  cathegory,
   lang,
   date,
 }: BlogHeaderProps) {
   return (
     <header className="flex w-full flex-col justify-center gap-5 pt-48">
       <div>
-        {/* red above title */}
-        <motion.p
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          className="text-lg font-bold text-red-600"
-        >
-          {cathegory}
-        </motion.p>
-
         {/* title */}
         <motion.h1
           initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1, transition: { delay: 0.1 } }}
+          animate={{ x: 0, opacity: 1 }}
           className="text-6xl font-bold"
         >
           {pageTitle}
@@ -43,7 +32,7 @@ export default function BlogHeader({
       {/* description */}
       <motion.p
         initial={{ x: -50, opacity: 0 }}
-        animate={{ x: 0, opacity: 0.75, transition: { delay: 0.2 } }}
+        animate={{ x: 0, opacity: 0.75, transition: { delay: 0.1 } }}
         className="text-lg"
       >
         {pageDescription}
