@@ -22,7 +22,7 @@ export default function NavItems() {
 
         {/* links */}
         {professional.map((item) => (
-          <Link href={item.href} className="hover:opacity-75">
+          <Link key={item.name} href={item.href} className="hover:opacity-75">
             {item.name}
           </Link>
         ))}
@@ -34,7 +34,7 @@ export default function NavItems() {
 
         {/* links */}
         {personal.map((item) => (
-          <Link href={item.href} className="hover:opacity-75">
+          <Link key={item.name} href={item.href} className="hover:opacity-75">
             {item.name}
           </Link>
         ))}

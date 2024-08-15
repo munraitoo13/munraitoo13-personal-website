@@ -63,7 +63,10 @@ export default function SinglePost({
         <div className="mt-5 flex flex-wrap gap-1">
           {tags.map((tag: { id: Number; name: string }) => {
             return (
-              <span className="rounded-full bg-neutral-800 px-3 py-1 text-sm opacity-75">
+              <span
+                key={tag.name}
+                className="rounded-full bg-neutral-800 px-3 py-1 text-sm opacity-75"
+              >
                 {tag.name}
               </span>
             );
