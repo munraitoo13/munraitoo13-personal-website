@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { motion } from "framer-motion";
-import Logo from "@/app/(pages)/_components/Navbar/Logo";
-import Socials from "@/app/(pages)/_components/Socials";
-import NavItems from "@/app/(pages)/_components/Navbar/NavItems";
+import Logo from "@/app/components/Navbar/Logo";
+import Socials from "@/app/components/Navbar/Socials";
+import NavItems from "@/app/components/Navbar/NavItems";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

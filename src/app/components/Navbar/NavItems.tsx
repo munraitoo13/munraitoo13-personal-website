@@ -2,8 +2,8 @@ import Link from "next/link";
 
 // professional links
 export const professional = [
-  { name: "Projects", href: "/professional/projects" },
   { name: "Experiences", href: "/professional/experiences" },
+  { name: "Projects", href: "/professional/projects" },
   { name: "Skills & Tools", href: "/professional/skills-and-tools" },
 ];
 

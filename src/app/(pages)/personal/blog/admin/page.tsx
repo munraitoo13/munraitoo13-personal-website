@@ -1,7 +1,7 @@
 "use client";
-import Header from "@/app/(pages)/(routes)/_components/Header";
+import Header from "@/app/components/Header";
 import TextareaAutosize from "react-textarea-autosize";
-import { prisma } from "@/app/_lib/prisma";
+import { prisma } from "@/app/lib/prisma";
 import { useState } from "react";
 
 export default async function Page() {

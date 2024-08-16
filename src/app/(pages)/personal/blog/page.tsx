@@ -1,6 +1,6 @@
-import Header from "@/app/(pages)/(routes)/_components/Header";
-import Markdown from "@/app/(pages)/(routes)/_components/Markdown";
-import Sorting from "@/app/(pages)/(routes)/personal/blog/_components/Sorting";
+import Header from "@/app/components/Header";
+import Markdown from "@/app/components/Markdown";
+import Sorting from "@/app/components/Blog/Sorting";
 import Content from "./content.mdx";
 import { Metadata } from "next";
 

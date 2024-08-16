@@ -1,12 +1,12 @@
-import Header from "@/app/(pages)/(routes)/_components/Header";
-import Markdown from "@/app/(pages)/(routes)/_components/Markdown";
-import Contents from "@/app/(pages)/(routes)/_components/TableOfContents";
+import Header from "@/app/components/Header";
+import Markdown from "@/app/components/Markdown";
+import Contents from "@/app/components/TableOfContents";
 import Content from "./content.mdx";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects | munraitoo13",
-  description: "munraitoo13's projects",
+  title: "Experiences | munraitoo13",
+  description: "munraitoo13's experiences",
 };
 
 export default async function Page() {
@@ -14,8 +14,8 @@ export default async function Page() {
     <>
       <Header
         cathegory="Professional"
-        pageTitle="Projects"
-        pageDescription="All of my wip and finished projects in one place."
+        pageTitle="Experiences"
+        pageDescription="My experiences in the professional world."
       />
 
       <div className="flex flex-col gap-3 lg:flex-row-reverse lg:justify-between">

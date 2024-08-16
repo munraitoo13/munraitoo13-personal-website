@@ -1,8 +1,8 @@
 import BlogHeader from "@/app/(pages)/(routes)/personal/blog/_components/BlogHeader";
 import formatDate from "@/app/(pages)/(routes)/personal/blog/_lib/formatDate";
-import Markdown from "@/app/(pages)/(routes)/_components/Markdown";
+import Markdown from "@/app/components/Markdown";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { prisma } from "@/app/_lib/prisma";
+import { prisma } from "@/app/lib/prisma";
 
 async function getPost(id: string) {
   const post = await prisma.post.findUnique({
