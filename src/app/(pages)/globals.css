@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --foreground-color: #101010;
-  --background-color: #ffffff;
+  --foreground-color: #0a0a0a;
+  --background-color: #d4d4d4;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-color: #ffffff;
-    --background-color: #101010;
+    --foreground-color: #d4d4d4;
+    --background-color: #0a0a0a;
   }
 }
 
@@ -22,8 +22,8 @@ body {
   color-scheme: dark;
   color: var(--foreground-color);
   background: var(--background-color);
-  background-image: linear-gradient(#121212 0.1em, transparent 0.1em),
-    linear-gradient(90deg, #121212 0.1em, transparent 0.1em);
-  background-size: 3em 3em;
+  background-image: linear-gradient(#0c0c0c 0.1em, transparent 0.1em),
+    linear-gradient(90deg, #0c0c0c 0.1em, transparent 0.1em);
+  background-size: 2em 2em;
   font-size: 14px;
 }

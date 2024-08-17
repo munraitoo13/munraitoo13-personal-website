@@ -27,13 +27,11 @@ export default function TableOfContents() {
 
   return (
     <motion.nav
-      className="flex h-fit flex-col gap-5 rounded-xl bg-neutral-900 p-5 lg:w-1/4"
+      className="flex h-fit flex-col gap-5 rounded-xl border border-red-600 bg-neutral-950/25 p-5 backdrop-blur-md lg:w-1/4"
       initial={{ x: 50, opacity: 0 }}
       animate={{ x: 0, opacity: 1, transition: { delay: 0.3 } }}
     >
       <h2 className="text-xl font-bold">Contents</h2>
-
-      <hr className="border-neutral-600" />
 
       <div className="flex flex-col gap-3">
         {headings.map((heading) => {

@@ -14,7 +14,7 @@ export default async function PostList() {
   const posts = await getAllPosts();
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 pt-10">
       {posts.map((post: any) => {
         return (
           <SinglePost

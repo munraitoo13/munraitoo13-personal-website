@@ -3,7 +3,7 @@ import { personal, professional } from "../Navbar/NavItems";
 
 export default function Footer() {
   return (
-    <footer className="flex w-full flex-col items-center bg-gradient-to-b from-neutral-999 px-10 pb-5 pt-36">
+    <footer className="flex w-full flex-col items-center bg-gradient-to-b from-neutral-950 px-10 pb-5 pt-36">
       <div className="flex w-full max-w-screen-xl flex-col">
         {/* top */}
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
