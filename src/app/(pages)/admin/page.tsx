@@ -1,9 +1,9 @@
-"use client";
-import TextareaAutosize from "react-textarea-autosize";
+import NewPostForm from "@/app/components/Admin/NewPostForm";
+import PostManager from "@/app/components/Admin/PostManager";
 
 export default function Admin() {
   return (
-    <main className="h-screen w-full p-10">
+    <main className="w-full p-10">
       <div className="flex h-full flex-col items-center gap-10 rounded-xl bg-neutral-950 p-5">
         {/* title */}
         <div className="text-center">
@@ -16,13 +16,19 @@ export default function Admin() {
           analytics (future plan)
         </div>
 
-        {/* new post */}
-        <div className="flex flex-col gap-3">
-          <h2 className="text-center text-xl font-medium">New Post</h2>
+        {/* post actions */}
+        <div className="flex w-full flex-col gap-10">
+          {/* new post */}
+          <div className="flex w-full flex-col items-center justify-center gap-5">
+            <h2 className="text-xl font-medium">New Post</h2>
+            <NewPostForm />
+          </div>
 
-          <form action="">
-            <TextareaAutosize className="resize-none rounded-xl p-5" />
-          </form>
+          {/* manage posts */}
+          <div className="flex w-full flex-col items-center justify-center gap-5">
+            <h2 className="text-xl font-medium">Manage Posts</h2>
+            <PostManager />
+          </div>
         </div>
       </div>
     </main>

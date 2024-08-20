@@ -4,11 +4,11 @@ import { SignJWT } from "jose";
 import argon2id from "argon2";
 import { redirect } from "next/navigation";
 
-// sign jwt token
 const secretKey = process.env.JWT_SECRET;
 if (!secretKey) {
   throw new Error("JWT_SECRET is not defined");
 }
+
 const key = new TextEncoder().encode(secretKey);
 
 export async function encrypt(payload: any) {
@@ -22,6 +22,7 @@ export async function encrypt(payload: any) {
 export async function login(formData: FormData) {
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
+
   const user = await prisma.user.findUnique({ where: { email: email } });
 
   if (!email || !password) {
@@ -32,8 +33,9 @@ export async function login(formData: FormData) {
     console.log("User not found");
   } else {
     const checkPassword = await argon2id.verify(user.password, password);
+
     if (checkPassword) {
-      const token = await encrypt({ email: user.name });
+      const token = await encrypt({ name: user.name, id: user.id });
       cookies().set("token", token);
       redirect("/admin");
     } else {
@@ -41,13 +43,4 @@ export async function login(formData: FormData) {
       console.log("Invalid password");
     }
   }
-}
-
-export function getSession() {
-  const session = cookies().get("token")?.value;
-  return session;
-}
-
-export function sessionBool() {
-  return getSession();
 }
