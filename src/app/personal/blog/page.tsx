@@ -22,12 +22,12 @@ export default async function Page() {
         pageDescription="All of my blog posts in one place."
       />
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-10">
         <Markdown>
           <Content />
         </Markdown>
 
-        <div className="flex flex-col gap-3 pt-10">
+        <div className="flex flex-col gap-20">
           {posts.map((post: any) => {
             return (
               <Posts
