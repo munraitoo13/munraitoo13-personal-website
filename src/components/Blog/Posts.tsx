@@ -4,17 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { IconCaretRight } from "@tabler/icons-react";
 
-// framer motion variants
-const cardVariants = {
-  rest: { x: -50, opacity: 0 },
-  hover: { x: 10 },
-  view: { x: 0, opacity: 1 },
-};
-const caretVariants = {
-  rest: { x: 0 },
-  hover: { x: 10 },
-};
-
 // SinglePost component props
 interface SinglePostProps {
   title: string;
@@ -36,25 +25,21 @@ export default function SinglePost({
 }: SinglePostProps) {
   return (
     <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       className="flex flex-col gap-1 rounded-xl"
-      variants={cardVariants}
-      initial={"rest"}
-      whileInView={"view"}
-      whileHover={"hover"}
     >
       <Link className="mb-10 no-underline" href={`/personal/blog/posts/${id}`}>
-        <small className="flex gap-3">
+        <div className="flex gap-5">
           {/* date */}
-          <div className="flex items-center justify-center gap-1">{date}</div>
-
-          <span>|</span>
+          <small>{date}</small>
 
           {/* lang */}
-          <div className="flex items-center justify-center gap-1">{lang}</div>
-        </small>
+          <small>{lang}</small>
+        </div>
 
         {/* title */}
-        <h2>{title}</h2>
+        <h2 className="text-2xl font-bold text-white">{title}</h2>
 
         {/* description */}
         <p>{desc}</p>
@@ -74,12 +59,9 @@ export default function SinglePost({
         </div>
 
         {/* view more */}
-        <div className="mt-5 flex items-center font-bold text-red-600">
+        <span className="mt-5 flex items-center font-bold text-red-600">
           See more...
-          <motion.div variants={caretVariants}>
-            <IconCaretRight size={20} />
-          </motion.div>
-        </div>
+        </span>
       </Link>
     </motion.div>
   );
