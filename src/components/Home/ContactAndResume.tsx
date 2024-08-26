@@ -1,8 +1,8 @@
 "use client";
 
 import { IconFile } from "@tabler/icons-react";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function ContactAndResume() {
   return (
@@ -13,7 +13,7 @@ export default function ContactAndResume() {
       transition={{ delay: 0.4 }}
     >
       <Link
-        className="flex items-center rounded-full bg-red-600 px-5 py-3"
+        className="flex items-center rounded-full bg-red-600 px-5 py-3 text-white"
         href="/personal/contact"
       >
         Contact me

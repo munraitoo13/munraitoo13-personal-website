@@ -48,7 +48,7 @@ export default function Stacks() {
           className="hover:cursor-pointer hover:opacity-75"
         />
 
-        <span className="opacity-75">|</span>
+        <span>|</span>
 
         <IconBrandVscode
           size={24}

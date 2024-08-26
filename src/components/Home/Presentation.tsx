@@ -24,11 +24,9 @@ export default function Presentation() {
         }}
         className="text-lg"
       >
-        <span className="opacity-75">
-          Also known as munraitoo13, I'm a passionate
-        </span>
+        <span>Also known as munraitoo13, I'm a passionate</span>
         <b> Software Engineer </b>
-        <span className="opacity-75">from Brazil!</span>
+        <span>from Brazil!</span>
       </motion.p>
     </div>
   );

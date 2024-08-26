@@ -32,7 +32,7 @@ export default function Qualities() {
           </h3>
         </div>
 
-        <p className="p-3 opacity-75">
+        <p className="p-3">
           I can communicate clearly. A must-have quality that enhances the
           entire team working experience.
         </p>
@@ -52,7 +52,7 @@ export default function Qualities() {
           </h3>
         </div>
 
-        <p className="p-3 opacity-75">
+        <p className="p-3">
           I'm dedicated. Another must-have trait that significantly enhances the
           overall working experience.
         </p>
@@ -72,7 +72,7 @@ export default function Qualities() {
           </h3>
         </div>
 
-        <p className="p-3 opacity-75">
+        <p className="p-3">
           I have good coding and security practises. A very important quality
           that ensures the success of the final product.
         </p>

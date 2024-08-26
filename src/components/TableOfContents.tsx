@@ -1,8 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 export default function TableOfContents() {
   const [headings, setHeadings] = useState<
@@ -38,7 +38,7 @@ export default function TableOfContents() {
           return (
             <motion.div whileHover={{ x: 5 }}>
               <Link
-                className={`${heading.headingLevel === "H2" ? "font-medium" : "ml-3 opacity-75 hover:opacity-100"} hover:text-red-600`}
+                className={`${heading.headingLevel === "H2" ? "font-medium" : "ml-3 text-inherit hover:opacity-100"} text-white hover:text-red-600`}
                 href={`#${heading.id}`}
               >
                 {heading.text}

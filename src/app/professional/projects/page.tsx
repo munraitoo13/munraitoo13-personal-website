@@ -3,6 +3,7 @@ import Markdown from "@/components/Markdown";
 import Contents from "@/components/TableOfContents";
 import { Metadata } from "next";
 import Content from "./content.mdx";
+import Projects from "@/components/Projects/Projects";
 
 export const metadata: Metadata = {
   title: "Projects | munraitoo13",
@@ -23,6 +24,7 @@ export default async function Page() {
         <Markdown>
           <Content />
         </Markdown>
+        <Projects />
       </div>
     </>
   );

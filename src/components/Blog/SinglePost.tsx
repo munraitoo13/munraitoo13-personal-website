@@ -43,7 +43,7 @@ export default function SinglePost({
       whileHover={"hover"}
     >
       <Link className="mb-10 no-underline" href={`/personal/blog/posts/${id}`}>
-        <small className="flex gap-3 opacity-75">
+        <small className="flex gap-3">
           {/* date */}
           <div className="flex items-center justify-center gap-1">{date}</div>
 
@@ -54,10 +54,10 @@ export default function SinglePost({
         </small>
 
         {/* title */}
-        <h2 className="m-0">{title}</h2>
+        <h2>{title}</h2>
 
         {/* description */}
-        <p className="m-0 opacity-75">{desc}</p>
+        <p>{desc}</p>
 
         {/* tags */}
         <div className="mt-5 flex flex-wrap gap-1">
@@ -65,7 +65,7 @@ export default function SinglePost({
             return (
               <span
                 key={tag.name}
-                className="rounded-full bg-neutral-800 px-3 py-1 text-sm opacity-75"
+                className="rounded-full bg-neutral-800 px-3 py-1 text-sm"
               >
                 {tag.name}
               </span>

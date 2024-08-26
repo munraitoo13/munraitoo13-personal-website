@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Markdown from "@/components/Markdown";
 import { Metadata } from "next";
 import Content from "./content.mdx";
+import PostList from "@/components/Blog/PostList";
 
 export const metadata: Metadata = {
   title: "Blog | munraitoo13",
@@ -23,6 +24,7 @@ export default async function Page() {
         <Markdown>
           <Content />
         </Markdown>
+        <PostList />
       </div>
     </>
   );

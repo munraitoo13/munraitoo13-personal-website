@@ -11,14 +11,14 @@ export default function Footer() {
           <div className="flex gap-10">
             {/* Professional */}
             <div className="flex flex-col gap-3">
-              <p className="opacity-75">Professional</p>
+              <p>Professional</p>
 
               {/* links */}
               {professional.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="hover:opacity-75"
+                  className="text-white hover:opacity-75"
                 >
                   {item.name}
                 </Link>
@@ -27,14 +27,14 @@ export default function Footer() {
 
             {/* Personal */}
             <div className="flex flex-col gap-3">
-              <p className="opacity-75">Personal</p>
+              <p>Personal</p>
 
               {/* links */}
               {personal.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="hover:opacity-75"
+                  className="text-white hover:opacity-75"
                 >
                   {item.name}
                 </Link>
@@ -44,9 +44,9 @@ export default function Footer() {
 
           {/* about-me */}
           <div className="flex max-w-lg flex-col gap-2">
-            <p className="opacity-75">About-me</p>
+            <p>About-me</p>
 
-            <p>
+            <p className="text-white">
               What's up! My name is Augusto. Also known as munraitoo13, I'm a
               passionate software engineer from Brazil.
             </p>
@@ -60,13 +60,12 @@ export default function Footer() {
         <div className="mt-5 flex justify-between text-xs">
           <p>&copy; 2024, munraitoo13</p>
 
-          <a
+          <Link
             href="https://github.com/munraitoo13/munraitoo13-personal-website/tree/dev"
             target="_blank"
-            className="opacity-75"
           >
-            Development repository
-          </a>
+            dev
+          </Link>
         </div>
       </div>
     </footer>

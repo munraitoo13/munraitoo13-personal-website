@@ -35,10 +35,10 @@ export default function Project({
         </motion.div>
 
         {/* project title */}
-        <h3 className="m-0 text-3xl font-bold">{projectTitle}</h3>
+        <h3 className="text-3xl font-bold">{projectTitle}</h3>
 
         {/* project description */}
-        <p className="text-lg opacity-75">{projectDescription}</p>
+        <p className="text-lg">{projectDescription}</p>
       </div>
 
       {/* main language */}

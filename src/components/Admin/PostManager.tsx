@@ -26,11 +26,7 @@ export default function PostManager() {
       {posts.map((post) => (
         <div key={post.id} className="flex w-full flex-col gap-5">
           {/* post */}
-          <a
-            href={`/personal/blog/posts/${post.id}`}
-            target="_blank"
-            className=""
-          >
+          <a href={`/personal/blog/posts/${post.id}`} target="_blank">
             {post.title}
           </a>
 

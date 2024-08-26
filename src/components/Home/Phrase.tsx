@@ -14,22 +14,22 @@ export default function Phrase() {
       }}
     >
       <div className="flex justify-center">
-        <span className="opacity-75">
+        <span>
           There are <span className="italic">three responses</span> to a
           product:
         </span>
       </div>
 
-      <div>
-        <span className="opacity-75">— yes, no, and </span>
-        <span className="font-bold">WOW! </span>
-        <span className="opacity-75">—</span>
+      <div className="italic">
+        <span>— yes, no, and </span>
+        <span className="font-bold text-white">WOW! </span>
+        <span>—</span>
       </div>
 
       <div>
-        <span className="opacity-75">Wow is the one </span>
-        <span className="rounded-xl bg-neutral-900 p-1 font-bold">
-          I aim for.
+        <span>Wow is </span>
+        <span className="rounded-xl bg-neutral-900 p-1 font-bold text-white">
+          the one I aim for.
         </span>
       </div>
     </motion.blockquote>
