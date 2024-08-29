@@ -20,12 +20,12 @@ export default function Page() {
 
         {/* contact and resume */}
         <ContactAndResume />
+
+        {/* stacks & tools */}
+        <Stacks />
       </header>
 
       <div className="flex flex-col gap-10">
-        {/* stacks & tools */}
-        <Stacks />
-
         {/* qualities */}
         <Qualities />
       </div>

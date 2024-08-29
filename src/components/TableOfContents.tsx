@@ -27,7 +27,7 @@ export default function TableOfContents() {
 
   return (
     <motion.nav
-      className="flex h-fit w-96 flex-col gap-5 rounded-xl border border-red-600 p-5"
+      className="mb-5 flex h-fit w-full flex-col gap-5 text-nowrap rounded-xl border border-red-600 p-5 lg:w-fit"
       initial={{ x: 50, opacity: 0 }}
       animate={{ x: 0, opacity: 1, transition: { delay: 0.3 } }}
     >
@@ -38,7 +38,7 @@ export default function TableOfContents() {
           return (
             <motion.div whileHover={{ x: 5 }}>
               <Link
-                className={`${heading.headingLevel === "H2" ? "font-medium" : "ml-3 text-inherit hover:opacity-100"} text-white hover:text-red-600`}
+                className={`${heading.headingLevel === "H2" ? "font-medium text-white" : "ml-3 text-inherit hover:opacity-100"} hover:text-red-600`}
                 href={`#${heading.id}`}
               >
                 {heading.text}

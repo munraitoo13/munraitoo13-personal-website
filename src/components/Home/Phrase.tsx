@@ -10,7 +10,7 @@ export default function Phrase() {
       animate={{
         opacity: 1,
         x: 0,
-        transition: { delay: 0.6 },
+        transition: { delay: 0.5 },
       }}
     >
       <div className="flex justify-center">
@@ -28,7 +28,7 @@ export default function Phrase() {
 
       <div>
         <span>Wow is </span>
-        <span className="rounded-xl bg-neutral-900 p-1 font-bold text-white">
+        <span className="rounded-xl bg-neutral-900/25 p-1 font-bold text-white">
           the one I aim for.
         </span>
       </div>

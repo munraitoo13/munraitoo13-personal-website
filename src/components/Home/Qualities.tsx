@@ -14,12 +14,12 @@ export default function Qualities() {
       animate={{
         opacity: 1,
         x: 0,
-        transition: { delay: 0.5 },
+        transition: { delay: 0.4 },
       }}
       className="flex w-full flex-col items-stretch justify-center gap-5 lg:flex-row"
     >
       {/* comunicative */}
-      <div className="w-full rounded-xl border border-neutral-900 p-3 text-white">
+      <div className="w-full rounded-xl border border-neutral-900/25 p-3 text-white">
         <div className="flex items-center">
           <IconBrandHipchat
             size={24}
@@ -27,7 +27,7 @@ export default function Qualities() {
             className="z-10 box-content min-w-fit rounded-full bg-red-600 p-3"
           />
 
-          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900 py-2 pl-10 font-bold">
+          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900/25 py-2 pl-10 font-bold">
             Communicative
           </h3>
         </div>
@@ -39,7 +39,7 @@ export default function Qualities() {
       </div>
 
       {/* competent */}
-      <div className="w-full rounded-xl border border-neutral-900 p-3 text-white">
+      <div className="w-full rounded-xl border border-neutral-900/25 p-3 text-white">
         <div className="flex items-center">
           <IconBriefcase2
             size={24}
@@ -47,7 +47,7 @@ export default function Qualities() {
             className="z-10 box-content min-w-fit rounded-full bg-red-600 p-3"
           />
 
-          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900 py-2 pl-10 font-bold">
+          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900/25 py-2 pl-10 font-bold">
             Competent
           </h3>
         </div>
@@ -59,7 +59,7 @@ export default function Qualities() {
       </div>
 
       {/* detail-oriented */}
-      <div className="w-full rounded-xl border border-neutral-900 p-3 text-white">
+      <div className="w-full rounded-xl border border-neutral-900/25 p-3 text-white">
         <div className="flex items-center">
           <IconStars
             size={24}
@@ -67,7 +67,7 @@ export default function Qualities() {
             className="z-10 box-content min-w-fit rounded-full bg-red-600 p-3"
           />
 
-          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900 py-2 pl-10 font-bold">
+          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900/25 py-2 pl-10 font-bold">
             Detail-oriented
           </h3>
         </div>

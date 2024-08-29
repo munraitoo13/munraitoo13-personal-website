@@ -22,7 +22,7 @@ export default function Project({
     <motion.a
       initial={{ opacity: 0, scale: 0.5 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      className="flex flex-col rounded-xl bg-neutral-900/10 p-5"
+      className="flex flex-col rounded-xl bg-neutral-900/25 p-5"
       href={href}
       target="_blank"
       whileHover={{ x: 5 }}

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { IconCaretRight } from "@tabler/icons-react";
 
 // SinglePost component props
-interface SinglePostProps {
+interface PostsProps {
   title: string;
   date: string;
   desc: string;
@@ -22,13 +22,13 @@ export default function SinglePost({
   lang,
   tags,
   id,
-}: SinglePostProps) {
+}: PostsProps) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       whileInView={{ opacity: 1, scale: 1 }}
       whileHover={{ x: 5 }}
-      className="flex flex-col gap-1 rounded-xl bg-neutral-900/10 p-5"
+      className="flex flex-col gap-1 rounded-xl bg-neutral-900/25 p-5"
     >
       <Link href={`/personal/blog/posts/${id}`}>
         <div className="flex gap-5">
@@ -47,16 +47,14 @@ export default function SinglePost({
 
         {/* tags */}
         <div className="mt-5 flex flex-wrap gap-1">
-          {tags.map((tag: { id: Number; name: string }) => {
-            return (
-              <span
-                key={tag.name}
-                className="rounded-full bg-neutral-800 px-3 py-1 text-sm"
-              >
-                {tag.name}
-              </span>
-            );
-          })}
+          {tags.map((tag: any) => (
+            <span
+              key={tag.name}
+              className="rounded-full bg-neutral-900/25 px-3 py-1"
+            >
+              {tag.name}
+            </span>
+          ))}
         </div>
 
         {/* view more */}

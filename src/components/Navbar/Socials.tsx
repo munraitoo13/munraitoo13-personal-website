@@ -16,7 +16,7 @@ export default function Socials() {
         <Link
           href="https://github.com/munraitoo13"
           target="_blank"
-          className="hover:text-red-600"
+          className="text-white hover:text-red-600"
         >
           <IconBrandGithub stroke={1.25} />
         </Link>
@@ -27,7 +27,7 @@ export default function Socials() {
         <Link
           href="https://www.linkedin.com/in/munraitoo13/"
           target="_blank"
-          className="hover:text-red-600"
+          className="text-white hover:text-red-600"
         >
           <IconBrandLinkedin stroke={1.25} />
         </Link>
@@ -38,7 +38,7 @@ export default function Socials() {
         <Link
           href="https://www.instagram.com/munraitoo13/"
           target="_blank"
-          className="hover:text-red-600"
+          className="text-white hover:text-red-600"
         >
           <IconBrandInstagram stroke={1.25} />
         </Link>
@@ -49,7 +49,7 @@ export default function Socials() {
         <Link
           href="https://twitter.com/munraitoo13"
           target="_blank"
-          className="hover:text-red-600"
+          className="text-white hover:text-red-600"
         >
           <IconBrandX stroke={1.25} />
         </Link>

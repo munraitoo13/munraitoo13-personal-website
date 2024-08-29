@@ -3,13 +3,14 @@ import Link from "next/link";
 // professional links
 export const professional = [
   { name: "/experiences", href: "/professional/experiences" },
-  { name: "/projects", href: "/professional/projects" },
+
   { name: "/skills-and-tools", href: "/professional/skills-and-tools" },
 ];
 
 // personal links
 export const personal = [
   { name: "/blog", href: "/personal/blog" },
+  { name: "/projects", href: "/personal/projects" },
   { name: "/contact", href: "/personal/contact" },
 ];
 
@@ -18,9 +19,9 @@ export default function NavItems() {
     <div className="flex flex-col gap-5 lg:flex-row">
       {/* professional */}
       <div className="flex flex-col items-center gap-3 lg:flex-row">
-        <h1 className="rounded-full bg-neutral-900/25 px-5 py-2 font-bold">
+        <p className="rounded-full bg-neutral-900/25 px-5 py-2 text-white">
           /professional
-        </h1>
+        </p>
 
         {/* links */}
         {professional.map((item) => (
@@ -32,9 +33,9 @@ export default function NavItems() {
 
       {/* personal */}
       <div className="flex flex-col items-center gap-3 lg:flex-row">
-        <h1 className="rounded-full bg-neutral-900/25 px-5 py-2 font-bold">
+        <p className="rounded-full bg-neutral-900/25 px-5 py-2 text-white">
           /personal
-        </h1>
+        </p>
 
         {/* links */}
         {personal.map((item) => (
