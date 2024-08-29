@@ -24,14 +24,14 @@ model Post {
   createdAt   DateTime @default(now())
   language    String
   content     String
-  author      User     @relation(fields: [userId], references: [id])
-  userId      String
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    String
   tags        Tag[]
   published   Boolean  @default(false)
 }
 
 model Tag {
   id    String @id @default(uuid())
-  name  String
+  name  String @unique
   posts Post[]
 }

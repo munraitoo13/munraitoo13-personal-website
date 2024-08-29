@@ -88,7 +88,7 @@ export default function NewPostForm() {
         name="description"
         placeholder="Description"
         className="w-full resize-none rounded-xl p-5"
-        maxLength={200}
+        maxLength={255}
       />
 
       {/* content */}

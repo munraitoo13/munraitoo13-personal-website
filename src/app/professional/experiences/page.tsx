@@ -13,7 +13,7 @@ export default async function Page() {
   return (
     <>
       <Header
-        cathegory="Professional"
+        category="Professional"
         pageTitle="Experiences"
         pageDescription="My experiences in the professional world."
       />

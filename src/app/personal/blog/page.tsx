@@ -17,7 +17,7 @@ export default async function Page() {
   return (
     <>
       <Header
-        cathegory="Personal"
+        category="Personal"
         pageTitle="Blog"
         pageDescription="All of my blog posts in one place."
       />

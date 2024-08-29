@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 export default function Header({
   pageTitle,
   pageDescription,
-  cathegory,
+  category,
 }: {
   pageTitle: string;
   pageDescription: string;
-  cathegory: string;
+  category: string;
 }) {
   return (
     <header className="flex w-full flex-col justify-center gap-5 pt-48">
@@ -20,7 +20,7 @@ export default function Header({
           animate={{ x: 0, opacity: 1 }}
           className="text-lg font-bold text-red-600"
         >
-          {cathegory}
+          {category}
         </motion.p>
 
         {/* title */}

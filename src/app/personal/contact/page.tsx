@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <Header
-        cathegory="Personal"
+        category="Personal"
         pageTitle="Contact"
         pageDescription="All the ways you are able to contact me."
       />

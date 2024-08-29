@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <Header
-        cathegory="Professional"
+        category="Professional"
         pageTitle="Skills & Tools"
         pageDescription="All the skills I have and tools I use to build those beautiful websites."
       />

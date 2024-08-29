@@ -16,7 +16,7 @@ export default async function Page() {
   return (
     <>
       <Header
-        cathegory="Professional"
+        category="Professional"
         pageTitle="Projects"
         pageDescription="All of my wip and finished projects in one place."
       />
