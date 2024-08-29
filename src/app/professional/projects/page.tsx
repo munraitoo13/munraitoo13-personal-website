@@ -26,7 +26,7 @@ export default async function Page() {
           <Content />
         </Markdown>
 
-        <div className="flex flex-col gap-20">
+        <div className="grid gap-5 lg:grid-cols-2">
           {repos.map((repo: any) => {
             return (
               <Projects

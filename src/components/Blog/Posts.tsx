@@ -27,9 +27,10 @@ export default function SinglePost({
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      className="flex flex-col gap-1 rounded-xl"
+      whileHover={{ x: 5 }}
+      className="flex flex-col gap-1 rounded-xl bg-neutral-900/10 p-5"
     >
-      <Link className="mb-10 no-underline" href={`/personal/blog/posts/${id}`}>
+      <Link href={`/personal/blog/posts/${id}`}>
         <div className="flex gap-5">
           {/* date */}
           <small>{date}</small>
