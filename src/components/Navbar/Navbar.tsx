@@ -22,23 +22,26 @@ export default function Navbar() {
           </div>
 
           {/* links lg */}
-          <div className="hidden lg:flex">
+          <div className="hidden text-nowrap lg:flex">
             <NavItems />
           </div>
         </div>
 
         {/* socials md */}
-        <div className="hidden lg:flex">
-          <Socials />
-        </div>
+        <div className="flex justify-center gap-5">
+          {/* socials */}
+          <div className="hidden md:flex">
+            <Socials />
+          </div>
 
-        {/* menu sm md */}
-        <div className="cursor-pointer lg:hidden">
-          {isOpen ? (
-            <IconX onClick={() => setIsOpen(!isOpen)} />
-          ) : (
-            <IconMenu2 onClick={() => setIsOpen(!isOpen)} />
-          )}
+          {/* menu sm md */}
+          <div className="cursor-pointer lg:hidden">
+            {isOpen ? (
+              <IconX onClick={() => setIsOpen(!isOpen)} />
+            ) : (
+              <IconMenu2 onClick={() => setIsOpen(!isOpen)} />
+            )}
+          </div>
         </div>
       </div>
 

@@ -23,7 +23,7 @@ export default function BlogHeader({
         <motion.h1
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          className="text-6xl font-bold"
+          className="text-6xl font-bold text-white"
         >
           {pageTitle}
         </motion.h1>
@@ -32,7 +32,7 @@ export default function BlogHeader({
       {/* description */}
       <motion.p
         initial={{ x: -50, opacity: 0 }}
-        animate={{ x: 0, opacity: 0.75, transition: { delay: 0.1 } }}
+        animate={{ x: 0, opacity: 1, transition: { delay: 0.1 } }}
         className="text-lg"
       >
         {pageDescription}
@@ -41,7 +41,7 @@ export default function BlogHeader({
       {/* date and language */}
       <motion.div
         initial={{ x: -50, opacity: 0 }}
-        animate={{ x: 0, opacity: 0.75, transition: { delay: 0.2 } }}
+        animate={{ x: 0, opacity: 1, transition: { delay: 0.2 } }}
         className="flex items-center gap-5"
       >
         {/* date */}

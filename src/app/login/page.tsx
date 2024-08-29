@@ -4,7 +4,7 @@ export default function Login() {
   return (
     <div className="flex h-screen items-center justify-center">
       <div className="flex h-1/2 min-h-64 flex-col items-center justify-center rounded-xl border border-red-600 bg-neutral-950 px-10">
-        <h2 className="text-2xl font-bold">Login</h2>
+        <h2 className="text-2xl font-bold text-white">Login</h2>
 
         {/* login form */}
         <form

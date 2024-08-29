@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { IconCaretRight } from "@tabler/icons-react";
+import { IconGhost2Filled } from "@tabler/icons-react";
 
 // SinglePost component props
 interface PostsProps {
@@ -24,29 +24,29 @@ export default function SinglePost({
   id,
 }: PostsProps) {
   return (
-    <motion.div
+    <motion.a
       initial={{ opacity: 0, scale: 0.5 }}
       whileInView={{ opacity: 1, scale: 1 }}
       whileHover={{ x: 5 }}
-      className="flex flex-col gap-1 rounded-xl bg-neutral-900/25 p-5"
+      className="flex flex-col gap-10 rounded-xl bg-neutral-900/25 p-10"
+      href={`/personal/blog/posts/${id}`}
     >
-      <Link href={`/personal/blog/posts/${id}`}>
-        <div className="flex gap-5">
+      {/* post itself */}
+      <div className="flex flex-col gap-3">
+        {/* date and lang */}
+        <div className="flex items-center gap-5 text-red-600">
           {/* date */}
           <small>{date}</small>
-
-          {/* lang */}
-          <small>{lang}</small>
         </div>
 
         {/* title */}
-        <h2 className="text-2xl font-bold text-white">{title}</h2>
+        <h2 className="text-4xl font-bold text-white">{title}</h2>
 
         {/* description */}
-        <p>{desc}</p>
+        <p className="text-xl">{desc}</p>
 
         {/* tags */}
-        <div className="mt-5 flex flex-wrap gap-1">
+        <div className="flex flex-wrap gap-1">
           {tags.map((tag: any) => (
             <span
               key={tag.name}
@@ -56,12 +56,19 @@ export default function SinglePost({
             </span>
           ))}
         </div>
+      </div>
 
-        {/* view more */}
-        <span className="mt-5 flex items-center font-bold text-red-600">
-          See more...
-        </span>
-      </Link>
-    </motion.div>
+      {/* check it and lang */}
+      <div className="flex items-center gap-5">
+        {/* check it */}
+        <div className="flex w-fit items-center gap-3 rounded-full bg-neutral-900/25 px-5 py-3 font-bold">
+          <IconGhost2Filled />
+          Check it!
+        </div>
+
+        {/* lang */}
+        <small>{lang}</small>
+      </div>
+    </motion.a>
   );
 }

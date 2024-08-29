@@ -8,7 +8,7 @@ export default function Presentation() {
       <motion.h1
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
-        className="text-6xl font-bold"
+        className="text-6xl font-bold text-white"
       >
         What's up!
         <br />

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { IconBrandGithubFilled } from "@tabler/icons-react";
 import Link from "next/link";
 
 interface ProjectProps {
@@ -22,24 +23,28 @@ export default function Project({
     <motion.a
       initial={{ opacity: 0, scale: 0.5 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      className="flex flex-col rounded-xl bg-neutral-900/25 p-5"
+      className="flex flex-col justify-between gap-10 rounded-xl bg-neutral-900/25 p-10"
       href={href}
       target="_blank"
       whileHover={{ x: 5 }}
     >
-      <div>
+      {/* project */}
+      <div className="flex flex-col gap-3">
         {/* project repo name */}
-        <p className="font-bold text-red-600 no-underline">{repo}</p>
+        <p className="text-xs text-red-600">{repo}</p>
 
         {/* project title */}
-        <p className="text-2xl font-bold text-white">{projectTitle}</p>
+        <p className="text-4xl font-bold text-white">{projectTitle}</p>
 
         {/* project description */}
-        <p>{projectDescription}</p>
+        <p className="text-lg">{projectDescription}</p>
       </div>
 
-      {/* main language */}
-      <small className="mt-5">{language}</small>
+      {/* github availability */}
+      <div className="flex w-fit items-center gap-3 rounded-full bg-neutral-900/25 px-5 py-3 font-bold">
+        <IconBrandGithubFilled />
+        Available on GitHub!
+      </div>
     </motion.a>
   );
 }

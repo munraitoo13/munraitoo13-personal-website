@@ -31,7 +31,7 @@ export default function TableOfContents() {
       initial={{ x: 50, opacity: 0 }}
       animate={{ x: 0, opacity: 1, transition: { delay: 0.3 } }}
     >
-      <h2 className="text-xl font-bold">Contents</h2>
+      <h2 className="text-xl font-bold text-white">Contents</h2>
 
       <div className="flex flex-col gap-3">
         {headings.map((heading) => {

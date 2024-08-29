@@ -16,9 +16,9 @@ export default async function Page() {
   return (
     <>
       <Header
-        category="Professional"
+        category="Personal"
         pageTitle="Projects"
-        pageDescription="All of my wip and finished projects in one place."
+        pageDescription="All of my wip and finished public projects in one place."
       />
 
       <div className="flex flex-col gap-10">
