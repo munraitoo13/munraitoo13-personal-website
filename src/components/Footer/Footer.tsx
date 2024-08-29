@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="flex gap-10">
             {/* Professional */}
             <div className="flex flex-col gap-3">
-              <p>Professional</p>
+              <p>/professional</p>
 
               {/* links */}
               {professional.map((item) => (
@@ -27,7 +27,7 @@ export default function Footer() {
 
             {/* Personal */}
             <div className="flex flex-col gap-3">
-              <p>Personal</p>
+              <p>/personal</p>
 
               {/* links */}
               {personal.map((item) => (
