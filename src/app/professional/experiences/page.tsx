@@ -18,7 +18,7 @@ export default async function Page() {
         pageDescription="My experiences in the professional world."
       />
 
-      <div className="flex flex-col gap-3 lg:flex-row-reverse lg:justify-between">
+      <div className="flex flex-col gap-20 lg:flex-row-reverse lg:justify-between">
         <Contents />
         <Markdown>
           <Content />

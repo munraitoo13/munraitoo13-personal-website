@@ -18,12 +18,9 @@ export default function Page() {
         pageDescription="All the ways you are able to contact me."
       />
 
-      <div className="flex flex-col gap-3 lg:flex-row-reverse lg:justify-between">
-        <TableOfContents />
-        <Markdown>
-          <Content />
-        </Markdown>
-      </div>
+      <Markdown>
+        <Content />
+      </Markdown>
     </>
   );
 }

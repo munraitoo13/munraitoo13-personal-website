@@ -18,7 +18,7 @@ export default function Page() {
         pageDescription="All the skills I have and tools I use to build those beautiful websites."
       />
 
-      <div className="flex flex-col gap-3 lg:flex-row-reverse lg:justify-between">
+      <div className="flex flex-col gap-20 lg:flex-row-reverse lg:justify-between">
         <Contents />
         <Markdown>
           <Content />

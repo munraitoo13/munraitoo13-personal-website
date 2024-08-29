@@ -27,7 +27,7 @@ export default function TableOfContents() {
 
   return (
     <motion.nav
-      className="mb-5 flex h-fit w-full flex-col gap-5 text-nowrap rounded-xl border border-red-600 p-5 lg:w-fit"
+      className="mb-5 flex h-fit w-full flex-col gap-5 text-nowrap rounded-xl border border-red-600 p-10 lg:w-fit"
       initial={{ x: 50, opacity: 0 }}
       animate={{ x: 0, opacity: 1, transition: { delay: 0.3 } }}
     >
