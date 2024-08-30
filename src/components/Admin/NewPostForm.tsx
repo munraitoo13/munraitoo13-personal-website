@@ -1,14 +1,22 @@
 "use client";
 
-import { getTags } from "@/lib/db";
-import { newPost } from "@/lib/posts/newPost";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 
-interface Tag {
-  id: string;
+type Tag = {
+  id: number;
   name: string;
-}
+};
+
+const languages = [
+  "Portuguese",
+  "English",
+  "French",
+  "Spanish",
+  "Italian",
+  "German",
+  "Japanese",
+];
 
 export default function NewPostForm() {
   const [tags, setTags] = useState<Tag[]>([]);
@@ -18,27 +26,13 @@ export default function NewPostForm() {
   }, []);
 
   async function fetchTags() {
-    const tags = await getTags();
-    setTags(tags!);
+    const response = await fetch("/api/tags");
+    const tags = await response.json();
+    setTags(tags);
   }
 
-  const languages = [
-    "Portuguese",
-    "English",
-    "French",
-    "Spanish",
-    "Italian",
-    "German",
-    "Japanese",
-  ];
-
   return (
-    <form
-      action={async (formData) => {
-        await newPost(formData);
-      }}
-      className="flex w-full flex-col items-center justify-center gap-3"
-    >
+    <form className="flex w-full flex-col items-center justify-center gap-3">
       {/* language and published */}
       <div className="flex gap-5">
         {/* language */}
@@ -76,7 +70,7 @@ export default function NewPostForm() {
         className="w-full cursor-pointer rounded-xl px-5 py-2"
         multiple
       >
-        {tags.map((tag) => (
+        {tags.map((tag: Tag) => (
           <option key={tag.id} value={tag.id}>
             {tag.name}
           </option>

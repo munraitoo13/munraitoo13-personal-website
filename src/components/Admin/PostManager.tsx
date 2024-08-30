@@ -1,14 +1,13 @@
 "use client";
 
-import { getPosts } from "@/lib/db";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-interface Post {
+type Post = {
   id: string;
   title: string;
   description: string;
   content: string;
-}
+};
 
 export default function PostManager() {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -18,7 +17,8 @@ export default function PostManager() {
   }, []);
 
   async function fetchPosts() {
-    const posts = await getPosts();
+    const response = await fetch("/api/posts");
+    const posts = await response.json();
     setPosts(posts);
   }
 

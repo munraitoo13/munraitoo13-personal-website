@@ -2,11 +2,13 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 
+// jwt secret
 const secretKey = process.env.JWT_SECRET;
 if (!secretKey) {
   throw new Error("JWT_SECRET is not defined");
 }
 
+// jwt secret key
 const key = new TextEncoder().encode(secretKey);
 
 export async function middleware(req: Request) {
