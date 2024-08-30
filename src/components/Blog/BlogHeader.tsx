@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 import { IconLanguage, IconCalendarEvent } from "@tabler/icons-react";
 
 interface BlogHeaderProps {
-  pageTitle: string;
-  pageDescription: string;
-  lang: string;
+  title: string;
+  description: string;
+  language: string;
   date: string;
 }
 
 export default function BlogHeader({
-  pageTitle,
-  pageDescription,
-  lang,
+  title,
+  description,
+  language,
   date,
 }: BlogHeaderProps) {
   return (
@@ -25,7 +25,7 @@ export default function BlogHeader({
           animate={{ x: 0, opacity: 1 }}
           className="text-6xl font-bold text-white"
         >
-          {pageTitle}
+          {title}
         </motion.h1>
       </div>
 
@@ -35,7 +35,7 @@ export default function BlogHeader({
         animate={{ x: 0, opacity: 1, transition: { delay: 0.1 } }}
         className="text-lg"
       >
-        {pageDescription}
+        {description}
       </motion.p>
 
       {/* date and language */}
@@ -52,7 +52,7 @@ export default function BlogHeader({
         |{/* lang */}
         <div className="flex items-center gap-3">
           <IconLanguage size={20} />
-          <small>{lang}</small>
+          <small>{language}</small>
         </div>
       </motion.div>
     </header>

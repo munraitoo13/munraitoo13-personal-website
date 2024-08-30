@@ -2,7 +2,7 @@
 
 import { getTags } from "@/lib/db";
 import { newPost } from "@/lib/posts/newPost";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 
 interface Tag {
@@ -19,7 +19,7 @@ export default function NewPostForm() {
 
   async function fetchTags() {
     const tags = await getTags();
-    setTags(tags);
+    setTags(tags!);
   }
 
   const languages = [

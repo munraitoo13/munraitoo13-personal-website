@@ -1,33 +1,24 @@
 import BlogHeader from "@/components/Blog/BlogHeader";
 import Markdown from "@/components/Markdown";
 import formatDate from "@/lib/formatDate";
-import { prisma } from "@/lib/prisma";
 import { MDXRemote } from "next-mdx-remote/rsc";
-
-async function getPost(id: string) {
-  const post = await prisma.post.findUnique({
-    where: { id: id },
-    include: { tags: true },
-  });
-  return post;
-}
+import { getPost } from "@/lib/db";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug);
-
-  if (!post) return null;
+  const { title, description, createdAt, language, content } = post!;
 
   return (
     <>
       <BlogHeader
-        pageTitle={post.title}
-        pageDescription={post.description}
-        date={formatDate(post.createdAt)}
-        lang={post.language}
+        title={title}
+        description={description}
+        date={formatDate(createdAt)}
+        language={language}
       />
 
       <Markdown>
-        <MDXRemote source={post.content} />
+        <MDXRemote source={content} />
       </Markdown>
     </>
   );

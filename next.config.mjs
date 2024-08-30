@@ -9,8 +9,12 @@ const withMDX = nextMDX({
     rehypePlugins: [],
   },
 });
+
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+
+  // strict mode is double checking some hooks and other things
+  reactStrictMode: true,
 };
 
 export default withMDX(nextConfig);

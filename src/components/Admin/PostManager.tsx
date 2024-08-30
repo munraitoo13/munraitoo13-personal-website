@@ -1,7 +1,7 @@
 "use client";
 
 import { getPosts } from "@/lib/db";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Post {
   id: string;
@@ -14,12 +14,13 @@ export default function PostManager() {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
-    async function fetchPosts() {
-      const posts = await getPosts();
-      setPosts(posts);
-    }
     fetchPosts();
   }, []);
+
+  async function fetchPosts() {
+    const posts = await getPosts();
+    setPosts(posts);
+  }
 
   return (
     <section className="w-full">
