@@ -1,8 +1,32 @@
+"use client";
+
 import { sendMail } from "@/actions/actions";
+import { useEffect, useState } from "react";
 
 export default function ContactForm() {
+  const [isSending, setIsSending] = useState(false);
+  const [isCooldown, setIsCooldown] = useState(false);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+
+    try {
+      setIsSending(true);
+
+      await sendMail(formData);
+
+      setIsCooldown(true);
+      setTimeout(() => setIsCooldown(false), 60000);
+      setTimeout("window.alert('Message sent successfully.');", 1);
+    } catch (error) {
+      window.alert(`Error sending message: ${error}`);
+    }
+    setIsSending(false);
+  };
+
   return (
-    <form action={sendMail} className="flex flex-col gap-3">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <input
         required
         type="text"
@@ -43,9 +67,10 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="w-fit rounded-full bg-red-600 px-5 py-3 font-bold text-white"
+        className={`w-fit rounded-full ${isSending ? "bg-neutral-900/25" : isCooldown ? "bg-neutral-900/25" : "bg-red-600"} px-5 py-3 font-bold text-white`}
+        disabled={isSending || isCooldown}
       >
-        Send
+        {isSending ? "Sending..." : isCooldown ? "Cooldown..." : "Send"}
       </button>
     </form>
   );
