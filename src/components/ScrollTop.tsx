@@ -29,7 +29,7 @@ export default function ScrollTop() {
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.25 }}
-      className="fixed bottom-10 z-50 flex w-full justify-center"
+      className="fixed bottom-5 z-50 flex w-full justify-center"
     >
       <IconArrowMoveUp
         onClick={() => {
@@ -38,7 +38,7 @@ export default function ScrollTop() {
             behavior: "smooth",
           });
         }}
-        className="box-content cursor-pointer rounded-full bg-red-600 p-2 shadow-md"
+        className="box-content cursor-pointer rounded-full bg-red-600 p-2"
       />
     </motion.div>
   );
