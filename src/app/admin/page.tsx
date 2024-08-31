@@ -1,36 +1,53 @@
-import NewPostForm from "@/components/Admin/NewPostForm";
-import PostManager from "@/components/Admin/PostManager";
+const links = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "New Post",
+    href: "/admin/new-post",
+  },
+  {
+    name: "Manage Posts",
+    href: "/admin/manage-posts",
+  },
+];
 
 export default function Admin() {
   return (
-    <main className="w-full p-10">
-      <div className="flex h-full flex-col items-center gap-10 rounded-xl bg-neutral-950 p-5">
-        {/* title */}
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-white">Admin Panel</h1>
-          <p>Some functions may not work properly!</p>
+    <>
+      {/* title */}
+      <div className="text-center">
+        <h1 className="text-2xl font-bold text-white">Admin Panel</h1>
+        <p>Please note that some functions may not work properly!</p>
+      </div>
+
+      {/* content */}
+      <div className="flex flex-col gap-5">
+        {/* shortcuts */}
+        <div className="flex flex-col items-center justify-center gap-5 rounded-xl bg-neutral-900/25 p-5">
+          <h3 className="text-xl font-bold text-white">Shortcuts</h3>
+
+          {/* links */}
+          <div className="flex gap-1">
+            {links.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="rounded-full bg-neutral-900/25 px-5 py-3 hover:bg-red-600 hover:text-white"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* analytics */}
-        <div className="flex w-full items-center justify-center rounded-xl border border-red-600 p-5 text-neutral-600">
-          analytics (future plan)
-        </div>
-
-        {/* post actions */}
-        <div className="flex w-full flex-col gap-10">
-          {/* new post */}
-          <div className="flex w-full flex-col items-center justify-center gap-5">
-            <h2 className="text-xl font-medium">New Post</h2>
-            <NewPostForm />
-          </div>
-
-          {/* manage posts */}
-          <div className="flex w-full flex-col items-center justify-center gap-5">
-            <h2 className="text-xl font-medium">Manage Posts</h2>
-            <PostManager />
-          </div>
+        <div className="flex flex-col items-center justify-center rounded-xl bg-neutral-900/25 p-5">
+          <h3 className="text-xl font-bold text-white">Analytics</h3>
+          <p>Coming soon</p>
         </div>
       </div>
-    </main>
+    </>
   );
 }

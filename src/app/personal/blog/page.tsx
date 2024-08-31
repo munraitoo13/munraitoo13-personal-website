@@ -1,18 +1,20 @@
 import Header from "@/components/Header";
 import Markdown from "@/components/Markdown";
 import { Metadata } from "next";
+import { prisma } from "@/lib/prisma";
 import Content from "./content.mdx";
 import Posts from "@/components/Blog/Posts";
 import formatDate from "@/lib/formatDate";
-import getAllPosts from "@/lib/posts/getAllPosts";
-
 export const metadata: Metadata = {
   title: "Blog | munraitoo13",
   description: "munraitoo13's blog",
 };
 
 export default async function Page() {
-  const posts = await getAllPosts();
+  const posts = await prisma.post.findMany({
+    where: { published: true },
+    include: { tags: true },
+  });
 
   return (
     <>
@@ -27,7 +29,7 @@ export default async function Page() {
           <Content />
         </Markdown>
 
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-5">
           {posts.map((post: any) => {
             return (
               <Posts

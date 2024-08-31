@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { IconGhost2Filled } from "@tabler/icons-react";
 
 // SinglePost component props
@@ -15,7 +14,7 @@ interface PostsProps {
 }
 
 // SinglePost component
-export default function SinglePost({
+export default function Posts({
   title,
   date,
   desc,

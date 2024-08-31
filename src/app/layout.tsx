@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
 
-  if (pathname === "/login" || pathname === "/admin") {
+  if (pathname === "/login" || pathname.startsWith("/admin")) {
     return (
       <html lang="en">
         <body className={inter.className}>{children}</body>
