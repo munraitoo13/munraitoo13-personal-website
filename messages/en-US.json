@@ -47,7 +47,13 @@
 
   "Footer": {
     "professional": "/professional",
+    "experiences": "/experiences",
+    "skillsAndTools": "/skills-and-tools",
+
     "personal": "/personal",
+    "blog": "/blog",
+    "projects": "/projects",
+    "contact": "/contact",
 
     "about": "About me",
     "aboutPhrase": "What's up! My name is Augusto. Also known as munraitoo13, I'm a passionate software engineer from Brazil.",
@@ -77,7 +83,14 @@
   "Contact": {
     "category": "Personal",
     "title": "Contact",
-    "description": "Feel free to contact me if you have any questions or would like to work together."
+    "description": "Feel free to contact me if you have any questions or would like to work together.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "subject": "Subject",
+    "send": "Send",
+    "sending": "Sending...",
+    "cooldown": "Cooldown"
   },
 
   "Blog": {
@@ -85,5 +98,9 @@
     "title": "Blog",
     "description": "Here are some of the blog posts I've written.",
     "check": "Check it out!"
+  },
+
+  "TableOfContents": {
+    "contents": "Contents"
   }
 }

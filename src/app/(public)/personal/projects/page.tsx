@@ -25,7 +25,7 @@ export default function Page() {
         <Markdown>
           <Content />
         </Markdown>
-        <Projects />;
+        <Projects />
       </div>
     </>
   );

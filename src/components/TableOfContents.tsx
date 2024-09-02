@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface Headings {
   id: string;
@@ -11,6 +12,7 @@ interface Headings {
 }
 
 export default function TableOfContents() {
+  const t = useTranslations("TableOfContents");
   const [headings, setHeadings] = useState<Headings[]>([]);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function TableOfContents() {
       initial={{ x: 50, opacity: 0 }}
       animate={{ x: 0, opacity: 1, transition: { delay: 0.3 } }}
     >
-      <h2 className="text-xl font-bold text-white">Contents</h2>
+      <h2 className="text-xl font-bold text-white">{t("contents")}</h2>
 
       <div className="flex flex-col gap-3">
         {headings.map((heading) => {

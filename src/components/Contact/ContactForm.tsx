@@ -1,9 +1,11 @@
 "use client";
 
 import { sendMail } from "@/actions/actions";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function ContactForm() {
+  const t = useTranslations("Contact");
   const [isSending, setIsSending] = useState(false);
   const [isCooldown, setIsCooldown] = useState(false);
 
@@ -33,7 +35,7 @@ export default function ContactForm() {
         id="name"
         name="name"
         className="rounded-xl bg-neutral-900/25 p-5"
-        placeholder="Name"
+        placeholder={t("name")}
         maxLength={64}
       />
 
@@ -43,7 +45,7 @@ export default function ContactForm() {
         id="email"
         name="email"
         className="rounded-xl bg-neutral-900/25 p-5"
-        placeholder="Email"
+        placeholder={t("email")}
         maxLength={255}
       />
 
@@ -53,7 +55,7 @@ export default function ContactForm() {
         id="subject"
         name="subject"
         className="rounded-xl bg-neutral-900/25 p-5"
-        placeholder="Subject"
+        placeholder={t("subject")}
         maxLength={64}
       />
 
@@ -62,7 +64,7 @@ export default function ContactForm() {
         id="message"
         name="message"
         className="h-48 resize-none rounded-xl bg-neutral-900/25 p-5"
-        placeholder="Message"
+        placeholder={t("message")}
       />
 
       <button
@@ -70,7 +72,7 @@ export default function ContactForm() {
         className={`w-fit rounded-full ${isSending ? "bg-neutral-900/25" : isCooldown ? "bg-neutral-900/25" : "bg-red-600"} px-5 py-3 font-bold text-white`}
         disabled={isSending || isCooldown}
       >
-        {isSending ? "Sending..." : isCooldown ? "Cooldown..." : "Send"}
+        {isSending ? t("sending") : isCooldown ? t("cooldown") : t("send")}
       </button>
     </form>
   );

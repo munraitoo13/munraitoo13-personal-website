@@ -15,15 +15,15 @@ export default function Footer() {
 
   // professional links
   const professional = [
-    { name: "/experiences", href: "/professional/experiences" },
-    { name: "/skills-and-tools", href: "/professional/skills-and-tools" },
+    { name: t("skillsAndTools"), href: "/professional/skills-and-tools" },
+    { name: t("experiences"), href: "/professional/experiences" },
   ];
 
   // personal links
   const personal = [
-    { name: "/blog", href: "/personal/blog" },
-    { name: "/projects", href: "/personal/projects" },
-    { name: "/contact", href: "/personal/contact" },
+    { name: t("projects"), href: "/personal/projects" },
+    { name: t("contact"), href: "/personal/contact" },
+    { name: t("blog"), href: "/personal/blog" },
   ];
 
   return (
