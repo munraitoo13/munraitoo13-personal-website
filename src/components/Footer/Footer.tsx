@@ -1,8 +1,31 @@
 import Link from "next/link";
-import { personal, professional } from "../Navbar/NavItems";
 import Socials from "@/components/Navbar/Socials";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+
+  // languages
+  const languages = [
+    { name: "Português", value: "pt_BR" },
+    { name: "English", value: "en-US" },
+    { name: "Deutsch", value: "de_DE" },
+    { name: "François", value: "fr_FR" },
+  ];
+
+  // professional links
+  const professional = [
+    { name: "/experiences", href: "/professional/experiences" },
+    { name: "/skills-and-tools", href: "/professional/skills-and-tools" },
+  ];
+
+  // personal links
+  const personal = [
+    { name: "/blog", href: "/personal/blog" },
+    { name: "/projects", href: "/personal/projects" },
+    { name: "/contact", href: "/personal/contact" },
+  ];
+
   return (
     <footer className="flex w-full flex-col items-center bg-gradient-to-b from-neutral-950 px-10 pb-5 pt-36">
       <div className="flex w-full max-w-screen-xl flex-col gap-10">
@@ -10,10 +33,10 @@ export default function Footer() {
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
           {/* navigation */}
           <div className="flex flex-col gap-10 lg:flex-row">
-            {/* Personal */}
+            {/* personal */}
             <div className="flex flex-col items-center gap-3">
-              <p className="w-fit rounded-full bg-neutral-900/25 px-5 py-2 text-white">
-                /personal
+              <p className="w-fit rounded-full bg-neutral-900/25 px-5 py-2">
+                {t("personal")}
               </p>
 
               {/* links */}
@@ -21,17 +44,17 @@ export default function Footer() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="hover:text-red-600"
+                  className="text-white hover:text-red-600"
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
 
-            {/* Professional */}
+            {/* professional */}
             <div className="flex flex-col items-center gap-3">
-              <p className="w-fit rounded-full bg-neutral-900/25 px-5 py-2 text-white">
-                /professional
+              <p className="w-fit rounded-full bg-neutral-900/25 px-5 py-2">
+                {t("professional")}
               </p>
 
               {/* links */}
@@ -39,24 +62,40 @@ export default function Footer() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="hover:text-red-600"
+                  className="text-white hover:text-red-600"
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
+
+            {/* language */}
+            <div className="self-center lg:self-auto">
+              <select
+                className="cursor-pointer rounded-full bg-neutral-900/25 px-5 py-2"
+                name="language"
+                id="langugage"
+              >
+                {languages.map((lang) => (
+                  <option
+                    className="bg-neutral-950 text-white"
+                    key={lang.value}
+                    value={lang.value}
+                  >
+                    {lang.name}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
           {/* about-me */}
           <div className="mx-auto flex max-w-lg flex-col items-center gap-2 lg:mx-0">
-            <p className="w-fit rounded-full bg-neutral-900/25 px-5 py-2 text-white">
-              About-me
+            <p className="w-fit rounded-full bg-neutral-900/25 px-5 py-2">
+              {t("about")}
             </p>
 
-            <p className="text-center">
-              What's up! My name is Augusto. Also known as munraitoo13, I'm a
-              passionate software engineer from Brazil.
-            </p>
+            <p className="text-center text-white">{t("aboutPhrase")}</p>
 
             <Socials />
           </div>
@@ -70,7 +109,7 @@ export default function Footer() {
             href="https://github.com/munraitoo13/munraitoo13-personal-website/tree/dev"
             target="_blank"
           >
-            Development Repository
+            {t("repo")}
           </Link>
         </div>
       </div>

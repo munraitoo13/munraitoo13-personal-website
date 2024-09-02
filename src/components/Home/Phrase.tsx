@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function Phrase() {
+  const t = useTranslations("HomePage");
+
   return (
     <motion.blockquote
       className="flex w-full flex-col gap-1 text-center text-2xl"
@@ -15,21 +18,21 @@ export default function Phrase() {
     >
       <div className="flex justify-center">
         <span>
-          There are <span className="italic">three</span> responses to a piece
-          of product:
+          {t("phraseThere")}{" "}
+          <span className="italic">{t("phraseNumber")} </span> {t("phraseTo")}
         </span>
       </div>
 
       <div className="italic">
-        <span>— yes, no, and </span>
-        <span className="font-bold text-white">WOW! </span>
-        <span>—</span>
+        <span>{t("phraseYesNo")} </span>
+        <span className="font-bold text-white">{t("phraseWow")} </span>
+        <span>{t("phraseDash")} </span>
       </div>
 
       <div>
-        <span>Wow is </span>
+        <span>{t("phraseWowIs")} </span>
         <span className="rounded-xl bg-neutral-900/25 p-1 font-bold text-white">
-          the one I aim for.
+          {t("phraseThe")}
         </span>
       </div>
     </motion.blockquote>

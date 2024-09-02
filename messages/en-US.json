@@ -1,0 +1,89 @@
+{
+  "HomePage": {
+    "greetings": "What's up!",
+    "presentation": "My name is ",
+
+    "name": "Augusto",
+
+    "description": "Also known as munraitoo13, I'm a passionate",
+    "descriptionLocation": "from Brazil!",
+
+    "profession": "Software Engineer",
+
+    "quality1": "Communicative",
+    "quality1desc": "I can communicate clearly. A must-have quality that enhances the entire team working experience.",
+
+    "quality2": "Competent",
+    "quality2desc": "I'm dedicated. Another must-have trait that significantly enhances the overall working experience.",
+
+    "quality3": "Deital-oriented",
+    "quality3desc": "I'm detail-oriented. This quality is essential for a software engineer, as it ensures that the code is clean and efficient.",
+
+    "phraseThere": "There are",
+    "phraseNumber": "three",
+    "phraseTo": "responses to a piece of product:",
+    "phraseYesNo": "— yes, no, and ",
+    "phraseWow": "WOW!",
+    "phraseDash": "—",
+    "phraseWowIs": "Wow is",
+    "phraseThe": "the one I aim for.",
+
+    "stacks": "My Stacks & Tools",
+
+    "contact": "Contact me",
+    "resume": "RESUME"
+  },
+
+  "NavBar": {
+    "professional": "/professional",
+    "experiences": "/experiences",
+    "skillsAndTools": "/skills-and-tools",
+
+    "personal": "/personal",
+    "blog": "/blog",
+    "projects": "/projects",
+    "contact": "/contact"
+  },
+
+  "Footer": {
+    "professional": "/professional",
+    "personal": "/personal",
+
+    "about": "About me",
+    "aboutPhrase": "What's up! My name is Augusto. Also known as munraitoo13, I'm a passionate software engineer from Brazil.",
+
+    "repo": "dev repo"
+  },
+
+  "SkillsAndTools": {
+    "category": "Professional",
+    "title": "Skills and Tools",
+    "description": "Here are some of the skills and tools I've acquired over the years. I'm always looking to learn more and improve my skills."
+  },
+
+  "Experiences": {
+    "category": "Professional",
+    "title": "Experiences",
+    "description": "Here are some of the experiences I've had over the years."
+  },
+
+  "Projects": {
+    "category": "Personal",
+    "title": "Projects",
+    "description": "Here are some of the projects I've worked on.",
+    "github": "Available on GitHub!"
+  },
+
+  "Contact": {
+    "category": "Personal",
+    "title": "Contact",
+    "description": "Feel free to contact me if you have any questions or would like to work together."
+  },
+
+  "Blog": {
+    "category": "Personal",
+    "title": "Blog",
+    "description": "Here are some of the blog posts I've written.",
+    "check": "Check it out!"
+  }
+}

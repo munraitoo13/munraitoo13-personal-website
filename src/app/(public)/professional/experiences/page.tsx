@@ -3,19 +3,22 @@ import Markdown from "@/components/Markdown";
 import Contents from "@/components/TableOfContents";
 import { Metadata } from "next";
 import Content from "./content.mdx";
+import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
-  title: "Skills and Tools | munraitoo13",
-  description: "munraitoo13's skills and tools.",
+  title: "Experiences | munraitoo13",
+  description: "munraitoo13's experiences",
 };
 
 export default function Page() {
+  const t = useTranslations("Experiences");
+
   return (
     <>
       <Header
-        category="Professional"
-        pageTitle="Skills & Tools"
-        pageDescription="All the skills I have and tools I use to build those beautiful websites."
+        category={t("category")}
+        pageTitle={t("title")}
+        pageDescription={t("description")}
       />
 
       <div className="flex flex-col gap-20 lg:flex-row-reverse lg:justify-between">

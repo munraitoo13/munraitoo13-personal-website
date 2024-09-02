@@ -3,8 +3,11 @@
 import { IconFile } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function ContactAndResume() {
+  const t = useTranslations("HomePage");
+
   return (
     <motion.div
       className="mt-10 flex gap-5"
@@ -16,12 +19,12 @@ export default function ContactAndResume() {
         className="flex items-center rounded-full bg-red-600 px-5 py-3 text-white"
         href="/personal/contact"
       >
-        Contact me
+        {t("contact")}
       </Link>
 
       <Link className="flex items-center gap-1" href="#">
         <IconFile stroke={1.25} />
-        RESUME
+        {t("resume")}
       </Link>
     </motion.div>
   );

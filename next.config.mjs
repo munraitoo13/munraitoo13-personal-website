@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
+
 import nextMDX from "@next/mdx";
 import remarkSlug from "remark-slug";
+import createNextIntlPlugin from "next-intl/plugin";
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
@@ -10,11 +12,11 @@ const withMDX = nextMDX({
   },
 });
 
-const nextConfig = {
-  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+const withIntl = createNextIntlPlugin();
 
-  // strict mode is double checking some hooks and other things
+const nextConfig = {
   reactStrictMode: true,
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
 };
 
-export default withMDX(nextConfig);
+export default withMDX(withIntl(nextConfig));

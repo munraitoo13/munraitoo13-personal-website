@@ -6,8 +6,11 @@ import {
   IconStars,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function Qualities() {
+  const t = useTranslations("HomePage");
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -50 }}
@@ -28,14 +31,11 @@ export default function Qualities() {
           />
 
           <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900/25 py-2 pl-10 font-bold text-white">
-            Communicative
+            {t("quality1")}
           </h3>
         </div>
 
-        <p className="p-3">
-          I can communicate clearly. A must-have quality that enhances the
-          entire team working experience.
-        </p>
+        <p className="p-3">{t("quality1desc")}</p>
       </div>
 
       {/* competent */}
@@ -48,14 +48,11 @@ export default function Qualities() {
           />
 
           <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900/25 py-2 pl-10 font-bold text-white">
-            Competent
+            {t("quality2")}
           </h3>
         </div>
 
-        <p className="p-3">
-          I'm dedicated. Another must-have trait that significantly enhances the
-          overall working experience.
-        </p>
+        <p className="p-3">{t("quality2desc")}</p>
       </div>
 
       {/* detail-oriented */}
@@ -68,14 +65,11 @@ export default function Qualities() {
           />
 
           <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900/25 py-2 pl-10 font-bold text-white">
-            Detail-oriented
+            {t("quality3")}
           </h3>
         </div>
 
-        <p className="p-3">
-          I have good coding and security practises. A very important quality
-          that ensures the success of the final product.
-        </p>
+        <p className="p-3">{t("quality3desc")}</p>
       </div>
     </motion.div>
   );

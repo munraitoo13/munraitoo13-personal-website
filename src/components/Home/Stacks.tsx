@@ -11,15 +11,17 @@ import {
   IconBrandMongodb,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function Stacks() {
+  const t = useTranslations("HomePage");
   return (
     <motion.div
       className="flex flex-col gap-1"
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
     >
-      <span>My Stacks & Tools</span>
+      <span>{t("stacks")} </span>
 
       <div className="flex items-center gap-2">
         <IconBrandTypescript
