@@ -5,8 +5,8 @@ import { Metadata } from "next";
 import Content from "./content.mdx";
 
 export const metadata: Metadata = {
-  title: "Skills & Tools | munraitoo13",
-  description: "munraitoo13's skills & tools.",
+  title: "Skills and Tools | munraitoo13",
+  description: "munraitoo13's skills and tools.",
 };
 
 export default function Page() {
