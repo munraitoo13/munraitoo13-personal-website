@@ -1,28 +1,33 @@
 import { cookies } from "next/headers";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 
-// jwt secret
-const secretKey = process.env.JWT_SECRET;
-if (!secretKey) {
+const jwtSecret = process.env.JWT_SECRET;
+if (!jwtSecret) {
   throw new Error("JWT_SECRET is not defined");
 }
 
-// jwt secret key
-const key = new TextEncoder().encode(secretKey);
+const key = new TextEncoder().encode(jwtSecret);
 
-export async function middleware(req: Request) {
+export async function middleware(req: NextRequest, res: NextResponse) {
   const token = cookies().get("token")?.value;
-
   if (!token) {
-    return NextResponse.redirect(new URL("/", req.url));
+    return NextResponse.redirect(new URL("/login", req.url));
   }
 
+  if (!/^[A-Za-z0-9-_=]+\.[A-Za-z0-9-_=]+\.?[A-Za-z0-9-_.+/=]*$/.test(token)) {
+    return NextResponse.redirect(new URL("/login", req.url));
+  }
+
+  const session = await jwtVerify(token, key);
   try {
-    await jwtVerify(token, key);
-    return NextResponse.next();
-  } catch (err) {
-    return NextResponse.redirect(new URL("/", req.url));
+    if (!session) {
+      return NextResponse.redirect(new URL("/login", req.url));
+    } else {
+      return NextResponse.next();
+    }
+  } catch (error) {
+    return NextResponse.redirect(new URL("/login", req.url));
   }
 }
 

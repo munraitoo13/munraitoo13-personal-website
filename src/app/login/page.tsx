@@ -1,34 +1,36 @@
-import { login } from "@/lib/auth/auth";
+import { login } from "@/actions/actions";
 
 export default function Login() {
   return (
     <div className="flex h-screen items-center justify-center">
-      <div className="flex h-1/2 min-h-64 flex-col items-center justify-center rounded-xl border border-red-600 bg-neutral-950 px-10">
-        <h2 className="text-2xl font-bold text-white">Login</h2>
+      <div className="flex flex-col items-center justify-center gap-10 rounded-xl border border-red-600 bg-neutral-950 p-10">
+        <div>
+          <h2 className="text-2xl font-bold text-white">Login</h2>
+          <p>Identify yourself, curious peasant.</p>
+        </div>
+
+        <hr className="w-full border-neutral-900" />
 
         {/* login form */}
         <form
-          className="mt-5 flex flex-col items-center justify-center gap-3"
-          action={async (formData) => {
-            "use server";
-            await login(formData);
-          }}
+          className="flex flex-col items-center justify-center gap-3"
+          action={login}
         >
           <input
             type="email"
             name="email"
             placeholder="Email"
-            className="rounded-full px-5 py-2 text-center"
+            className="rounded-full bg-neutral-900/25 px-5 py-3"
           />
 
           <input
             type="password"
             name="password"
             placeholder="Password"
-            className="rounded-full px-5 py-2 text-center"
+            className="rounded-full bg-neutral-900/25 px-5 py-3"
           />
 
-          <button className="rounded-full bg-red-600 px-5 py-2 text-white">
+          <button className="w-full rounded-full bg-red-600 px-5 py-3 font-bold text-white">
             Login
           </button>
         </form>

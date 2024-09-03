@@ -2,7 +2,10 @@
 
 import { prisma } from "@/lib/prisma";
 import { options, transporter } from "@/lib/nodemailer";
+import argon2id from "argon2";
+import { encrypt } from "@/lib/encrypt";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 // create post
 export async function createPost(formData: FormData) {
@@ -85,5 +88,33 @@ export async function sendMail(formData: FormData) {
     });
   } catch (error) {
     console.error("Error sending email", error);
+  }
+}
+
+// login
+export async function login(formData: FormData) {
+  const email = formData.get("email") as string;
+  const password = formData.get("password") as string;
+  if (!email || !password) {
+    console.log("Email and password are required");
+    return;
+  }
+
+  const user = await prisma.user.findUnique({ where: { email } });
+  if (!user) {
+    console.log("User not found");
+    return;
+  }
+
+  const checkPassword = await argon2id.verify(user!.password, password);
+  if (!checkPassword) {
+    console.log("Invalid password");
+    return;
+  } else {
+    const { id, name } = user!;
+    const token = await encrypt({ name, id });
+
+    cookies().set("token", token);
+    redirect("/admin");
   }
 }
