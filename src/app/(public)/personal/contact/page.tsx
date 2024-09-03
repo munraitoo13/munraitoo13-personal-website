@@ -1,16 +1,18 @@
 import Header from "@/components/Header";
 import Markdown from "@/components/Markdown";
 import { Metadata } from "next";
-import Content from "./content.mdx";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { getUserLocale } from "@/services/locale";
 
 export const metadata: Metadata = {
   title: "Contact | munraitoo13",
   description: "munraitoo13's contact.",
 };
 
-export default function Page() {
-  const t = useTranslations("Contact");
+export default async function Page() {
+  const t = await getTranslations("Contact");
+  const locale = await getUserLocale();
+  const Content = (await import(`./${locale}.mdx`)).default;
 
   return (
     <>

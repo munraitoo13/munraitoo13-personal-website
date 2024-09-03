@@ -2,16 +2,18 @@ import Header from "@/components/Header";
 import Markdown from "@/components/Markdown";
 import Contents from "@/components/TableOfContents";
 import { Metadata } from "next";
-import Content from "./content.mdx";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { getUserLocale } from "@/services/locale";
 
 export const metadata: Metadata = {
   title: "Skills and Tools | munraitoo13",
   description: "munraitoo13's skills and tools.",
 };
 
-export default function Page() {
-  const t = useTranslations("SkillsAndTools");
+export default async function Page() {
+  const t = await getTranslations("SkillsAndTools");
+  const locale = await getUserLocale();
+  const Content = (await import(`./${locale}.mdx`)).default;
 
   return (
     <>

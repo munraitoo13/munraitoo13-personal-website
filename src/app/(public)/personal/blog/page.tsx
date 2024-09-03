@@ -1,19 +1,19 @@
 import Header from "@/components/Header";
 import Markdown from "@/components/Markdown";
 import { Metadata } from "next";
-import { prisma } from "@/lib/prisma";
-import Content from "./content.mdx";
 import Posts from "@/components/Blog/Posts";
-import formatDate from "@/lib/formatDate";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { getUserLocale } from "@/services/locale";
 
 export const metadata: Metadata = {
   title: "Blog | munraitoo13",
   description: "munraitoo13's blog",
 };
 
-export default function Page() {
-  const t = useTranslations("Blog");
+export default async function Page() {
+  const locale = await getUserLocale();
+  const t = await getTranslations("Blog");
+  const Content = (await import(`./${locale}.mdx`)).default;
 
   return (
     <>
