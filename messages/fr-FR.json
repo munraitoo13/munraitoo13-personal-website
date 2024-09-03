@@ -1,0 +1,106 @@
+{
+  "HomePage": {
+    "greetings": "Ça va!",
+    "presentation": "Je m'appelle ",
+
+    "name": "Augusto",
+
+    "description": "Aussi connu sous le nom de munraitoo13, je suis un passionné",
+    "descriptionLocation": "du Brésil!",
+
+    "profession": "Ingénieur logiciel",
+
+    "quality1": "Communicatif",
+    "quality1desc": "Je peux communiquer clairement. Une qualité indispensable qui améliore l'expérience de travail en équipe.",
+
+    "quality2": "Compétent",
+    "quality2desc": "Je suis dévoué. Une autre qualité indispensable qui améliore considérablement l'expérience de travail globale.",
+
+    "quality3": "Axé sur les détails",
+    "quality3desc": "Je suis axé sur les détails. Cette qualité est essentielle pour un ingénieur logiciel, car elle garantit que le code est propre et efficace.",
+
+    "phraseThere": "Il y a",
+    "phraseNumber": "trois",
+    "phraseTo": "réponses à un produit :",
+    "phraseYesNo": "— oui, non et ",
+    "phraseWow": "WAOUH!",
+    "phraseDash": "—",
+    "phraseWowIs": "Waouh est",
+    "phraseThe": "ce que je vise.",
+
+    "stacks": "Mes Stacks & Outils",
+
+    "contact": "Contactez-moi",
+    "resume": "CV"
+  },
+
+  "NavBar": {
+    "professional": "/professionnel",
+    "experiences": "/expériences",
+    "skillsAndTools": "/compétences-et-outils",
+
+    "personal": "/personnel",
+    "blog": "/blog",
+    "projects": "/projets",
+    "contact": "/contact"
+  },
+
+  "Footer": {
+    "professional": "/professionnel",
+    "experiences": "/expériences",
+    "skillsAndTools": "/compétences-et-outils",
+
+    "personal": "/personnel",
+    "blog": "/blog",
+    "projects": "/projets",
+    "contact": "/contact",
+
+    "about": "À propos de moi",
+    "aboutPhrase": "Ça va! Je m'appelle Augusto. Aussi connu sous le nom de munraitoo13, je suis un ingénieur logiciel passionné du Brésil.",
+
+    "repo": "repo dev"
+  },
+
+  "SkillsAndTools": {
+    "category": "Professionnel",
+    "title": "Compétences et Outils",
+    "description": "Voici quelques-unes des compétences et des outils que j'ai acquis au fil des ans. Je cherche toujours à apprendre davantage et à améliorer mes compétences."
+  },
+
+  "Experiences": {
+    "category": "Professionnel",
+    "title": "Expériences",
+    "description": "Voici quelques-unes des expériences que j'ai vécues au fil des ans."
+  },
+
+  "Projects": {
+    "category": "Personnel",
+    "title": "Projets",
+    "description": "Voici quelques-uns des projets sur lesquels j'ai travaillé.",
+    "github": "Disponible sur GitHub!"
+  },
+
+  "Contact": {
+    "category": "Personnel",
+    "title": "Contact",
+    "description": "N'hésitez pas à me contacter si vous avez des questions ou si vous souhaitez collaborer.",
+    "name": "Nom",
+    "email": "E-mail",
+    "message": "Message",
+    "subject": "Objet",
+    "send": "Envoyer",
+    "sending": "Envoi...",
+    "cooldown": "Cooldown"
+  },
+
+  "Blog": {
+    "category": "Personnel",
+    "title": "Blog",
+    "description": "Voici quelques articles de blog que j'ai écrits.",
+    "check": "Regardez!"
+  },
+
+  "TableOfContents": {
+    "contents": "Sommaire"
+  }
+}

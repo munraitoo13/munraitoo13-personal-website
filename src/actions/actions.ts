@@ -2,6 +2,7 @@
 
 import { prisma } from "@/lib/prisma";
 import { options, transporter } from "@/lib/nodemailer";
+import { cookies } from "next/headers";
 
 // create post
 export async function createPost(formData: FormData) {

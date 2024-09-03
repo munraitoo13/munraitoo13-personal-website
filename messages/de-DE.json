@@ -1,0 +1,106 @@
+{
+  "HomePage": {
+    "greetings": "Was geht ab!",
+    "presentation": "Mein Name ist ",
+
+    "name": "Augusto",
+
+    "description": "Auch bekannt als munraitoo13, ich bin ein leidenschaftlicher",
+    "descriptionLocation": "aus Brasilien!",
+
+    "profession": "Softwareentwickler",
+
+    "quality1": "Kommunikativ",
+    "quality1desc": "Ich kann klar kommunizieren. Eine unverzichtbare Eigenschaft, die das gesamte Teamarbeitserlebnis verbessert.",
+
+    "quality2": "Kompetent",
+    "quality2desc": "Ich bin engagiert. Eine weitere unverzichtbare Eigenschaft, die das gesamte Arbeitserlebnis erheblich verbessert.",
+
+    "quality3": "Detailorientiert",
+    "quality3desc": "Ich bin detailorientiert. Diese Eigenschaft ist für einen Softwareentwickler unerlässlich, da sie sicherstellt, dass der Code sauber und effizient ist.",
+
+    "phraseThere": "Es gibt",
+    "phraseNumber": "drei",
+    "phraseTo": "Antworten auf ein Produkt:",
+    "phraseYesNo": "— ja, nein und ",
+    "phraseWow": "WOW!",
+    "phraseDash": "—",
+    "phraseWowIs": "Wow ist",
+    "phraseThe": "das, was ich anstrebe.",
+
+    "stacks": "Meine Stacks & Tools",
+
+    "contact": "Kontaktiere mich",
+    "resume": "LEBENSLAUF"
+  },
+
+  "NavBar": {
+    "professional": "/professional",
+    "experiences": "/erfahrungen",
+    "skillsAndTools": "/fähigkeiten-und-tools",
+
+    "personal": "/persönlich",
+    "blog": "/blog",
+    "projects": "/projekte",
+    "contact": "/kontakt"
+  },
+
+  "Footer": {
+    "professional": "/professional",
+    "experiences": "/erfahrungen",
+    "skillsAndTools": "/fähigkeiten-und-tools",
+
+    "personal": "/persönlich",
+    "blog": "/blog",
+    "projects": "/projekte",
+    "contact": "/kontakt",
+
+    "about": "Über mich",
+    "aboutPhrase": "Was geht ab! Mein Name ist Augusto. Auch bekannt als munraitoo13, ich bin ein leidenschaftlicher Softwareentwickler aus Brasilien.",
+
+    "repo": "Entwicklungs-Repo"
+  },
+
+  "SkillsAndTools": {
+    "category": "Beruflich",
+    "title": "Fähigkeiten und Tools",
+    "description": "Hier sind einige der Fähigkeiten und Tools, die ich im Laufe der Jahre erworben habe. Ich bin immer bestrebt, mehr zu lernen und meine Fähigkeiten zu verbessern."
+  },
+
+  "Experiences": {
+    "category": "Beruflich",
+    "title": "Erfahrungen",
+    "description": "Hier sind einige der Erfahrungen, die ich im Laufe der Jahre gemacht habe."
+  },
+
+  "Projects": {
+    "category": "Persönlich",
+    "title": "Projekte",
+    "description": "Hier sind einige der Projekte, an denen ich gearbeitet habe.",
+    "github": "Verfügbar auf GitHub!"
+  },
+
+  "Contact": {
+    "category": "Persönlich",
+    "title": "Kontakt",
+    "description": "Kontaktieren Sie mich gerne, wenn Sie Fragen haben oder zusammenarbeiten möchten.",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "subject": "Betreff",
+    "send": "Senden",
+    "sending": "Wird gesendet...",
+    "cooldown": "Cooldown"
+  },
+
+  "Blog": {
+    "category": "Persönlich",
+    "title": "Blog",
+    "description": "Hier sind einige der Blogposts, die ich geschrieben habe.",
+    "check": "Schau es dir an!"
+  },
+
+  "TableOfContents": {
+    "contents": "Inhalt"
+  }
+}

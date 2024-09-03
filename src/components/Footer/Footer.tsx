@@ -1,17 +1,10 @@
 import Link from "next/link";
 import Socials from "@/components/Navbar/Socials";
 import { useTranslations } from "next-intl";
+import LocaleChanger from "@/components/Footer/LocaleChanger";
 
 export default function Footer() {
   const t = useTranslations("Footer");
-
-  // languages
-  const languages = [
-    { name: "Português", value: "pt_BR" },
-    { name: "English", value: "en-US" },
-    { name: "Deutsch", value: "de_DE" },
-    { name: "François", value: "fr_FR" },
-  ];
 
   // professional links
   const professional = [
@@ -69,24 +62,7 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* language */}
-            <div className="self-center lg:self-auto">
-              <select
-                className="cursor-pointer rounded-full bg-neutral-900/25 px-5 py-2"
-                name="language"
-                id="langugage"
-              >
-                {languages.map((lang) => (
-                  <option
-                    className="bg-neutral-950 text-white"
-                    key={lang.value}
-                    value={lang.value}
-                  >
-                    {lang.name}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <LocaleChanger />
           </div>
 
           {/* about-me */}
