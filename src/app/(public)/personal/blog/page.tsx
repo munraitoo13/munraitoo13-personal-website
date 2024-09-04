@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Markdown from "@/components/Markdown";
 import { Metadata } from "next";
 import Posts from "@/components/Blog/Posts";
+import { prisma } from "@/lib/prisma";
 import { getTranslations } from "next-intl/server";
 import { getUserLocale } from "@/services/locale";
 
@@ -11,6 +12,15 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
+  const allPosts = await prisma.post.findMany({
+    where: {
+      published: true,
+    },
+    include: {
+      tags: true,
+    },
+  });
+
   const locale = await getUserLocale();
   const t = await getTranslations("Blog");
   const Content = (await import(`./${locale}.mdx`)).default;
@@ -28,7 +38,7 @@ export default async function Page() {
           <Content />
         </Markdown>
 
-        <Posts />
+        <Posts allPosts={allPosts} />
       </div>
     </>
   );

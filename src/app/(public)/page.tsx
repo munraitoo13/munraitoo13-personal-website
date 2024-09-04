@@ -10,7 +10,9 @@ export const metadata: Metadata = {
   description: "munraitoo13's personal website home page.",
 };
 
-export default function Page() {
+export default async function Page() {
+  await wait(2000);
+
   return (
     <>
       {/* header */}
@@ -34,4 +36,8 @@ export default function Page() {
       <Phrase />
     </>
   );
+}
+
+export async function wait(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }

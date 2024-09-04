@@ -6,7 +6,6 @@ const jwtSecret = process.env.JWT_SECRET;
 if (!jwtSecret) {
   throw new Error("JWT_SECRET is not defined");
 }
-
 const key = new TextEncoder().encode(jwtSecret);
 
 export async function middleware(req: NextRequest, res: NextResponse) {
@@ -20,11 +19,12 @@ export async function middleware(req: NextRequest, res: NextResponse) {
   }
 
   const session = await jwtVerify(token, key);
+
   try {
-    if (!session) {
-      return NextResponse.redirect(new URL("/login", req.url));
-    } else {
+    if (session) {
       return NextResponse.next();
+    } else {
+      return NextResponse.redirect(new URL("/login", req.url));
     }
   } catch (error) {
     return NextResponse.redirect(new URL("/login", req.url));

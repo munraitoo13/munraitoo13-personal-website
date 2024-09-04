@@ -16,30 +16,24 @@ type Post = {
   title: string;
   description: string;
   language: string;
-  createdAt: string;
+  createdAt: Date;
   tags: Tag[];
 };
 
 // SinglePost component
-export default function Posts() {
+export default async function Posts({ allPosts }: { allPosts: Post[] }) {
   const t = useTranslations("Blog");
-  const [posts, setPosts] = useState<Post[]>([]);
-
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  async function fetchPosts() {
-    const res = await fetch("/api/posts");
-    setPosts(await res.json());
-  }
 
   return (
-    <div className="flex flex-col gap-5">
-      {posts.map((post) => (
+    <motion.div
+      initial={{ x: -50, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ delay: 0.4 }}
+      className="flex flex-col gap-5"
+    >
+      {allPosts.map((post) => (
         <motion.a
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 1, x: 0 }}
           whileHover={{ x: 5 }}
           className="flex flex-col gap-10 rounded-xl bg-neutral-900/25 p-10"
           href={`/personal/blog/posts/${post.id}`}
@@ -84,6 +78,6 @@ export default function Posts() {
           </div>
         </motion.a>
       ))}
-    </div>
+    </motion.div>
   );
 }
