@@ -1,14 +1,12 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { MotionH1, MotionP } from "@/components/Motion";
 import { useTranslations } from "next-intl";
 
 export default function Presentation() {
-  const t = useTranslations("HomePage");
+  const t = useTranslations("Projects");
 
   return (
     <div className="flex flex-col gap-5">
-      <motion.h1
+      <MotionH1
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         className="text-6xl font-bold text-white"
@@ -17,9 +15,9 @@ export default function Presentation() {
         <br />
         {t("presentation")}
         <span className="text-red-600">{t("name")}</span>.
-      </motion.h1>
+      </MotionH1>
 
-      <motion.p
+      <MotionP
         initial={{ opacity: 0, x: -50 }}
         animate={{
           opacity: 1,
@@ -31,7 +29,7 @@ export default function Presentation() {
         <span>{t("description")}</span>
         <b> {t("profession")} </b>
         <span>{t("descriptionLocation")}</span>
-      </motion.p>
+      </MotionP>
     </div>
   );
 }

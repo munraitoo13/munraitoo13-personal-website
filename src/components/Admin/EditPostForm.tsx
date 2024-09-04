@@ -1,5 +1,3 @@
-"use server";
-
 import { prisma } from "@/lib/prisma";
 import { updatePost } from "@/actions/actions";
 
@@ -15,7 +13,6 @@ const languages = [
 
 export default async function EditPostForm({ params }: { params: string }) {
   const allTags = await prisma.tag.findMany();
-
   const post = await prisma.post.findUnique({
     where: {
       id: params,

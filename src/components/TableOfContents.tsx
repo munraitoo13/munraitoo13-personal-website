@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { MotionDiv, MotionNav } from "@/components/Motion";
 
 interface Headings {
   id: string;
@@ -34,7 +34,7 @@ export default function TableOfContents() {
   }, []);
 
   return (
-    <motion.nav
+    <MotionNav
       className="flex h-fit w-full flex-col gap-5 text-nowrap rounded-xl border border-red-600 p-10 lg:w-fit"
       initial={{ x: 50, opacity: 0 }}
       animate={{ x: 0, opacity: 1, transition: { delay: 0.3 } }}
@@ -44,17 +44,17 @@ export default function TableOfContents() {
       <div className="flex flex-col gap-3">
         {headings.map((heading) => {
           return (
-            <motion.div whileHover={{ x: 5 }}>
+            <MotionDiv whileHover={{ x: 5 }}>
               <Link
                 className={`${heading.headingLevel === "H2" ? "font-medium text-white" : "ml-3 text-inherit hover:opacity-100"} hover:text-red-600`}
                 href={`#${heading.id}`}
               >
                 {heading.text}
               </Link>
-            </motion.div>
+            </MotionDiv>
           );
         })}
       </div>
-    </motion.nav>
+    </MotionNav>
   );
 }

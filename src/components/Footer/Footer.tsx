@@ -28,7 +28,7 @@ export default function Footer() {
           <div className="flex flex-col gap-10 lg:flex-row">
             {/* personal */}
             <div className="flex flex-col items-center gap-3">
-              <p className="w-fit rounded-full bg-neutral-900/25 px-5 py-2">
+              <p className="w-fit text-nowrap rounded-full bg-neutral-900/25 px-5 py-2">
                 {t("personal")}
               </p>
 
@@ -46,7 +46,7 @@ export default function Footer() {
 
             {/* professional */}
             <div className="flex flex-col items-center gap-3">
-              <p className="w-fit rounded-full bg-neutral-900/25 px-5 py-2">
+              <p className="w-fit text-nowrap rounded-full bg-neutral-900/25 px-5 py-2">
                 {t("professional")}
               </p>
 

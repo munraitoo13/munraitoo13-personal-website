@@ -1,9 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { IconBrandGithubFilled } from "@tabler/icons-react";
-import { useEffect, useState } from "react";
+import { MotionDiv, MotionA } from "@/components/Motion";
+import { useTranslations } from "next-intl";
 
 type Repos = {
   id: number;
@@ -17,14 +14,14 @@ export default function Project({ repos }: { repos: Repos[] }) {
   const t = useTranslations("Projects");
 
   return (
-    <motion.div
+    <MotionDiv
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ delay: 0.4 }}
       className="grid gap-5 lg:grid-cols-2"
     >
       {repos.map((repo) => (
-        <motion.a
+        <MotionA
           initial={{ opacity: 1, x: 0 }}
           whileHover={{ x: 5 }}
           className="flex flex-col justify-between gap-10 rounded-xl bg-neutral-900/25 p-10"
@@ -49,8 +46,8 @@ export default function Project({ repos }: { repos: Repos[] }) {
             <IconBrandGithubFilled />
             {t("github")}
           </div>
-        </motion.a>
+        </MotionA>
       ))}
-    </motion.div>
+    </MotionDiv>
   );
 }

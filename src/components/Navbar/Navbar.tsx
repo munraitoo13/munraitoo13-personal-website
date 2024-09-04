@@ -4,8 +4,8 @@ import Logo from "@/components/Navbar/Logo";
 import NavItems from "@/components/Navbar/NavItems";
 import Socials from "@/components/Navbar/Socials";
 import { IconMenu2, IconX } from "@tabler/icons-react";
-import { motion } from "framer-motion";
 import { useState } from "react";
+import { MotionDiv } from "@/components/Motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +48,7 @@ export default function Navbar() {
       {/* dropdown mobile */}
       {isOpen && (
         <div className="mt-5 flex w-full flex-col lg:hidden">
-          <motion.div
+          <MotionDiv
             onClick={() => setIsOpen(!isOpen)}
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export default function Navbar() {
 
             {/* socials */}
             <Socials />
-          </motion.div>
+          </MotionDiv>
         </div>
       )}
     </nav>

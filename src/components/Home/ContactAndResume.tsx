@@ -1,15 +1,13 @@
-"use client";
-
 import { IconFile } from "@tabler/icons-react";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import { MotionDiv } from "@/components/Motion";
 import { useTranslations } from "next-intl";
 
 export default function ContactAndResume() {
-  const t = useTranslations("HomePage");
+  const t = useTranslations("Projects");
 
   return (
-    <motion.div
+    <MotionDiv
       className="mt-10 flex gap-5"
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
@@ -26,6 +24,6 @@ export default function ContactAndResume() {
         <IconFile stroke={1.25} />
         {t("resume")}
       </Link>
-    </motion.div>
+    </MotionDiv>
   );
 }

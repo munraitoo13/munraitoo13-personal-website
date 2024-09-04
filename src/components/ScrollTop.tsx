@@ -2,16 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { IconArrowMoveUp } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/Motion";
 
 export default function ScrollTop() {
-  // button visibility
   const [isVisible, setIsVisible] = useState(false);
 
-  // function to check if the user has scrolled down the page
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
+      if (window.scrollY > 250) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -19,13 +17,8 @@ export default function ScrollTop() {
     });
   }, []);
 
-  // scroll to top if page realod
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <motion.div
+    <MotionDiv
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.25 }}
@@ -40,6 +33,6 @@ export default function ScrollTop() {
         }}
         className="box-content cursor-pointer rounded-full bg-red-600 p-2"
       />
-    </motion.div>
+    </MotionDiv>
   );
 }

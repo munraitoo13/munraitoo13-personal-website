@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { MotionH1, MotionP } from "@/components/Motion";
 
 export default function Header({
   pageTitle,
@@ -15,32 +13,32 @@ export default function Header({
     <header className="flex w-full flex-col justify-center gap-5 pt-48">
       <div>
         {/* red above title */}
-        <motion.p
+        <MotionP
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           className="text-lg font-bold text-red-600"
         >
           {category}
-        </motion.p>
+        </MotionP>
 
         {/* title */}
-        <motion.h1
+        <MotionH1
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1, transition: { delay: 0.1 } }}
           className="text-6xl font-bold text-white"
         >
           {pageTitle}
-        </motion.h1>
+        </MotionH1>
       </div>
 
       {/* description */}
-      <motion.p
+      <MotionP
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1, transition: { delay: 0.2 } }}
         className="text-lg"
       >
         {pageDescription}
-      </motion.p>
+      </MotionP>
     </header>
   );
 }

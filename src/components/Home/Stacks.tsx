@@ -1,5 +1,3 @@
-"use client";
-
 import {
   IconBrandTypescript,
   IconBrandReact,
@@ -10,13 +8,14 @@ import {
   IconBrandNodejs,
   IconBrandMongodb,
 } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/Motion";
 import { useTranslations } from "next-intl";
 
 export default function Stacks() {
-  const t = useTranslations("HomePage");
+  const t = useTranslations("Projects");
+
   return (
-    <motion.div
+    <MotionDiv
       className="flex flex-col gap-1"
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
@@ -63,6 +62,6 @@ export default function Stacks() {
           className="hover:cursor-pointer hover:opacity-75"
         />
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 }

@@ -1,13 +1,11 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { MotionBlockquote } from "@/components/Motion";
 import { useTranslations } from "next-intl";
 
 export default function Phrase() {
-  const t = useTranslations("HomePage");
+  const t = useTranslations("Projects");
 
   return (
-    <motion.blockquote
+    <MotionBlockquote
       className="flex w-full flex-col gap-1 text-center text-2xl"
       initial={{ opacity: 0, x: -50 }}
       animate={{
@@ -19,7 +17,8 @@ export default function Phrase() {
       <div className="flex justify-center">
         <span>
           {t("phraseThere")}{" "}
-          <span className="italic">{t("phraseNumber")} </span> {t("phraseTo")}
+          <span className="italic">{t("phraseNumber")} </span>
+          {t("phraseTo")}
         </span>
       </div>
 
@@ -35,6 +34,6 @@ export default function Phrase() {
           {t("phraseThe")}
         </span>
       </div>
-    </motion.blockquote>
+    </MotionBlockquote>
   );
 }

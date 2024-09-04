@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "munraitoo13's personal website home page.",
 };
 
-export default async function Page() {
+export default function Page() {
   return (
     <>
       {/* header */}

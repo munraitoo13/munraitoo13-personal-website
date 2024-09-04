@@ -1,18 +1,16 @@
-"use client";
-
 import {
   IconBrandHipchat,
   IconBriefcase2,
   IconStars,
 } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/Motion";
 import { useTranslations } from "next-intl";
 
 export default function Qualities() {
-  const t = useTranslations("HomePage");
+  const t = useTranslations("Projects");
 
   return (
-    <motion.div
+    <MotionDiv
       initial={{ opacity: 0, x: -50 }}
       animate={{
         opacity: 1,
@@ -71,6 +69,6 @@ export default function Qualities() {
 
         <p className="p-3">{t("quality3desc")}</p>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 }
