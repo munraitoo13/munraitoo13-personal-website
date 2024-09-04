@@ -13,30 +13,24 @@ type Repos = {
   html_url: string;
 };
 
-export default function Project() {
+export default function Project({ repos }: { repos: Repos[] }) {
   const t = useTranslations("Projects");
-  const [repos, setRepos] = useState<Repos[]>([]);
-
-  useEffect(() => {
-    fetchRepos();
-  });
-
-  async function fetchRepos() {
-    const res = await fetch("https://api.github.com/users/munraitoo13/repos");
-    setRepos(await res.json());
-  }
 
   return (
-    <div className="grid gap-5 lg:grid-cols-2">
+    <motion.div
+      initial={{ x: -50, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ delay: 0.4 }}
+      className="grid gap-5 lg:grid-cols-2"
+    >
       {repos.map((repo) => (
         <motion.a
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 1, x: 0 }}
+          whileHover={{ x: 5 }}
           className="flex flex-col justify-between gap-10 rounded-xl bg-neutral-900/25 p-10"
           href={repo.html_url}
           key={repo.id}
           target="_blank"
-          whileHover={{ x: 5 }}
         >
           {/* project */}
           <div className="flex flex-col gap-3">
@@ -57,6 +51,6 @@ export default function Project() {
           </div>
         </motion.a>
       ))}
-    </div>
+    </motion.div>
   );
 }

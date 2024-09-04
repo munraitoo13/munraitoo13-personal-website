@@ -11,6 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
+  const repos = await fetch(
+    "https://api.github.com/users/munraitoo13/repos",
+  ).then((res) => res.json());
+
   const t = await getTranslations("Projects");
   const locale = await getUserLocale();
   const Content = (await import(`./${locale}.mdx`)).default;
@@ -27,7 +31,8 @@ export default async function Page() {
         <Markdown>
           <Content />
         </Markdown>
-        <Projects />
+
+        <Projects repos={repos} />
       </div>
     </>
   );
