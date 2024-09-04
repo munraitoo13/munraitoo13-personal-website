@@ -11,8 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  await wait(2000);
-
   return (
     <>
       {/* header */}
@@ -36,8 +34,4 @@ export default async function Page() {
       <Phrase />
     </>
   );
-}
-
-export async function wait(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
 }

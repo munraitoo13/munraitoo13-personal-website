@@ -1,8 +1,6 @@
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import ScrollTop from "@/components/ScrollTop";
-import Spinner from "@/components/Spinner";
-import { Suspense } from "react";
 import "../globals.css";
 
 export default function PublicLayout({

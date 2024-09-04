@@ -1,9 +1,6 @@
-"use client";
-
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { IconGhost2Filled } from "@tabler/icons-react";
-import { useEffect, useState } from "react";
 import formatDate from "@/lib/formatDate";
 
 type Tag = {
@@ -22,7 +19,7 @@ type Post = {
 
 // SinglePost component
 export default async function Posts({ allPosts }: { allPosts: Post[] }) {
-  const t = useTranslations("Blog");
+  const t = await getTranslations("Blog");
 
   return (
     <motion.div
@@ -37,6 +34,7 @@ export default async function Posts({ allPosts }: { allPosts: Post[] }) {
           whileHover={{ x: 5 }}
           className="flex flex-col gap-10 rounded-xl bg-neutral-900/25 p-10"
           href={`/personal/blog/posts/${post.id}`}
+          key={post.id}
         >
           {/* post itself */}
           <div className="flex flex-col gap-3">
