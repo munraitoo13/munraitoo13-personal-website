@@ -2,7 +2,7 @@ import { MotionH1, MotionP } from "@/components/Motion";
 import { useTranslations } from "next-intl";
 
 export default function Presentation() {
-  const t = useTranslations("Projects");
+  const t = useTranslations("HomePage");
 
   return (
     <div className="flex flex-col gap-5">

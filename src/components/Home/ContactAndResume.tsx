@@ -4,7 +4,7 @@ import { MotionDiv } from "@/components/Motion";
 import { useTranslations } from "next-intl";
 
 export default function ContactAndResume() {
-  const t = useTranslations("Projects");
+  const t = useTranslations("HomePage");
 
   return (
     <MotionDiv

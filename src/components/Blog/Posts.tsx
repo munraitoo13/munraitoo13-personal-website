@@ -18,7 +18,7 @@ type Post = {
 };
 
 export default function Posts({ allPosts }: { allPosts: Post[] }) {
-  const t = useTranslations("Projects");
+  const t = useTranslations("Blog");
 
   return (
     <MotionDiv
