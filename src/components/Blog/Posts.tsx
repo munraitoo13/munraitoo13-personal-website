@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { IconMoodSmileBeam } from "@tabler/icons-react";
+import { IconDeviceMobileExclamation } from "@tabler/icons-react";
 import formatDate from "@/lib/formatDate";
 import { MotionA, MotionDiv } from "@/components/Motion";
 
@@ -31,7 +31,7 @@ export default function Posts({ allPosts }: { allPosts: Post[] }) {
         <MotionA
           initial={{ opacity: 1, x: 0 }}
           whileHover={{ x: 5 }}
-          className="flex flex-col gap-10 rounded-xl bg-neutral-50 p-10"
+          className="flex flex-col gap-10 rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25"
           href={`/personal/blog/posts/${post.id}`}
           key={post.id}
         >
@@ -44,7 +44,7 @@ export default function Posts({ allPosts }: { allPosts: Post[] }) {
             </div>
 
             {/* title */}
-            <h2 className="text-4xl font-extrabold text-neutral-900">
+            <h2 className="text-4xl font-extrabold text-neutral-900 dark:text-white">
               {post.title}
             </h2>
 
@@ -56,7 +56,7 @@ export default function Posts({ allPosts }: { allPosts: Post[] }) {
               {post.tags.map((tag: Tag) => (
                 <span
                   key={tag.id}
-                  className="rounded-full bg-neutral-100 px-3 py-1"
+                  className="rounded-full bg-neutral-100 px-3 py-1 dark:bg-neutral-900/25"
                 >
                   {tag.name}
                 </span>
@@ -67,8 +67,8 @@ export default function Posts({ allPosts }: { allPosts: Post[] }) {
           {/* check it and lang */}
           <div className="flex items-center gap-5">
             {/* check it */}
-            <div className="flex w-fit items-center gap-1 rounded-full bg-neutral-100 px-5 py-3 text-neutral-900">
-              <IconMoodSmileBeam stroke={1.25} />
+            <div className="flex w-fit items-center gap-1 rounded-full bg-neutral-100 px-5 py-3 dark:bg-neutral-900/25">
+              <IconDeviceMobileExclamation stroke={1.25} />
               {t("check")}
             </div>
 

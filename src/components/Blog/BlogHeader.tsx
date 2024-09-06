@@ -20,7 +20,7 @@ export default function BlogHeader({
       <MotionH1
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        className="text-6xl font-extrabold text-neutral-900"
+        className="text-6xl font-extrabold text-neutral-900 dark:text-white"
       >
         {title}
       </MotionH1>

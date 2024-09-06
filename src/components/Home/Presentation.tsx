@@ -9,7 +9,7 @@ export default function Presentation() {
       <MotionH1
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
-        className="text-6xl font-extrabold text-neutral-900"
+        className="text-6xl font-extrabold text-neutral-900 dark:text-white"
       >
         {t("greetings")}
         <br />
@@ -27,7 +27,7 @@ export default function Presentation() {
         className="text-lg"
       >
         <span>{t("description")} </span>
-        <span className="font-extrabold text-neutral-900">
+        <span className="font-extrabold text-neutral-900 dark:text-white">
           {t("profession")}
         </span>
         <span> {t("descriptionLocation")}</span>

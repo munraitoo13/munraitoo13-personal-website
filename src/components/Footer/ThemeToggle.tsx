@@ -26,7 +26,7 @@ export default function ThemeToggle() {
         <IconSun
           stroke={1.25}
           onClick={() => setIsDark(false)}
-          className="cursor-pointer text-neutral-300 hover:text-neutral-900"
+          className="cursor-pointer text-neutral-700 hover:text-white"
         />
       ) : (
         <IconMoon

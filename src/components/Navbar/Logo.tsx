@@ -5,7 +5,7 @@ export default function Logo() {
     <Link href="/" className="text-nowrap">
       <span className="text-red-600">&lt;</span>
 
-      <span className="text-neutral-900">munraitoo13</span>
+      <span className="text-neutral-900 dark:text-white">munraitoo13</span>
 
       <span className="text-red-600"> /&gt;</span>
     </Link>

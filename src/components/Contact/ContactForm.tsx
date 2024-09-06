@@ -34,7 +34,7 @@ export default function ContactForm() {
         type="text"
         id="name"
         name="name"
-        className="rounded-xl bg-neutral-50 p-5"
+        className="rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
         placeholder={t("name")}
         maxLength={64}
       />
@@ -44,7 +44,7 @@ export default function ContactForm() {
         type="email"
         id="email"
         name="email"
-        className="rounded-xl bg-neutral-50 p-5"
+        className="rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
         placeholder={t("email")}
         maxLength={255}
       />
@@ -54,7 +54,7 @@ export default function ContactForm() {
         type="text"
         id="subject"
         name="subject"
-        className="rounded-xl bg-neutral-50 p-5"
+        className="rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
         placeholder={t("subject")}
         maxLength={64}
       />
@@ -63,13 +63,13 @@ export default function ContactForm() {
         required
         id="message"
         name="message"
-        className="h-48 resize-none rounded-xl bg-neutral-50 p-5"
+        className="h-48 resize-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
         placeholder={t("message")}
       />
 
       <button
         type="submit"
-        className={`w-fit rounded-full ${isSending ? "bg-neutral-100" : isCooldown ? "bg-neutral-100" : "bg-red-600"} px-5 py-3 text-white`}
+        className={`w-fit rounded-full ${isSending ? "bg-neutral-100 text-neutral-300 dark:bg-neutral-900/25 dark:text-neutral-700" : isCooldown ? "bg-neutral-100 text-neutral-300 dark:bg-neutral-900/25 dark:text-neutral-700" : "bg-red-600"} px-5 py-3 text-white`}
         disabled={isSending || isCooldown}
       >
         {isSending ? t("sending") : isCooldown ? t("cooldown") : t("send")}

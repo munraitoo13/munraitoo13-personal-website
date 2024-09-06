@@ -13,13 +13,11 @@ export default function Navbar() {
   return (
     <nav className="fixed z-50 mt-5 flex w-full flex-col items-center px-10">
       {/* navbar */}
-      <div className="mx-10 flex h-20 w-full max-w-screen-xl items-center justify-between gap-10 rounded-xl bg-neutral-50/50 p-5 backdrop-blur-xl">
+      <div className="mx-10 flex h-20 w-full max-w-screen-xl items-center justify-between gap-10 rounded-xl bg-neutral-50/50 p-5 backdrop-blur-xl dark:bg-neutral-950/50">
         {/* logo and links */}
         <div className="flex items-center gap-10">
           {/* logo */}
-          <div>
-            <Logo />
-          </div>
+          <Logo />
 
           {/* links lg */}
           <div className="hidden text-nowrap lg:flex">
@@ -47,7 +45,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col items-center gap-5 rounded-xl bg-neutral-50/50 p-5 backdrop-blur-xl"
+            className="flex flex-col items-center gap-5 rounded-xl bg-neutral-50/50 p-5 backdrop-blur-xl dark:bg-neutral-950/50"
           >
             {/* links */}
             <NavItems />

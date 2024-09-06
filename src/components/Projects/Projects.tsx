@@ -24,7 +24,7 @@ export default function Project({ repos }: { repos: Repos[] }) {
         <MotionA
           initial={{ opacity: 1, x: 0 }}
           whileHover={{ x: 5 }}
-          className="flex flex-col justify-between gap-10 rounded-xl bg-neutral-50 p-10"
+          className="flex flex-col justify-between gap-10 rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25"
           href={repo.html_url}
           key={repo.id}
           target="_blank"
@@ -35,7 +35,7 @@ export default function Project({ repos }: { repos: Repos[] }) {
             <p className="text-xs font-bold text-red-600">{repo.full_name}</p>
 
             {/* project title */}
-            <p className="text-4xl font-extrabold text-neutral-900">
+            <p className="text-4xl font-extrabold text-neutral-900 dark:text-white">
               {repo.name}
             </p>
 
@@ -44,7 +44,7 @@ export default function Project({ repos }: { repos: Repos[] }) {
           </div>
 
           {/* github availability */}
-          <div className="flex w-fit items-center gap-3 rounded-full bg-neutral-100 px-5 py-3">
+          <div className="flex w-fit items-center gap-3 rounded-full bg-neutral-100 px-5 py-3 dark:bg-neutral-900/25">
             <IconBrandGithub stroke={1.25} />
             {t("github")}
           </div>
