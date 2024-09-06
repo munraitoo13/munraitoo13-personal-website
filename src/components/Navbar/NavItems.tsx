@@ -21,7 +21,7 @@ export default function NavItems() {
     <div className="flex flex-col gap-5 lg:flex-row">
       {/* professional */}
       <div className="flex flex-col items-center gap-3 lg:flex-row">
-        <p className="rounded-full bg-neutral-900/25 px-5 py-2">
+        <p className="rounded-full bg-neutral-100 px-5 py-2">
           {t("professional")}
         </p>
 
@@ -30,7 +30,7 @@ export default function NavItems() {
           <Link
             key={item.name}
             href={item.href}
-            className="text-white hover:text-red-600"
+            className="text-neutral-900 hover:text-red-600"
           >
             {item.name}
           </Link>
@@ -39,16 +39,14 @@ export default function NavItems() {
 
       {/* personal */}
       <div className="flex flex-col items-center gap-3 lg:flex-row">
-        <p className="rounded-full bg-neutral-900/25 px-5 py-2">
-          {t("personal")}
-        </p>
+        <p className="rounded-full bg-neutral-100 px-5 py-2">{t("personal")}</p>
 
         {/* links */}
         {personal.map((item) => (
           <Link
             key={item.name}
             href={item.href}
-            className="text-white hover:text-red-600"
+            className="text-neutral-900 hover:text-red-600"
           >
             {item.name}
           </Link>

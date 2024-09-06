@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
@@ -23,9 +23,17 @@ export default function ThemeToggle() {
   return (
     <>
       {isDark ? (
-        <IconSun onClick={() => setIsDark(false)} className="cursor-pointer" />
+        <IconSun
+          stroke={1.25}
+          onClick={() => setIsDark(false)}
+          className="cursor-pointer text-neutral-300 hover:text-neutral-900"
+        />
       ) : (
-        <IconMoon onClick={() => setIsDark(true)} className="cursor-pointer" />
+        <IconMoon
+          stroke={1.25}
+          onClick={() => setIsDark(true)}
+          className="cursor-pointer text-neutral-300 hover:text-neutral-900"
+        />
       )}
     </>
   );

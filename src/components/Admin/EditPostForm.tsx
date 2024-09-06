@@ -31,7 +31,7 @@ export default async function EditPostForm({ params }: { params: string }) {
     >
       {/* id */}
       <input
-        className="rounded-xl bg-neutral-900/25 px-5 py-3"
+        className="rounded-xl bg-neutral-50 px-5 py-3"
         type="hidden"
         name="id"
         value={id}
@@ -41,7 +41,7 @@ export default async function EditPostForm({ params }: { params: string }) {
       <input
         name="title"
         placeholder="Title"
-        className="w-full resize-none rounded-xl bg-neutral-900/25 p-5"
+        className="w-full resize-none rounded-xl bg-neutral-50 p-5"
         maxLength={64}
         defaultValue={title}
       />
@@ -51,7 +51,7 @@ export default async function EditPostForm({ params }: { params: string }) {
         {/* language */}
         <select
           name="language"
-          className="cursor-pointer rounded-xl bg-neutral-900/25 px-5"
+          className="cursor-pointer rounded-xl bg-neutral-50 px-5"
           defaultValue={language}
         >
           {languages.map((language) => (
@@ -64,7 +64,7 @@ export default async function EditPostForm({ params }: { params: string }) {
         {/* tags */}
         <select
           name="tags"
-          className="w-full cursor-pointer rounded-xl bg-neutral-900/25 px-5"
+          className="w-full cursor-pointer rounded-xl bg-neutral-50 px-5"
           multiple
           defaultValue={tags.map((tag) => tag.id)}
         >
@@ -80,7 +80,7 @@ export default async function EditPostForm({ params }: { params: string }) {
       <textarea
         name="description"
         placeholder="Description"
-        className="h-24 w-full resize-none rounded-xl bg-neutral-900/25 p-5"
+        className="h-24 w-full resize-none rounded-xl bg-neutral-50 p-5"
         maxLength={255}
         defaultValue={description}
       />
@@ -89,7 +89,7 @@ export default async function EditPostForm({ params }: { params: string }) {
       <textarea
         name="content"
         placeholder="Content"
-        className="flex w-full flex-grow resize-none rounded-xl bg-neutral-900/25 p-5"
+        className="flex w-full flex-grow resize-none rounded-xl bg-neutral-50 p-5"
         defaultValue={content}
       />
 
@@ -98,7 +98,7 @@ export default async function EditPostForm({ params }: { params: string }) {
         {/* submit */}
         <button
           type="submit"
-          className="rounded-full bg-red-600 px-5 py-3 font-bold text-white"
+          className="rounded-full bg-red-600 px-5 py-3 font-bold"
         >
           Update Post
         </button>

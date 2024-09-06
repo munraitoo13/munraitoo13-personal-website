@@ -31,7 +31,7 @@ export default function ScrollTop() {
             behavior: "smooth",
           });
         }}
-        className="box-content cursor-pointer rounded-full bg-red-600 p-2"
+        className="box-content cursor-pointer rounded-full bg-red-600 p-2 text-white"
       />
     </MotionDiv>
   );

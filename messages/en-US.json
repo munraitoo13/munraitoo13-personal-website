@@ -35,25 +35,25 @@
   },
 
   "NavBar": {
-    "professional": "/professional",
-    "experiences": "/experiences",
-    "skillsAndTools": "/skills-and-tools",
+    "professional": "Professional",
+    "experiences": "Experiences",
+    "skillsAndTools": "Skills",
 
-    "personal": "/personal",
-    "blog": "/blog",
-    "projects": "/projects",
-    "contact": "/contact"
+    "personal": "Personal",
+    "blog": "Blog",
+    "projects": "Projects",
+    "contact": "Contact"
   },
 
   "Footer": {
-    "professional": "/professional",
-    "experiences": "/experiences",
-    "skillsAndTools": "/skills-and-tools",
+    "professional": "Professional",
+    "experiences": "Experiences",
+    "skillsAndTools": "Skills",
 
-    "personal": "/personal",
-    "blog": "/blog",
-    "projects": "/projects",
-    "contact": "/contact",
+    "personal": "Personal",
+    "blog": "Blog",
+    "projects": "Projects",
+    "contact": "Contact",
 
     "about": "About me",
     "aboutPhrase": "What's up! My name is Augusto. Also known as munraitoo13, I'm a passionate software engineer from Brazil.",

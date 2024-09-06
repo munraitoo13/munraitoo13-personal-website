@@ -1,4 +1,4 @@
-import { IconBrandGithubFilled } from "@tabler/icons-react";
+import { IconBrandGithub } from "@tabler/icons-react";
 import { MotionDiv, MotionA } from "@/components/Motion";
 import { useTranslations } from "next-intl";
 
@@ -24,7 +24,7 @@ export default function Project({ repos }: { repos: Repos[] }) {
         <MotionA
           initial={{ opacity: 1, x: 0 }}
           whileHover={{ x: 5 }}
-          className="flex flex-col justify-between gap-10 rounded-xl bg-neutral-900/25 p-10"
+          className="flex flex-col justify-between gap-10 rounded-xl bg-neutral-50 p-10"
           href={repo.html_url}
           key={repo.id}
           target="_blank"
@@ -32,18 +32,20 @@ export default function Project({ repos }: { repos: Repos[] }) {
           {/* project */}
           <div className="flex flex-col gap-3">
             {/* project repo name */}
-            <p className="text-xs text-red-600">{repo.full_name}</p>
+            <p className="text-xs font-bold text-red-600">{repo.full_name}</p>
 
             {/* project title */}
-            <p className="text-4xl font-bold text-white">{repo.name}</p>
+            <p className="text-4xl font-extrabold text-neutral-900">
+              {repo.name}
+            </p>
 
             {/* project description */}
             <p className="text-lg">{repo.description}</p>
           </div>
 
           {/* github availability */}
-          <div className="flex w-fit items-center gap-3 rounded-full bg-neutral-900/25 px-5 py-3 font-bold">
-            <IconBrandGithubFilled />
+          <div className="flex w-fit items-center gap-3 rounded-full bg-neutral-100 px-5 py-3">
+            <IconBrandGithub stroke={1.25} />
             {t("github")}
           </div>
         </MotionA>

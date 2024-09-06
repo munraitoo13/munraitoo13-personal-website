@@ -35,25 +35,25 @@
   },
 
   "NavBar": {
-    "professional": "/professionnel",
-    "experiences": "/expériences",
-    "skillsAndTools": "/compétences-et-outils",
+    "professional": "Professionnel",
+    "experiences": "Expériences",
+    "skillsAndTools": "Compétences",
 
-    "personal": "/personnel",
-    "blog": "/blog",
-    "projects": "/projets",
-    "contact": "/contact"
+    "personal": "Personnel",
+    "blog": "Blog",
+    "projects": "Projets",
+    "contact": "Contact"
   },
 
   "Footer": {
-    "professional": "/professionnel",
-    "experiences": "/expériences",
-    "skillsAndTools": "/compétences-et-outils",
+    "professional": "Professionnel",
+    "experiences": "Expériences",
+    "skillsAndTools": "Compétences",
 
-    "personal": "/personnel",
-    "blog": "/blog",
-    "projects": "/projets",
-    "contact": "/contact",
+    "personal": "Personnel",
+    "blog": "Blog",
+    "projects": "Projets",
+    "contact": "Contact",
 
     "about": "À propos de moi",
     "aboutPhrase": "Ça va! Je m'appelle Augusto. Aussi connu sous le nom de munraitoo13, je suis un ingénieur logiciel passionné du Brésil.",

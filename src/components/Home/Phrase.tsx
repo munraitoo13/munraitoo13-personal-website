@@ -24,13 +24,15 @@ export default function Phrase() {
 
       <div className="italic">
         <span>{t("phraseYesNo")} </span>
-        <span className="font-bold text-white">{t("phraseWow")} </span>
+        <span className="font-extrabold text-neutral-900">
+          {t("phraseWow")}{" "}
+        </span>
         <span>{t("phraseDash")} </span>
       </div>
 
       <div>
         <span>{t("phraseWowIs")} </span>
-        <span className="rounded-xl bg-neutral-900/25 p-1 font-bold text-white">
+        <span className="rounded-xl bg-neutral-50 p-1 font-extrabold text-neutral-900">
           {t("phraseThe")}
         </span>
       </div>

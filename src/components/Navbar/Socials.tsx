@@ -14,7 +14,7 @@ export default function Socials() {
       <MotionA
         href="https://github.com/munraitoo13"
         target="_blank"
-        className="text-white hover:text-red-600"
+        className="hover:text-red-600"
         whileHover={{ scale: 1.1 }}
       >
         <IconBrandGithub stroke={1.25} />
@@ -25,7 +25,7 @@ export default function Socials() {
       <MotionA
         href="https://www.linkedin.com/in/munraitoo13/"
         target="_blank"
-        className="text-white hover:text-red-600"
+        className="hover:text-red-600"
         whileHover={{ scale: 1.1 }}
       >
         <IconBrandLinkedin stroke={1.25} />
@@ -36,7 +36,7 @@ export default function Socials() {
       <MotionA
         href="https://www.instagram.com/munraitoo13/"
         target="_blank"
-        className="text-white hover:text-red-600"
+        className="hover:text-red-600"
         whileHover={{ scale: 1.1 }}
       >
         <IconBrandInstagram stroke={1.25} />
@@ -47,7 +47,7 @@ export default function Socials() {
       <MotionA
         href="https://twitter.com/munraitoo13"
         target="_blank"
-        className="text-white hover:text-red-600"
+        className="hover:text-red-600"
         whileHover={{ scale: 1.1 }}
       >
         <IconBrandX stroke={1.25} />

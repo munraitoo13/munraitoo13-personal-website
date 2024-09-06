@@ -35,25 +35,25 @@
   },
 
   "NavBar": {
-    "professional": "/profissional",
-    "experiences": "/experiencias",
-    "skillsAndTools": "/habilidades-e-ferramentas",
+    "professional": "Profissional",
+    "experiences": "Experiencias",
+    "skillsAndTools": "Habilidades",
 
-    "personal": "/pessoal",
-    "blog": "/blog",
-    "projects": "/projetos",
-    "contact": "/contato"
+    "personal": "Pessoal",
+    "blog": "Blog",
+    "projects": "Projetos",
+    "contact": "Contato"
   },
 
   "Footer": {
-    "professional": "/profissional",
-    "experiences": "/experiencias",
-    "skillsAndTools": "/habilidades-e-ferramentas",
+    "professional": "Profissional",
+    "experiences": "Experiencias",
+    "skillsAndTools": "Habilidades e Ferramentas",
 
-    "personal": "/pessoal",
-    "blog": "/blog",
-    "projects": "/projetos",
-    "contact": "/contato",
+    "personal": "Pessoal",
+    "blog": "Blog",
+    "projects": "Projetos",
+    "contact": "Contato",
 
     "about": "Sobre mim",
     "aboutPhrase": "E aí! Meu nome é Augusto. Também conhecido como munraitoo13, sou um apaixonado engenheiro de software do Brasil.",

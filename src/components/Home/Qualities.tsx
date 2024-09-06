@@ -20,7 +20,7 @@ export default function Qualities() {
       className="flex w-full flex-col items-stretch justify-center gap-5 lg:flex-row"
     >
       {/* comunicative */}
-      <div className="w-full rounded-xl border border-neutral-900/25 p-3">
+      <div className="w-full rounded-xl border border-neutral-100 p-3">
         <div className="flex items-center">
           <IconBrandHipchat
             size={24}
@@ -28,7 +28,7 @@ export default function Qualities() {
             className="z-10 box-content min-w-fit rounded-full bg-red-600 p-3 text-white"
           />
 
-          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900/25 py-2 pl-10 font-bold text-white">
+          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-50 py-2 pl-10 font-extrabold text-neutral-900">
             {t("quality1")}
           </h3>
         </div>
@@ -37,7 +37,7 @@ export default function Qualities() {
       </div>
 
       {/* competent */}
-      <div className="w-full rounded-xl border border-neutral-900/25 p-3">
+      <div className="w-full rounded-xl border border-neutral-100 p-3">
         <div className="flex items-center">
           <IconBriefcase2
             size={24}
@@ -45,7 +45,7 @@ export default function Qualities() {
             className="z-10 box-content min-w-fit rounded-full bg-red-600 p-3 text-white"
           />
 
-          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900/25 py-2 pl-10 font-bold text-white">
+          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-50 py-2 pl-10 font-extrabold text-neutral-900">
             {t("quality2")}
           </h3>
         </div>
@@ -54,7 +54,7 @@ export default function Qualities() {
       </div>
 
       {/* detail-oriented */}
-      <div className="w-full rounded-xl border border-neutral-900/25 p-3">
+      <div className="w-full rounded-xl border border-neutral-100 p-3">
         <div className="flex items-center">
           <IconStars
             size={24}
@@ -62,7 +62,7 @@ export default function Qualities() {
             className="z-10 box-content min-w-fit rounded-full bg-red-600 p-3 text-white"
           />
 
-          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-900/25 py-2 pl-10 font-bold text-white">
+          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-50 py-2 pl-10 font-extrabold text-neutral-900">
             {t("quality3")}
           </h3>
         </div>

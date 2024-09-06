@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ThemeToggle from "@/components/ThemeToggle";
+import ThemeToggle from "@/components/Footer/ThemeToggle";
 import Socials from "@/components/Navbar/Socials";
 import { useTranslations } from "next-intl";
 import LocaleChanger from "@/components/Footer/LocaleChanger";
@@ -21,7 +21,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="flex w-full flex-col items-center bg-gradient-to-b from-neutral-950 px-10 pb-5 pt-36">
+    <footer className="flex w-full flex-col items-center bg-gradient-to-b from-white px-10 pb-5 pt-36">
       <div className="flex w-full max-w-screen-xl flex-col gap-10">
         {/* top */}
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="flex flex-col gap-10 lg:flex-row">
             {/* personal */}
             <div className="flex flex-col items-center gap-3">
-              <p className="w-fit text-nowrap rounded-full bg-neutral-900/25 px-5 py-2">
+              <p className="w-fit text-nowrap rounded-full bg-neutral-50 px-5 py-2">
                 {t("personal")}
               </p>
 
@@ -38,7 +38,7 @@ export default function Footer() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-white hover:text-red-600"
+                  className="text-neutral-900 hover:text-red-600"
                 >
                   {item.name}
                 </Link>
@@ -47,7 +47,7 @@ export default function Footer() {
 
             {/* professional */}
             <div className="flex flex-col items-center gap-3">
-              <p className="w-fit text-nowrap rounded-full bg-neutral-900/25 px-5 py-2">
+              <p className="w-fit text-nowrap rounded-full bg-neutral-50 px-5 py-2">
                 {t("professional")}
               </p>
 
@@ -56,7 +56,7 @@ export default function Footer() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-white hover:text-red-600"
+                  className="text-neutral-900 hover:text-red-600"
                 >
                   {item.name}
                 </Link>
@@ -72,11 +72,11 @@ export default function Footer() {
 
           {/* about-me */}
           <div className="mx-auto flex max-w-lg flex-col items-center gap-2 lg:mx-0">
-            <p className="w-fit rounded-full bg-neutral-900/25 px-5 py-2">
+            <p className="w-fit rounded-full bg-neutral-50 px-5 py-2">
               {t("about")}
             </p>
 
-            <p className="text-center text-white">{t("aboutPhrase")}</p>
+            <p className="text-center text-neutral-900">{t("aboutPhrase")}</p>
 
             <Socials />
           </div>

@@ -16,16 +16,14 @@ export default function BlogHeader({
 }: BlogHeaderProps) {
   return (
     <header className="flex w-full flex-col justify-center gap-5 pt-48">
-      <div>
-        {/* title */}
-        <MotionH1
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          className="text-6xl font-bold text-white"
-        >
-          {title}
-        </MotionH1>
-      </div>
+      {/* title */}
+      <MotionH1
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        className="text-6xl font-extrabold text-neutral-900"
+      >
+        {title}
+      </MotionH1>
 
       {/* description */}
       <MotionP

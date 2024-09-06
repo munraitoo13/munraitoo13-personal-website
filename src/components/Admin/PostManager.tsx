@@ -12,7 +12,7 @@ export default async function PostManager() {
       {posts.map((post) => (
         <div
           key={post.id}
-          className="flex w-full items-center justify-between gap-5 rounded-xl bg-neutral-900/25 p-10"
+          className="flex w-full items-center justify-between gap-5 rounded-xl bg-neutral-50 p-10"
         >
           {/* post */}
           <div className="flex flex-col gap-3">
@@ -37,7 +37,7 @@ export default async function PostManager() {
               {/* title */}
               <a
                 href={`/personal/blog/posts/${post.id}`}
-                className="text-xl font-bold text-white hover:text-red-600"
+                className="text-xl font-bold hover:text-red-600"
               >
                 {post.title}
               </a>
@@ -51,7 +51,7 @@ export default async function PostManager() {
               {tags.map((tag: any) => (
                 <span
                   key={tag.name}
-                  className="rounded-full bg-neutral-900/25 px-3 py-1"
+                  className="rounded-full bg-neutral-50 px-3 py-1"
                 >
                   {tag.name}
                 </span>
@@ -60,7 +60,7 @@ export default async function PostManager() {
           </div>
 
           {/* buttons */}
-          <div className="ml-24 flex gap-5 font-bold text-white">
+          <div className="ml-24 flex gap-5 font-bold">
             {/* edit */}
             <a
               className="hover:text-red-600"

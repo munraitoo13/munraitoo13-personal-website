@@ -25,7 +25,7 @@ export default function Header({
         <MotionH1
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1, transition: { delay: 0.1 } }}
-          className="text-6xl font-bold text-white"
+          className="text-6xl font-extrabold text-neutral-900"
         >
           {pageTitle}
         </MotionH1>

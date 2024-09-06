@@ -35,25 +35,25 @@
   },
 
   "NavBar": {
-    "professional": "/professional",
-    "experiences": "/erfahrungen",
-    "skillsAndTools": "/fähigkeiten-und-tools",
+    "professional": "Professional",
+    "experiences": "Erfahrungen",
+    "skillsAndTools": "Fähigkeiten",
 
-    "personal": "/persönlich",
-    "blog": "/blog",
-    "projects": "/projekte",
-    "contact": "/kontakt"
+    "personal": "Persönlich",
+    "blog": "Blog",
+    "projects": "Projekte",
+    "contact": "Kontakt"
   },
 
   "Footer": {
-    "professional": "/professional",
-    "experiences": "/erfahrungen",
-    "skillsAndTools": "/fähigkeiten-und-tools",
+    "professional": "Professional",
+    "experiences": "Erfahrungen",
+    "skillsAndTools": "Fähigkeiten",
 
-    "personal": "/persönlich",
-    "blog": "/blog",
-    "projects": "/projekte",
-    "contact": "/kontakt",
+    "personal": "Persönlich",
+    "blog": "Blog",
+    "projects": "Projekte",
+    "contact": "Kontakt",
 
     "about": "Über mich",
     "aboutPhrase": "Was geht ab! Mein Name ist Augusto. Auch bekannt als munraitoo13, ich bin ein leidenschaftlicher Softwareentwickler aus Brasilien.",

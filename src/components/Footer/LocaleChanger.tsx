@@ -34,7 +34,7 @@ export default function LocaleChange() {
 
   return (
     <select
-      className="cursor-pointer appearance-none rounded-full bg-neutral-900/25 px-5 py-2 text-center"
+      className="cursor-pointer appearance-none rounded-full bg-neutral-50 px-5 py-2 text-center"
       name="language"
       id="language"
       onChange={handleChange}
@@ -42,7 +42,7 @@ export default function LocaleChange() {
     >
       {languages.map((lang) => (
         <option
-          className="border-red-600 bg-neutral-950 font-sans"
+          className="border-red-600 bg-neutral-50 font-sans"
           key={lang.value}
           value={lang.value}
         >

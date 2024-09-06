@@ -39,14 +39,16 @@ export default function TableOfContents() {
       initial={{ x: 50, opacity: 0 }}
       animate={{ x: 0, opacity: 1, transition: { delay: 0.3 } }}
     >
-      <h2 className="text-xl font-bold text-white">{t("contents")}</h2>
+      <h2 className="text-xl font-extrabold text-neutral-900">
+        {t("contents")}
+      </h2>
 
       <div className="flex flex-col gap-3">
         {headings.map((heading) => {
           return (
             <MotionDiv whileHover={{ x: 5 }}>
               <Link
-                className={`${heading.headingLevel === "H2" ? "font-medium text-white" : "ml-3 text-inherit hover:opacity-100"} hover:text-red-600`}
+                className={`${heading.headingLevel === "H2" ? "font-medium" : "ml-3 text-inherit hover:opacity-100"} hover:text-red-600`}
                 href={`#${heading.id}`}
               >
                 {heading.text}
