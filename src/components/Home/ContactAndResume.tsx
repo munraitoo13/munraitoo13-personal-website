@@ -14,7 +14,7 @@ export default function ContactAndResume() {
       transition={{ delay: 0.2 }}
     >
       <Link
-        className="flex items-center rounded-full bg-red-600 px-5 py-3 text-white"
+        className="flex items-center rounded-full bg-red-600 px-5 py-3 font-bold text-white"
         href="/personal/contact"
       >
         {t("contact")}
