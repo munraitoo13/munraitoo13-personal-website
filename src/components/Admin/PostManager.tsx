@@ -4,13 +4,28 @@ import { IconTrash, IconPencil } from "@tabler/icons-react";
 import formatDate from "@/lib/formatDate";
 import Link from "next/link";
 
+type Post = {
+  id: string;
+  title: string;
+  description: string;
+  language: string;
+  content: string;
+  createdAt: Date;
+  published: boolean;
+};
+
+type Tag = {
+  id: string;
+  name: string;
+};
+
 export default async function PostManager() {
   const posts = await prisma.post.findMany();
   const tags = await prisma.tag.findMany();
 
   return (
     <div className="flex w-full flex-col gap-5">
-      {posts.map((post) => (
+      {posts.map((post: Post) => (
         <div
           key={post.id}
           className="flex w-full items-center justify-between gap-5 rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25"
@@ -49,7 +64,7 @@ export default async function PostManager() {
 
             {/* tags */}
             <div className="flex flex-wrap gap-1">
-              {tags.map((tag: any) => (
+              {tags.map((tag: Tag) => (
                 <span
                   key={tag.name}
                   className="rounded-full bg-neutral-100 px-3 py-1 dark:bg-neutral-900/25"
