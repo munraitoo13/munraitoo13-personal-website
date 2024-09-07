@@ -2,7 +2,7 @@
 
 import { prisma } from "@/lib/prisma";
 import { options, transporter } from "@/lib/nodemailer";
-import argon2id from "argon2";
+import bcrypt from "bcryptjs";
 import { encrypt } from "@/lib/encrypt";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -106,14 +106,14 @@ export async function login(formData: FormData) {
     return;
   }
 
-  const checkPassword = await argon2id.verify(user!.password, password);
+  const checkPassword = bcrypt.compareSync(password, user.password);
+
   if (!checkPassword) {
     console.log("Invalid password");
     return;
   } else {
     const { id, name } = user!;
     const token = await encrypt({ name, id });
-
     cookies().set("token", token);
     redirect("/admin");
   }
