@@ -11,6 +11,11 @@ const languages = [
   "Japanese",
 ];
 
+type Tag = {
+  id: string;
+  name: string;
+};
+
 export default async function EditPostForm({ slug }: { slug: string }) {
   const allTags = await prisma.tag.findMany();
   const post = await prisma.post.findUnique({
@@ -70,9 +75,9 @@ export default async function EditPostForm({ slug }: { slug: string }) {
           name="tags"
           className="h-16 w-full cursor-pointer rounded-xl bg-neutral-50 px-5 dark:bg-neutral-900/25"
           multiple
-          defaultValue={tags.map((tag) => tag.id)}
+          defaultValue={tags.map((tag: Tag) => tag.id)}
         >
-          {allTags.map((tag) => (
+          {allTags.map((tag: Tag) => (
             <option
               className="rounded-xl px-5 py-3"
               key={tag.id}
