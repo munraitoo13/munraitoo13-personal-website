@@ -36,6 +36,7 @@ export default function LocaleChange() {
     <select
       className="cursor-pointer appearance-none rounded-full bg-neutral-50 px-5 py-2 text-center dark:bg-neutral-900/25"
       name="language"
+      title="language"
       id="language"
       onChange={handleChange}
       value={locale}
