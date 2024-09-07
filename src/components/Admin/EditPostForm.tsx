@@ -11,11 +11,11 @@ const languages = [
   "Japanese",
 ];
 
-export default async function EditPostForm({ params }: { params: string }) {
+export default async function EditPostForm({ slug }: { slug: string }) {
   const allTags = await prisma.tag.findMany();
   const post = await prisma.post.findUnique({
     where: {
-      id: params,
+      id: slug,
     },
     include: {
       tags: true,
@@ -31,7 +31,7 @@ export default async function EditPostForm({ params }: { params: string }) {
     >
       {/* id */}
       <input
-        className="rounded-xl bg-neutral-50 px-5 py-3"
+        className="rounded-xl bg-neutral-50 px-5 py-3 dark:bg-neutral-900/25"
         type="hidden"
         name="id"
         value={id}
@@ -41,7 +41,7 @@ export default async function EditPostForm({ params }: { params: string }) {
       <input
         name="title"
         placeholder="Title"
-        className="w-full resize-none rounded-xl bg-neutral-50 p-5"
+        className="w-full resize-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
         maxLength={64}
         defaultValue={title}
       />
@@ -51,11 +51,15 @@ export default async function EditPostForm({ params }: { params: string }) {
         {/* language */}
         <select
           name="language"
-          className="cursor-pointer rounded-xl bg-neutral-50 px-5"
+          className="cursor-pointer rounded-xl bg-neutral-50 px-5 dark:bg-neutral-900/25"
           defaultValue={language}
         >
           {languages.map((language) => (
-            <option className="bg-inherit" key={language} value={language}>
+            <option
+              className="bg-white dark:bg-neutral-950"
+              key={language}
+              value={language}
+            >
               {language}
             </option>
           ))}
@@ -64,12 +68,16 @@ export default async function EditPostForm({ params }: { params: string }) {
         {/* tags */}
         <select
           name="tags"
-          className="w-full cursor-pointer rounded-xl bg-neutral-50 px-5"
+          className="h-16 w-full cursor-pointer rounded-xl bg-neutral-50 px-5 dark:bg-neutral-900/25"
           multiple
           defaultValue={tags.map((tag) => tag.id)}
         >
           {allTags.map((tag) => (
-            <option key={tag.id} value={tag.id}>
+            <option
+              className="rounded-xl px-5 py-3"
+              key={tag.id}
+              value={tag.id}
+            >
               {tag.name}
             </option>
           ))}
@@ -80,7 +88,7 @@ export default async function EditPostForm({ params }: { params: string }) {
       <textarea
         name="description"
         placeholder="Description"
-        className="h-24 w-full resize-none rounded-xl bg-neutral-50 p-5"
+        className="h-24 w-full resize-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
         maxLength={255}
         defaultValue={description}
       />
@@ -89,7 +97,7 @@ export default async function EditPostForm({ params }: { params: string }) {
       <textarea
         name="content"
         placeholder="Content"
-        className="flex w-full flex-grow resize-none rounded-xl bg-neutral-50 p-5"
+        className="flex w-full flex-grow resize-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
         defaultValue={content}
       />
 
@@ -98,7 +106,7 @@ export default async function EditPostForm({ params }: { params: string }) {
         {/* submit */}
         <button
           type="submit"
-          className="rounded-full bg-red-600 px-5 py-3 font-bold"
+          className="rounded-full bg-red-600 px-5 py-3 text-white"
         >
           Update Post
         </button>

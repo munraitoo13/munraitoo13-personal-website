@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ className }: { className?: string }) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function ThemeToggle() {
   }, [isDark]);
 
   return (
-    <>
+    <div className={`${className}`}>
       {isDark ? (
         <IconSun
           stroke={1.25}
@@ -35,6 +35,6 @@ export default function ThemeToggle() {
           className="cursor-pointer text-neutral-300 hover:text-neutral-900"
         />
       )}
-    </>
+    </div>
   );
 }

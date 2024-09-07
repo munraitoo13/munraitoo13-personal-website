@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { deletePost } from "@/actions/actions";
 import { IconTrash, IconPencil } from "@tabler/icons-react";
 import formatDate from "@/lib/formatDate";
+import Link from "next/link";
 
 export default async function PostManager() {
   const posts = await prisma.post.findMany();
@@ -12,7 +13,7 @@ export default async function PostManager() {
       {posts.map((post) => (
         <div
           key={post.id}
-          className="flex w-full items-center justify-between gap-5 rounded-xl bg-neutral-50 p-10"
+          className="flex w-full items-center justify-between gap-5 rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25"
         >
           {/* post */}
           <div className="flex flex-col gap-3">
@@ -35,12 +36,12 @@ export default async function PostManager() {
             {/* title and desc */}
             <div>
               {/* title */}
-              <a
+              <Link
                 href={`/personal/blog/posts/${post.id}`}
-                className="text-xl font-bold hover:text-red-600"
+                className="text-xl font-bold text-neutral-900 hover:text-red-600 dark:text-white dark:hover:text-red-600"
               >
                 {post.title}
-              </a>
+              </Link>
 
               {/* description */}
               <p>{post.description}</p>
@@ -51,7 +52,7 @@ export default async function PostManager() {
               {tags.map((tag: any) => (
                 <span
                   key={tag.name}
-                  className="rounded-full bg-neutral-50 px-3 py-1"
+                  className="rounded-full bg-neutral-100 px-3 py-1 dark:bg-neutral-900/25"
                 >
                   {tag.name}
                 </span>
@@ -62,13 +63,13 @@ export default async function PostManager() {
           {/* buttons */}
           <div className="ml-24 flex gap-5 font-bold">
             {/* edit */}
-            <a
+            <Link
               className="hover:text-red-600"
               href={`/admin/edit-post/${post.id}`}
               target="_blank"
             >
               <IconPencil stroke={1.25} />
-            </a>
+            </Link>
 
             {/* delete */}
             <form
