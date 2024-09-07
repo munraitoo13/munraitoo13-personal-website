@@ -11,6 +11,11 @@ const languages = [
   "Japanese",
 ];
 
+type Tag = {
+  id: string;
+  name: string;
+};
+
 export default async function NewPostForm() {
   const tags = await prisma.tag.findMany();
 
@@ -47,7 +52,7 @@ export default async function NewPostForm() {
           className="h-16 w-full cursor-pointer rounded-xl bg-neutral-50 px-5 dark:bg-neutral-900/25"
           multiple
         >
-          {tags.map((tag) => (
+          {tags.map((tag: Tag) => (
             <option
               className="rounded-xl px-5 py-2"
               key={tag.id}
