@@ -2,6 +2,7 @@ import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 import Socials from "@/components/Navbar/Socials";
 import { useTranslations } from "next-intl";
+import LocaleChanger from "@/components/Footer/LocaleChanger";
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -63,7 +64,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col items-center gap-3 self-center lg:flex-row lg:self-baseline">
-              <ThemeToggle />
+              <LocaleChanger />
             </div>
           </div>
 
