@@ -1,30 +1,36 @@
 "use client";
 
 import { sendMail } from "@/actions/actions";
-import { useState } from "react";
+import { toast } from "react-toastify";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 export default function ContactForm() {
+  const [pending, setPending] = useState(false);
+
   const t = useTranslations("Contact");
-  const [isSending, setIsSending] = useState(false);
-  const [isCooldown, setIsCooldown] = useState(false);
+  const tt = useTranslations("Toastify");
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     const formData = new FormData(event.currentTarget);
+    const email = formData.get("email") as string;
+    const emailRegex = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm
+    if (!emailRegex.test(email)) {
+      toast.error(tt("invalidEmail"));
+      return;
+    }
 
     try {
-      setIsSending(true);
-
+      setPending(true);
       await sendMail(formData);
-
-      setIsCooldown(true);
-      setTimeout(() => setIsCooldown(false), 60000);
-      setTimeout("window.alert('Message sent successfully.');", 1);
+      toast.success(tt("messageSent"));
     } catch (error) {
-      window.alert(`Error sending message: ${error}`);
+      console.error("Error sending email", error);
+      toast.error(tt("messageError"));
     }
-    setIsSending(false);
+    setPending(false);
   };
 
   return (
@@ -68,11 +74,10 @@ export default function ContactForm() {
       />
 
       <button
-        type="submit"
-        className={`w-fit rounded-full ${isSending ? "bg-neutral-100 text-neutral-300 dark:bg-neutral-900/25 dark:text-neutral-700" : isCooldown ? "bg-neutral-100 text-neutral-300 dark:bg-neutral-900/25 dark:text-neutral-700" : "bg-red-600"} px-5 py-3 text-white`}
-        disabled={isSending || isCooldown}
+        disabled={pending}
+        className={`${pending ? "cursor-not-allowed" : "cursor-pointer"} rounded-full bg-red-600 px-5 py-3 text-white`}
       >
-        {isSending ? t("sending") : isCooldown ? t("cooldown") : t("send")}
+        {pending ? t("sending") : t("send")}
       </button>
     </form>
   );

@@ -102,5 +102,11 @@
 
   "TableOfContents": {
     "contents": "Inhalt"
+  },
+
+  "Toastify": {
+    "messageSent": "Nachricht gesendet!",
+    "messageError": "Fehler beim Senden der Nachricht.",
+    "invalidEmail": "Ungültige E-Mail."
   }
 }
