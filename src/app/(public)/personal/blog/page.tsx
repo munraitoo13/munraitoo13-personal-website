@@ -2,9 +2,8 @@ import Header from "@/components/Header";
 import Markdown from "@/components/Markdown";
 import { Metadata } from "next";
 import Posts from "@/components/Blog/Posts";
-import { prisma } from "@/lib/prisma";
+import { prisma, getUserLocale } from "@/lib";
 import { getTranslations } from "next-intl/server";
-import { getUserLocale } from "@/services/locale";
 
 export const metadata: Metadata = {
   title: "Blog | munraitoo13",

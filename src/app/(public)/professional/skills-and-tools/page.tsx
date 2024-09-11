@@ -3,7 +3,7 @@ import Markdown from "@/components/Markdown";
 import Contents from "@/components/TableOfContents";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { getUserLocale } from "@/services/locale";
+import { getUserLocale } from "@/lib";
 
 export const metadata: Metadata = {
   title: "Skills and Tools | munraitoo13",

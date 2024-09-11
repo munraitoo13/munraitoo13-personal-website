@@ -1,7 +1,7 @@
-import { prisma } from "@/lib/prisma";
-import { deletePost } from "@/actions/actions";
+import { prisma } from "@/lib";
+import { deletePost } from "@/actions";
 import { IconTrash, IconPencil } from "@tabler/icons-react";
-import formatDate from "@/lib/formatDate";
+import { formatDate } from "@/utils";
 import Link from "next/link";
 
 type Post = {

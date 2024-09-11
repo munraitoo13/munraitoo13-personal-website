@@ -1,5 +1,5 @@
-import { prisma } from "@/lib/prisma";
-import { createPost } from "@/actions/actions";
+import { prisma } from "@/lib";
+import { createPost } from "@/actions";
 
 const languages = [
   "Portuguese",

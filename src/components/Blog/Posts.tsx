@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { IconDeviceMobileExclamation } from "@tabler/icons-react";
-import formatDate from "@/lib/formatDate";
+import { formatDate } from "@/utils";
 import { MotionA, MotionDiv } from "@/components/Motion";
 
 type Tag = {

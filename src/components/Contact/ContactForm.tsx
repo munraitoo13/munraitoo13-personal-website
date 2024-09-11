@@ -1,6 +1,6 @@
 "use client";
 
-import { sendMail } from "@/actions/actions";
+import { sendMail } from "@/actions";
 import { toast } from "react-toastify";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -16,7 +16,7 @@ export default function ContactForm() {
 
     const formData = new FormData(event.currentTarget);
     const email = formData.get("email") as string;
-    const emailRegex = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm
+    const emailRegex = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/gim;
     if (!emailRegex.test(email)) {
       toast.error(tt("invalidEmail"));
       return;

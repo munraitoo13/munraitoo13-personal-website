@@ -19,8 +19,9 @@
 .DS_Store
 *.pem
 
-# local env files
+# env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -28,14 +29,3 @@
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-.vercel
-
-.vercel
-.env*.local
-
-.env
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/

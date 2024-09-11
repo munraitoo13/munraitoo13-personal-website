@@ -1,13 +1,9 @@
-import { SignJWT } from "jose";
+import { JWTPayload, SignJWT } from "jose";
+import { getJwtKey } from "@/utils";
 
-const jwtSecret = process.env.JWT_SECRET;
-if (!jwtSecret) {
-  throw new Error("JWT_SECRET is not defined");
-}
+const key = getJwtKey();
 
-const key = new TextEncoder().encode(jwtSecret);
-
-export async function encrypt(payload: any) {
+export async function encrypt(payload: JWTPayload) {
   return await new SignJWT(payload)
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
