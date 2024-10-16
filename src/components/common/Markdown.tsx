@@ -1,4 +1,4 @@
-import { MotionDiv } from "@/components/Motion";
+import { MotionDiv } from "@/components/common/Motion";
 
 export default function Markdown({ children }: { children: React.ReactNode }) {
   return (

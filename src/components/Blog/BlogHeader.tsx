@@ -1,19 +1,12 @@
 import { IconLanguage, IconCalendarEvent } from "@tabler/icons-react";
-import { MotionDiv, MotionH1, MotionP } from "@/components/Motion";
-
-interface BlogHeaderProps {
-  title: string;
-  description: string;
-  language: string;
-  date: string;
-}
+import { MotionDiv, MotionH1, MotionP } from "@/components/common/Motion";
 
 export default function BlogHeader({
   title,
   description,
   language,
   date,
-}: BlogHeaderProps) {
+}: BlogHeader) {
   return (
     <header className="flex w-full flex-col justify-center gap-5 pt-48">
       {/* title */}

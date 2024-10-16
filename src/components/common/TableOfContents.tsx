@@ -3,13 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { MotionDiv, MotionNav } from "@/components/Motion";
-
-interface Headings {
-  id: string;
-  text: string;
-  headingLevel: string;
-}
+import { MotionDiv, MotionNav } from "@/components/common/Motion";
 
 export default function TableOfContents() {
   const t = useTranslations("TableOfContents");

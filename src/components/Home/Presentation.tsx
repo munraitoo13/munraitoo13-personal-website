@@ -1,4 +1,4 @@
-import { MotionH1, MotionP } from "@/components/Motion";
+import { MotionH1, MotionP } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
 
 export default function Presentation() {

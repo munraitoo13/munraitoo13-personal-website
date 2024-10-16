@@ -1,6 +1,6 @@
 import { IconFile } from "@tabler/icons-react";
 import Link from "next/link";
-import { MotionDiv } from "@/components/Motion";
+import { MotionDiv } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
 
 export default function ContactAndResume() {

@@ -4,7 +4,7 @@ import {
   IconBrandInstagram,
   IconBrandX,
 } from "@tabler/icons-react";
-import { MotionA } from "@/components/Motion";
+import { MotionA } from "@/components/common/Motion";
 
 export default function Socials() {
   return (

@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import ThemeToggle from "@/components/ThemeToggle";
+import ThemeToggle from "@/components/common/ThemeToggle";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { ToastContainer } from "react-toastify";

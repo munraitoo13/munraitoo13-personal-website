@@ -1,5 +1,5 @@
 import BlogHeader from "@/components/Blog/BlogHeader";
-import Markdown from "@/components/Markdown";
+import Markdown from "@/components/common/Markdown";
 import { formatDate } from "@/utils";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { prisma } from "@/lib";

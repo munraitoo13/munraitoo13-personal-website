@@ -4,23 +4,12 @@ import { IconTrash, IconPencil } from "@tabler/icons-react";
 import { formatDate } from "@/utils";
 import Link from "next/link";
 
-type Post = {
-  id: string;
-  title: string;
-  description: string;
-  language: string;
-  content: string;
-  createdAt: Date;
-  published: boolean;
-};
-
-type Tag = {
-  id: string;
-  name: string;
-};
-
 export default async function PostManager() {
-  const posts = await prisma.post.findMany();
+  const posts = await prisma.post.findMany({
+    include: {
+      tags: true,
+    },
+  });
   const tags = await prisma.tag.findMany();
 
   return (

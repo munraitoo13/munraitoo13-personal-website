@@ -1,6 +1,6 @@
-import Footer from "@/components/Footer/Footer";
-import Navbar from "@/components/Navbar/Navbar";
-import ScrollTop from "@/components/ScrollTop";
+import Footer from "@/components/common/footer/Footer";
+import Navbar from "@/components/common/navbar/Navbar";
+import ScrollTop from "@/components/common/ScrollTop";
 import "../globals.css";
 
 export default function PublicLayout({

@@ -1,7 +1,7 @@
-import Header from "@/components/Header";
-import Markdown from "@/components/Markdown";
+import Header from "@/components/common/Header";
+import Markdown from "@/components/common/Markdown";
 import { Metadata } from "next";
-import Posts from "@/components/Blog/Posts";
+import Posts from "@/components/blog/Post";
 import { prisma, getUserLocale } from "@/lib";
 import { getTranslations } from "next-intl/server";
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const allPosts = await prisma.post.findMany({
+  const posts = await prisma.post.findMany({
     where: {
       published: true,
     },
@@ -37,7 +37,7 @@ export default async function Page() {
           <Content />
         </Markdown>
 
-        <Posts allPosts={allPosts} />
+        <Posts posts={posts} />
       </div>
     </>
   );

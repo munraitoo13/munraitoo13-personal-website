@@ -8,7 +8,7 @@ import {
   IconBrandNodejs,
   IconBrandMongodb,
 } from "@tabler/icons-react";
-import { MotionDiv } from "@/components/Motion";
+import { MotionDiv } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
 
 export default function Stacks() {

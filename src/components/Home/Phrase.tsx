@@ -1,4 +1,4 @@
-import { MotionBlockquote } from "@/components/Motion";
+import { MotionBlockquote } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
 
 export default function Phrase() {

@@ -1,11 +1,11 @@
 "use client";
 
-import Logo from "@/components/Navbar/Logo";
-import NavItems from "@/components/Navbar/NavItems";
-import Socials from "@/components/Navbar/Socials";
+import Logo from "@/components/common/navbar/Logo";
+import NavItems from "@/components/common/navbar/NavItems";
+import Socials from "@/components/common/navbar/Socials";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { useState } from "react";
-import { MotionDiv } from "@/components/Motion";
+import { MotionDiv } from "@/components/common/Motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

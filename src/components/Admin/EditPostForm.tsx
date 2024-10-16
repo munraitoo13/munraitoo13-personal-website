@@ -1,20 +1,7 @@
 import { prisma } from "@/lib";
 import { updatePost } from "@/actions";
 
-const languages = [
-  "Portuguese",
-  "English",
-  "French",
-  "Spanish",
-  "Italian",
-  "German",
-  "Japanese",
-];
-
-type Tag = {
-  id: string;
-  name: string;
-};
+const languages = ["Portuguese", "English", "French", "German"];
 
 export default async function EditPostForm({ slug }: { slug: string }) {
   const allTags = await prisma.tag.findMany();

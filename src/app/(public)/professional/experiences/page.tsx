@@ -1,6 +1,6 @@
-import Header from "@/components/Header";
-import Markdown from "@/components/Markdown";
-import Contents from "@/components/TableOfContents";
+import Header from "@/components/common/Header";
+import Markdown from "@/components/common/Markdown";
+import Contents from "@/components/common/TableOfContents";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { getUserLocale } from "@/lib";

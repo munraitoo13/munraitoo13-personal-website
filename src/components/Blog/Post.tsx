@@ -1,23 +1,9 @@
 import { useTranslations } from "next-intl";
 import { IconDeviceMobileExclamation } from "@tabler/icons-react";
 import { formatDate } from "@/utils";
-import { MotionA, MotionDiv } from "@/components/Motion";
+import { MotionA, MotionDiv } from "@/components/common/Motion";
 
-type Tag = {
-  name: string;
-  id: string;
-};
-
-type Post = {
-  id: string;
-  title: string;
-  description: string;
-  language: string;
-  createdAt: Date;
-  tags: Tag[];
-};
-
-export default function Posts({ allPosts }: { allPosts: Post[] }) {
+export default function Posts({ posts }: { posts: Post[] }) {
   const t = useTranslations("Blog");
 
   return (
@@ -27,7 +13,7 @@ export default function Posts({ allPosts }: { allPosts: Post[] }) {
       transition={{ delay: 0.4 }}
       className="flex flex-col gap-5"
     >
-      {allPosts.map((post) => (
+      {posts.map((post: Post) => (
         <MotionA
           initial={{ opacity: 1, x: 0 }}
           whileHover={{ x: 5 }}
@@ -35,7 +21,7 @@ export default function Posts({ allPosts }: { allPosts: Post[] }) {
           href={`/personal/blog/posts/${post.id}`}
           key={post.id}
         >
-          {/* post itself */}
+          {/* post */}
           <div className="flex flex-col gap-3">
             {/* date and lang */}
             <div className="flex items-center gap-5 font-bold text-red-600">

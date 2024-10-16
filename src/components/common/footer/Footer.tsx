@@ -1,8 +1,7 @@
 import Link from "next/link";
-import ThemeToggle from "@/components/ThemeToggle";
-import Socials from "@/components/Navbar/Socials";
+import Socials from "@/components/common/navbar/Socials";
 import { useTranslations } from "next-intl";
-import LocaleChanger from "@/components/Footer/LocaleChanger";
+import LocaleChanger from "@/components/common/footer/LocaleChanger";
 
 export default function Footer() {
   const t = useTranslations("Footer");

@@ -1,7 +1,7 @@
-import Header from "@/components/Header";
-import Markdown from "@/components/Markdown";
+import Header from "@/components/common/Header";
+import Markdown from "@/components/common/Markdown";
 import { Metadata } from "next";
-import Projects from "@/components/Projects/Projects";
+import Projects from "@/components/projects/Project";
 import { getTranslations } from "next-intl/server";
 import { getUserLocale } from "@/lib";
 
