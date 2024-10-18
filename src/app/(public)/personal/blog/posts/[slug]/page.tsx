@@ -1,4 +1,4 @@
-import BlogHeader from "@/components/Blog/BlogHeader";
+import BlogHeader from "@/components/blog/BlogHeader";
 import Markdown from "@/components/common/Markdown";
 import { formatDate } from "@/utils";
 import { MDXRemote } from "next-mdx-remote/rsc";
