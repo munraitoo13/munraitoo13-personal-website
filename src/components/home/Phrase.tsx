@@ -11,7 +11,7 @@ export default function Phrase() {
       animate={{
         opacity: 1,
         x: 0,
-        transition: { delay: 0.5 },
+        transition: { delay: 0.4 },
       }}
     >
       <div className="flex justify-center">

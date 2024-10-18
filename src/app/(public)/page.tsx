@@ -20,19 +20,12 @@ export default function Page() {
 
         {/* contact and resume */}
         <ContactAndResume />
-
-        {/* stacks & tools */}
-        <Stacks />
       </header>
 
       {/* phrase */}
       <Phrase />
 
       <div className="flex flex-col gap-5">
-        <h3 className="text-center">
-          Why should you consider choosing me? Well, I'm...
-        </h3>
-
         {/* qualities */}
         <Qualities />
       </div>

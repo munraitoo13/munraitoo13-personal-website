@@ -11,7 +11,7 @@ export default function ContactAndResume() {
       className="mt-10 flex items-center justify-center gap-5"
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      transition={{ delay: 0.2 }}
+      transition={{ delay: 0.3 }}
     >
       <Link
         className="flex items-center rounded-full bg-red-600 px-5 py-3 text-white"

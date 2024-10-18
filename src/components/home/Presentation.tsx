@@ -1,5 +1,6 @@
 import { MotionH1, MotionP } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
+import Stacks from "@/components/home/Stacks";
 
 export default function Presentation() {
   const t = useTranslations("HomePage");
@@ -34,6 +35,8 @@ export default function Presentation() {
         </span>
         <span> {t("descriptionLocation")}</span>
       </MotionP>
+
+      <Stacks />
     </div>
   );
 }

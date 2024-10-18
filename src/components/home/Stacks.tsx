@@ -16,12 +16,10 @@ export default function Stacks() {
 
   return (
     <MotionDiv
-      className="mt-10 flex flex-col items-center justify-center gap-1"
+      className="flex flex-col items-center justify-center gap-1"
       initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
+      animate={{ opacity: 1, x: 0, transition: { delay: 0.2 } }}
     >
-      <span>{t("stacks")} </span>
-
       <div className="flex items-center gap-2">
         <IconBrandTypescript
           stroke={1.25}
@@ -48,9 +46,6 @@ export default function Stacks() {
           stroke={1.25}
           className="hover:cursor-pointer hover:opacity-75"
         />
-
-        <span>|</span>
-
         <IconBrandVscode
           size={24}
           stroke={1.25}

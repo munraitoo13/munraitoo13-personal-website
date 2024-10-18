@@ -15,7 +15,7 @@ export default function Qualities() {
       animate={{
         opacity: 1,
         x: 0,
-        transition: { delay: 0.4 },
+        transition: { delay: 0.5 },
       }}
       className="flex w-full flex-col items-stretch justify-center gap-5 lg:flex-row"
     >
