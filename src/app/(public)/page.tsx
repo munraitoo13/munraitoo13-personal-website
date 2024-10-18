@@ -1,8 +1,8 @@
-import ContactAndResume from "@/components/Home/ContactAndResume";
-import Phrase from "@/components/Home/Phrase";
-import Presentation from "@/components/Home/Presentation";
-import Qualities from "@/components/Home/Qualities";
-import Stacks from "@/components/Home/Stacks";
+import ContactAndResume from "@/components/home/ContactAndResume";
+import Phrase from "@/components/home/Phrase";
+import Presentation from "@/components/home/Presentation";
+import Qualities from "@/components/home/Qualities";
+import Stacks from "@/components/home/Stacks";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -25,13 +25,17 @@ export default function Page() {
         <Stacks />
       </header>
 
-      <div className="flex flex-col gap-10">
+      {/* phrase */}
+      <Phrase />
+
+      <div className="flex flex-col gap-5">
+        <h3 className="text-center">
+          Why should you consider choosing me? Well, I'm...
+        </h3>
+
         {/* qualities */}
         <Qualities />
       </div>
-
-      {/* phrase */}
-      <Phrase />
     </>
   );
 }

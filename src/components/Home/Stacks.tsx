@@ -16,7 +16,7 @@ export default function Stacks() {
 
   return (
     <MotionDiv
-      className="flex flex-col gap-1"
+      className="mt-10 flex flex-col items-center justify-center gap-1"
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
     >
