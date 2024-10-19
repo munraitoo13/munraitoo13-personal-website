@@ -9,14 +9,15 @@ import { redirect } from "next/navigation";
 export async function login(formData: FormData) {
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
+
   if (!email || !password) {
     console.log("Email and password are required.");
     return;
   }
 
   const user = await prisma.user.findUnique({ where: { email } });
-  if (!user) {
-    console.log("User not found.");
+  if (!user || !user.password) {
+    console.log("Credentials not found.");
     return;
   }
 
