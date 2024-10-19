@@ -1,9 +1,9 @@
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
-import { getJwtKey } from "@/utils/getJWTSecret";
+import { getJWTSecret } from "@/utils/getJWTSecret";
 
-const key = getJwtKey();
+const JWTSecret = getJWTSecret();
 
 export async function middleware(req: NextRequest, res: NextResponse) {
   const token = cookies().get("token")?.value;
@@ -15,7 +15,7 @@ export async function middleware(req: NextRequest, res: NextResponse) {
     return NextResponse.redirect(new URL("/login", req.url));
   }
 
-  const session = await jwtVerify(token, key);
+  const session = await jwtVerify(token, JWTSecret);
 
   try {
     if (session) {
