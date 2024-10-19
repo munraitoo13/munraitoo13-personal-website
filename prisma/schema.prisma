@@ -8,26 +8,47 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
+enum Role {
+  USER
+  ADMIN
+}
+
 model User {
-  id        String   @id @default(uuid())
+  id         String  @id @default(uuid())
+  provider   String  @default("email")
+  providerId String?
+
   email     String   @unique
-  password  String
+  password  String?
   name      String
-  posts     Post[]
+  role      Role     @default(USER)
   createdAt DateTime @default(now())
+
+  signedMessage SignedMessage?
+}
+
+model SignedMessage {
+  id     String @id @default(uuid())
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @unique
+
+  message String
 }
 
 model Post {
-  id          String   @id @default(uuid())
+  id String @id @default(uuid())
+
   title       String
   description String
   language    String
   content     String
   tags        Tag[]
-  author      User     @relation(fields: [authorId], references: [id])
-  authorId    String
   published   Boolean  @default(false)
   createdAt   DateTime @default(now())
+
+  views      Int     @default(0)
+  likes      Int     @default(0)
+  isFeatured Boolean @default(false)
 }
 
 model Tag {
