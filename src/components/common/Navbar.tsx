@@ -72,7 +72,7 @@ export function Navbar() {
 
           {/* personal links */}
           <div className="flex flex-col items-center justify-center gap-3">
-            <h3 className="rounded-full bg-neutral-50/50 px-5 py-2 dark:bg-neutral-900/25">
+            <h3 className="cursor-context-menu rounded-full bg-neutral-50/50 px-5 py-2 dark:bg-neutral-900/25">
               Personal
             </h3>
 
