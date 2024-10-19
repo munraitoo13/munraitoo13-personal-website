@@ -1,7 +1,7 @@
 import { Markdown } from "@/components/common/Markdown";
 import { Header } from "@/components/common/Header";
 import { Posts } from "@/components/blog/Posts";
-import { getUserLocale } from "@/lib/locale";
+import { getUserLocale } from "@/utils/userLocale";
 import { prisma } from "@/lib/prisma";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";

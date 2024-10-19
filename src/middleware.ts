@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
-import { getJwtKey } from "@/utils/getJwtKey";
+import { getJwtKey } from "@/utils/getJWTSecret";
 
 const key = getJwtKey();
 

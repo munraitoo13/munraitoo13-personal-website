@@ -1,6 +1,6 @@
 "use client";
 
-import { getUserLocale, setUserLocale } from "@/lib/locale";
+import { getUserLocale, setUserLocale } from "@/utils/userLocale";
 import { useEffect, useState, useTransition } from "react";
 
 // languages

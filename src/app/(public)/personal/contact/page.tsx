@@ -1,7 +1,7 @@
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Header } from "@/components/common/Header";
 import { Markdown } from "@/components/common/Markdown";
-import { getUserLocale } from "@/lib/locale";
+import { getUserLocale } from "@/utils/userLocale";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 

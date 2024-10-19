@@ -1,12 +1,12 @@
 import { JWTPayload, SignJWT } from "jose";
-import { getJwtKey } from "@/utils/getJwtKey";
+import { getJWTSecret } from "@/utils/getJWTSecret";
 
-const key = getJwtKey();
+export async function generateJWT(payload: JWTPayload) {
+  const JWTSecret = getJWTSecret();
 
-export async function encrypt(payload: JWTPayload) {
   return await new SignJWT(payload)
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
     .setExpirationTime("2h")
-    .sign(key);
+    .sign(JWTSecret);
 }
