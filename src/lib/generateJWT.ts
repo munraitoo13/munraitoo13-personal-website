@@ -1,3 +1,5 @@
+"use server";
+
 import { JWTPayload, SignJWT } from "jose";
 import { getJwtKey } from "@/utils/getJwtKey";
 
