@@ -2,9 +2,9 @@
 
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
-import { generateJwt } from "@/lib/generateJwt";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { generateJwt } from "@/utils/tokenUtils";
 
 export async function login(formData: FormData) {
   const email = formData.get("email") as string;
@@ -27,7 +27,7 @@ export async function login(formData: FormData) {
     return;
   } else {
     const { id, name } = user;
-    const token = await generateJwt({ name, id });
+    const token = await generateJwt({ id, name });
     cookies().set("token", token);
     redirect("/admin");
   }
