@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { MotionDiv, MotionNav } from "@/components/common/Motion";
 
-export default function TableOfContents() {
+export function TableOfContents() {
   const t = useTranslations("TableOfContents");
   const [headings, setHeadings] = useState<Headings[]>([]);
 

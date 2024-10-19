@@ -1,6 +1,6 @@
 "use server";
 
-import { prisma } from "@/lib";
+import { prisma } from "@/lib/prisma";
 
 export async function createPost(formData: FormData) {
   try {

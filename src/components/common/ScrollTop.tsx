@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { IconArrowMoveUp } from "@tabler/icons-react";
 import { MotionDiv } from "@/components/common/Motion";
 
-export default function ScrollTop() {
+export function ScrollTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

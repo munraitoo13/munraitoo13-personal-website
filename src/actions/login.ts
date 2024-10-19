@@ -1,7 +1,8 @@
 "use server";
 
 import bcrypt from "bcryptjs";
-import { prisma, encrypt } from "@/lib";
+import { prisma } from "@/lib/prisma";
+import { encrypt } from "@/lib/encrypt";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 

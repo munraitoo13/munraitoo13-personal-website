@@ -1,7 +1,7 @@
 import { MotionBlockquote } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
 
-export default function Phrase() {
+export function Phrase() {
   const t = useTranslations("HomePage");
 
   return (

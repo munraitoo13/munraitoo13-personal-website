@@ -1,10 +1,6 @@
 import { MotionH1, MotionP } from "@/components/common/Motion";
 
-export default function Header({
-  pageTitle,
-  pageDescription,
-  category,
-}: Header) {
+export function Header({ pageTitle, pageDescription, category }: Header) {
   return (
     <header className="flex w-full flex-col justify-center gap-5 pt-48">
       <div>

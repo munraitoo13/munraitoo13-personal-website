@@ -1,12 +1,9 @@
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
+import { getJwtKey } from "@/utils/getJwtKey";
 
-const jwtSecret = process.env.JWT_SECRET;
-if (!jwtSecret) {
-  throw new Error("JWT_SECRET is not defined");
-}
-const key = new TextEncoder().encode(jwtSecret);
+const key = getJwtKey();
 
 export async function middleware(req: NextRequest, res: NextResponse) {
   const token = cookies().get("token")?.value;

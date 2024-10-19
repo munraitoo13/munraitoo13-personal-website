@@ -1,8 +1,9 @@
-import Header from "@/components/common/Header";
-import Markdown from "@/components/common/Markdown";
+import { Markdown } from "@/components/common/Markdown";
+import { Header } from "@/components/common/Header";
+import { Posts } from "@/components/blog/Posts";
+import { getUserLocale } from "@/lib/locale";
+import { prisma } from "@/lib/prisma";
 import { Metadata } from "next";
-import Posts from "@/components/blog/Post";
-import { prisma, getUserLocale } from "@/lib";
 import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {

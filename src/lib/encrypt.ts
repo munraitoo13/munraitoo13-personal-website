@@ -1,5 +1,5 @@
 import { JWTPayload, SignJWT } from "jose";
-import { getJwtKey } from "@/utils";
+import { getJwtKey } from "@/utils/getJwtKey";
 
 const key = getJwtKey();
 

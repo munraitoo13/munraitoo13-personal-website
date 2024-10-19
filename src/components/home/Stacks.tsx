@@ -11,7 +11,7 @@ import {
 import { MotionDiv } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
 
-export default function Stacks() {
+export function Stacks() {
   const t = useTranslations("HomePage");
 
   return (

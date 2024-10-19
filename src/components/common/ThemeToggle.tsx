@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 
-export default function ThemeToggle({ className }: { className?: string }) {
+export function ThemeToggle({ className }: { className?: string }) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {

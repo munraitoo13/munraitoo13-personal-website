@@ -6,7 +6,7 @@ import {
 import { MotionDiv } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
 
-export default function Qualities() {
+export function Qualities() {
   const t = useTranslations("HomePage");
 
   return (

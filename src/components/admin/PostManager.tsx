@@ -1,10 +1,10 @@
-import { prisma } from "@/lib";
-import { deletePost } from "@/actions";
+import { prisma } from "@/lib/prisma";
+import { deletePost } from "@/actions/deletePost";
 import { IconTrash, IconPencil } from "@tabler/icons-react";
-import { formatDate } from "@/utils";
+import { formatDate } from "@/utils/formatDate";
 import Link from "next/link";
 
-export default async function PostManager() {
+export async function PostManager() {
   const posts = await prisma.post.findMany({
     include: {
       tags: true,

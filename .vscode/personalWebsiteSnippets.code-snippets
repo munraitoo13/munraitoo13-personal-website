@@ -19,4 +19,8 @@
     "prefix": "t",
     "body": ["{t('$1')}"],
   },
+  "index export": {
+    "prefix": "ex",
+    "body": ["export * from './$1';"],
+  },
 }

@@ -2,7 +2,7 @@ import { IconBrandGithub } from "@tabler/icons-react";
 import { MotionDiv, MotionA } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
 
-export default function Project({ repos }: { repos: Repos[] }) {
+export function Projects({ repos }: { repos: Repos[] }) {
   const t = useTranslations("Projects");
 
   return (

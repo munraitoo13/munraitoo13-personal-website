@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MotionDiv } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
 
-export default function ContactAndResume() {
+export function ContactAndResume() {
   const t = useTranslations("HomePage");
 
   return (

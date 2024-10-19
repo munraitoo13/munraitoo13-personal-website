@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Logo() {
+export function Logo() {
   return (
     <Link href="/" className="text-nowrap">
       <span className="text-red-600">&lt;</span>

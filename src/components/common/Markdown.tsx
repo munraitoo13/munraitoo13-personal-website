@@ -1,6 +1,6 @@
 import { MotionDiv } from "@/components/common/Motion";
 
-export default function Markdown({ children }: { children: React.ReactNode }) {
+export function Markdown({ children }: { children: React.ReactNode }) {
   return (
     <MotionDiv
       className="mdx-content prose prose-sm prose-neutral max-w-none dark:prose-invert"

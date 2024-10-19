@@ -1,8 +1,8 @@
-import ContactAndResume from "@/components/home/ContactAndResume";
-import Phrase from "@/components/home/Phrase";
-import Presentation from "@/components/home/Presentation";
-import Qualities from "@/components/home/Qualities";
-import Stacks from "@/components/home/Stacks";
+import { ContactAndResume } from "@/components/home/ContactAndResume";
+import { Phrase } from "@/components/home/Phrase";
+import { Presentation } from "@/components/home/Presentation";
+import { Qualities } from "@/components/home/Qualities";
+
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,18 +15,14 @@ export default function Page() {
     <>
       {/* header */}
       <header className="flex w-full flex-col justify-center gap-5 pt-44">
-        {/* presentation */}
         <Presentation />
 
-        {/* contact and resume */}
         <ContactAndResume />
       </header>
 
-      {/* phrase */}
       <Phrase />
 
       <div className="flex flex-col gap-5">
-        {/* qualities */}
         <Qualities />
       </div>
     </>

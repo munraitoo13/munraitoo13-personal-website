@@ -1,9 +1,9 @@
 import { useTranslations } from "next-intl";
 import { IconDeviceMobileExclamation } from "@tabler/icons-react";
-import { formatDate } from "@/utils";
+import { formatDate } from "@/utils/formatDate";
 import { MotionA, MotionDiv } from "@/components/common/Motion";
 
-export default function Posts({ posts }: { posts: Post[] }) {
+export function Posts({ posts }: { posts: Post[] }) {
   const t = useTranslations("Blog");
 
   return (
@@ -53,13 +53,13 @@ export default function Posts({ posts }: { posts: Post[] }) {
           {/* check it and lang */}
           <div className="flex items-center gap-5">
             {/* check it */}
-            <div className="flex w-fit items-center gap-1 rounded-full bg-neutral-100 px-5 py-3 dark:bg-neutral-900/25">
-              <IconDeviceMobileExclamation stroke={1.25} />
+            <div className="flex w-fit items-center gap-1 rounded-full bg-neutral-100 px-5 py-3 text-xs dark:bg-neutral-900/25">
+              <IconDeviceMobileExclamation stroke={1} />
               {t("check")}
             </div>
 
             {/* lang */}
-            <small>{post.language}</small>
+            <p className="text-xs">{post.language}</p>
           </div>
         </MotionA>
       ))}

@@ -6,7 +6,7 @@ import {
 } from "@tabler/icons-react";
 import { MotionA } from "@/components/common/Motion";
 
-export default function Socials() {
+export function Socials() {
   return (
     <div className="flex gap-1">
       {/* github */}

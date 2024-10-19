@@ -1,11 +1,11 @@
 "use client";
 
-import { sendMail } from "@/actions";
+import { sendMail } from "@/actions/sendMail";
 import { toast } from "react-toastify";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-export default function ContactForm() {
+export function ContactForm() {
   const [pending, setPending] = useState(false);
 
   const t = useTranslations("Contact");

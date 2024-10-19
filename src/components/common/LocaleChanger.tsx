@@ -11,7 +11,7 @@ const languages = [
   { name: "François", value: "fr-FR" },
 ];
 
-export default function LocaleChange() {
+export function LocaleChanger() {
   const [locale, setLocale] = useState<string>();
   const [isPending, startTransition] = useTransition();
 

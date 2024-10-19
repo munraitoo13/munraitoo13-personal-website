@@ -1,9 +1,9 @@
-import Header from "@/components/common/Header";
-import Markdown from "@/components/common/Markdown";
+import { Header } from "@/components/common/Header";
+import { Markdown } from "@/components/common/Markdown";
+import { Projects } from "@/components/projects/Projects";
+import { getUserLocale } from "@/lib/locale";
 import { Metadata } from "next";
-import Projects from "@/components/projects/Project";
 import { getTranslations } from "next-intl/server";
-import { getUserLocale } from "@/lib";
 
 export const metadata: Metadata = {
   title: "Projects | munraitoo13",

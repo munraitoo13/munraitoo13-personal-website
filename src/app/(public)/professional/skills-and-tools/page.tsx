@@ -1,9 +1,9 @@
-import Header from "@/components/common/Header";
-import Markdown from "@/components/common/Markdown";
-import Contents from "@/components/common/TableOfContents";
+import { Header } from "@/components/common/Header";
+import { Markdown } from "@/components/common/Markdown";
+import { TableOfContents } from "@/components/common/TableOfContents";
+import { getUserLocale } from "@/lib/locale";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { getUserLocale } from "@/lib";
 
 export const metadata: Metadata = {
   title: "Skills and Tools | munraitoo13",
@@ -24,7 +24,7 @@ export default async function Page() {
       />
 
       <div className="flex flex-col gap-20 lg:flex-row-reverse lg:justify-between">
-        <Contents />
+        <TableOfContents />
         <Markdown>
           <Content />
         </Markdown>

@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Socials from "@/components/common/navbar/Socials";
+import { Socials } from "@/components/common/Socials";
+import { LocaleChanger } from "@/components/common/LocaleChanger";
 import { useTranslations } from "next-intl";
-import LocaleChanger from "@/components/common/footer/LocaleChanger";
 
-export default function Footer() {
+export function Footer() {
   const t = useTranslations("Footer");
 
   // professional links

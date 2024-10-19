@@ -1,8 +1,8 @@
 import { MotionH1, MotionP } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
-import Stacks from "@/components/home/Stacks";
+import { Stacks } from "@/components/home/Stacks";
 
-export default function Presentation() {
+export function Presentation() {
   const t = useTranslations("HomePage");
 
   return (

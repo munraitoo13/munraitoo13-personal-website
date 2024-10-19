@@ -1,9 +1,9 @@
-import { prisma } from "@/lib";
-import { createPost } from "@/actions";
+import { prisma } from "@/lib/prisma";
+import { createPost } from "@/actions/createPost";
 
 const languages = ["Portuguese", "English", "French", "German"];
 
-export default async function NewPostForm() {
+export async function NewPostForm() {
   const tags = await prisma.tag.findMany();
 
   return (

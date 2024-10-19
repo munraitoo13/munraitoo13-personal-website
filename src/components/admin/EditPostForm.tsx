@@ -1,9 +1,9 @@
-import { prisma } from "@/lib";
-import { updatePost } from "@/actions";
+import { prisma } from "@/lib/prisma";
+import { updatePost } from "@/actions/updatePost";
 
 const languages = ["Portuguese", "English", "French", "German"];
 
-export default async function EditPostForm({ slug }: { slug: string }) {
+export async function EditPostForm({ slug }: { slug: string }) {
   const allTags = await prisma.tag.findMany();
   const post = await prisma.post.findUnique({
     where: {
