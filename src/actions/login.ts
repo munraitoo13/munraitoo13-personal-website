@@ -26,7 +26,7 @@ export async function login(formData: FormData) {
     console.log("Invalid password.");
     return;
   } else {
-    const { id, name } = user!;
+    const { id, name } = user;
     const token = await generateJwt({ name, id });
     cookies().set("token", token);
     redirect("/admin");
