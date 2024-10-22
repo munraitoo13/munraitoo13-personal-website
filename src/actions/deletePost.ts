@@ -1,18 +1,28 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
+import { redirect } from "next/navigation";
 
 export async function deletePost(formData: FormData) {
   try {
+    // form data
+    const data = {
+      id: formData.get("id")?.toString(),
+    };
+
     // delete post
     await prisma.post.delete({
       where: {
-        id: formData.get("id") as string,
+        id: data.id,
       },
     });
-
-    console.log("Post deleted successfully");
   } catch (error) {
-    console.error("Error deleting post", error);
+    if (error instanceof Error) {
+      console.error("Error creating a post: ", error.message);
+    } else {
+      console.error("Unexpected error: ", error);
+    }
   }
+
+  redirect("/admin");
 }

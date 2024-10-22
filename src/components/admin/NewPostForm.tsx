@@ -63,7 +63,7 @@ export async function NewPostForm() {
       <textarea
         name="content"
         placeholder="Content"
-        className="flex w-full flex-grow resize-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
+        className="flex h-96 w-full resize-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
       />
 
       {/* submit and publish check */}

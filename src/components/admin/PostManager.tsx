@@ -69,7 +69,7 @@ export async function PostManager() {
             {/* edit */}
             <Link
               className="hover:text-red-600"
-              href={`/admin/edit-post/${post.id}`}
+              href={`/admin/update-post/${post.id}`}
               target="_blank"
             >
               <IconPencil stroke={1.25} />

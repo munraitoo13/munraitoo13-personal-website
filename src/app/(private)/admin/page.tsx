@@ -1,17 +1,10 @@
+import { PostManager } from "@/components/admin/PostManager";
 import Link from "next/link";
 
 const links = [
   {
-    name: "Home",
-    href: "/",
-  },
-  {
     name: "New Post",
     href: "/admin/new-post",
-  },
-  {
-    name: "Manage Posts",
-    href: "/admin/manage-posts",
   },
 ];
 
@@ -23,6 +16,7 @@ export default function Admin() {
         <h1 className="text-2xl font-extrabold text-neutral-900 dark:text-white">
           Admin Panel
         </h1>
+
         <p>Please note that some functions may not work properly!</p>
       </div>
 
@@ -48,12 +42,9 @@ export default function Admin() {
           </div>
         </div>
 
-        {/* analytics */}
+        {/* post manager */}
         <div className="flex flex-col items-center justify-center rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25">
-          <h3 className="text-xl font-extrabold text-neutral-900 dark:text-white">
-            Analytics
-          </h3>
-          <p>Coming soon</p>
+          <PostManager />
         </div>
       </div>
     </>

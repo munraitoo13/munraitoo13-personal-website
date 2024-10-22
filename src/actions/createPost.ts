@@ -1,25 +1,40 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
+import { redirect } from "next/navigation";
 
 export async function createPost(formData: FormData) {
   try {
+    // form data
+    const data = {
+      language: formData.get("language")?.toString() ?? "",
+      published: formData.get("published")?.toString() === "on",
+      title: formData.get("title")?.toString() ?? "",
+      tags: formData.getAll("tags").map((tag) => tag.toString()),
+      description: formData.get("description")?.toString() ?? "",
+      content: formData.get("content")?.toString() ?? "",
+    };
+
+    // create post
     await prisma.post.create({
       data: {
-        language: formData.get("language") as string,
-        published: formData.get("published") === "on",
-        title: formData.get("title") as string,
+        language: data.language,
+        published: data.published,
+        title: data.title,
         tags: {
-          connect: formData
-            .getAll("tags")
-            .map((tag) => ({ id: tag as string })),
+          connect: data.tags.map((tag) => ({ id: tag })),
         },
-        description: formData.get("description") as string,
-        content: formData.get("content") as string,
+        description: data.description,
+        content: data.content,
       },
     });
-    console.log("Post created successfully.");
   } catch (error) {
-    console.error("Error creating a post: ", error);
+    if (error instanceof Error) {
+      console.error("Error creating a post:", error.message);
+    } else {
+      console.error("Unexpected error:", error);
+    }
   }
+
+  redirect("/admin");
 }

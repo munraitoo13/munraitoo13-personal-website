@@ -3,7 +3,7 @@ import { updatePost } from "@/actions/updatePost";
 
 const languages = ["Portuguese", "English", "French", "German"];
 
-export async function EditPostForm({ slug }: { slug: string }) {
+export async function UpdatePostForm({ slug }: { slug: string }) {
   const allTags = await prisma.tag.findMany();
   const post = await prisma.post.findUnique({
     where: {
@@ -89,7 +89,7 @@ export async function EditPostForm({ slug }: { slug: string }) {
       <textarea
         name="content"
         placeholder="Content"
-        className="flex w-full flex-grow resize-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
+        className="flex h-96 w-full resize-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
         defaultValue={content}
       />
 
