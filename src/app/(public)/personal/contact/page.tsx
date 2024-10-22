@@ -4,6 +4,7 @@ import { Markdown } from "@/components/common/Markdown";
 import { getUserLocale } from "@/utils/userLocale";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Contact | munraitoo13",
@@ -17,6 +18,11 @@ export default async function Page() {
 
   return (
     <>
+      <Script
+        strategy="beforeInteractive"
+        src={`https://www.google.com/recaptcha/api.js?render=${process.env.SITE_KEY}`}
+      />
+
       <Header
         category={t("category")}
         pageTitle={t("title")}

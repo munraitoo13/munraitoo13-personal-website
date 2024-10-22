@@ -16,8 +16,7 @@ export function ContactForm() {
 
     const formData = new FormData(event.currentTarget);
     const email = formData.get("email") as string;
-    const emailRegex = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/gim;
-    if (!emailRegex.test(email)) {
+    if (!/[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/gim.test(email)) {
       toast.error(tt("invalidEmail"));
       return;
     }
@@ -30,6 +29,7 @@ export function ContactForm() {
       console.error("Error sending email", error);
       toast.error(tt("messageError"));
     }
+
     setPending(false);
   };
 
