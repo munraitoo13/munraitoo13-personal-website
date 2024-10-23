@@ -107,6 +107,7 @@
   "Toastify": {
     "messageSent": "Mensagem enviada!",
     "messageError": "Erro ao enviar mensagem.",
-    "invalidEmail": "E-mail inválido."
+    "invalidEmail": "E-mail inválido.",
+    "failedCaptcha": "Falha na verificação do captcha."
   }
 }

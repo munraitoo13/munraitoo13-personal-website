@@ -18,11 +18,6 @@ export default async function Page() {
 
   return (
     <>
-      <Script
-        strategy="beforeInteractive"
-        src={`https://www.google.com/recaptcha/api.js?render=${process.env.SITE_KEY}`}
-      />
-
       <Header
         category={t("category")}
         pageTitle={t("title")}

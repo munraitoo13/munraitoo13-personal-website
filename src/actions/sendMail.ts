@@ -10,7 +10,24 @@ export async function sendMail(formData: FormData) {
       email: formData.get("email")?.toString() ?? "",
       subject: formData.get("subject")?.toString() ?? "",
       message: formData.get("message")?.toString() ?? "",
+      captchaToken: formData.get("captchaToken")?.toString() ?? "",
     };
+
+    // validate captcha
+    const captchaResponse = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `secret=${process.env.CAPTCHA_SECRET}&response=${data.captchaToken}`,
+      },
+    );
+    const captchaResult = await captchaResponse.json();
+    if (!captchaResult.success) {
+      throw new Error("Captcha failed");
+    }
 
     // send email
     await transporter.sendMail({

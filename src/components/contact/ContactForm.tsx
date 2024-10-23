@@ -3,10 +3,21 @@
 import { sendMail } from "@/actions/sendMail";
 import { toast } from "react-toastify";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useRef } from "react";
 
 export function ContactForm() {
   const [pending, setPending] = useState(false);
+  const [theme, setTheme] = useState("light");
+  const [captchaToken, setCaptchaToken] = useState<string | null>("");
+  const captchaRef = useRef<ReCAPTCHA>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    const theme = localStorage.getItem("theme") || "light";
+    setTheme(theme);
+  }, []);
 
   const t = useTranslations("Contact");
   const tt = useTranslations("Toastify");
@@ -21,6 +32,12 @@ export function ContactForm() {
       return;
     }
 
+    if (!captchaToken) {
+      toast.error(tt("failedCaptcha"));
+      return;
+    }
+    formData.append("captchaToken", captchaToken);
+
     try {
       setPending(true);
       await sendMail(formData);
@@ -30,11 +47,13 @@ export function ContactForm() {
       toast.error(tt("messageError"));
     }
 
+    formRef.current?.reset();
+    captchaRef.current?.reset();
     setPending(false);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+    <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-3">
       <input
         required
         type="text"
@@ -73,12 +92,21 @@ export function ContactForm() {
         placeholder={t("message")}
       />
 
-      <button
-        disabled={pending}
-        className={`${pending ? "cursor-not-allowed" : "cursor-pointer"} rounded-full bg-red-600 px-5 py-3 text-white`}
-      >
-        {pending ? t("sending") : t("send")}
-      </button>
+      <div className="flex items-center gap-5">
+        <button
+          disabled={pending}
+          className={`${pending ? "cursor-not-allowed" : "cursor-pointer"} rounded-full bg-red-600 px-5 py-3 text-white`}
+        >
+          {pending ? t("sending") : t("send")}
+        </button>
+
+        <ReCAPTCHA
+          theme={theme as "light" | "dark"}
+          sitekey={process.env.NEXT_PUBLIC_SITE_KEY || ""}
+          onChange={(token) => setCaptchaToken(token)}
+          ref={captchaRef}
+        />
+      </div>
     </form>
   );
 }
