@@ -93,10 +93,10 @@ export function ContactForm() {
         placeholder={t("message")}
       />
 
-      <div className="flex items-center gap-5">
+      <div className="flex flex-col items-center gap-5 self-center md:flex-row md:self-start">
         <button
           disabled={pending}
-          className={`${pending ? "cursor-not-allowed" : "cursor-pointer"} rounded-full bg-red-600 px-5 py-3 text-white`}
+          className={`${pending ? "cursor-not-allowed" : "cursor-pointer"} order-2 rounded-full bg-red-600 px-5 py-3 text-white md:order-1`}
         >
           {pending ? t("sending") : t("send")}
         </button>
@@ -106,6 +106,7 @@ export function ContactForm() {
           sitekey={process.env.NEXT_PUBLIC_SITE_KEY || ""}
           onChange={(token) => setCaptchaToken(token)}
           ref={captchaRef}
+          className="order-1 md:order-2"
         />
       </div>
     </form>
