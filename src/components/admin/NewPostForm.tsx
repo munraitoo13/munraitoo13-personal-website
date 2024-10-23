@@ -8,21 +8,24 @@ export function NewPostForm({ tags }: { tags: Tag[] }) {
   const languages = ["Português", "English", "Français", "Deutsch"];
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-  // if tag in selectedTags, remove it, else add it
+  // handle tag click
   const handleTagClick = (tagId: string) => {
-    if (selectedTags.includes(tagId)) {
-      setSelectedTags(selectedTags.filter((tag) => tag !== tagId));
-    } else {
-      setSelectedTags([...selectedTags, tagId]);
-    }
+    setSelectedTags((prevTags) => {
+      if (prevTags.includes(tagId)) {
+        return prevTags.filter((tag) => tag !== tagId);
+      } else {
+        return [...prevTags, tagId];
+      }
+    });
   };
 
-  // if tag in selectedTags, bg-red else bg-neutral
+  // tag color
   const tagColor = (tagId: string) =>
     selectedTags.includes(tagId)
       ? "bg-red-600"
       : "bg-neutral-50/50 dark:bg-neutral-900/25";
 
+  // handle form submit
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
