@@ -26,6 +26,11 @@ export function ContactForm() {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
+    if (Array.from(formData.values()).some((value) => !value)) {
+      toast.error(tt("emptyFields"));
+      return;
+    }
+
     const email = formData.get("email") as string;
     if (!/[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/gim.test(email)) {
       toast.error(tt("invalidEmail"));
@@ -55,7 +60,6 @@ export function ContactForm() {
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-3">
       <input
-        required
         type="text"
         id="name"
         name="name"
@@ -65,7 +69,6 @@ export function ContactForm() {
       />
 
       <input
-        required
         type="email"
         id="email"
         name="email"
@@ -75,7 +78,6 @@ export function ContactForm() {
       />
 
       <input
-        required
         type="text"
         id="subject"
         name="subject"
@@ -85,7 +87,6 @@ export function ContactForm() {
       />
 
       <textarea
-        required
         id="message"
         name="message"
         className="h-48 resize-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"

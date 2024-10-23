@@ -48,7 +48,7 @@
   "Footer": {
     "professional": "Profissional",
     "experiences": "Experiencias",
-    "skillsAndTools": "Habilidades e Ferramentas",
+    "skillsAndTools": "Habilidades",
 
     "personal": "Pessoal",
     "blog": "Blog",
@@ -108,6 +108,7 @@
     "messageSent": "Mensagem enviada!",
     "messageError": "Erro ao enviar mensagem.",
     "invalidEmail": "E-mail inválido.",
-    "failedCaptcha": "Falha na verificação do captcha."
+    "failedCaptcha": "Falha na verificação do captcha.",
+    "emptyFields": "Alguns campos estão vazios."
   }
 }

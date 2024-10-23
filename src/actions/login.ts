@@ -41,6 +41,6 @@ export async function login(formData: FormData) {
     console.error("Error during login:", error);
   }
 
-  // redirect to /admin
+  // redirect to admin page
   redirect("/admin");
 }

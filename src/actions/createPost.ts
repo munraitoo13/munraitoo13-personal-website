@@ -7,34 +7,31 @@ export async function createPost(formData: FormData) {
   try {
     // form data
     const data = {
-      language: formData.get("language")?.toString() ?? "",
-      published: formData.get("published")?.toString() === "on",
       title: formData.get("title")?.toString() ?? "",
-      tags: formData.getAll("tags").map((tag) => tag.toString()),
       description: formData.get("description")?.toString() ?? "",
+      language: formData.get("language")?.toString() ?? "",
+      tags: formData.getAll("tags").map((tag) => tag.toString()),
       content: formData.get("content")?.toString() ?? "",
+      published: formData.get("published")?.toString() === "on",
     };
 
     // create post
     await prisma.post.create({
       data: {
-        language: data.language,
-        published: data.published,
         title: data.title,
+        description: data.description,
+        language: data.language,
         tags: {
           connect: data.tags.map((tag) => ({ id: tag })),
         },
-        description: data.description,
         content: data.content,
+        published: data.published,
       },
     });
   } catch (error) {
-    if (error instanceof Error) {
-      console.error("Error creating a post:", error.message);
-    } else {
-      console.error("Unexpected error:", error);
-    }
+    console.error("Error creating a post:", error);
   }
 
+  // redirect to admin page
   redirect("/admin");
 }

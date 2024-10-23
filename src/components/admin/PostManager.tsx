@@ -10,7 +10,6 @@ export async function PostManager() {
       tags: true,
     },
   });
-  const tags = await prisma.tag.findMany();
 
   return (
     <div className="flex w-full flex-col gap-5">
@@ -53,10 +52,10 @@ export async function PostManager() {
 
             {/* tags */}
             <div className="flex flex-wrap gap-1">
-              {tags.map((tag: Tag) => (
+              {post.tags.map((tag: Tag) => (
                 <span
-                  key={tag.name}
-                  className="rounded-full bg-neutral-100 px-3 py-1 dark:bg-neutral-900/25"
+                  key={tag.id}
+                  className="rounded-lg bg-neutral-100 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-900/25 dark:text-neutral-200"
                 >
                   {tag.name}
                 </span>

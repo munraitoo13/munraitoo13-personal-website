@@ -1,91 +1,123 @@
-import { prisma } from "@/lib/prisma";
+"use client";
+
 import { createPost } from "@/actions/createPost";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
-const languages = ["Portuguese", "English", "French", "German"];
+export function NewPostForm({ tags }: { tags: Tag[] }) {
+  const languages = ["Português", "English", "Français", "Deutsch"];
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-export async function NewPostForm() {
-  const tags = await prisma.tag.findMany();
+  // if tag in selectedTags, remove it, else add it
+  const handleTagClick = (tagId: string) => {
+    if (selectedTags.includes(tagId)) {
+      setSelectedTags(selectedTags.filter((tag) => tag !== tagId));
+    } else {
+      setSelectedTags([...selectedTags, tagId]);
+    }
+  };
+
+  // if tag in selectedTags, bg-red else bg-neutral
+  const tagColor = (tagId: string) =>
+    selectedTags.includes(tagId)
+      ? "bg-red-600"
+      : "bg-neutral-50/50 dark:bg-neutral-900/25";
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    // create formdata and append tags
+    const formData = new FormData(event.currentTarget);
+    selectedTags.forEach((tag) => formData.append("tags", tag));
+
+    // check if all fields are filled
+    if (Array.from(formData.values()).some((value) => value === "")) {
+      toast.error("Please fill all fields");
+      return;
+    }
+
+    // create post
+    try {
+      await createPost(formData);
+      toast.success("Post created successfully!");
+    } catch (error) {
+      toast.error("Error creating post");
+      console.error("Error creating post: ", error);
+    }
+  };
 
   return (
-    <form
-      className="flex h-full w-full flex-col items-center justify-center gap-3"
-      action={createPost}
-    >
+    <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2">
       {/* title */}
       <input
+        type="text"
         name="title"
         placeholder="Title"
-        className="w-full resize-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
-        maxLength={64}
+        className="w-full rounded-xl bg-neutral-50/50 px-5 py-3 dark:bg-neutral-900/25"
+      />
+
+      {/* description */}
+      <textarea
+        name="description"
+        placeholder="Description"
+        className="w-full rounded-xl bg-neutral-50/50 px-5 py-3 dark:bg-neutral-900/25"
       />
 
       {/* language and tags */}
-      <div className="flex w-full gap-3">
+      <div className="flex gap-2">
         {/* language */}
         <select
           name="language"
-          className="cursor-pointer appearance-none rounded-xl bg-neutral-50 px-5 dark:bg-neutral-900/25"
+          className="w-fit appearance-none rounded-xl bg-neutral-50/50 px-5 py-3 dark:bg-neutral-900/25"
         >
           {languages.map((language) => (
-            <option className="bg-neutral-950" key={language} value={language}>
+            <option key={language} value={language}>
               {language}
             </option>
           ))}
         </select>
 
         {/* tags */}
-        <select
-          name="tags"
-          className="h-16 w-full cursor-pointer rounded-xl bg-neutral-50 px-5 dark:bg-neutral-900/25"
-          multiple
-        >
-          {tags.map((tag: Tag) => (
-            <option
-              className="rounded-xl px-5 py-2"
+        <div className="flex items-center justify-center gap-1">
+          {tags.map((tag) => (
+            <div
               key={tag.id}
-              value={tag.id}
+              className={`${tagColor(tag.id)} cursor-pointer rounded-xl px-3 py-1`}
+              onClick={() => handleTagClick(tag.id)}
             >
               {tag.name}
-            </option>
+            </div>
           ))}
-        </select>
+        </div>
       </div>
-
-      {/* description */}
-      <textarea
-        name="description"
-        placeholder="Description"
-        className="h-24 w-full resize-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
-        maxLength={255}
-      />
 
       {/* content */}
       <textarea
         name="content"
         placeholder="Content"
-        className="flex h-96 w-full resize-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
+        className="h-96 w-full rounded-xl bg-neutral-50/50 px-5 py-3 dark:bg-neutral-900/25"
       />
 
-      {/* submit and publish check */}
-      <div className="flex items-center gap-5 self-start">
+      {/* submit and published */}
+      <div className="mt-5 flex gap-5 self-center">
         {/* submit */}
         <button
           type="submit"
-          className="rounded-full bg-red-600 px-5 py-3 text-white"
+          className="text- rounded-full bg-red-600 px-5 py-3 text-white"
         >
           Create Post
         </button>
 
         {/* published */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center justify-center gap-2">
           <input
-            className="size-5 cursor-pointer"
             type="checkbox"
             name="published"
             id="published"
+            className="h-3 w-3 cursor-pointer appearance-none rounded-sm bg-neutral-50/50 outline outline-4 outline-neutral-50/50 checked:bg-red-600 dark:bg-neutral-900/25 dark:outline-neutral-900/25 dark:checked:bg-red-600"
           />
-          <label className="cursor-pointer" htmlFor="published">
-            Publish
+          <label htmlFor="published" className="cursor-pointer">
+            Published
           </label>
         </div>
       </div>

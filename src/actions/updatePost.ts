@@ -8,12 +8,12 @@ export async function updatePost(formData: FormData) {
     // form data
     const data = {
       id: formData.get("id")?.toString(),
-      language: formData.get("language")?.toString(),
-      published: formData.get("published") === "on",
       title: formData.get("title")?.toString(),
-      tags: formData.getAll("tags").map((tag) => tag.toString()),
       description: formData.get("description")?.toString(),
+      language: formData.get("language")?.toString(),
+      tags: formData.getAll("tags").map((tag) => tag.toString()),
       content: formData.get("content")?.toString(),
+      published: formData.get("published") === "on",
     };
 
     // update post
@@ -23,14 +23,14 @@ export async function updatePost(formData: FormData) {
       },
 
       data: {
-        language: data.language,
-        published: data.published,
         title: data.title,
+        description: data.description,
+        language: data.language,
         tags: {
           connect: data.tags.map((tag) => ({ id: tag })),
         },
-        description: data.description,
         content: data.content,
+        published: data.published,
       },
     });
   } catch (error) {

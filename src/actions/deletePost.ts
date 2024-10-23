@@ -17,12 +17,9 @@ export async function deletePost(formData: FormData) {
       },
     });
   } catch (error) {
-    if (error instanceof Error) {
-      console.error("Error creating a post: ", error.message);
-    } else {
-      console.error("Unexpected error: ", error);
-    }
+    console.error("Error deleting a post:", error);
   }
 
+  // redirect to admin page
   redirect("/admin");
 }

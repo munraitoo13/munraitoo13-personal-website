@@ -108,6 +108,7 @@
     "messageSent": "Message envoyé !",
     "messageError": "Erreur lors de l'envoi du message.",
     "invalidEmail": "E-mail invalide.",
-    "failedCaptcha": "Échec de la vérification du captcha."
+    "failedCaptcha": "Échec de la vérification du captcha.",
+    "emptyFields": "Certains champs sont vides."
   }
 }
