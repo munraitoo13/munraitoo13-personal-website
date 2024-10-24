@@ -100,6 +100,10 @@
     "check": "Schau es dir an!"
   },
 
+  "BlogHeader": {
+    "return": "Zurück"
+  },
+
   "TableOfContents": {
     "contents": "Inhalt"
   },

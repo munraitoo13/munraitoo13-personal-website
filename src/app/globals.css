@@ -6,3 +6,7 @@
   scroll-behavior: smooth;
   scroll-margin-top: 7rem;
 }
+
+.dark {
+  color-scheme: dark;
+}

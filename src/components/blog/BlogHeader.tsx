@@ -1,9 +1,26 @@
-import { IconLanguage, IconCalendarEvent } from "@tabler/icons-react";
+import {
+  IconLanguage,
+  IconCalendarEvent,
+  IconArrowBack,
+} from "@tabler/icons-react";
 import { MotionDiv, MotionH1, MotionP } from "@/components/common/Motion";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export function BlogHeader({ title, description, language, date }: BlogHeader) {
+  const t = useTranslations("BlogHeader");
+
   return (
-    <header className="flex w-full flex-col justify-center gap-5 pt-48">
+    <header className="mt-36 flex w-full flex-col justify-center gap-5">
+      {/* return */}
+      <Link
+        href="/personal/blog"
+        className="flex items-center gap-3 text-red-600"
+      >
+        <IconArrowBack />
+        <p className="font-semibold">{t("return")}</p>
+      </Link>
+
       {/* title */}
       <MotionH1
         initial={{ x: -50, opacity: 0 }}

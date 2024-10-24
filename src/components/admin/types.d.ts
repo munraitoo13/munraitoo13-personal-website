@@ -3,7 +3,7 @@ type Tag = {
   name: string;
 };
 
-interface Post {
+type Post = {
   tags: any;
   id: string;
   title: string;
@@ -13,4 +13,4 @@ interface Post {
   createdAt: Date;
   published: boolean;
   tags: Tag[];
-}
+};

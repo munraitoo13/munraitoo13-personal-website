@@ -1,4 +1,5 @@
 import { PostManager } from "@/components/admin/PostManager";
+import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
 const links = [
@@ -8,7 +9,13 @@ const links = [
   },
 ];
 
-export default function Admin() {
+export default async function Admin() {
+  const posts = await prisma.post.findMany({
+    include: {
+      tags: true,
+    },
+  });
+
   return (
     <>
       {/* title */}
@@ -44,7 +51,7 @@ export default function Admin() {
 
         {/* post manager */}
         <div className="flex flex-col items-center justify-center rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25">
-          <PostManager />
+          <PostManager posts={posts} />
         </div>
       </div>
     </>

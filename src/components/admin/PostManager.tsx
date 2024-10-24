@@ -1,15 +1,28 @@
-import { prisma } from "@/lib/prisma";
+"use client";
+
 import { deletePost } from "@/actions/deletePost";
 import { IconTrash, IconPencil } from "@tabler/icons-react";
 import { formatDate } from "@/utils/formatDate";
+import { toast } from "react-toastify";
 import Link from "next/link";
 
-export async function PostManager() {
-  const posts = await prisma.post.findMany({
-    include: {
-      tags: true,
-    },
-  });
+export function PostManager({ posts }: { posts: Post[] }) {
+  // handle delete
+  const handleDelete = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    // create formdata
+    const formData = new FormData(event.currentTarget);
+
+    // delete post
+    try {
+      await deletePost(formData);
+      toast.success("Post deleted successfully!");
+    } catch (error) {
+      toast.error("Error deleting post");
+      console.error("Error deleting post: ", error);
+    }
+  };
 
   return (
     <div className="flex w-full flex-col gap-5">
@@ -41,6 +54,7 @@ export async function PostManager() {
               {/* title */}
               <Link
                 href={`/personal/blog/posts/${post.id}`}
+                target="_blank"
                 className="text-xl font-bold text-neutral-900 hover:text-red-600 dark:text-white dark:hover:text-red-600"
               >
                 {post.title}
@@ -75,7 +89,7 @@ export async function PostManager() {
 
             {/* delete */}
             <form
-              action={deletePost}
+              onSubmit={handleDelete}
               className="cursor-pointer hover:text-red-600"
             >
               <input type="hidden" name="id" value={post.id} />

@@ -93,8 +93,9 @@ export function ContactForm() {
         placeholder={t("message")}
       />
 
-      <div className="flex flex-col items-center gap-5 self-center md:flex-row md:self-start">
+      <div className="flex flex-col items-center gap-3 self-center md:flex-row md:self-start">
         <button
+          type="submit"
           disabled={pending}
           className={`${pending ? "cursor-not-allowed" : "cursor-pointer"} order-2 rounded-full bg-red-600 px-5 py-3 text-white md:order-1`}
         >
