@@ -3,7 +3,7 @@ import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.min.css";
+import "react-toastify/ReactToastify.min.css";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -37,7 +37,7 @@ export default async function RootLayout({
           {children}
         </NextIntlClientProvider>
 
-        <ThemeToggle className="fixed bottom-0 right-0 z-50 mb-5 mr-5" />
+        <ThemeToggle />
       </body>
     </html>
   );

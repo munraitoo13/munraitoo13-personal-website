@@ -27,13 +27,11 @@ export default async function Page() {
         pageDescription={t("description")}
       />
 
-      <div className="flex flex-col gap-10">
-        <Markdown>
-          <Content />
-        </Markdown>
+      <Markdown>
+        <Content />
+      </Markdown>
 
-        <Projects repos={repos} />
-      </div>
+      <Projects repos={repos} />
     </>
   );
 }

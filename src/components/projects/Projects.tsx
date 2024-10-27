@@ -1,25 +1,27 @@
 import { IconBrandGithub } from "@tabler/icons-react";
 import { MotionDiv, MotionA } from "@/components/common/Motion";
+import { revealVariants, contentVariants } from "@/animations/motionVariants";
 import { useTranslations } from "next-intl";
 
-export function Projects({ repos }: { repos: Repos[] }) {
+export function Projects({ repos }: ProjectsProps) {
   const t = useTranslations("Projects");
 
   return (
     <MotionDiv
-      initial={{ x: -50, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ delay: 0.4 }}
+      variants={contentVariants}
+      initial="hidden"
+      animate="visible"
       className="grid gap-5 lg:grid-cols-2"
     >
       {repos.map((repo) => (
         <MotionA
-          initial={{ opacity: 1, x: 0 }}
+          variants={revealVariants}
           whileHover={{ x: 5 }}
-          className="flex flex-col justify-between gap-10 rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25"
+          whileTap={{ scale: 0.95 }}
           href={repo.html_url}
           key={repo.id}
           target="_blank"
+          className="flex flex-col justify-between gap-10 rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25"
         >
           {/* project */}
           <div className="flex flex-col gap-3">

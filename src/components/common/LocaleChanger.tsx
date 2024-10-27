@@ -1,9 +1,8 @@
 "use client";
 
-import { getUserLocale, setUserLocale } from "@/utils/userLocale";
-import { useEffect, useState, useTransition } from "react";
+import { useLocale } from "@/hooks/useLocale";
 
-// languages
+// Language options
 const languages = [
   { name: "Português", value: "pt-BR" },
   { name: "English", value: "en-US" },
@@ -12,25 +11,7 @@ const languages = [
 ];
 
 export function LocaleChanger() {
-  const [locale, setLocale] = useState<string>();
-  const [isPending, startTransition] = useTransition();
-
-  useEffect(() => {
-    getLocale();
-  }, []);
-
-  const getLocale = async () => {
-    const userLocale = await getUserLocale();
-    setLocale(userLocale);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedLocale = e.target.value;
-    startTransition(() => {
-      setUserLocale(selectedLocale);
-      setLocale(selectedLocale);
-    });
-  };
+  const { locale, updateLocale, isPending } = useLocale();
 
   return (
     <select
@@ -38,16 +19,17 @@ export function LocaleChanger() {
       name="language"
       title="language"
       id="language"
-      onChange={handleChange}
+      onChange={(e) => updateLocale(e.target.value)}
       value={locale}
+      disabled={isPending}
     >
-      {languages.map((lang) => (
+      {languages.map(({ name, value }) => (
         <option
           className="border-red-600 bg-neutral-50 font-sans dark:bg-neutral-950"
-          key={lang.value}
-          value={lang.value}
+          key={value}
+          value={value}
         >
-          {lang.name}
+          {name}
         </option>
       ))}
     </select>

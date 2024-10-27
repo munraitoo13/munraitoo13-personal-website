@@ -1,40 +1,20 @@
 "use client";
 
 import { updatePost } from "@/actions/updatePost";
-import { useEffect, useState } from "react";
+import { useTagSelection } from "@/hooks/useTagSelection";
+import { useEffect } from "react";
 import { toast } from "react-toastify";
 
-export function UpdatePostForm({ tags, post }: { tags: Tag[]; post: Post }) {
+export function UpdatePostForm({ tags, post }: UpdatePostProps) {
   const languages = ["Português", "English", "Français", "Deutsch"];
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const { selectedTags, handleTagClick, tagColor, setSelectedTags } =
+    useTagSelection();
 
   // set selectedTags to post tags
   useEffect(() => {
     const postTags = post.tags.map((tag: Tag) => tag.id);
     setSelectedTags(postTags);
-  }, [post.tags]);
-
-  // log whenever selectedTags changes
-  useEffect(() => {
-    console.log("Updated selectedTags: ", selectedTags);
-  }, [selectedTags]);
-
-  // handle tag click
-  const handleTagClick = (tagId: string) => {
-    if (selectedTags.includes(tagId)) {
-      setSelectedTags((prevSelectedTags) =>
-        prevSelectedTags.filter((tag) => tag !== tagId),
-      );
-    } else {
-      setSelectedTags((prevSelectedTags) => [...prevSelectedTags, tagId]);
-    }
-  };
-
-  // tag color
-  const tagColor = (tagId: string) =>
-    selectedTags.includes(tagId)
-      ? "bg-red-600"
-      : "bg-neutral-50/50 dark:bg-neutral-900/25";
+  }, []);
 
   // handle form submit
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {

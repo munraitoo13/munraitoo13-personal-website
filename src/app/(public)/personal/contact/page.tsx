@@ -4,7 +4,6 @@ import { Markdown } from "@/components/common/Markdown";
 import { getUserLocale } from "@/utils/userLocale";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Contact | munraitoo13",

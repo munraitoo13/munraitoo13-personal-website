@@ -1,17 +1,18 @@
 import { IconFile } from "@tabler/icons-react";
 import Link from "next/link";
-import { MotionDiv } from "@/components/common/Motion";
+import { MotionSection } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
+import { contactAndResumeVariants } from "@/animations/motionVariants";
 
 export function ContactAndResume() {
   const t = useTranslations("HomePage");
 
   return (
-    <MotionDiv
+    <MotionSection
       className="mt-10 flex items-center justify-center gap-5"
-      initial={{ x: -50, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ delay: 0.3 }}
+      variants={contactAndResumeVariants}
+      initial="hidden"
+      animate="visible"
     >
       <Link
         className="flex items-center rounded-full bg-red-600 px-5 py-3 text-white"
@@ -24,6 +25,6 @@ export function ContactAndResume() {
         <IconFile stroke={1.25} />
         {t("resume")}
       </Link>
-    </MotionDiv>
+    </MotionSection>
   );
 }

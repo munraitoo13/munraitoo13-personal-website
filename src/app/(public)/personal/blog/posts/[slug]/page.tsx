@@ -4,19 +4,29 @@ import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/utils/formatDate";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({ params }: Params) {
   const post = await prisma.post.findUnique({
     where: { id: params.slug },
   });
+  if (!post) {
+    return (
+      <BlogHeader
+        title="Post not found"
+        description="The post you are looking for does not exist."
+        date={await formatDate(new Date())}
+        language={"Easter Egg!"}
+      />
+    );
+  }
 
-  const { title, description, createdAt, language, content } = post!;
+  const { title, description, createdAt, language, content } = post;
 
   return (
     <>
       <BlogHeader
         title={title}
         description={description}
-        date={formatDate(createdAt)}
+        date={await formatDate(createdAt)}
         language={language}
       />
 

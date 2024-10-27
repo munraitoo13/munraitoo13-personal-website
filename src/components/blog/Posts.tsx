@@ -2,64 +2,51 @@ import { useTranslations } from "next-intl";
 import { IconDeviceMobileExclamation } from "@tabler/icons-react";
 import { formatDate } from "@/utils/formatDate";
 import { MotionA, MotionDiv } from "@/components/common/Motion";
+import { contentVariants, revealVariants } from "@/animations/motionVariants";
 
-export function Posts({ posts }: { posts: Post[] }) {
+export function Posts({ posts }: Posts) {
   const t = useTranslations("Blog");
 
   return (
     <MotionDiv
-      initial={{ x: -50, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ delay: 0.4 }}
+      variants={contentVariants}
+      initial="hidden"
+      animate="visible"
       className="flex flex-col gap-5"
     >
-      {posts.map((post: Post) => (
+      {posts.map((post) => (
         <MotionA
-          initial={{ opacity: 1, x: 0 }}
+          variants={revealVariants}
           whileHover={{ x: 5 }}
-          className="flex flex-col gap-10 rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25"
+          className="flex flex-col rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25"
           href={`/personal/blog/posts/${post.id}`}
           key={post.id}
         >
-          {/* post */}
-          <div className="flex flex-col gap-3">
-            {/* date and lang */}
-            <div className="flex items-center gap-5 font-bold text-red-600">
-              {/* date */}
-              <small>{formatDate(post.createdAt)}</small>
-            </div>
+          {/* date */}
+          <small className="font-bold text-red-600">
+            {formatDate(post.createdAt)}
+          </small>
 
-            {/* title */}
-            <h2 className="text-4xl font-extrabold text-neutral-900 dark:text-white">
-              {post.title}
-            </h2>
+          {/* title */}
+          <h2 className="text-4xl font-extrabold text-neutral-900 dark:text-white">
+            {post.title}
+          </h2>
 
-            {/* description */}
-            <p className="text-xl">{post.description}</p>
+          {/* description */}
+          <p className="text-lg">{post.description}</p>
 
-            {/* tags */}
-            <div className="flex flex-wrap gap-1">
-              {post.tags.map((tag: Tag) => (
-                <span
-                  key={tag.id}
-                  className="rounded-full bg-neutral-100 px-3 py-1 dark:bg-neutral-900/25"
-                >
-                  {tag.name}
-                </span>
-              ))}
-            </div>
-          </div>
+          {/* tags and lang */}
+          <div className="mt-10 flex flex-wrap items-center gap-1">
+            {post.tags.map((tag: Tag) => (
+              <span
+                key={tag.id}
+                className="rounded-full bg-neutral-100 px-3 py-1 dark:bg-neutral-900/25"
+              >
+                {tag.name}
+              </span>
+            ))}
 
-          {/* check it and lang */}
-          <div className="flex items-center gap-5">
-            {/* check it */}
-            <div className="flex w-fit items-center gap-1 rounded-full bg-neutral-100 px-5 py-3 text-xs dark:bg-neutral-900/25">
-              <IconDeviceMobileExclamation stroke={1} />
-              {t("check")}
-            </div>
-
-            {/* lang */}
-            <p className="text-xs">{post.language}</p>
+            <small className="ml-5">{post.language}</small>
           </div>
         </MotionA>
       ))}

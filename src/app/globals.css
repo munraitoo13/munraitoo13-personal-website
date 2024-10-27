@@ -10,3 +10,11 @@
 .dark {
   color-scheme: dark;
 }
+
+.button {
+  @apply cursor-pointer rounded-full bg-red-600 px-5 py-3 text-white;
+}
+
+.button-disabled {
+  @apply cursor-not-allowed rounded-full bg-neutral-50/50 px-5 py-3 text-neutral-300 dark:bg-neutral-900/25 dark:text-neutral-700;
+}

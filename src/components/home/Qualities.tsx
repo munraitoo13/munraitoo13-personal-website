@@ -3,24 +3,25 @@ import {
   IconBriefcase2,
   IconStars,
 } from "@tabler/icons-react";
-import { MotionDiv } from "@/components/common/Motion";
+import { MotionDiv, MotionSection } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
+import { qualitiesVariants, revealVariants } from "@/animations/motionVariants";
 
 export function Qualities() {
   const t = useTranslations("HomePage");
 
   return (
-    <MotionDiv
-      initial={{ opacity: 0, x: -50 }}
-      animate={{
-        opacity: 1,
-        x: 0,
-        transition: { delay: 0.5 },
-      }}
+    <MotionSection
+      variants={qualitiesVariants}
+      initial="hidden"
+      animate="visible"
       className="flex w-full flex-col items-stretch justify-center gap-5 lg:flex-row"
     >
       {/* comunicative */}
-      <div className="w-full rounded-xl border border-neutral-100 p-3 dark:border-neutral-900/25">
+      <MotionDiv
+        variants={revealVariants}
+        className="w-full rounded-xl border border-neutral-100 p-3 dark:border-neutral-900/25"
+      >
         <div className="flex items-center">
           <IconBrandHipchat
             size={24}
@@ -34,10 +35,13 @@ export function Qualities() {
         </div>
 
         <p className="p-3">{t("quality1desc")}</p>
-      </div>
+      </MotionDiv>
 
       {/* competent */}
-      <div className="w-full rounded-xl border border-neutral-100 p-3 dark:border-neutral-900/25">
+      <MotionDiv
+        variants={revealVariants}
+        className="w-full rounded-xl border border-neutral-100 p-3 dark:border-neutral-900/25"
+      >
         <div className="flex items-center">
           <IconBriefcase2
             size={24}
@@ -51,10 +55,13 @@ export function Qualities() {
         </div>
 
         <p className="p-3">{t("quality2desc")}</p>
-      </div>
+      </MotionDiv>
 
       {/* detail-oriented */}
-      <div className="w-full rounded-xl border border-neutral-100 p-3 dark:border-neutral-900/25">
+      <MotionDiv
+        variants={revealVariants}
+        className="w-full rounded-xl border border-neutral-100 p-3 dark:border-neutral-900/25"
+      >
         <div className="flex items-center">
           <IconStars
             size={24}
@@ -68,7 +75,7 @@ export function Qualities() {
         </div>
 
         <p className="p-3">{t("quality3desc")}</p>
-      </div>
-    </MotionDiv>
+      </MotionDiv>
+    </MotionSection>
   );
 }

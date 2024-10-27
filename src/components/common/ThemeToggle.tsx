@@ -1,38 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { IconMoon, IconSun } from "@tabler/icons-react";
+import { useTheme } from "@/hooks/useTheme";
 
-export function ThemeToggle({ className }: { className?: string }) {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme === "dark") setIsDark(true);
-  }, []);
-
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDark]);
+export function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
 
   return (
-    <div className={`${className}`}>
-      {isDark ? (
+    <div className="fixed bottom-0 right-0 z-50 mb-5 mr-5">
+      {theme === "dark" ? (
         <IconSun
           stroke={1.25}
-          onClick={() => setIsDark(false)}
+          onClick={() => setTheme("light")}
           className="cursor-pointer text-neutral-700 hover:text-white"
         />
       ) : (
         <IconMoon
           stroke={1.25}
-          onClick={() => setIsDark(true)}
+          onClick={() => setTheme("dark")}
           className="cursor-pointer text-neutral-300 hover:text-neutral-900"
         />
       )}

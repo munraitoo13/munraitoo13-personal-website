@@ -1,6 +1,6 @@
 {
   "HomePage": {
-    "greetings": "E aí!",
+    "greetings": "Salve salve!",
     "presentation": "Meu nome é ",
 
     "name": "Augusto",
@@ -26,11 +26,11 @@
     "phraseWow": "UAU!",
     "phraseDash": "—",
     "phraseWowIs": "Uau é",
-    "phraseThe": "o que eu busco.",
+    "phraseThe": "a que eu busco.",
 
     "stacks": "Minhas Tecnologias e Ferramentas",
 
-    "contact": "Entre em contato",
+    "contact": "Contato",
     "resume": "CURRÍCULO"
   },
 

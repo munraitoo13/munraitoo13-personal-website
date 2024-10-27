@@ -5,3 +5,7 @@ type Repos = {
   description: string;
   html_url: string;
 };
+
+type ProjectsProps = {
+  repos: Repos[];
+};

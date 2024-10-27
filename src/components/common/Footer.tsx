@@ -20,7 +20,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="flex w-full flex-col items-center bg-gradient-to-b from-white px-10 pb-5 pt-36 dark:from-neutral-950">
+    <footer className="flex w-full flex-col items-center bg-gradient-to-b from-white px-10 pb-24 pt-48 dark:from-neutral-950">
       <div className="flex w-full max-w-screen-xl flex-col gap-10">
         {/* top */}
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
@@ -78,20 +78,19 @@ export function Footer() {
             </p>
 
             <Socials />
+
+            <Link
+              href="https://github.com/munraitoo13/munraitoo13-personal-website/tree/dev"
+              target="_blank"
+              className="text-neutral-300 dark:text-neutral-700"
+            >
+              {t("repo")}
+            </Link>
           </div>
         </div>
 
-        {/* copy and repo */}
-        <div className="flex justify-between text-xs">
-          <p>&copy; 2024, munraitoo13</p>
-
-          <Link
-            href="https://github.com/munraitoo13/munraitoo13-personal-website/tree/dev"
-            target="_blank"
-          >
-            {t("repo")}
-          </Link>
-        </div>
+        {/* copy */}
+        <p className="mx-auto">&copy; 2024, munraitoo13</p>
       </div>
     </footer>
   );

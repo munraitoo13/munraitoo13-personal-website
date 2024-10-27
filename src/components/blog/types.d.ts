@@ -15,6 +15,10 @@ type Post = {
   tags: Tag[];
 };
 
+type Posts = {
+  posts: Post[];
+};
+
 type BlogHeader = {
   title: string;
   description: string;

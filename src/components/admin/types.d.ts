@@ -14,3 +14,16 @@ type Post = {
   published: boolean;
   tags: Tag[];
 };
+
+type UpdatePostProps = {
+  post: Post;
+  tags: Tag[];
+};
+
+type ManagerProps = {
+  posts: Post[];
+};
+
+type NewPostProps = {
+  tags: Tag[];
+};

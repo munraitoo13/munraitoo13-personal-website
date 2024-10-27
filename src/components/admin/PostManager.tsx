@@ -6,7 +6,7 @@ import { formatDate } from "@/utils/formatDate";
 import { toast } from "react-toastify";
 import Link from "next/link";
 
-export function PostManager({ posts }: { posts: Post[] }) {
+export function PostManager({ posts }: ManagerProps) {
   // handle delete
   const handleDelete = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

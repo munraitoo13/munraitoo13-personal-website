@@ -13,18 +13,10 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      {/* header */}
-      <header className="flex w-full flex-col justify-center gap-5 pt-44">
-        <Presentation />
-
-        <ContactAndResume />
-      </header>
-
+      <Presentation />
+      <ContactAndResume />
       <Phrase />
-
-      <div className="flex flex-col gap-5">
-        <Qualities />
-      </div>
+      <Qualities />
     </>
   );
 }

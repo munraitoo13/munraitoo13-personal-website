@@ -4,58 +4,59 @@ import {
   IconBrandInstagram,
   IconBrandX,
 } from "@tabler/icons-react";
-import { MotionA } from "@/components/common/Motion";
+import { linkVariants } from "@/animations/motionVariants";
+import { MotionLink } from "@/components/common/Motion";
 
 export function Socials() {
   return (
     <div className="flex gap-1">
       {/* github */}
-
-      <MotionA
+      <MotionLink
+        variants={linkVariants}
+        whileHover={{ scale: 1.1 }}
+        whileTap="tap"
         href="https://github.com/munraitoo13"
-        title="munraitoo13's GitHub"
         target="_blank"
         className="hover:text-red-600"
-        whileHover={{ scale: 1.1 }}
       >
         <IconBrandGithub stroke={1.25} />
-      </MotionA>
+      </MotionLink>
 
       {/* linkedin */}
-
-      <MotionA
+      <MotionLink
+        variants={linkVariants}
+        whileHover={{ scale: 1.1 }}
+        whileTap="tap"
         href="https://www.linkedin.com/in/munraitoo13/"
         target="_blank"
-        title="munraitoo13's LinkedIn"
         className="hover:text-red-600"
-        whileHover={{ scale: 1.1 }}
       >
         <IconBrandLinkedin stroke={1.25} />
-      </MotionA>
+      </MotionLink>
 
       {/* instagram */}
-
-      <MotionA
+      <MotionLink
+        variants={linkVariants}
+        whileHover={{ scale: 1.1 }}
+        whileTap="tap"
         href="https://www.instagram.com/munraitoo13/"
-        title="munraitoo13's Instagram"
         target="_blank"
         className="hover:text-red-600"
-        whileHover={{ scale: 1.1 }}
       >
         <IconBrandInstagram stroke={1.25} />
-      </MotionA>
+      </MotionLink>
 
       {/* twitter */}
-
-      <MotionA
+      <MotionLink
+        variants={linkVariants}
+        whileHover={{ scale: 1.1 }}
+        whileTap="tap"
         href="https://twitter.com/munraitoo13"
-        title="munraitoo13's Twitter"
         target="_blank"
         className="hover:text-red-600"
-        whileHover={{ scale: 1.1 }}
       >
         <IconBrandX stroke={1.25} />
-      </MotionA>
+      </MotionLink>
     </div>
   );
 }
