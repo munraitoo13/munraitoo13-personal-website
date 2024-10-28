@@ -87,10 +87,7 @@ export function NewPostForm({ tags }: NewPostProps) {
       {/* submit and published */}
       <div className="mt-5 flex gap-5 self-center">
         {/* submit */}
-        <button
-          type="submit"
-          className="text- rounded-full bg-red-600 px-5 py-3 text-white"
-        >
+        <button type="submit" className="button">
           Create Post
         </button>
 

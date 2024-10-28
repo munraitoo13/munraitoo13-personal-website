@@ -33,10 +33,7 @@ export default function Login() {
           className="rounded-full bg-neutral-100 px-5 py-3 dark:bg-neutral-900/25"
         />
 
-        <button
-          type="submit"
-          className="w-full rounded-full bg-red-600 px-5 py-3 text-white"
-        >
+        <button type="submit" className="button">
           Login
         </button>
       </form>

@@ -12,6 +12,7 @@ type Post = {
   content: string;
   createdAt: Date;
   published: boolean;
+  isFeatured: boolean;
   tags: Tag[];
 };
 

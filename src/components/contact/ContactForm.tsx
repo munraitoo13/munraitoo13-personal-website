@@ -111,7 +111,6 @@ export function ContactForm() {
 
         {/* captcha */}
         <ReCAPTCHA
-          theme={theme as unknown as "light" | "dark"}
           sitekey={process.env.NEXT_PUBLIC_SITE_KEY || ""}
           onChange={(token) => setCaptchaToken(token)}
           ref={captchaRef}

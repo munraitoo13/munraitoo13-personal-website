@@ -12,7 +12,7 @@
 }
 
 .button {
-  @apply cursor-pointer rounded-full bg-red-600 px-5 py-3 text-white;
+  @apply cursor-pointer rounded-full bg-red-600 px-5 py-3 text-white hover:bg-red-700;
 }
 
 .button-disabled {

@@ -28,7 +28,7 @@ export default async function Admin() {
       </div>
 
       {/* content */}
-      <div className="flex flex-col gap-5">
+      <div className="flex w-full max-w-screen-xl flex-col gap-5">
         {/* shortcuts */}
         <div className="flex flex-col items-center justify-center gap-5 rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25">
           <h3 className="text-xl font-extrabold text-neutral-900 dark:text-white">
@@ -50,7 +50,7 @@ export default async function Admin() {
         </div>
 
         {/* post manager */}
-        <div className="flex flex-col items-center justify-center rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25">
+        <div className="grid gap-5 rounded-xl bg-neutral-50 p-5 lg:grid-cols-2 dark:bg-neutral-900/25">
           <PostManager posts={posts} />
         </div>
       </div>

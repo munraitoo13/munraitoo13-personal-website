@@ -1,11 +1,10 @@
-import { useTranslations } from "next-intl";
-import { IconDeviceMobileExclamation } from "@tabler/icons-react";
 import { formatDate } from "@/utils/formatDate";
 import { MotionA, MotionDiv } from "@/components/common/Motion";
 import { contentVariants, revealVariants } from "@/animations/motionVariants";
+import { getTranslations } from "next-intl/server";
 
-export function Posts({ posts }: Posts) {
-  const t = useTranslations("Blog");
+export async function Posts({ posts }: Posts) {
+  const t = getTranslations("Blog");
 
   return (
     <MotionDiv
@@ -14,7 +13,7 @@ export function Posts({ posts }: Posts) {
       animate="visible"
       className="flex flex-col gap-5"
     >
-      {posts.map((post) => (
+      {posts.map(async (post) => (
         <MotionA
           variants={revealVariants}
           whileHover={{ x: 5 }}
@@ -24,7 +23,7 @@ export function Posts({ posts }: Posts) {
         >
           {/* date */}
           <small className="font-bold text-red-600">
-            {formatDate(post.createdAt)}
+            {await formatDate(post.createdAt)}
           </small>
 
           {/* title */}

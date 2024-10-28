@@ -14,10 +14,7 @@ export function ContactAndResume() {
       initial="hidden"
       animate="visible"
     >
-      <Link
-        className="flex items-center rounded-full bg-red-600 px-5 py-3 text-white"
-        href="/personal/contact"
-      >
+      <Link className="button" href="/personal/contact">
         {t("contact")}
       </Link>
 

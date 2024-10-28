@@ -1,10 +1,15 @@
 "use client";
 
 import { deletePost } from "@/actions/deletePost";
-import { IconTrash, IconPencil } from "@tabler/icons-react";
-import { formatDate } from "@/utils/formatDate";
+import {
+  IconTrashX,
+  IconEdit,
+  IconPinFilled,
+  IconPin,
+} from "@tabler/icons-react";
 import { toast } from "react-toastify";
 import Link from "next/link";
+import { pinPost } from "@/actions/pinPost";
 
 export function PostManager({ posts }: ManagerProps) {
   // handle delete
@@ -24,16 +29,37 @@ export function PostManager({ posts }: ManagerProps) {
     }
   };
 
+  // handle pin
+  const handlePin = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    // create formdata
+    const formData = new FormData(event.currentTarget);
+    const isFeatured = formData.get("isFeatured") === "true";
+
+    // pin/unpin post
+    try {
+      await pinPost(formData);
+      toast.success(`Post ${isFeatured ? "unpinned" : "pinned"} successfully!`);
+    } catch (error) {
+      toast.error(`Error ${isFeatured ? "unpinning" : "pinning"} post`);
+      console.error(
+        `Error ${isFeatured ? "unpinning" : "pinning"} post:`,
+        error,
+      );
+    }
+  };
+
   return (
-    <div className="flex w-full flex-col gap-5">
+    <>
       {posts.map((post: Post) => (
         <div
           key={post.id}
-          className="flex w-full items-center justify-between gap-5 rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25"
+          className="flex w-full flex-col gap-5 rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25"
         >
           {/* post */}
           <div className="flex flex-col gap-3">
-            {/* date, lang, published */}
+            {/* published, pinned, lang */}
             <div className="flex flex-col text-xs">
               {/* published */}
               <p
@@ -42,8 +68,12 @@ export function PostManager({ posts }: ManagerProps) {
                 {post.published ? "Published" : "Not published"}
               </p>
 
-              {/* date */}
-              <p>Created at: {formatDate(post.createdAt)}</p>
+              {/* pinned */}
+              <p
+                className={`${post.isFeatured ? "text-blue-600" : "text-yellow-600"}`}
+              >
+                {post.isFeatured ? "Pinned" : "Not pinned"}
+              </p>
 
               {/* lang */}
               <p>Language: {post.language}</p>
@@ -78,13 +108,29 @@ export function PostManager({ posts }: ManagerProps) {
           </div>
 
           {/* buttons */}
-          <div className="ml-24 flex gap-5 font-bold">
+          <div className="flex gap-3">
+            {/* pin/unpin */}
+            <form
+              className="cursor-pointer hover:text-red-600"
+              onSubmit={handlePin}
+            >
+              <input type="hidden" name="id" value={post.id} />
+              <input
+                type="hidden"
+                name="isFeatured"
+                value={post.isFeatured.toString()}
+              />
+              <button type="submit">
+                {post.isFeatured ? <IconPinFilled /> : <IconPin />}
+              </button>
+            </form>
+
             {/* edit */}
             <Link
               className="hover:text-red-600"
               href={`/admin/update-post/${post.id}`}
             >
-              <IconPencil stroke={1.25} />
+              <IconEdit />
             </Link>
 
             {/* delete */}
@@ -94,12 +140,12 @@ export function PostManager({ posts }: ManagerProps) {
             >
               <input type="hidden" name="id" value={post.id} />
               <button type="submit">
-                <IconTrash stroke={1.25} />
+                <IconTrashX />
               </button>
             </form>
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }
