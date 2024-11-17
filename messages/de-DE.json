@@ -97,7 +97,9 @@
     "category": "Persönlich",
     "title": "Blog",
     "description": "Hier sind einige der Blogposts, die ich geschrieben habe.",
-    "check": "Schau es dir an!"
+    "check": "Schau es dir an!",
+    "views": "Ansichten",
+    "likes": "Likes"
   },
 
   "BlogHeader": {

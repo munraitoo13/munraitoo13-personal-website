@@ -2,6 +2,7 @@ import { formatDate } from "@/utils/formatDate";
 import { MotionA, MotionDiv } from "@/components/common/Motion";
 import { contentVariants, revealVariants } from "@/animations/motionVariants";
 import { getTranslations } from "next-intl/server";
+import { IconChessKnightFilled, IconChevronRight } from "@tabler/icons-react";
 
 export async function Posts({ posts }: Posts) {
   const t = getTranslations("Blog");
@@ -11,41 +12,55 @@ export async function Posts({ posts }: Posts) {
       variants={contentVariants}
       initial="hidden"
       animate="visible"
-      className="flex flex-col gap-5"
+      className="flex flex-col"
     >
       {posts.map(async (post) => (
         <MotionA
           variants={revealVariants}
           whileHover={{ x: 5 }}
-          className="flex flex-col rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25"
+          className="mb-14 flex"
           href={`/personal/blog/posts/${post.id}`}
           key={post.id}
         >
-          {/* date */}
-          <small className="font-bold text-red-600">
-            {await formatDate(post.createdAt)}
-          </small>
+          <div className="card-divider"></div>
 
-          {/* title */}
-          <h2 className="text-4xl font-extrabold text-neutral-900 dark:text-white">
-            {post.title}
-          </h2>
+          <div className="flex w-full flex-col gap-2">
+            {/* date */}
+            <small className="text-red-500">
+              {await formatDate(post.createdAt)}
+            </small>
 
-          {/* description */}
-          <p className="text-lg">{post.description}</p>
+            {/* title */}
+            <h2 className="section-title">{post.title}</h2>
 
-          {/* tags and lang */}
-          <div className="mt-10 flex flex-wrap items-center gap-1">
-            {post.tags.map((tag: Tag) => (
-              <span
-                key={tag.id}
-                className="rounded-full bg-neutral-100 px-3 py-1 dark:bg-neutral-900/25"
-              >
-                {tag.name}
-              </span>
-            ))}
+            {/* description */}
+            <p className="text-lg">{post.description}</p>
 
-            <small className="ml-5">{post.language}</small>
+            {/* views and likes */}
+            <div className="flex items-center gap-1">
+              <small className="flex items-center gap-1">
+                <span>{post.views}</span>
+                {(await t)("views")}
+              </small>
+
+              <span>-</span>
+
+              <small className="flex items-center gap-1">
+                <span>{post.likes}</span>
+                {(await t)("likes")}
+              </small>
+            </div>
+
+            {/* tags and lang */}
+            <div className="mt-5 flex flex-wrap items-center gap-1">
+              <small className="mr-5">{post.language}</small>
+
+              {post.tags.map((tag: Tag) => (
+                <span key={tag.id} className="tag-badge">
+                  {tag.name}
+                </span>
+              ))}
+            </div>
           </div>
         </MotionA>
       ))}

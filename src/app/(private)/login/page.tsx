@@ -5,9 +5,7 @@ export default function Login() {
     <div className="flex flex-col items-center justify-center gap-10 rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25">
       {/* title */}
       <div className="flex flex-col">
-        <h2 className="text-2xl font-extrabold text-neutral-900 dark:text-white">
-          Login
-        </h2>
+        <h2 className="section-title">Login</h2>
         <p>Identify yourself, curious peasant.</p>
       </div>
 
@@ -39,7 +37,7 @@ export default function Login() {
       </form>
 
       <div>
-        <a href="/" className="hover:text-red-600">
+        <a href="/" className="hover:text-red-500">
           Home
         </a>
       </div>

@@ -20,11 +20,11 @@ export default async function Admin() {
     <>
       {/* title */}
       <div className="text-center">
-        <h1 className="text-2xl font-extrabold text-neutral-900 dark:text-white">
-          Admin Panel
-        </h1>
+        <h1 className="title">Admin Panel</h1>
 
-        <p>Please note that some functions may not work properly!</p>
+        <p className="subtitle">
+          Please note that some functions may not work properly!
+        </p>
       </div>
 
       {/* content */}
@@ -41,7 +41,7 @@ export default async function Admin() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="rounded-full bg-neutral-100 px-5 py-3 hover:bg-red-600 hover:text-white dark:bg-neutral-900/25 dark:hover:bg-red-600 dark:hover:text-white"
+                className="rounded-full bg-neutral-100 px-5 py-3 hover:bg-red-500 hover:text-white dark:bg-neutral-900/25 dark:hover:bg-red-500 dark:hover:text-white"
               >
                 {link.name}
               </Link>

@@ -49,7 +49,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
         type="text"
         name="title"
         placeholder="Title"
-        className="w-full rounded-xl bg-neutral-50/50 px-5 py-3 dark:bg-neutral-900/25"
+        className="form-input"
       />
 
       {/* description */}
@@ -57,7 +57,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
         defaultValue={post.description}
         name="description"
         placeholder="Description"
-        className="w-full rounded-xl bg-neutral-50/50 px-5 py-3 dark:bg-neutral-900/25"
+        className="form-input h-36 resize-none"
       />
 
       {/* language and tags */}
@@ -66,7 +66,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
         <select
           defaultValue={post.language}
           name="language"
-          className="w-fit appearance-none rounded-xl bg-neutral-50/50 px-5 py-3 dark:bg-neutral-900/25"
+          className="form-input w-fit"
         >
           {languages.map((language) => (
             <option key={language} value={language}>
@@ -94,7 +94,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
         defaultValue={post.content}
         name="content"
         placeholder="Content"
-        className="h-96 w-full rounded-xl bg-neutral-50/50 px-5 py-3 dark:bg-neutral-900/25"
+        className="form-input h-96 resize-none"
       />
 
       {/* submit and published */}
@@ -111,7 +111,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
             type="checkbox"
             name="published"
             id="published"
-            className="h-3 w-3 cursor-pointer appearance-none rounded-sm bg-neutral-50/50 outline outline-4 outline-neutral-50/50 checked:bg-red-600 dark:bg-neutral-900/25 dark:outline-neutral-900/25 dark:checked:bg-red-600"
+            className="h-3 w-3 cursor-pointer appearance-none rounded-sm bg-neutral-50/50 outline outline-4 outline-neutral-50/50 checked:bg-red-500 dark:bg-neutral-900/25 dark:outline-neutral-900/25 dark:checked:bg-red-500"
           />
           <label htmlFor="published" className="cursor-pointer">
             Published

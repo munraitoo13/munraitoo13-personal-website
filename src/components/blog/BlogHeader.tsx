@@ -24,21 +24,18 @@ export function BlogHeader({ title, description, language, date }: BlogHeader) {
         variants={revealVariants}
         whileHover={{ x: 5 }}
         href="/personal/blog"
-        className="text-lg font-bold text-red-600"
+        className="pre-title"
       >
         {t("return")}
       </MotionLink>
 
       {/* title */}
-      <MotionH1
-        variants={revealVariants}
-        className="text-5xl font-extrabold text-neutral-900 dark:text-white"
-      >
+      <MotionH1 variants={revealVariants} className="title">
         {title}
       </MotionH1>
 
       {/* description */}
-      <MotionP variants={revealVariants} className="text-lg">
+      <MotionP variants={revealVariants} className="subtitle">
         {description}
       </MotionP>
 

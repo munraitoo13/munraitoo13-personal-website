@@ -1,7 +1,8 @@
-import { IconBrandGithub } from "@tabler/icons-react";
+"use client";
 import { MotionDiv, MotionA } from "@/components/common/Motion";
 import { revealVariants, contentVariants } from "@/animations/motionVariants";
 import { useTranslations } from "next-intl";
+import { useRepoTopics } from "@/hooks/useRepoTopics";
 
 export function Projects({ repos }: ProjectsProps) {
   const t = useTranslations("Projects");
@@ -11,7 +12,7 @@ export function Projects({ repos }: ProjectsProps) {
       variants={contentVariants}
       initial="hidden"
       animate="visible"
-      className="grid gap-5 lg:grid-cols-2"
+      className="flex flex-col"
     >
       {repos.map((repo) => (
         <MotionA
@@ -21,26 +22,34 @@ export function Projects({ repos }: ProjectsProps) {
           href={repo.html_url}
           key={repo.id}
           target="_blank"
-          className="flex flex-col justify-between gap-10 rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25"
+          className="mb-14 flex"
         >
+          {/* divider */}
+          <div className="card-divider"></div>
+
           {/* project */}
-          <div className="flex flex-col gap-3">
+          <div className="flex w-full flex-col gap-2">
             {/* project repo name */}
-            <p className="text-xs font-bold text-red-600">{repo.full_name}</p>
+            <small className="text-red-500">{repo.full_name}</small>
 
             {/* project title */}
-            <p className="text-4xl font-extrabold text-neutral-900 dark:text-white">
-              {repo.name}
-            </p>
+            <p className="section-title">{repo.name}</p>
 
             {/* project description */}
             <p className="text-lg">{repo.description}</p>
-          </div>
 
-          {/* github availability */}
-          <div className="flex w-fit items-center gap-3 rounded-full bg-neutral-100 px-5 py-3 dark:bg-neutral-900/25">
-            <IconBrandGithub stroke={1.25} />
-            {t("github")}
+            {/* tags and lang */}
+            <div className="mt-5 flex flex-wrap items-center gap-1">
+              <small className="mr-5">
+                {repo.language ? repo.language : "Markdown"}
+              </small>
+
+              {useRepoTopics(repo.name)?.map((topic) => (
+                <span key={topic} className="tag-badge">
+                  {topic}
+                </span>
+              ))}
+            </div>
           </div>
         </MotionA>
       ))}

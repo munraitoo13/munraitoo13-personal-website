@@ -54,15 +54,13 @@ export function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           className="mx-10 mt-5 flex w-96 flex-col items-center gap-3 rounded-xl bg-neutral-50/50 p-5 backdrop-blur-xl dark:bg-neutral-950/50"
         >
-          {/* professional links */}
+          {/* personal links */}
           <div className="flex flex-col items-center justify-center gap-3">
-            <h3 className="cursor-context-menu rounded-full bg-neutral-50/50 px-5 py-2 dark:bg-neutral-900/25">
-              Professional
-            </h3>
+            <p className="category-badge">Personal</p>
 
-            {professional.map((link) => (
+            {personal.map((link) => (
               <Link
-                className="text-neutral-900 hover:text-red-600 dark:text-white"
+                className="text-neutral-900 hover:text-red-500 dark:text-white"
                 key={link.name}
                 href={link.href}
               >
@@ -71,15 +69,13 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* personal links */}
+          {/* professional links */}
           <div className="flex flex-col items-center justify-center gap-3">
-            <h3 className="cursor-context-menu rounded-full bg-neutral-50/50 px-5 py-2 dark:bg-neutral-900/25">
-              Personal
-            </h3>
+            <p className="category-badge">Professional</p>
 
-            {personal.map((link) => (
+            {professional.map((link) => (
               <Link
-                className="text-neutral-900 hover:text-red-600 dark:text-white"
+                className="text-neutral-900 hover:text-red-500 dark:text-white"
                 key={link.name}
                 href={link.href}
               >

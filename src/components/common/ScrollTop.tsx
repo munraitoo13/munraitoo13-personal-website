@@ -16,7 +16,7 @@ export function ScrollTop() {
     >
       <IconChevronUp
         onClick={scrollTop}
-        className="box-content cursor-pointer rounded-full bg-red-600 p-2 text-white"
+        className="box-content cursor-pointer rounded-full bg-red-500 p-2 text-white"
       />
     </MotionDiv>
   );

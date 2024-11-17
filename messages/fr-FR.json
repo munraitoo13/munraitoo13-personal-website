@@ -97,7 +97,9 @@
     "category": "Personnel",
     "title": "Blog",
     "description": "Voici quelques articles de blog que j'ai écrits.",
-    "check": "Regardez!"
+    "check": "Regardez!",
+    "views": "Vues",
+    "likes": "J'aime"
   },
 
   "BlogHeader": {

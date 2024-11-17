@@ -11,10 +11,51 @@
   color-scheme: dark;
 }
 
+/* buttons */
 .button {
-  @apply cursor-pointer rounded-full bg-red-600 px-5 py-3 text-white hover:bg-red-700;
+  @apply cursor-pointer rounded-full bg-red-500 px-5 py-3 text-white hover:bg-red-600;
 }
 
 .button-disabled {
   @apply cursor-not-allowed rounded-full bg-neutral-50/50 px-5 py-3 text-neutral-300 dark:bg-neutral-900/25 dark:text-neutral-700;
+}
+
+/* headings and similars */
+.title {
+  @apply text-5xl font-extrabold text-neutral-900 dark:text-white;
+}
+
+.section-title {
+  @apply text-xl font-extrabold text-neutral-900 dark:text-white;
+}
+
+.subtitle {
+  @apply mt-5 text-lg;
+}
+
+.pre-title {
+  @apply text-lg font-bold text-red-500;
+}
+
+/* inputs */
+.form-input {
+  @apply appearance-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25;
+}
+
+/* badges */
+.tag-badge {
+  @apply rounded-full bg-neutral-100 px-3 py-1 dark:bg-neutral-900/25;
+}
+
+.category-badge {
+  @apply cursor-context-menu text-nowrap rounded-full bg-neutral-50 px-5 py-2 dark:bg-neutral-900/25;
+}
+
+/* other */
+.divider {
+  @apply h-0 self-center border-t border-neutral-400 dark:border-neutral-700;
+}
+
+.card-divider {
+  @apply mr-5 hidden h-0 w-14 self-center border-t border-neutral-400 md:flex dark:border-neutral-700;
 }

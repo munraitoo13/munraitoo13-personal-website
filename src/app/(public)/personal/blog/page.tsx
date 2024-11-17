@@ -21,9 +21,7 @@ export default async function Page() {
     },
   });
 
-  const locale = await getUserLocale();
   const t = await getTranslations("Blog");
-  const Content = (await import(`./${locale}.mdx`)).default;
 
   return (
     <>
@@ -32,10 +30,6 @@ export default async function Page() {
         pageTitle={t("title")}
         pageDescription={t("description")}
       />
-
-      <Markdown>
-        <Content />
-      </Markdown>
 
       <Posts posts={posts} />
     </>

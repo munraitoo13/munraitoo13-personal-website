@@ -4,6 +4,8 @@ type Repos = {
   full_name: string;
   description: string;
   html_url: string;
+  language: string;
+  topics: string[];
 };
 
 type ProjectsProps = {

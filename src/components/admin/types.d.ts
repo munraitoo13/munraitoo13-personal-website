@@ -4,6 +4,8 @@ type Tag = {
 };
 
 type Post = {
+  [x: string]: ReactNode;
+  views: ReactNode;
   tags: any;
   id: string;
   title: string;

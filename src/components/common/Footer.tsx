@@ -37,7 +37,7 @@ export function Footer() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-neutral-900 hover:text-red-600 dark:text-white"
+                  className="text-neutral-900 hover:text-red-500 dark:text-white"
                 >
                   {item.name}
                 </Link>
@@ -55,7 +55,7 @@ export function Footer() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-neutral-900 hover:text-red-600 dark:text-white"
+                  className="text-neutral-900 hover:text-red-500 dark:text-white"
                 >
                   {item.name}
                 </Link>
@@ -78,14 +78,6 @@ export function Footer() {
             </p>
 
             <Socials />
-
-            <Link
-              href="https://github.com/munraitoo13/munraitoo13-personal-website/tree/dev"
-              target="_blank"
-              className="text-neutral-300 dark:text-neutral-700"
-            >
-              {t("repo")}
-            </Link>
           </div>
         </div>
 

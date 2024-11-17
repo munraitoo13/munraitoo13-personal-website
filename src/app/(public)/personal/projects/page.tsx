@@ -1,7 +1,5 @@
 import { Header } from "@/components/common/Header";
-import { Markdown } from "@/components/common/Markdown";
 import { Projects } from "@/components/projects/Projects";
-import { getUserLocale } from "@/utils/userLocale";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
@@ -16,8 +14,6 @@ export default async function Page() {
   ).then((res) => res.json());
 
   const t = await getTranslations("Projects");
-  const locale = await getUserLocale();
-  const Content = (await import(`./${locale}.mdx`)).default;
 
   return (
     <>
@@ -26,10 +22,6 @@ export default async function Page() {
         pageTitle={t("title")}
         pageDescription={t("description")}
       />
-
-      <Markdown>
-        <Content />
-      </Markdown>
 
       <Projects repos={repos} />
     </>

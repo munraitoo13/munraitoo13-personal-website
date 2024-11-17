@@ -25,7 +25,7 @@ export function LocaleChanger() {
     >
       {languages.map(({ name, value }) => (
         <option
-          className="border-red-600 bg-neutral-50 font-sans dark:bg-neutral-950"
+          className="border-red-500 bg-neutral-50 font-sans dark:bg-neutral-950"
           key={value}
           value={value}
         >

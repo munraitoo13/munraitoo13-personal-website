@@ -28,21 +28,18 @@ export function Presentation() {
       variants={presentationVariants}
       initial="hidden"
       animate="visible"
-      className="mb-24 mt-48 flex flex-col items-center justify-center gap-5"
+      className="mb-24 mt-48 flex flex-col items-center justify-center"
     >
       {/* presentation */}
-      <MotionH1
-        variants={revealVariants}
-        className="text-center text-5xl font-extrabold text-neutral-900 dark:text-white"
-      >
+      <MotionH1 variants={revealVariants} className="title text-center">
         {t("greetings")}
         <br />
         {t("presentation")}
-        <span className="text-red-600">{t("name")}</span>.
+        <span className="text-red-500">{t("name")}</span>.
       </MotionH1>
 
       {/* aka munraitoo13 */}
-      <MotionP variants={revealVariants} className="text-center text-lg">
+      <MotionP variants={revealVariants} className="subtitle text-center">
         <span>{t("description")} </span>
         <span className="font-extrabold text-neutral-900 dark:text-white">
           {t("profession")}
@@ -50,7 +47,10 @@ export function Presentation() {
         <span> {t("descriptionLocation")}</span>
       </MotionP>
 
-      <MotionDiv variants={revealVariants} className="flex items-center gap-2">
+      <MotionDiv
+        variants={revealVariants}
+        className="mt-5 flex items-center gap-2"
+      >
         <IconBrandTypescript
           stroke={1.25}
           className="hover:cursor-pointer hover:opacity-75"

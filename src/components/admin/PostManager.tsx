@@ -63,14 +63,14 @@ export function PostManager({ posts }: ManagerProps) {
             <div className="flex flex-col text-xs">
               {/* published */}
               <p
-                className={`${post.published ? "text-green-600" : "text-red-600"}`}
+                className={`${post.published ? "text-green-500" : "text-red-500"}`}
               >
                 {post.published ? "Published" : "Not published"}
               </p>
 
               {/* pinned */}
               <p
-                className={`${post.isFeatured ? "text-blue-600" : "text-yellow-600"}`}
+                className={`${post.isFeatured ? "text-blue-500" : "text-yellow-500"}`}
               >
                 {post.isFeatured ? "Pinned" : "Not pinned"}
               </p>
@@ -85,7 +85,7 @@ export function PostManager({ posts }: ManagerProps) {
               <Link
                 href={`/personal/blog/posts/${post.id}`}
                 target="_blank"
-                className="text-xl font-bold text-neutral-900 hover:text-red-600 dark:text-white dark:hover:text-red-600"
+                className="text-xl font-bold text-neutral-900 hover:text-red-500 dark:text-white dark:hover:text-red-500"
               >
                 {post.title}
               </Link>
@@ -111,7 +111,7 @@ export function PostManager({ posts }: ManagerProps) {
           <div className="flex gap-3">
             {/* pin/unpin */}
             <form
-              className="cursor-pointer hover:text-red-600"
+              className="cursor-pointer hover:text-red-500"
               onSubmit={handlePin}
             >
               <input type="hidden" name="id" value={post.id} />
@@ -127,7 +127,7 @@ export function PostManager({ posts }: ManagerProps) {
 
             {/* edit */}
             <Link
-              className="hover:text-red-600"
+              className="hover:text-red-500"
               href={`/admin/update-post/${post.id}`}
             >
               <IconEdit />
@@ -136,7 +136,7 @@ export function PostManager({ posts }: ManagerProps) {
             {/* delete */}
             <form
               onSubmit={handleDelete}
-              className="cursor-pointer hover:text-red-600"
+              className="cursor-pointer hover:text-red-500"
             >
               <input type="hidden" name="id" value={post.id} />
               <button type="submit">

@@ -65,7 +65,7 @@ export function ContactForm() {
         type="text"
         id="name"
         name="name"
-        className="rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
+        className="form-input"
         placeholder={t("name")}
         maxLength={64}
       />
@@ -75,7 +75,7 @@ export function ContactForm() {
         type="email"
         id="email"
         name="email"
-        className="rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
+        className="form-input"
         placeholder={t("email")}
         maxLength={255}
       />
@@ -85,7 +85,7 @@ export function ContactForm() {
         type="text"
         id="subject"
         name="subject"
-        className="rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
+        className="form-input"
         placeholder={t("subject")}
         maxLength={64}
       />
@@ -94,7 +94,7 @@ export function ContactForm() {
       <textarea
         id="message"
         name="message"
-        className="h-48 resize-none rounded-xl bg-neutral-50 p-5 dark:bg-neutral-900/25"
+        className="form-input h-48 resize-none"
         placeholder={t("message")}
       />
 

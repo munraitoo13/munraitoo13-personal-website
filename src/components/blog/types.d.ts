@@ -13,6 +13,8 @@ type Post = {
   createdAt: Date;
   published: boolean;
   isFeatured: boolean;
+  views: number;
+  likes: number;
   tags: Tag[];
 };
 

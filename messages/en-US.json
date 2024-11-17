@@ -97,7 +97,9 @@
     "category": "Personal",
     "title": "Blog",
     "description": "Here are some of the blog posts I've written.",
-    "check": "Check it out!"
+    "check": "Check it!",
+    "views": "Views",
+    "likes": "Likes"
   },
 
   "BlogHeader": {
