@@ -1,12 +1,9 @@
 "use client";
+
 import { MotionDiv, MotionA } from "@/components/common/Motion";
 import { revealVariants, contentVariants } from "@/animations/motionVariants";
-import { useTranslations } from "next-intl";
-import { useRepoTopics } from "@/hooks/useRepoTopics";
 
 export function Projects({ repos }: ProjectsProps) {
-  const t = useTranslations("Projects");
-
   return (
     <MotionDiv
       variants={contentVariants}
@@ -38,18 +35,11 @@ export function Projects({ repos }: ProjectsProps) {
             {/* project description */}
             <p className="text-lg">{repo.description}</p>
 
-            {/* tags and lang */}
-            <div className="mt-5 flex flex-wrap items-center gap-1">
-              <small className="mr-5">
-                {repo.language ? repo.language : "Markdown"}
-              </small>
+            {/* lang */}
 
-              {useRepoTopics(repo.name)?.map((topic) => (
-                <span key={topic} className="tag-badge">
-                  {topic}
-                </span>
-              ))}
-            </div>
+            <small className="mr-5">
+              {repo.language ? repo.language : "None"}
+            </small>
           </div>
         </MotionA>
       ))}
