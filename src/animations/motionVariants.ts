@@ -60,6 +60,19 @@ export const linkVariants: Variants = {
     scale: 0.95,
   },
 };
+export const markdownVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -50,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 0.3,
+    },
+  },
+};
 
 // home variants
 export const presentationVariants: Variants = {

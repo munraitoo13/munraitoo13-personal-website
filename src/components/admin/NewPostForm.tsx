@@ -3,9 +3,11 @@
 import { createPost } from "@/actions/createPost";
 import { useTagSelection } from "@/hooks/useTagSelection";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 export function NewPostForm({ tags }: NewPostProps) {
   const languages = ["Português", "English", "Français", "Deutsch"];
+  const [content, setContent] = useState("");
   const { selectedTags, handleTagClick, tagColor } = useTagSelection();
 
   // handle form submit
@@ -33,74 +35,79 @@ export function NewPostForm({ tags }: NewPostProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2">
-      {/* title */}
-      <input
-        type="text"
-        name="title"
-        placeholder="Title"
-        className="form-input"
-      />
+    <>
+      <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2">
+        {/* title */}
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          className="form-input"
+        />
 
-      {/* description */}
-      <textarea
-        name="description"
-        placeholder="Description"
-        className="form-input h-36 resize-none"
-      />
+        {/* description */}
+        <textarea
+          name="description"
+          placeholder="Description"
+          className="form-input h-36 resize-none"
+        />
 
-      {/* language and tags */}
-      <div className="flex gap-2">
-        {/* language */}
-        <select name="language" className="form-input w-fit">
-          {languages.map((language) => (
-            <option key={language} value={language}>
-              {language}
-            </option>
-          ))}
-        </select>
+        {/* language and tags */}
+        <div className="flex gap-2">
+          {/* language */}
+          <select name="language" className="form-input w-fit">
+            {languages.map((language) => (
+              <option key={language} value={language}>
+                {language}
+              </option>
+            ))}
+          </select>
 
-        {/* tags */}
-        <div className="flex items-center justify-center gap-1">
-          {tags.map((tag) => (
-            <div
-              key={tag.id}
-              className={`${tagColor(tag.id)} cursor-pointer rounded-xl px-3 py-1`}
-              onClick={() => handleTagClick(tag.id)}
-            >
-              {tag.name}
-            </div>
-          ))}
+          {/* tags */}
+          <div className="flex items-center justify-center gap-1">
+            {tags.map((tag) => (
+              <div
+                key={tag.id}
+                className={`${tagColor(tag.id)} cursor-pointer rounded-xl px-3 py-1`}
+                onClick={() => handleTagClick(tag.id)}
+              >
+                {tag.name}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* content */}
-      <textarea
-        name="content"
-        placeholder="Content"
-        className="form-input h-96 resize-none"
-      />
+        {/* content */}
+        <textarea
+          name="content"
+          placeholder="Content"
+          className="form-input h-[50rem] w-full resize-none"
+          onChange={(event) => setContent(event.target.value)}
+        />
 
-      {/* submit and published */}
-      <div className="mt-5 flex gap-5 self-center">
-        {/* submit */}
-        <button type="submit" className="button">
-          Create Post
-        </button>
+        {/* submit and published */}
+        <div className="mt-5 flex gap-5 self-center">
+          {/* submit */}
+          <button type="submit" className="button">
+            Create Post
+          </button>
 
-        {/* published */}
-        <div className="flex items-center justify-center gap-2">
-          <input
-            type="checkbox"
-            name="published"
-            id="published"
-            className="h-3 w-3 cursor-pointer appearance-none rounded-sm bg-neutral-50/50 outline outline-4 outline-neutral-50/50 checked:bg-red-500 dark:bg-neutral-900/25 dark:outline-neutral-900/25 dark:checked:bg-red-500"
-          />
-          <label htmlFor="published" className="cursor-pointer">
-            Published
-          </label>
+          {/* published */}
+          <div className="flex items-center justify-center gap-2">
+            <input
+              type="checkbox"
+              name="published"
+              id="published"
+              className="h-3 w-3 cursor-pointer appearance-none rounded-sm bg-neutral-50/50 outline outline-4 outline-neutral-50/50 checked:bg-red-500 dark:bg-neutral-900/25 dark:outline-neutral-900/25 dark:checked:bg-red-500"
+            />
+            <label htmlFor="published" className="cursor-pointer">
+              Published
+            </label>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+
+      {/* preview */}
+    </>
   );
 }

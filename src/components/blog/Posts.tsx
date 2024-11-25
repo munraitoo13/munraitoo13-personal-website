@@ -25,9 +25,9 @@ export async function Posts({ posts }: Posts) {
           <div className="card-divider"></div>
 
           <div className="flex w-full flex-col gap-2">
-            {/* date */}
+            {/* date and lang */}
             <small className="text-red-500">
-              {await formatDate(post.createdAt)}
+              {await formatDate(post.createdAt)}, {post.language}
             </small>
 
             {/* title */}
@@ -51,10 +51,8 @@ export async function Posts({ posts }: Posts) {
               </small>
             </div>
 
-            {/* tags and lang */}
+            {/* tags */}
             <div className="mt-5 flex flex-wrap items-center gap-1">
-              <small className="mr-5">{post.language}</small>
-
               {post.tags.map((tag: Tag) => (
                 <span key={tag.id} className="tag-badge">
                   {tag.name}
