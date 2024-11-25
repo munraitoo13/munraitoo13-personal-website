@@ -99,7 +99,9 @@
     "description": "Voici quelques articles de blog que j'ai écrits.",
     "check": "Regardez!",
     "views": "Vues",
-    "likes": "J'aime"
+    "likes": "J'aime",
+    "share": "Partager",
+    "likeAndShare": "Vous avez aimé l'article ? Pensez à aimer et partager ! 😊"
   },
 
   "BlogHeader": {

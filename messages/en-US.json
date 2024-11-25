@@ -99,7 +99,9 @@
     "description": "Here are some of the blog posts I've written.",
     "check": "Check it!",
     "views": "Views",
-    "likes": "Likes"
+    "likes": "Likes",
+    "share": "Share",
+    "likeAndShare": "Enjoyed the post? Consider liking and sharing! 😊"
   },
 
   "BlogHeader": {

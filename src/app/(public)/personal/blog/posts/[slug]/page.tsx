@@ -3,11 +3,14 @@ import { Markdown } from "@/components/common/Markdown";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/utils/formatDate";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { LikesViews } from "@/components/blog/LikesViews";
+import { LikeShare } from "@/components/blog/LikeShare";
 
 export default async function Page({ params }: Params) {
   const post = await prisma.post.findUnique({
     where: { id: params.slug },
   });
+
   if (!post) {
     return (
       <BlogHeader
@@ -19,7 +22,18 @@ export default async function Page({ params }: Params) {
     );
   }
 
-  const { title, description, createdAt, language, content } = post;
+  // Increment the view count
+  await prisma.post.update({
+    where: { id: params.slug },
+    data: {
+      views: {
+        increment: 1,
+      },
+    },
+  });
+
+  const { id, title, description, createdAt, language, content, likes, views } =
+    post;
 
   return (
     <>
@@ -30,9 +44,13 @@ export default async function Page({ params }: Params) {
         language={language}
       />
 
+      <LikesViews likes={likes} views={views} />
+
       <Markdown>
         <MDXRemote source={content} />
       </Markdown>
+
+      <LikeShare likes={likes} id={id} />
     </>
   );
 }

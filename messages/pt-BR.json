@@ -99,7 +99,9 @@
     "description": "Aqui estão alguns dos posts que escrevi.",
     "check": "Confira!",
     "views": "Visualizações",
-    "likes": "Curtidas"
+    "likes": "Curtidas",
+    "share": "Compartilhar",
+    "likeAndShare": "Gostou do post? Considere curtir e compartilhar! 😊"
   },
 
   "BlogHeader": {

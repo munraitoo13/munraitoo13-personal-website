@@ -99,7 +99,9 @@
     "description": "Hier sind einige der Blogposts, die ich geschrieben habe.",
     "check": "Schau es dir an!",
     "views": "Ansichten",
-    "likes": "Likes"
+    "likes": "Likes",
+    "share": "Teilen",
+    "likeAndShare": "Hat dir der Beitrag gefallen? Erwäge, ihn zu liken und zu teilen! 😊"
   },
 
   "BlogHeader": {

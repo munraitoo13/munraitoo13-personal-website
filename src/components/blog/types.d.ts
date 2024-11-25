@@ -28,3 +28,13 @@ type BlogHeader = {
   language: string;
   date: string;
 };
+
+type LikesViews = {
+  likes: number;
+  views: number;
+};
+
+type LikesShare = {
+  likes: number;
+  id: string;
+};

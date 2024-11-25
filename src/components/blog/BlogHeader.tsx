@@ -1,9 +1,7 @@
-import { IconLanguage, IconCalendarEvent } from "@tabler/icons-react";
 import {
   MotionDiv,
   MotionH1,
   MotionP,
-  MotionLink,
   MotionHeader,
 } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
@@ -19,18 +17,22 @@ export function BlogHeader({ title, description, language, date }: BlogHeader) {
       animate="visible"
       className="mb-24 mt-48 flex flex-col"
     >
-      {/* return */}
-      <MotionLink
+      {/* date and language */}
+      <MotionDiv
         variants={revealVariants}
-        whileHover={{ x: 5 }}
-        href="/personal/blog"
-        className="pre-title"
+        className="mt-5 flex items-center gap-5 text-red-500"
       >
-        {t("return")}
-      </MotionLink>
+        {/* date */}
+        <small className="flex items-center gap-1">
+          {date}, {language}.
+        </small>
+
+        {/* lang */}
+        <div className="flex items-center gap-1"></div>
+      </MotionDiv>
 
       {/* title */}
-      <MotionH1 variants={revealVariants} className="title">
+      <MotionH1 variants={revealVariants} className="title mt-5">
         {title}
       </MotionH1>
 
@@ -38,24 +40,6 @@ export function BlogHeader({ title, description, language, date }: BlogHeader) {
       <MotionP variants={revealVariants} className="subtitle">
         {description}
       </MotionP>
-
-      {/* date and language */}
-      <MotionDiv
-        variants={revealVariants}
-        className="mt-10 flex items-center gap-5"
-      >
-        {/* date */}
-        <div className="flex items-center gap-1">
-          <IconCalendarEvent size={20} />
-          <small>{date}</small>
-        </div>
-
-        {/* lang */}
-        <div className="flex items-center gap-1">
-          <IconLanguage size={20} />
-          <small>{language}</small>
-        </div>
-      </MotionDiv>
     </MotionHeader>
   );
 }
