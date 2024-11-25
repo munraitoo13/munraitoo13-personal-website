@@ -21,15 +21,11 @@ export function LikeShare({ likes, id }: LikesShare) {
 
   const handleShare = async () => {
     if (navigator.share) {
-      try {
-        await navigator.share({
-          title: "Check out this post!",
-          text: "I found this post and I think you might like it.",
-          url: window.location.href,
-        });
-      } catch (error) {
-        toast.error("Failed to share the post.");
-      }
+      await navigator.share({
+        title: "Check out this post!",
+        text: "I found this post and I think you might like it.",
+        url: window.location.href,
+      });
     } else {
       toast.error("Your browser does not support sharing.");
     }
