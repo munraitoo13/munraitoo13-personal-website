@@ -18,7 +18,7 @@ export function useTagSelection() {
   // tag color
   const tagColor = (tagId: string) =>
     selectedTags.includes(tagId)
-      ? "bg-red-500"
+      ? "bg-red-500 text-white"
       : "bg-neutral-50/50 dark:bg-neutral-900/25";
 
   return { selectedTags, handleTagClick, tagColor, setSelectedTags };

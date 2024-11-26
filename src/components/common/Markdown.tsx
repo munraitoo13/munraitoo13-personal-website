@@ -4,7 +4,7 @@ import { MotionDiv } from "@/components/common/Motion";
 export function Markdown({ children }: { children: React.ReactNode }) {
   return (
     <MotionDiv
-      className="mdx-content prose prose-sm prose-neutral mb-10 max-w-none dark:prose-invert"
+      className="markdown mdx-content mb-10"
       variants={markdownVariants}
       initial="hidden"
       animate="visible"

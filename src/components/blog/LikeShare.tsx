@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { toast } from "react-toastify";
 
-export function LikeShare({ likes, id }: LikesShare) {
+export function LikeShare({ likes, id }: LikeShare) {
   const [localLikes, setLocalLikes] = useState(likes);
   const t = useTranslations("Blog");
 
@@ -22,8 +22,8 @@ export function LikeShare({ likes, id }: LikesShare) {
   const handleShare = async () => {
     if (navigator.share) {
       await navigator.share({
-        title: "Check out this post!",
-        text: "I found this post and I think you might like it.",
+        title: t("shareTitle"),
+        text: t("shareText"),
         url: window.location.href,
       });
     } else {
@@ -48,7 +48,7 @@ export function LikeShare({ likes, id }: LikesShare) {
             onClick={handleLike}
           />
           <span className="select-none">
-            {localLikes} {t("likes")}
+            {localLikes} {localLikes === 1 ? t("like") : t("likes")}
           </span>
         </div>
 

@@ -4,6 +4,8 @@ import { createPost } from "@/actions/createPost";
 import { useTagSelection } from "@/hooks/useTagSelection";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
+import { Markdown } from "@/components/common/Markdown";
 
 export function NewPostForm({ tags }: NewPostProps) {
   const languages = ["Português", "English", "Français", "Deutsch"];
@@ -78,12 +80,18 @@ export function NewPostForm({ tags }: NewPostProps) {
         </div>
 
         {/* content */}
-        <textarea
-          name="content"
-          placeholder="Content"
-          className="form-input h-[50rem] w-full resize-none"
-          onChange={(event) => setContent(event.target.value)}
-        />
+        <div className="flex flex-col gap-2 xl:flex-row">
+          <textarea
+            name="content"
+            placeholder="Content"
+            className="form-input h-[50rem] w-full resize-none xl:w-1/2"
+            onChange={(event) => setContent(event.target.value)}
+          />
+
+          <ReactMarkdown className="form-input markdown h-[50rem] w-full overflow-y-auto xl:w-1/2">
+            {content}
+          </ReactMarkdown>
+        </div>
 
         {/* submit and published */}
         <div className="mt-5 flex gap-5 self-center">
@@ -106,8 +114,6 @@ export function NewPostForm({ tags }: NewPostProps) {
           </div>
         </div>
       </form>
-
-      {/* preview */}
     </>
   );
 }

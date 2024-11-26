@@ -56,6 +56,10 @@
   @apply h-0 self-center border-t border-neutral-400 dark:border-neutral-700;
 }
 
+.markdown {
+  @apply prose prose-sm prose-neutral max-w-none dark:prose-invert;
+}
+
 .card-divider {
   @apply mr-5 hidden h-0 w-14 self-center border-t border-neutral-400 md:flex dark:border-neutral-700;
 }

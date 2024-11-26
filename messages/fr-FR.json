@@ -98,10 +98,14 @@
     "title": "Blog",
     "description": "Voici quelques articles de blog que j'ai écrits.",
     "check": "Regardez!",
+    "view": "Vue",
     "views": "Vues",
-    "likes": "J'aime",
+    "like": "J'aime",
+    "likes": "J'aimes",
     "share": "Partager",
-    "likeAndShare": "Vous avez aimé l'article ? Pensez à aimer et partager ! 😊"
+    "likeAndShare": "Vous avez aimé l'article ? Pensez à aimer et partager ! 😊",
+    "shareTitle": "Regarde ce post !",
+    "shareText": "J'ai trouvé ce post et je pense qu'il pourrait te plaire."
   },
 
   "BlogHeader": {

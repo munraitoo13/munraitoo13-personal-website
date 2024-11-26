@@ -18,14 +18,14 @@ export function LikesViews({ likes, views }: LikesViews) {
       <div className="flex items-center gap-3">
         <IconThumbUpFilled />
         <span>
-          {likes} {t("likes")}
+          {likes} {likes === 1 ? t("like") : t("likes")}
         </span>
       </div>
 
       <div className="flex items-center gap-3">
         <IconEyeFilled />
         <span>
-          {views} {t("views")}
+          {views} {views === 1 ? t("view") : t("views")}
         </span>
       </div>
     </MotionDiv>

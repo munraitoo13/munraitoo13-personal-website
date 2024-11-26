@@ -98,10 +98,14 @@
     "title": "Blog",
     "description": "Aqui estão alguns dos posts que escrevi.",
     "check": "Confira!",
+    "view": "Visualização",
     "views": "Visualizações",
+    "like": "Curtida",
     "likes": "Curtidas",
     "share": "Compartilhar",
-    "likeAndShare": "Gostou do post? Considere curtir e compartilhar! 😊"
+    "likeAndShare": "Gostou do post? Considere curtir e compartilhar! 😊",
+    "shareTitle": "Da uma olhada nesse post!",
+    "shareText": "Encontrei este post e acho que você pode gostar."
   },
 
   "BlogHeader": {

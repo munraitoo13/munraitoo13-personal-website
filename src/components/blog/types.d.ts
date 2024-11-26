@@ -34,7 +34,7 @@ type LikesViews = {
   views: number;
 };
 
-type LikesShare = {
+type LikeShare = {
   likes: number;
   id: string;
 };

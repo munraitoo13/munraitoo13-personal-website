@@ -98,10 +98,14 @@
     "title": "Blog",
     "description": "Hier sind einige der Blogposts, die ich geschrieben habe.",
     "check": "Schau es dir an!",
+    "view": "Ansicht",
     "views": "Ansichten",
-    "likes": "Likes",
+    "like": "Gefällt mir",
+    "likes": "Gefällt mirs",
     "share": "Teilen",
-    "likeAndShare": "Hat dir der Beitrag gefallen? Erwäge, ihn zu liken und zu teilen! 😊"
+    "likeAndShare": "Hat dir der Beitrag gefallen? Erwäge, ihn zu liken und zu teilen! 😊",
+    "shareTitle": "Schau dir diesen Beitrag an!",
+    "shareText": "Ich habe diesen Beitrag gefunden und dachte, er könnte dir gefallen."
   },
 
   "BlogHeader": {

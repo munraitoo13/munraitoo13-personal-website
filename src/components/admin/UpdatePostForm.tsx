@@ -2,11 +2,13 @@
 
 import { updatePost } from "@/actions/updatePost";
 import { useTagSelection } from "@/hooks/useTagSelection";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { toast } from "react-toastify";
 
 export function UpdatePostForm({ tags, post }: UpdatePostProps) {
   const languages = ["Português", "English", "Français", "Deutsch"];
+  const [content, setContent] = useState(post.content);
   const { selectedTags, handleTagClick, tagColor, setSelectedTags } =
     useTagSelection();
 
@@ -90,12 +92,19 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
       </div>
 
       {/* content */}
-      <textarea
-        defaultValue={post.content}
-        name="content"
-        placeholder="Content"
-        className="form-input h-96 resize-none"
-      />
+      <div className="flex flex-col gap-2 xl:flex-row">
+        <textarea
+          name="content"
+          defaultValue={post.content}
+          placeholder="Content"
+          className="form-input h-[50rem] w-full resize-none xl:w-1/2"
+          onChange={(event) => setContent(event.target.value)}
+        />
+
+        <ReactMarkdown className="form-input markdown h-[50rem] w-full overflow-y-auto xl:w-1/2">
+          {content}
+        </ReactMarkdown>
+      </div>
 
       {/* submit and published */}
       <div className="mt-5 flex gap-5 self-center">
