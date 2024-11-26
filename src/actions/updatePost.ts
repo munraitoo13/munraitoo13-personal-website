@@ -27,7 +27,11 @@ export async function updatePost(formData: FormData) {
         description: data.description,
         language: data.language,
         tags: {
-          set: data.tags.map((tagId) => ({ id: tagId })),
+          set: [],
+          connectOrCreate: data.tags.map((tag) => ({
+            where: { name: tag },
+            create: { name: tag },
+          })),
         },
         content: data.content,
         published: data.published,

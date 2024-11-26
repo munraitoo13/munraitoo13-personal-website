@@ -44,7 +44,7 @@
 
 /* badges */
 .tag-badge {
-  @apply rounded-full bg-neutral-100 px-3 py-1 dark:bg-neutral-900/25;
+  @apply rounded-full bg-neutral-100 px-3 py-1 capitalize dark:bg-neutral-900/25;
 }
 
 .category-badge {

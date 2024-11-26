@@ -7,14 +7,20 @@ import ReactMarkdown from "react-markdown";
 import { toast } from "react-toastify";
 
 export function UpdatePostForm({ tags, post }: UpdatePostProps) {
-  const languages = ["Português", "English", "Français", "Deutsch"];
   const [content, setContent] = useState(post.content);
-  const { selectedTags, handleTagClick, tagColor, setSelectedTags } =
-    useTagSelection();
+  const {
+    selectedTags,
+    handleTagClick,
+    tagColor,
+    setSelectedTags,
+    handleTagInput,
+  } = useTagSelection(tags);
+
+  const languages = ["Português", "English", "Français", "Deutsch"];
 
   // set selectedTags to post tags
   useEffect(() => {
-    const postTags = post.tags.map((tag: Tag) => tag.id);
+    const postTags = post.tags.map((tag: Tag) => tag.name);
     setSelectedTags(postTags);
   }, []);
 
@@ -35,12 +41,15 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
 
     // create post
     try {
+      toast.loading("Updating post...");
       await updatePost(formData);
-      toast.success("Post updated successfully!");
+      toast.dismiss();
     } catch (error) {
       toast.error("Error updating post");
       console.error("Error creating post: ", error);
     }
+
+    toast.success("Post updated successfully!");
   };
 
   return (
@@ -63,27 +72,34 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
       />
 
       {/* language and tags */}
-      <div className="flex gap-2">
-        {/* language */}
-        <select
-          defaultValue={post.language}
-          name="language"
-          className="form-input w-fit"
-        >
-          {languages.map((language) => (
-            <option key={language} value={language}>
-              {language}
-            </option>
-          ))}
-        </select>
+      <div className="flex flex-col gap-2">
+        {/* tags input and language */}
+        <div className="flex gap-2 self-center">
+          {/* language */}
+          <select name="language" className="form-input w-fit">
+            {languages.map((language) => (
+              <option key={language} value={language}>
+                {language}
+              </option>
+            ))}
+          </select>
 
-        {/* tags */}
-        <div className="flex items-center justify-center gap-1">
+          {/* tags input */}
+          <input
+            type="text"
+            className="form-input"
+            onKeyDown={handleTagInput}
+            placeholder="Add tags (press enter)"
+          />
+        </div>
+
+        {/* tags selector */}
+        <div className="flex flex-wrap gap-1 self-center">
           {tags.map((tag) => (
             <div
               key={tag.id}
-              className={`${tagColor(tag.id)} cursor-pointer rounded-xl px-3 py-1`}
-              onClick={() => handleTagClick(tag.id)}
+              className={`${tagColor(tag.name)} cursor-pointer rounded-xl px-3 py-1 capitalize`}
+              onClick={() => handleTagClick(tag.name)}
             >
               {tag.name}
             </div>

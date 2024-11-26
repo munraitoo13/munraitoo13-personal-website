@@ -22,7 +22,10 @@ export async function createPost(formData: FormData) {
         description: data.description,
         language: data.language,
         tags: {
-          connect: data.tags.map((tag) => ({ id: tag })),
+          connectOrCreate: data.tags.map((tag) => ({
+            where: { name: tag },
+            create: { name: tag },
+          })),
         },
         content: data.content,
         published: data.published,

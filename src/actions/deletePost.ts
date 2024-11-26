@@ -3,17 +3,12 @@
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 
-export async function deletePost(formData: FormData) {
+export async function deletePost(id: string) {
   try {
-    // form data
-    const data = {
-      id: formData.get("id")?.toString(),
-    };
-
     // delete post
     await prisma.post.delete({
       where: {
-        id: data.id,
+        id: id,
       },
     });
   } catch (error) {

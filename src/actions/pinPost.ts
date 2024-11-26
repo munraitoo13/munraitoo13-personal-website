@@ -3,16 +3,11 @@
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 
-export async function pinPost(formData: FormData) {
+export async function pinPost(id: string) {
   try {
-    // form data
-    const data = {
-      id: formData.get("id")?.toString(),
-    };
-
     // get the post
     const post = await prisma.post.findUnique({
-      where: { id: data.id },
+      where: { id: id },
     });
     if (!post) {
       throw new Error("Post not found");
@@ -20,7 +15,7 @@ export async function pinPost(formData: FormData) {
 
     // toggle the isFeatured
     await prisma.post.update({
-      where: { id: data.id },
+      where: { id: id },
       data: { isFeatured: !post.isFeatured },
     });
   } catch (error) {

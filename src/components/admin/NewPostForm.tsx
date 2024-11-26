@@ -10,7 +10,8 @@ import { Markdown } from "@/components/common/Markdown";
 export function NewPostForm({ tags }: NewPostProps) {
   const languages = ["Português", "English", "Français", "Deutsch"];
   const [content, setContent] = useState("");
-  const { selectedTags, handleTagClick, tagColor } = useTagSelection();
+  const { selectedTags, handleTagClick, tagColor, handleTagInput } =
+    useTagSelection(tags);
 
   // handle form submit
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -28,12 +29,15 @@ export function NewPostForm({ tags }: NewPostProps) {
 
     // create post
     try {
+      toast.loading("Creating post...");
       await createPost(formData);
-      toast.success("Post created successfully!");
+      toast.dismiss();
     } catch (error) {
       toast.error("Error creating post");
       console.error("Error creating post: ", error);
     }
+
+    toast.success("Post created successfully!");
   };
 
   return (
@@ -55,23 +59,34 @@ export function NewPostForm({ tags }: NewPostProps) {
         />
 
         {/* language and tags */}
-        <div className="flex gap-2">
-          {/* language */}
-          <select name="language" className="form-input w-fit">
-            {languages.map((language) => (
-              <option key={language} value={language}>
-                {language}
-              </option>
-            ))}
-          </select>
+        <div className="flex flex-col gap-2">
+          {/* tags input and language */}
+          <div className="flex gap-2 self-center">
+            {/* language */}
+            <select name="language" className="form-input w-fit">
+              {languages.map((language) => (
+                <option key={language} value={language}>
+                  {language}
+                </option>
+              ))}
+            </select>
 
-          {/* tags */}
-          <div className="flex items-center justify-center gap-1">
+            {/* tags input */}
+            <input
+              type="text"
+              className="form-input"
+              onKeyDown={handleTagInput}
+              placeholder="Add tags (press enter)"
+            />
+          </div>
+
+          {/* tags selector */}
+          <div className="flex flex-wrap gap-1 self-center">
             {tags.map((tag) => (
               <div
                 key={tag.id}
-                className={`${tagColor(tag.id)} cursor-pointer rounded-xl px-3 py-1`}
-                onClick={() => handleTagClick(tag.id)}
+                className={`${tagColor(tag.name)} cursor-pointer rounded-xl px-3 py-1 capitalize`}
+                onClick={() => handleTagClick(tag.name)}
               >
                 {tag.name}
               </div>
