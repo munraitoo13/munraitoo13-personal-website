@@ -18,3 +18,7 @@ export const getProfessionalLinks = (t: (key: string) => string) => [
   { name: t("skillsAndTools"), href: "/professional/skills-and-tools" },
   { name: t("experiences"), href: "/professional/experiences" },
 ];
+
+// admin constant
+export const ADMIN_LINKS = [{ title: "New Post", href: "/admin/new-post" }];
+export const POST_LANGUAGES = ["Português", "English", "Français", "Deutsch"];

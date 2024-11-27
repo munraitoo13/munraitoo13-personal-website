@@ -5,6 +5,7 @@ import { useTagSelection } from "@/hooks/useTagSelection";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { toast } from "react-toastify";
+import { POST_LANGUAGES } from "@/constants/constants";
 
 export function UpdatePostForm({ tags, post }: UpdatePostProps) {
   const [content, setContent] = useState(post.content);
@@ -20,7 +21,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
 
   // set selectedTags to post tags
   useEffect(() => {
-    const postTags = post.tags.map((tag: Tag) => tag.name);
+    const postTags = post.tags.map(({ name }: Tag) => name);
     setSelectedTags(postTags);
   }, []);
 
@@ -77,7 +78,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
         <div className="flex gap-2 self-center">
           {/* language */}
           <select name="language" className="form-input w-fit">
-            {languages.map((language) => (
+            {POST_LANGUAGES.map((language) => (
               <option key={language} value={language}>
                 {language}
               </option>
@@ -95,13 +96,13 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
 
         {/* tags selector */}
         <div className="flex flex-wrap gap-1 self-center">
-          {tags.map((tag) => (
+          {tags.map(({ id, name }) => (
             <div
-              key={tag.id}
-              className={`${tagColor(tag.name)} cursor-pointer rounded-xl px-3 py-1 capitalize`}
-              onClick={() => handleTagClick(tag.name)}
+              key={id}
+              className={`${tagColor(name)} cursor-pointer rounded-xl px-3 py-1 capitalize`}
+              onClick={() => handleTagClick(name)}
             >
-              {tag.name}
+              {name}
             </div>
           ))}
         </div>

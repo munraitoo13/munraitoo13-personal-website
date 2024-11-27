@@ -14,54 +14,65 @@ export async function Posts({ posts }: Posts) {
       animate="visible"
       className="flex flex-col"
     >
-      {posts.map(async (post) => (
-        <MotionA
-          variants={revealVariants}
-          whileHover={{ x: 5 }}
-          className="mb-14 flex"
-          href={`/personal/blog/posts/${post.id}`}
-          key={post.id}
-        >
-          <div className="card-divider"></div>
+      {posts.map(
+        async ({
+          id,
+          createdAt,
+          language,
+          title,
+          description,
+          tags,
+          views,
+          likes,
+        }) => (
+          <MotionA
+            variants={revealVariants}
+            whileHover={{ x: 5 }}
+            className="mb-14 flex"
+            href={`/personal/blog/posts/${id}`}
+            key={id}
+          >
+            <div className="card-divider"></div>
 
-          <div className="flex w-full flex-col gap-2">
-            {/* date and lang */}
-            <small className="text-red-500">
-              {await formatDate(post.createdAt)}, {post.language}
-            </small>
-
-            {/* title */}
-            <h2 className="section-title">{post.title}</h2>
-
-            {/* description */}
-            <p className="text-lg">{post.description}</p>
-
-            {/* views and likes */}
-            <div className="flex items-center gap-1">
-              <small className="flex items-center gap-1">
-                <span>{post.views}</span>
-                {(await t)("views")}
+            <div className="flex w-full flex-col gap-2">
+              {/* date and lang */}
+              <small className="text-red-500">
+                {await formatDate(createdAt)}, {language}
               </small>
 
-              <span>-</span>
+              {/* title */}
+              <h2 className="section-title">{title}</h2>
 
-              <small className="flex items-center gap-1">
-                <span>{post.likes}</span>
-                {(await t)("likes")}
-              </small>
-            </div>
+              {/* description */}
+              <p className="text-lg">{description}</p>
 
-            {/* tags */}
-            <div className="mt-5 flex flex-wrap items-center gap-1">
-              {post.tags.map((tag: Tag) => (
-                <span key={tag.id} className="tag-badge">
-                  {tag.name}
-                </span>
-              ))}
+              {/* views and likes */}
+              <div className="flex items-center gap-1">
+                <small className="flex items-center gap-1">
+                  <span>{views}</span>
+                  {(await t)("views")}
+                </small>
+
+                <span>-</span>
+
+                <small className="flex items-center gap-1">
+                  <span>{likes}</span>
+                  {(await t)("likes")}
+                </small>
+              </div>
+
+              {/* tags */}
+              <div className="mt-5 flex flex-wrap items-center gap-1">
+                {tags.map(({ name, id }: Tag) => (
+                  <span key={id} className="tag-badge">
+                    {name}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        </MotionA>
-      ))}
+          </MotionA>
+        ),
+      )}
     </MotionDiv>
   );
 }

@@ -5,10 +5,9 @@ import { useTagSelection } from "@/hooks/useTagSelection";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { Markdown } from "@/components/common/Markdown";
+import { POST_LANGUAGES } from "@/constants/constants";
 
 export function NewPostForm({ tags }: NewPostProps) {
-  const languages = ["Português", "English", "Français", "Deutsch"];
   const [content, setContent] = useState("");
   const { selectedTags, handleTagClick, tagColor, handleTagInput } =
     useTagSelection(tags);
@@ -64,7 +63,7 @@ export function NewPostForm({ tags }: NewPostProps) {
           <div className="flex gap-2 self-center">
             {/* language */}
             <select name="language" className="form-input w-fit">
-              {languages.map((language) => (
+              {POST_LANGUAGES.map((language) => (
                 <option key={language} value={language}>
                   {language}
                 </option>
@@ -82,13 +81,13 @@ export function NewPostForm({ tags }: NewPostProps) {
 
           {/* tags selector */}
           <div className="flex flex-wrap gap-1 self-center">
-            {tags.map((tag) => (
+            {tags.map(({ id, name }) => (
               <div
-                key={tag.id}
-                className={`${tagColor(tag.name)} cursor-pointer rounded-xl px-3 py-1 capitalize`}
-                onClick={() => handleTagClick(tag.name)}
+                key={id}
+                className={`${tagColor(name)} cursor-pointer rounded-xl px-3 py-1 capitalize`}
+                onClick={() => handleTagClick(name)}
               >
-                {tag.name}
+                {name}
               </div>
             ))}
           </div>

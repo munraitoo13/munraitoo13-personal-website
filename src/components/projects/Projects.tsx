@@ -11,13 +11,13 @@ export function Projects({ repos }: ProjectsProps) {
       animate="visible"
       className="flex flex-col"
     >
-      {repos.map((repo) => (
+      {repos.map(({ html_url, id, full_name, name, description, language }) => (
         <MotionA
           variants={revealVariants}
           whileHover={{ x: 5 }}
           whileTap={{ scale: 0.95 }}
-          href={repo.html_url}
-          key={repo.id}
+          href={html_url}
+          key={id}
           target="_blank"
           className="mb-14 flex"
         >
@@ -27,19 +27,17 @@ export function Projects({ repos }: ProjectsProps) {
           {/* project */}
           <div className="flex w-full flex-col gap-2">
             {/* project repo name */}
-            <small className="text-red-500">{repo.full_name}</small>
+            <small className="text-red-500">{full_name}</small>
 
             {/* project title */}
-            <p className="section-title">{repo.name}</p>
+            <p className="section-title">{name}</p>
 
             {/* project description */}
-            <p className="text-lg">{repo.description}</p>
+            <p className="text-lg">{description}</p>
 
             {/* lang */}
 
-            <small className="mr-5">
-              {repo.language ? repo.language : "None"}
-            </small>
+            <small className="mr-5">{language || "None"}</small>
           </div>
         </MotionA>
       ))}

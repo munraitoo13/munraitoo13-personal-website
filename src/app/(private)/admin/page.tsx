@@ -1,13 +1,7 @@
 import { PostManager } from "@/components/admin/PostManager";
+import { ADMIN_LINKS } from "@/constants/constants";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
-
-const links = [
-  {
-    name: "New Post",
-    href: "/admin/new-post",
-  },
-];
 
 export default async function Admin() {
   const posts = await prisma.post.findMany({
@@ -37,13 +31,9 @@ export default async function Admin() {
 
           {/* links */}
           <div className="flex gap-1">
-            {links.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="rounded-full bg-neutral-100 px-5 py-3 hover:bg-red-500 hover:text-white dark:bg-neutral-900/25 dark:hover:bg-red-500 dark:hover:text-white"
-              >
-                {link.name}
+            {ADMIN_LINKS.map(({ href, title }) => (
+              <Link key={title} href={href} className="button">
+                {title}
               </Link>
             ))}
           </div>

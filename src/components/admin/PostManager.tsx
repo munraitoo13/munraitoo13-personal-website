@@ -46,73 +46,75 @@ export function PostManager({ posts }: ManagerProps) {
 
   return (
     <>
-      {posts.map((post) => (
-        <div key={post.id} className="mb-14 flex w-full self-center">
-          {/* divider */}
-          <div className="card-divider"></div>
+      {posts.map(
+        ({ id, isFeatured, published, language, title, description, tags }) => (
+          <div key={id} className="mb-14 flex w-full self-center">
+            {/* divider */}
+            <div className="card-divider"></div>
 
-          {/* post */}
-          <div className="flex w-full flex-col gap-2">
-            {/* buttons */}
-            <div className="flex gap-3">
-              {/* pin/unpin */}
-              <IconPinFilled
-                className={`${post.isFeatured && "text-red-500"} cursor-pointer hover:text-red-500`}
-                onClick={() => handlePin(post.id, post.isFeatured)}
-              />
+            {/* post */}
+            <div className="flex w-full flex-col gap-2">
+              {/* buttons */}
+              <div className="flex gap-3">
+                {/* pin/unpin */}
+                <IconPinFilled
+                  className={`${isFeatured && "text-red-500"} cursor-pointer hover:text-red-500`}
+                  onClick={() => handlePin(id, isFeatured)}
+                />
 
-              {/* edit */}
-              <Link
-                className="hover:text-red-500"
-                href={`/admin/update-post/${post.id}`}
-              >
-                <IconSettingsFilled />
-              </Link>
+                {/* edit */}
+                <Link
+                  className="hover:text-red-500"
+                  href={`/admin/update-post/${id}`}
+                >
+                  <IconSettingsFilled />
+                </Link>
 
-              {/* delete */}
-              <IconTrashFilled
-                onClick={() => handleDelete(post.id)}
-                className="cursor-pointer hover:text-red-500"
-              />
-            </div>
+                {/* delete */}
+                <IconTrashFilled
+                  onClick={() => handleDelete(id)}
+                  className="cursor-pointer hover:text-red-500"
+                />
+              </div>
 
-            {/* published and lang */}
-            <small className="flex flex-col">
-              {/* published */}
-              <p className={`${post.published && "text-red-500"}`}>
-                {post.published ? "Published" : "Not published"}
-              </p>
+              {/* published and lang */}
+              <small className="flex flex-col">
+                {/* published */}
+                <p className={`${published && "text-red-500"}`}>
+                  {published ? "Published" : "Not published"}
+                </p>
 
-              {/* lang */}
-              <p>{post.language}</p>
-            </small>
+                {/* lang */}
+                <p>{language}</p>
+              </small>
 
-            {/* title and desc */}
-            <div>
-              {/* title */}
-              <Link
-                href={`/personal/blog/posts/${post.id}`}
-                target="_blank"
-                className="section-title"
-              >
-                {post.title}
-              </Link>
+              {/* title and desc */}
+              <div>
+                {/* title */}
+                <Link
+                  href={`/personal/blog/posts/${id}`}
+                  target="_blank"
+                  className="section-title"
+                >
+                  {title}
+                </Link>
 
-              {/* description */}
-              <p className="text-lg">{post.description}</p>
-            </div>
+                {/* description */}
+                <p className="text-lg">{description}</p>
+              </div>
 
-            {/* tags */}
-            <div className="mt-5 flex flex-wrap gap-1">
-              {post.tags.map((tag: Tag) => (
-                <span key={tag.id} className="tag-badge">
-                  {tag.name}
-                </span>
-              ))}
+              {/* tags */}
+              <div className="mt-5 flex flex-wrap gap-1">
+                {tags.map(({ id, name }: Tag) => (
+                  <span key={id} className="tag-badge">
+                    {name}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ),
+      )}
     </>
   );
 }

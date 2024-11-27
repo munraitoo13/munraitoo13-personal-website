@@ -54,9 +54,9 @@ export async function FeaturedPost({ featuredPost }: FeaturedPost) {
 
       {/* tags */}
       <div className="mt-5 flex flex-wrap items-center gap-1">
-        {featuredPost.tags.map((tag: Tag) => (
-          <span key={tag.id} className="tag-badge">
-            {tag.name}
+        {featuredPost.tags.map(({ name, id }: Tag) => (
+          <span key={id} className="tag-badge">
+            {name}
           </span>
         ))}
       </div>

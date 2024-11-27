@@ -21,16 +21,16 @@ export function TableOfContents() {
     >
       <h2 className="section-title">{t("contents")}</h2>
 
-      {headings.map((heading) => (
+      {headings.map(({ text, id, headingLevel }) => (
         <MotionLink
           variants={linkVariants}
           whileHover="hover"
           whileTap="tap"
-          key={heading.text}
-          className={`${heading.headingLevel === "H2" ? "font-bold text-neutral-900 dark:text-white" : "ml-3 text-inherit hover:opacity-100"} hover:text-red-500`}
-          href={`#${heading.id}`}
+          key={text}
+          className={`${headingLevel === "H2" ? "font-bold text-neutral-900 dark:text-white" : "ml-3 text-inherit hover:opacity-100"} hover:text-red-500`}
+          href={`#${id}`}
         >
-          {heading.text}
+          {text}
         </MotionLink>
       ))}
     </MotionNav>

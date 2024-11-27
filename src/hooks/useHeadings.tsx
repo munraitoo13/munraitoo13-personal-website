@@ -10,13 +10,15 @@ export function useHeadings() {
     );
 
     // creates an array of objects with the heading details and map it to the state
-    const headingDetails = Array.from(foundHeadings).map((heading) => {
-      return {
-        id: heading.id,
-        text: heading.textContent || "",
-        headingLevel: heading.tagName,
-      };
-    });
+    const headingDetails = Array.from(foundHeadings).map(
+      ({ id, textContent, tagName }) => {
+        return {
+          id: id,
+          text: textContent || "",
+          headingLevel: tagName,
+        };
+      },
+    );
 
     // set the state with the heading details
     setHeadings(headingDetails);

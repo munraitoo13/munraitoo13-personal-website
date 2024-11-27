@@ -6,19 +6,19 @@ export function useTagSelection(tags: Tags[]) {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   // handle tag click
-  const handleTagClick = (tagName: string) => {
-    if (selectedTags.includes(tagName)) {
+  const handleTagClick = (name: string) => {
+    if (selectedTags.includes(name)) {
       setSelectedTags((prevSelectedTags) =>
-        prevSelectedTags.filter((tag) => tag !== tagName),
+        prevSelectedTags.filter((tag) => tag !== name),
       );
     } else {
-      setSelectedTags((prevSelectedTags) => [...prevSelectedTags, tagName]);
+      setSelectedTags((prevSelectedTags) => [...prevSelectedTags, name]);
     }
   };
 
   // tag color
-  const tagColor = (tagName: string) =>
-    selectedTags.includes(tagName)
+  const tagColor = (name: string) =>
+    selectedTags.includes(name)
       ? "bg-red-500 text-white"
       : "bg-neutral-50/50 dark:bg-neutral-900/25";
 
