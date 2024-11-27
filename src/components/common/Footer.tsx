@@ -1,27 +1,17 @@
 import Link from "next/link";
 import { Socials } from "@/components/common/Socials";
-import { LocaleChanger } from "@/components/common/LocaleChanger";
+import { getPersonalLinks, getProfessionalLinks } from "@/constants/constants";
 import { useTranslations } from "next-intl";
 
 export function Footer() {
   const t = useTranslations("Footer");
 
-  // professional links
-  const professional = [
-    { name: t("skillsAndTools"), href: "/professional/skills-and-tools" },
-    { name: t("experiences"), href: "/professional/experiences" },
-  ];
-
-  // personal links
-  const personal = [
-    { name: t("projects"), href: "/personal/projects" },
-    { name: t("contact"), href: "/personal/contact" },
-    { name: t("blog"), href: "/personal/blog" },
-  ];
+  const personalLinks = getPersonalLinks(t);
+  const professionalLinks = getProfessionalLinks(t);
 
   return (
     <footer className="flex w-full flex-col items-center bg-gradient-to-b from-white px-10 pb-24 pt-48 dark:from-neutral-950">
-      <div className="flex w-full max-w-screen-xl flex-col gap-10">
+      <div className="flex w-full max-w-screen-lg flex-col gap-10">
         {/* top */}
         <div className="flex flex-col justify-between gap-10 lg:flex-row">
           {/* navigation */}
@@ -32,14 +22,13 @@ export function Footer() {
                 {t("personal")}
               </p>
 
-              {/* links */}
-              {personal.map((item) => (
+              {personalLinks.map(({ name, href }) => (
                 <Link
-                  key={item.name}
-                  href={item.href}
+                  key={name}
+                  href={href}
                   className="text-neutral-900 hover:text-red-500 dark:text-white"
                 >
-                  {item.name}
+                  {name}
                 </Link>
               ))}
             </div>
@@ -50,20 +39,15 @@ export function Footer() {
                 {t("professional")}
               </p>
 
-              {/* links */}
-              {professional.map((item) => (
+              {professionalLinks.map(({ name, href }) => (
                 <Link
-                  key={item.name}
-                  href={item.href}
+                  key={name}
+                  href={href}
                   className="text-neutral-900 hover:text-red-500 dark:text-white"
                 >
-                  {item.name}
+                  {name}
                 </Link>
               ))}
-            </div>
-
-            <div className="flex flex-col items-center gap-3 self-center lg:flex-row lg:self-baseline">
-              <LocaleChanger />
             </div>
           </div>
 
