@@ -105,7 +105,8 @@
     "share": "Partager",
     "likeAndShare": "Vous avez aimé l'article ? Pensez à aimer et partager ! 😊",
     "shareTitle": "Regarde ce post !",
-    "shareText": "J'ai trouvé ce post et je pense qu'il pourrait te plaire."
+    "shareText": "J'ai trouvé ce post et je pense qu'il pourrait te plaire.",
+    "featured": "À la une"
   },
 
   "BlogHeader": {

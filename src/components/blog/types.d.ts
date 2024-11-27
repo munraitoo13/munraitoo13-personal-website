@@ -18,6 +18,10 @@ type Post = {
   tags: Tag[];
 };
 
+type FeaturedPost = {
+  featuredPost: Post | null;
+};
+
 type Posts = {
   posts: Post[];
 };
