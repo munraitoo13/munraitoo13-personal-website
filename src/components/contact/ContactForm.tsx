@@ -22,7 +22,6 @@ export function ContactForm() {
 
   // handle form submit
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    // prevent default form behavior
     event.preventDefault();
 
     // create formData
@@ -45,12 +44,15 @@ export function ContactForm() {
     // send email
     try {
       setPending(true);
+      toast.loading(tt("sending"));
       await sendMail(formData);
-      toast.success(tt("messageSent"));
+      toast.dismiss();
     } catch (error) {
       console.error("Error sending email", error);
       toast.error(tt("messageError"));
     }
+
+    toast.success(tt("messageSent"));
 
     // reset form and captcha
     formRef.current?.reset();

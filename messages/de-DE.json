@@ -122,6 +122,7 @@
     "messageError": "Fehler beim Senden der Nachricht.",
     "invalidEmail": "Ungültige E-Mail.",
     "failedCaptcha": "Captcha-Überprüfung fehlgeschlagen.",
-    "emptyFields": "Einige Felder sind leer."
+    "emptyFields": "Einige Felder sind leer.",
+    "sending": "Senden..."
   }
 }

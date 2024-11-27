@@ -122,6 +122,7 @@
     "messageError": "Error sending message.",
     "invalidEmail": "Invalid email.",
     "failedCaptcha": "Captcha verification failed.",
-    "emptyFields": "Some fields are empty."
+    "emptyFields": "Some fields are empty.",
+    "sending": "Sending..."
   }
 }
