@@ -63,3 +63,7 @@
 .card-divider {
   @apply mr-5 hidden h-0 w-14 self-center border-t border-neutral-400 md:flex dark:border-neutral-700;
 }
+
+.bg-gradient {
+  @apply bg-radial-custom dark:bg-radial-custom-dark bg-16 bg-white dark:bg-neutral-950;
+}
