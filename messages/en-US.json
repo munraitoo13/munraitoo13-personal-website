@@ -1,37 +1,25 @@
 {
   "HomePage": {
-    "greetings": "What's up!",
-    "presentation": "My name is ",
+    "greetings": "What's up! 👋",
+    "presentation": "I'm Augusto.",
+    "aka": "Also known as",
+    "nickname": "munraitoo13",
+    "profession": "I'm a developer driven by passion, proudly representing Brazil.",
 
-    "name": "Augusto",
+    "contact": "Let's talk!",
+    "resume": "RESUME",
 
-    "description": "Also known as munraitoo13, I'm a passionate",
-    "descriptionLocation": "from Brazil!",
-
-    "profession": "Software Engineer",
+    "simple": "Simple",
+    "yet": "yet",
+    "stunning": "stunning",
+    "insideAndOut": "inside and out",
 
     "quality1": "Communicative",
     "quality1desc": "I can communicate clearly. A must-have quality that enhances the entire team working experience.",
-
     "quality2": "Competent",
     "quality2desc": "I'm dedicated. Another must-have trait that significantly enhances the overall working experience.",
-
     "quality3": "Deital-oriented",
-    "quality3desc": "I'm detail-oriented. This quality is essential for a software engineer, as it ensures that the code is clean and efficient.",
-
-    "phraseThere": "There are",
-    "phraseNumber": "three",
-    "phraseTo": "responses to a piece of product:",
-    "phraseYesNo": "— yes, no, and ",
-    "phraseWow": "WOW!",
-    "phraseDash": "—",
-    "phraseWowIs": "Wow is",
-    "phraseThe": "the one I aim for.",
-
-    "stacks": "My Stacks & Tools",
-
-    "contact": "Contact me",
-    "resume": "RESUME"
+    "quality3desc": "I'm detail-oriented. This quality is essential for a software engineer, as it ensures that the code is clean and efficient."
   },
 
   "NavBar": {
