@@ -3,8 +3,10 @@ import {
   MotionH1,
   MotionHeader,
   MotionP,
+  MotionSection,
 } from "@/components/common/Motion";
 import {
+  contactAndResumeVariants,
   presentationVariants,
   revealVariants,
 } from "@/animations/motionVariants";
@@ -18,7 +20,9 @@ import {
   IconBrandMongodb,
   IconBrandVscode,
   IconBrandFigma,
+  IconFile,
 } from "@tabler/icons-react";
+import Link from "next/link";
 
 export function Presentation() {
   const t = useTranslations("HomePage");
@@ -28,65 +32,49 @@ export function Presentation() {
       variants={presentationVariants}
       initial="hidden"
       animate="visible"
-      className="mb-24 mt-48 flex flex-col items-center justify-center"
+      className="flex max-w-xl flex-col pt-48"
     >
-      {/* presentation */}
-      <MotionH1 variants={revealVariants} className="title text-center">
+      {/* greet */}
+      <MotionP variants={revealVariants} className="text-xl">
         {t("greetings")}
-        <br />
-        {t("presentation")}
-        <span className="text-red-500">{t("name")}</span>.
-      </MotionH1>
-
-      {/* aka munraitoo13 */}
-      <MotionP variants={revealVariants} className="subtitle text-center">
-        <span>{t("description")} </span>
-        <span className="font-extrabold text-neutral-900 dark:text-white">
-          {t("profession")}
-        </span>
-        <span> {t("descriptionLocation")}</span>
       </MotionP>
 
-      <MotionDiv
-        variants={revealVariants}
-        className="mt-5 flex items-center gap-2"
-      >
-        <IconBrandTypescript
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
-        <IconBrandReact
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
-        <IconBrandNextjs
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
-        <IconBrandTailwind
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
-        <IconBrandNodejs
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
-        <IconBrandMongodb
-          size={24}
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
-        <IconBrandVscode
-          size={24}
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
-        <IconBrandFigma
-          size={24}
-          stroke={1.25}
-          className="hover:cursor-pointer hover:opacity-75"
-        />
+      {/* title */}
+      <MotionH1 variants={revealVariants} className="title mb-5">
+        {t("presentation")}
+      </MotionH1>
+
+      {/* subtitle */}
+      <MotionP variants={revealVariants} className="mb-5 text-xl">
+        <span>{t("aka")} </span>
+
+        <b>{t("nickname")},</b>
+
+        <span> {t("profession")}</span>
+      </MotionP>
+
+      {/* stack */}
+      <MotionDiv variants={revealVariants} className="flex items-center gap-2">
+        <IconBrandTypescript stroke={1.25} className="hover:text-red-500" />
+        <IconBrandReact stroke={1.25} className="hover:text-red-500" />
+        <IconBrandNextjs stroke={1.25} className="hover:text-red-500" />
+        <IconBrandTailwind stroke={1.25} className="hover:text-red-500" />
+        <IconBrandNodejs stroke={1.25} className="hover:text-red-500" />
+        <IconBrandMongodb stroke={1.25} className="hover:text-red-500" />
+        <IconBrandVscode stroke={1.25} className="hover:text-red-500" />
+        <IconBrandFigma stroke={1.25} className="hover:text-red-500" />
       </MotionDiv>
+
+      <MotionSection className="mt-10 flex gap-5" variants={revealVariants}>
+        <Link className="button" href="/personal/contact">
+          {t("contact")}
+        </Link>
+
+        <Link className="flex items-center gap-1" href="#">
+          <IconFile stroke={1.25} />
+          {t("resume")}
+        </Link>
+      </MotionSection>
     </MotionHeader>
   );
 }

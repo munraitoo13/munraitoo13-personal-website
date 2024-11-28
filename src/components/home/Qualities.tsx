@@ -15,12 +15,12 @@ export function Qualities() {
       variants={qualitiesVariants}
       initial="hidden"
       animate="visible"
-      className="flex w-full flex-col items-stretch justify-center gap-5 lg:flex-row"
+      className="mx-auto flex flex-col gap-5 md:flex-row"
     >
       {/* comunicative */}
       <MotionDiv
         variants={revealVariants}
-        className="w-full rounded-xl border border-neutral-100 p-3 dark:border-neutral-900/25"
+        className="max-w-sm rounded-xl border border-neutral-200/50 p-3 dark:border-neutral-900/25"
       >
         <div className="flex items-center">
           <IconBrandHipchat
@@ -29,7 +29,7 @@ export function Qualities() {
             className="z-10 box-content min-w-fit rounded-full bg-red-500 p-3 text-white"
           />
 
-          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-50 py-2 pl-10 font-bold text-neutral-900 dark:bg-neutral-900/25 dark:text-white">
+          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-50 py-2 pl-10 text-neutral-900 dark:bg-neutral-900/25 dark:text-white">
             {t("quality1")}
           </h3>
         </div>
@@ -40,7 +40,7 @@ export function Qualities() {
       {/* competent */}
       <MotionDiv
         variants={revealVariants}
-        className="w-full rounded-xl border border-neutral-100 p-3 dark:border-neutral-900/25"
+        className="max-w-sm rounded-xl border border-neutral-200/50 p-3 dark:border-neutral-900/25"
       >
         <div className="flex items-center">
           <IconBriefcase2
@@ -49,7 +49,7 @@ export function Qualities() {
             className="z-10 box-content min-w-fit rounded-full bg-red-500 p-3 text-white"
           />
 
-          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-50 py-2 pl-10 font-bold text-neutral-900 dark:bg-neutral-900/25 dark:text-white">
+          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-50 py-2 pl-10 text-neutral-900 dark:bg-neutral-900/25 dark:text-white">
             {t("quality2")}
           </h3>
         </div>
@@ -60,7 +60,7 @@ export function Qualities() {
       {/* detail-oriented */}
       <MotionDiv
         variants={revealVariants}
-        className="w-full rounded-xl border border-neutral-100 p-3 dark:border-neutral-900/25"
+        className="max-w-sm rounded-xl border border-neutral-200/50 p-3 dark:border-neutral-900/25"
       >
         <div className="flex items-center">
           <IconStars
@@ -69,7 +69,7 @@ export function Qualities() {
             className="z-10 box-content min-w-fit rounded-full bg-red-500 p-3 text-white"
           />
 
-          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-50 py-2 pl-10 font-bold text-neutral-900 dark:bg-neutral-900/25 dark:text-white">
+          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-50 py-2 pl-10 text-neutral-900 dark:bg-neutral-900/25 dark:text-white">
             {t("quality3")}
           </h3>
         </div>

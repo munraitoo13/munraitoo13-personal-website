@@ -120,7 +120,7 @@ export function NewPostForm({ tags }: NewPostProps) {
               type="checkbox"
               name="published"
               id="published"
-              className="h-3 w-3 cursor-pointer appearance-none rounded-sm bg-neutral-50/50 outline outline-4 outline-neutral-50/50 checked:bg-red-500 dark:bg-neutral-900/25 dark:outline-neutral-900/25 dark:checked:bg-red-500"
+              className="h-3 w-3 cursor-pointer appearance-none rounded-sm bg-neutral-200/50 outline outline-4 outline-neutral-200/50 checked:bg-red-500 dark:bg-neutral-900/25 dark:outline-neutral-900/25 dark:checked:bg-red-500"
             />
             <label htmlFor="published" className="cursor-pointer">
               Published

@@ -20,7 +20,7 @@ export function Header({ pageTitle, pageDescription, category }: Header) {
       </MotionH1>
 
       {/* description */}
-      <MotionP variants={revealVariants} className="subtitle">
+      <MotionP variants={revealVariants} className="mt-5 text-lg">
         {pageDescription}
       </MotionP>
     </MotionHeader>

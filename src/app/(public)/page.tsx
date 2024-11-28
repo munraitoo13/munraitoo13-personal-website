@@ -1,4 +1,3 @@
-import { ContactAndResume } from "@/components/home/ContactAndResume";
 import { Phrase } from "@/components/home/Phrase";
 import { Presentation } from "@/components/home/Presentation";
 import { Qualities } from "@/components/home/Qualities";
@@ -13,10 +12,12 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Presentation />
-      <ContactAndResume />
+      <div className="flex min-h-screen flex-col gap-24">
+        <Presentation />
+        <Qualities />
+      </div>
+
       <Phrase />
-      <Qualities />
     </>
   );
 }

@@ -16,7 +16,7 @@ export default async function Admin() {
       <div className="text-center">
         <h1 className="title">Admin Panel</h1>
 
-        <p className="subtitle">
+        <p className="mt-5 text-lg">
           Please note that some functions may not work properly!
         </p>
       </div>

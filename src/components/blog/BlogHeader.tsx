@@ -37,7 +37,7 @@ export function BlogHeader({ title, description, language, date }: BlogHeader) {
       </MotionH1>
 
       {/* description */}
-      <MotionP variants={revealVariants} className="subtitle">
+      <MotionP variants={revealVariants} className="mt-5 text-lg">
         {description}
       </MotionP>
     </MotionHeader>
