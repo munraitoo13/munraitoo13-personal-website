@@ -19,7 +19,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${inter.className} bg-gradient text-sm text-neutral-600 dark:text-neutral-400`}
+        className={`${inter.className} bg-gradient text-sm text-neutral-700 dark:text-neutral-300`}
       >
         <NextIntlClientProvider messages={messages}>
           <ToastContainer

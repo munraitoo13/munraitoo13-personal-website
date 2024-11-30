@@ -35,7 +35,7 @@
   "NavBar": {
     "professional": "Professional",
     "experiences": "Experiences",
-    "skillsAndTools": "Skills",
+    "skills": "Skills",
 
     "personal": "Personal",
     "blog": "Blog",
@@ -46,7 +46,7 @@
   "Footer": {
     "professional": "Professional",
     "experiences": "Experiences",
-    "skillsAndTools": "Skills",
+    "skills": "Skills",
 
     "personal": "Personal",
     "blog": "Blog",
@@ -54,15 +54,13 @@
     "contact": "Contact",
 
     "about": "About me",
-    "aboutPhrase": "What's up! My name is Augusto. Also known as munraitoo13, I'm a passionate software engineer from Brazil.",
-
-    "repo": "dev repo"
+    "aboutPhrase": "I'm a developer driven by passion, proudly representing Brazil in the world of technology. I'm always looking to learn more and improve my skills."
   },
 
-  "SkillsAndTools": {
+  "skills": {
     "category": "Professional",
-    "title": "Skills and Tools",
-    "description": "Here are some of the skills and tools I've acquired over the years. I'm always looking to learn more and improve my skills."
+    "title": "Skills",
+    "description": "Here are some of the skills and tools I've acquired over the years."
   },
 
   "Experiences": {
@@ -74,41 +72,39 @@
   "Projects": {
     "category": "Personal",
     "title": "Projects",
-    "description": "Here are some of the projects I've worked on.",
-    "github": "Available on GitHub!"
+    "description": "Here are some of the projects I've worked on."
   },
 
   "Contact": {
     "category": "Personal",
     "title": "Contact",
     "description": "Feel free to contact me if you have any questions or would like to work together.",
+
     "name": "Name",
     "email": "Email",
     "message": "Message",
     "subject": "Subject",
     "send": "Send",
-    "sending": "Sending...",
-    "cooldown": "Cooldown"
+    "sending": "Sending..."
   },
 
   "Blog": {
     "category": "Personal",
     "title": "Blog",
     "description": "Here are some of the blog posts I've written.",
-    "check": "Check it!",
+
     "view": "View",
     "views": "Views",
     "like": "Like",
     "likes": "Likes",
     "share": "Share",
+
     "likeAndShare": "Enjoyed the post? Consider liking and sharing! 😊",
+
     "shareTitle": "Take a look at this post!",
     "shareText": "I found this post and thought you might like it.",
-    "featured": "Featured post"
-  },
 
-  "BlogHeader": {
-    "return": "Return"
+    "featured": "Featured post"
   },
 
   "TableOfContents": {
@@ -116,11 +112,15 @@
   },
 
   "Toastify": {
-    "messageSent": "Message sent!",
+    "messageSent": "Message sent.",
     "messageError": "Error sending message.",
+
     "invalidEmail": "Invalid email.",
+
     "failedCaptcha": "Captcha verification failed.",
+
     "emptyFields": "Some fields are empty.",
+
     "sending": "Sending..."
   }
 }

@@ -1,43 +1,41 @@
 {
   "HomePage": {
-    "greetings": "Salve salve!",
-    "presentation": "Meu nome é ",
+    "greetings": "E aí! 👋",
+    "presentation": "Sou Augusto.",
+    "aka": "Também conhecido como",
+    "nickname": "munraitoo13",
+    "profession": "sou um desenvolvedor apaixonado, representando o Brasil com orgulho.",
 
-    "name": "Augusto",
+    "contact": "Vamos conversar!",
+    "resume": "Currículo",
 
-    "description": "Também conhecido como munraitoo13, sou um apaixonado",
-    "descriptionLocation": "do Brasil!",
+    "simple": "Simples,",
+    "yet": "mas",
+    "stunning": "impressionante.",
+    "insideAndOut": "Por dentro e por fora.",
 
-    "profession": "Engenheiro de Software",
+    "whySimple": "Por que simples? 🤔",
+    "whySimpleTitle": "Código e design simples funcionam.",
+    "whySimpleDesc": "Fácil de ler, entender e manter. Menos propenso a erros e fácil de corrigir.",
+    "yetStunning": "E impressionante? 😮",
+    "yetStunningTitle": "Simples não é sem graça.",
+    "yetStunningDesc": "O simples pode ser belo, elegante e eficiente.",
+    "insideAndOutExpl": "Por dentro e por fora? 🤨",
+    "insideAndOutExplTitle": "Bem estruturado, eficiente e eficaz.",
+    "insideAndOutExplDesc": "Código e design simples e impressionantes, por dentro e por fora.",
 
     "quality1": "Comunicativo",
-    "quality1desc": "Sei me comunicar de forma clara. Uma qualidade indispensável que melhora toda a experiência de trabalho em equipe.",
-
+    "quality1desc": "A comunicação é essencial para alinhar todos no projeto.",
     "quality2": "Competente",
-    "quality2desc": "Sou dedicado. Outra característica essencial que melhora significativamente a experiência de trabalho geral.",
-
+    "quality2desc": "Uma qualidade essencial para um código limpo e eficiente.",
     "quality3": "Detalhista",
-    "quality3desc": "Sou detalhista. Essa qualidade é essencial para um engenheiro de software, pois garante que o código seja limpo e eficiente.",
-
-    "phraseThere": "Existem",
-    "phraseNumber": "três",
-    "phraseTo": "respostas para um produto:",
-    "phraseYesNo": "— sim, não, e ",
-    "phraseWow": "UAU!",
-    "phraseDash": "—",
-    "phraseWowIs": "Uau é",
-    "phraseThe": "a que eu busco.",
-
-    "stacks": "Minhas Tecnologias e Ferramentas",
-
-    "contact": "Contato",
-    "resume": "CURRÍCULO"
+    "quality3desc": "Atenção aos detalhes é crucial para garantir código claro e eficiente."
   },
 
   "NavBar": {
     "professional": "Profissional",
-    "experiences": "Experiencias",
-    "skillsAndTools": "Habilidades",
+    "experiences": "Experiências",
+    "skills": "Habilidades",
 
     "personal": "Pessoal",
     "blog": "Blog",
@@ -47,8 +45,8 @@
 
   "Footer": {
     "professional": "Profissional",
-    "experiences": "Experiencias",
-    "skillsAndTools": "Habilidades",
+    "experiences": "Experiências",
+    "skills": "Habilidades",
 
     "personal": "Pessoal",
     "blog": "Blog",
@@ -56,15 +54,13 @@
     "contact": "Contato",
 
     "about": "Sobre mim",
-    "aboutPhrase": "E aí! Meu nome é Augusto. Também conhecido como munraitoo13, sou um apaixonado engenheiro de software do Brasil.",
-
-    "repo": "repositório dev"
+    "aboutPhrase": "Desenvolvedor apaixonado, representando o Brasil no mundo da tecnologia."
   },
 
-  "SkillsAndTools": {
+  "skills": {
     "category": "Profissional",
-    "title": "Habilidades e Ferramentas",
-    "description": "Aqui estão algumas das habilidades e ferramentas que adquiri ao longo dos anos. Estou sempre procurando aprender mais e melhorar minhas habilidades."
+    "title": "Habilidades",
+    "description": "Aqui estão algumas das habilidades e ferramentas que adquiri ao longo dos anos."
   },
 
   "Experiences": {
@@ -76,53 +72,55 @@
   "Projects": {
     "category": "Pessoal",
     "title": "Projetos",
-    "description": "Aqui estão alguns dos projetos nos quais trabalhei.",
-    "github": "Disponível no GitHub!"
+    "description": "Aqui estão alguns dos projetos em que trabalhei."
   },
 
   "Contact": {
     "category": "Pessoal",
     "title": "Contato",
-    "description": "Sinta-se à vontade para entrar em contato se tiver alguma dúvida ou se quiser trabalhar junto.",
+    "description": "Fique à vontade para me contatar caso tenha dúvidas ou queira colaborar.",
+
     "name": "Nome",
     "email": "E-mail",
     "message": "Mensagem",
     "subject": "Assunto",
     "send": "Enviar",
-    "sending": "Enviando...",
-    "cooldown": "Tempo de espera"
+    "sending": "Enviando..."
   },
 
   "Blog": {
     "category": "Pessoal",
     "title": "Blog",
-    "description": "Aqui estão alguns dos posts que escrevi.",
-    "check": "Confira!",
+    "description": "Aqui estão algumas das postagens que escrevi.",
+
     "view": "Visualização",
     "views": "Visualizações",
     "like": "Curtida",
     "likes": "Curtidas",
     "share": "Compartilhar",
-    "likeAndShare": "Gostou do post? Considere curtir e compartilhar! 😊",
-    "shareTitle": "Da uma olhada nesse post!",
-    "shareText": "Encontrei este post e acho que você pode gostar.",
-    "featured": "Post em destaque"
-  },
 
-  "BlogHeader": {
-    "return": "Voltar"
+    "likeAndShare": "Gostou do post? Considere curtir e compartilhar! 😊",
+
+    "shareTitle": "Dá uma olhada neste post!",
+    "shareText": "Achei este post e pensei que você poderia gostar.",
+
+    "featured": "Postagem em destaque"
   },
 
   "TableOfContents": {
-    "contents": "Conteúdos"
+    "contents": "Conteúdo"
   },
 
   "Toastify": {
-    "messageSent": "Mensagem enviada!",
+    "messageSent": "Mensagem enviada.",
     "messageError": "Erro ao enviar mensagem.",
+
     "invalidEmail": "E-mail inválido.",
+
     "failedCaptcha": "Falha na verificação do captcha.",
+
     "emptyFields": "Alguns campos estão vazios.",
+
     "sending": "Enviando..."
   }
 }

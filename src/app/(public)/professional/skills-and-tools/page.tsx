@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const t = await getTranslations("SkillsAndTools");
+  const t = await getTranslations("skills");
   const locale = await getUserLocale();
   const Content = (await import(`./${locale}.mdx`)).default;
 

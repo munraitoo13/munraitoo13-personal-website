@@ -1,43 +1,41 @@
 {
   "HomePage": {
-    "greetings": "Was geht ab!",
-    "presentation": "Mein Name ist ",
+    "greetings": "Was geht! 👋",
+    "presentation": "Ich bin Augusto.",
+    "aka": "Auch bekannt als",
+    "nickname": "munraitoo13",
+    "profession": "ich bin ein leidenschaftlicher Entwickler und vertrete stolz Brasilien.",
 
-    "name": "Augusto",
+    "contact": "Lass uns reden!",
+    "resume": "Lebenslauf",
 
-    "description": "Auch bekannt als munraitoo13, ich bin ein leidenschaftlicher",
-    "descriptionLocation": "aus Brasilien!",
+    "simple": "Einfach,",
+    "yet": "und",
+    "stunning": "beeindruckend.",
+    "insideAndOut": "Von innen und außen.",
 
-    "profession": "Softwareentwickler",
+    "whySimple": "Warum einfach? 🤔",
+    "whySimpleTitle": "Einfacher Code und Design funktionieren einfach.",
+    "whySimpleDesc": "Leicht zu lesen, zu verstehen und zu warten. Weniger fehleranfällig und leicht zu beheben.",
+    "yetStunning": "Und beeindruckend? 😮",
+    "yetStunningTitle": "Einfach bedeutet nicht langweilig.",
+    "yetStunningDesc": "Einfach kann beeindruckend sein: schön, elegant und effizient.",
+    "insideAndOutExpl": "Von innen und außen? 🤨",
+    "insideAndOutExplTitle": "Gut strukturiert, effizient und effektiv.",
+    "insideAndOutExplDesc": "Einfacher und beeindruckender Code und Design, innen wie außen.",
 
     "quality1": "Kommunikativ",
-    "quality1desc": "Ich kann klar kommunizieren. Eine unverzichtbare Eigenschaft, die das gesamte Teamarbeitserlebnis verbessert.",
-
+    "quality1desc": "Kommunikation ist entscheidend, um sicherzustellen, dass alle auf dem gleichen Stand sind.",
     "quality2": "Kompetent",
-    "quality2desc": "Ich bin engagiert. Eine weitere unverzichtbare Eigenschaft, die das gesamte Arbeitserlebnis erheblich verbessert.",
-
+    "quality2desc": "Eine wesentliche Eigenschaft für einen Softwareentwickler: sauberen und effizienten Code schreiben.",
     "quality3": "Detailorientiert",
-    "quality3desc": "Ich bin detailorientiert. Diese Eigenschaft ist für einen Softwareentwickler unerlässlich, da sie sicherstellt, dass der Code sauber und effizient ist.",
-
-    "phraseThere": "Es gibt",
-    "phraseNumber": "drei",
-    "phraseTo": "Antworten auf ein Produkt:",
-    "phraseYesNo": "— ja, nein und ",
-    "phraseWow": "WOW!",
-    "phraseDash": "—",
-    "phraseWowIs": "Wow ist",
-    "phraseThe": "das, was ich anstrebe.",
-
-    "stacks": "Meine Stacks & Tools",
-
-    "contact": "Kontaktiere mich",
-    "resume": "LEBENSLAUF"
+    "quality3desc": "Details zu beachten ist wichtig für sauberen und effizienten Code."
   },
 
   "NavBar": {
-    "professional": "Professional",
+    "professional": "Professionell",
     "experiences": "Erfahrungen",
-    "skillsAndTools": "Fähigkeiten",
+    "skills": "Fähigkeiten",
 
     "personal": "Persönlich",
     "blog": "Blog",
@@ -46,9 +44,9 @@
   },
 
   "Footer": {
-    "professional": "Professional",
+    "professional": "Professionell",
     "experiences": "Erfahrungen",
-    "skillsAndTools": "Fähigkeiten",
+    "skills": "Fähigkeiten",
 
     "personal": "Persönlich",
     "blog": "Blog",
@@ -56,61 +54,57 @@
     "contact": "Kontakt",
 
     "about": "Über mich",
-    "aboutPhrase": "Was geht ab! Mein Name ist Augusto. Auch bekannt als munraitoo13, ich bin ein leidenschaftlicher Softwareentwickler aus Brasilien.",
-
-    "repo": "Entwicklungs-Repo"
+    "aboutPhrase": "Ich bin ein leidenschaftlicher Entwickler, stolz Brasilien in der Technologie zu vertreten."
   },
 
-  "SkillsAndTools": {
-    "category": "Beruflich",
-    "title": "Fähigkeiten und Tools",
-    "description": "Hier sind einige der Fähigkeiten und Tools, die ich im Laufe der Jahre erworben habe. Ich bin immer bestrebt, mehr zu lernen und meine Fähigkeiten zu verbessern."
+  "skills": {
+    "category": "Professionell",
+    "title": "Fähigkeiten",
+    "description": "Hier sind einige meiner erworbenen Fähigkeiten und Werkzeuge."
   },
 
   "Experiences": {
-    "category": "Beruflich",
+    "category": "Professionell",
     "title": "Erfahrungen",
-    "description": "Hier sind einige der Erfahrungen, die ich im Laufe der Jahre gemacht habe."
+    "description": "Hier sind einige meiner bisherigen Erfahrungen."
   },
 
   "Projects": {
     "category": "Persönlich",
     "title": "Projekte",
-    "description": "Hier sind einige der Projekte, an denen ich gearbeitet habe.",
-    "github": "Verfügbar auf GitHub!"
+    "description": "Hier sind einige Projekte, an denen ich gearbeitet habe."
   },
 
   "Contact": {
     "category": "Persönlich",
     "title": "Kontakt",
-    "description": "Kontaktieren Sie mich gerne, wenn Sie Fragen haben oder zusammenarbeiten möchten.",
+    "description": "Kontaktieren Sie mich, wenn Sie Fragen haben oder zusammenarbeiten möchten.",
+
     "name": "Name",
     "email": "E-Mail",
     "message": "Nachricht",
     "subject": "Betreff",
     "send": "Senden",
-    "sending": "Wird gesendet...",
-    "cooldown": "Cooldown"
+    "sending": "Senden..."
   },
 
   "Blog": {
     "category": "Persönlich",
     "title": "Blog",
-    "description": "Hier sind einige der Blogposts, die ich geschrieben habe.",
-    "check": "Schau es dir an!",
+    "description": "Hier sind einige meiner geschriebenen Blogposts.",
+
     "view": "Ansicht",
     "views": "Ansichten",
     "like": "Gefällt mir",
-    "likes": "Gefällt mirs",
+    "likes": "Gefällt mir Angaben",
     "share": "Teilen",
-    "likeAndShare": "Hat dir der Beitrag gefallen? Erwäge, ihn zu liken und zu teilen! 😊",
+
+    "likeAndShare": "Hat Ihnen der Beitrag gefallen? Liken und teilen! 😊",
+
     "shareTitle": "Schau dir diesen Beitrag an!",
     "shareText": "Ich habe diesen Beitrag gefunden und dachte, er könnte dir gefallen.",
-    "featured": "Hervorgehobener Beitrag"
-  },
 
-  "BlogHeader": {
-    "return": "Zurück"
+    "featured": "Empfohlener Beitrag"
   },
 
   "TableOfContents": {
@@ -118,11 +112,15 @@
   },
 
   "Toastify": {
-    "messageSent": "Nachricht gesendet!",
+    "messageSent": "Nachricht gesendet.",
     "messageError": "Fehler beim Senden der Nachricht.",
+
     "invalidEmail": "Ungültige E-Mail.",
+
     "failedCaptcha": "Captcha-Überprüfung fehlgeschlagen.",
+
     "emptyFields": "Einige Felder sind leer.",
+
     "sending": "Senden..."
   }
 }

@@ -1,43 +1,41 @@
 {
   "HomePage": {
-    "greetings": "Ça va!",
-    "presentation": "Je m'appelle ",
+    "greetings": "Salut ! 👋",
+    "presentation": "Je suis Augusto.",
+    "aka": "Aussi connu sous le nom de",
+    "nickname": "munraitoo13",
+    "profession": "développeur passionné, représentant fièrement le Brésil.",
 
-    "name": "Augusto",
+    "contact": "Discutons !",
+    "resume": "CV",
 
-    "description": "Aussi connu sous le nom de munraitoo13, je suis un passionné",
-    "descriptionLocation": "du Brésil!",
+    "simple": "Simple,",
+    "yet": "mais",
+    "stunning": "éblouissant.",
+    "insideAndOut": "De l'intérieur et l'extérieur.",
 
-    "profession": "Ingénieur logiciel",
+    "whySimple": "Pourquoi simple ? 🤔",
+    "whySimpleTitle": "Un code et un design simples fonctionnent mieux.",
+    "whySimpleDesc": "Facile à lire, comprendre et maintenir. Moins de bugs et facile à corriger.",
+    "yetStunning": "Et éblouissant ? 😮",
+    "yetStunningTitle": "Simple ne signifie pas ennuyeux.",
+    "yetStunningDesc": "Le simple peut être élégant, beau et efficace.",
+    "insideAndOutExpl": "De l'intérieur et l'extérieur ? 🤨",
+    "insideAndOutExplTitle": "Bien structuré, efficace et performant.",
+    "insideAndOutExplDesc": "Code et design simples et éblouissants, dedans et dehors.",
 
     "quality1": "Communicatif",
-    "quality1desc": "Je peux communiquer clairement. Une qualité indispensable qui améliore l'expérience de travail en équipe.",
-
+    "quality1desc": "La communication est essentielle pour que tout le monde reste aligné.",
     "quality2": "Compétent",
-    "quality2desc": "Je suis dévoué. Une autre qualité indispensable qui améliore considérablement l'expérience de travail globale.",
-
-    "quality3": "Axé sur les détails",
-    "quality3desc": "Je suis axé sur les détails. Cette qualité est essentielle pour un ingénieur logiciel, car elle garantit que le code est propre et efficace.",
-
-    "phraseThere": "Il y a",
-    "phraseNumber": "trois",
-    "phraseTo": "réponses à un produit :",
-    "phraseYesNo": "— oui, non et ",
-    "phraseWow": "WAOUH!",
-    "phraseDash": "—",
-    "phraseWowIs": "Waouh est",
-    "phraseThe": "ce que je vise.",
-
-    "stacks": "Mes Stacks & Outils",
-
-    "contact": "Contactez-moi",
-    "resume": "CV"
+    "quality2desc": "Une qualité essentielle pour garantir un code propre et efficace.",
+    "quality3": "Souci du détail",
+    "quality3desc": "L'attention aux détails est cruciale pour un code clair et performant."
   },
 
   "NavBar": {
     "professional": "Professionnel",
     "experiences": "Expériences",
-    "skillsAndTools": "Compétences",
+    "skills": "Compétences",
 
     "personal": "Personnel",
     "blog": "Blog",
@@ -48,69 +46,65 @@
   "Footer": {
     "professional": "Professionnel",
     "experiences": "Expériences",
-    "skillsAndTools": "Compétences",
+    "skills": "Compétences",
 
     "personal": "Personnel",
     "blog": "Blog",
     "projects": "Projets",
     "contact": "Contact",
 
-    "about": "À propos de moi",
-    "aboutPhrase": "Ça va! Je m'appelle Augusto. Aussi connu sous le nom de munraitoo13, je suis un ingénieur logiciel passionné du Brésil.",
-
-    "repo": "repo dev"
+    "about": "À propos",
+    "aboutPhrase": "Développeur passionné, représentant fièrement le Brésil dans le monde technologique."
   },
 
-  "SkillsAndTools": {
+  "skills": {
     "category": "Professionnel",
-    "title": "Compétences et Outils",
-    "description": "Voici quelques-unes des compétences et des outils que j'ai acquis au fil des ans. Je cherche toujours à apprendre davantage et à améliorer mes compétences."
+    "title": "Compétences",
+    "description": "Voici certaines des compétences et outils que j'ai acquis."
   },
 
   "Experiences": {
     "category": "Professionnel",
     "title": "Expériences",
-    "description": "Voici quelques-unes des expériences que j'ai vécues au fil des ans."
+    "description": "Voici certaines de mes expériences."
   },
 
   "Projects": {
     "category": "Personnel",
     "title": "Projets",
-    "description": "Voici quelques-uns des projets sur lesquels j'ai travaillé.",
-    "github": "Disponible sur GitHub!"
+    "description": "Voici quelques projets auxquels j'ai travaillé."
   },
 
   "Contact": {
     "category": "Personnel",
     "title": "Contact",
-    "description": "N'hésitez pas à me contacter si vous avez des questions ou si vous souhaitez collaborer.",
+    "description": "N'hésitez pas à me contacter pour des questions ou collaborations.",
+
     "name": "Nom",
     "email": "E-mail",
     "message": "Message",
-    "subject": "Objet",
+    "subject": "Sujet",
     "send": "Envoyer",
-    "sending": "Envoi...",
-    "cooldown": "Cooldown"
+    "sending": "Envoi..."
   },
 
   "Blog": {
     "category": "Personnel",
     "title": "Blog",
-    "description": "Voici quelques articles de blog que j'ai écrits.",
-    "check": "Regardez!",
-    "view": "Vue",
-    "views": "Vues",
+    "description": "Voici quelques articles que j'ai écrits.",
+
+    "view": "Visualisation",
+    "views": "Visualisations",
     "like": "J'aime",
     "likes": "J'aimes",
     "share": "Partager",
-    "likeAndShare": "Vous avez aimé l'article ? Pensez à aimer et partager ! 😊",
-    "shareTitle": "Regarde ce post !",
-    "shareText": "J'ai trouvé ce post et je pense qu'il pourrait te plaire.",
-    "featured": "À la une"
-  },
 
-  "BlogHeader": {
-    "return": "Retour"
+    "likeAndShare": "Vous avez aimé cet article ? Aimez et partagez ! 😊",
+
+    "shareTitle": "Regardez cet article !",
+    "shareText": "J'ai trouvé cet article, il pourrait vous intéresser.",
+
+    "featured": "Article vedette"
   },
 
   "TableOfContents": {
@@ -118,11 +112,15 @@
   },
 
   "Toastify": {
-    "messageSent": "Message envoyé !",
+    "messageSent": "Message envoyé.",
     "messageError": "Erreur lors de l'envoi du message.",
+
     "invalidEmail": "E-mail invalide.",
+
     "failedCaptcha": "Échec de la vérification du captcha.",
+
     "emptyFields": "Certains champs sont vides.",
+
     "sending": "Envoi..."
   }
 }
