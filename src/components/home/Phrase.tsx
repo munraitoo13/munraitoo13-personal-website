@@ -16,7 +16,6 @@ export function Phrase() {
       <IconQuoteFilled
         className="-mr-24 hidden -scale-100 text-neutral-200/50 md:block dark:text-neutral-900/25"
         size={256}
-        stroke={0.5}
       />
 
       {/* flex */}
