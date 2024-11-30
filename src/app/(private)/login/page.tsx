@@ -2,7 +2,7 @@ import { login } from "@/actions/login";
 
 export default function Login() {
   return (
-    <div className="flex flex-col items-center justify-center gap-10 rounded-xl bg-neutral-50 p-10 dark:bg-neutral-900/25">
+    <div className="flex flex-col items-center justify-center gap-10 rounded-xl bg-neutral-200/50 p-10 dark:bg-neutral-900/25">
       {/* title */}
       <div className="flex flex-col">
         <h2 className="section-title">Login</h2>

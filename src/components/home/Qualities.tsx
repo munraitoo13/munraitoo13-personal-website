@@ -29,7 +29,7 @@ export function Qualities() {
             className="z-10 box-content min-w-fit rounded-full bg-red-500 p-3 text-white"
           />
 
-          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-50 py-2 pl-10 text-neutral-900 dark:bg-neutral-900/25 dark:text-white">
+          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-200/50 py-2 pl-10 text-neutral-900 dark:bg-neutral-900/25 dark:text-white">
             {t("quality1")}
           </h3>
         </div>
@@ -49,7 +49,7 @@ export function Qualities() {
             className="z-10 box-content min-w-fit rounded-full bg-red-500 p-3 text-white"
           />
 
-          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-50 py-2 pl-10 text-neutral-900 dark:bg-neutral-900/25 dark:text-white">
+          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-200/50 py-2 pl-10 text-neutral-900 dark:bg-neutral-900/25 dark:text-white">
             {t("quality2")}
           </h3>
         </div>
@@ -69,7 +69,7 @@ export function Qualities() {
             className="z-10 box-content min-w-fit rounded-full bg-red-500 p-3 text-white"
           />
 
-          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-50 py-2 pl-10 text-neutral-900 dark:bg-neutral-900/25 dark:text-white">
+          <h3 className="relative right-5 w-full rounded-r-full bg-neutral-200/50 py-2 pl-10 text-neutral-900 dark:bg-neutral-900/25 dark:text-white">
             {t("quality3")}
           </h3>
         </div>

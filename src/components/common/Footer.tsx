@@ -16,7 +16,7 @@ export function Footer() {
         <div className="flex flex-col gap-10 lg:flex-row">
           {/* personal */}
           <div className="flex flex-col items-center gap-3">
-            <p className="w-fit text-nowrap rounded-full bg-neutral-50 px-5 py-2 dark:bg-neutral-900/25">
+            <p className="w-fit text-nowrap rounded-full bg-neutral-200/50 px-5 py-2 dark:bg-neutral-900/25">
               {t("personal")}
             </p>
 
@@ -33,7 +33,7 @@ export function Footer() {
 
           {/* professional */}
           <div className="flex flex-col items-center gap-3">
-            <p className="w-fit text-nowrap rounded-full bg-neutral-50 px-5 py-2 dark:bg-neutral-900/25">
+            <p className="w-fit text-nowrap rounded-full bg-neutral-200/50 px-5 py-2 dark:bg-neutral-900/25">
               {t("professional")}
             </p>
 
@@ -52,7 +52,7 @@ export function Footer() {
         {/* about-me */}
         <div className="mx-auto flex max-w-lg flex-col items-center gap-2 lg:mx-0">
           {/* title */}
-          <p className="w-fit rounded-full bg-neutral-50 px-5 py-2 dark:bg-neutral-900/25">
+          <p className="w-fit rounded-full bg-neutral-200/50 px-5 py-2 dark:bg-neutral-900/25">
             {t("about")}
           </p>
 
