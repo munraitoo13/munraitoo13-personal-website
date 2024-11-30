@@ -48,7 +48,7 @@ export function Presentation() {
       <MotionP variants={revealVariants} className="mb-5 text-xl">
         <span>{t("aka")} </span>
 
-        <b>{t("nickname")},</b>
+        <span className="bold">{t("nickname")},</span>
 
         <span> {t("profession")}</span>
       </MotionP>

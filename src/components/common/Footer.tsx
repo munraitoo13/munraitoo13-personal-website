@@ -65,9 +65,7 @@ export function Footer() {
           <Socials />
 
           {/* copy */}
-          <p className="mx-auto text-neutral-400 dark:text-neutral-700">
-            &copy; 2024, munraitoo13
-          </p>
+          <p className="mx-auto">&copy; 2024, munraitoo13</p>
         </div>
       </div>
     </footer>
