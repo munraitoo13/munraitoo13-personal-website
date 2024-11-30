@@ -32,7 +32,7 @@ export function Presentation() {
       variants={presentationVariants}
       initial="hidden"
       animate="visible"
-      className="flex max-w-xl flex-col pt-48"
+      className="mt-48 flex max-w-xl flex-col"
     >
       {/* greet */}
       <MotionP variants={revealVariants} className="text-xl">

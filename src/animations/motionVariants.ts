@@ -110,7 +110,21 @@ export const phraseVariants: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      delay: 0.4,
+      delay: 0.8,
+    },
+  },
+};
+export const phraseDescVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -50,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delayChildren: 0.9,
+      staggerChildren: 0.1,
     },
   },
 };

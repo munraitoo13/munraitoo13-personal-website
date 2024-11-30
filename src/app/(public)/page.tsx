@@ -1,4 +1,5 @@
 import { Phrase } from "@/components/home/Phrase";
+import { PhraseDescription } from "@/components/home/PhraseDescription";
 import { Presentation } from "@/components/home/Presentation";
 import { Qualities } from "@/components/home/Qualities";
 
@@ -12,12 +13,10 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <div className="flex min-h-screen flex-col gap-24">
-        <Presentation />
-        <Qualities />
-      </div>
-
+      <Presentation />
+      <Qualities />
       <Phrase />
+      <PhraseDescription />
     </>
   );
 }

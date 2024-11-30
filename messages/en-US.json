@@ -9,17 +9,27 @@
     "contact": "Let's talk!",
     "resume": "RESUME",
 
-    "simple": "Simple",
+    "simple": "Simple,",
     "yet": "yet",
-    "stunning": "stunning",
-    "insideAndOut": "inside and out",
+    "stunning": "stunning.",
+    "insideAndOut": "Inside and out.",
+
+    "whySimple": "Why simple? 🤔",
+    "whySimpleTitle": "Simple code and design just works.",
+    "whySimpleDesc": "It's easy to read, understand, and maintain. It is less error-prone and easier to fix. It is more maintainable and extensible.",
+    "yetStunning": "What about yet stunning? 😮",
+    "yetStunningTitle": "Simple doesn't mean boring.",
+    "yetStunningDesc": "Simple can be stunning. It can be beautiful, elegant, and efficient. It can be simple and stunning at the same time.",
+    "insideAndOutExpl": "Inside and out? 🤨",
+    "insideAndOutExplTitle": "Well-structured, efficient, and effective.",
+    "insideAndOutExplDesc": "Simple and stunning code and design. Simple and stunning inside and out. That's what I aim for in everything I do.",
 
     "quality1": "Communicative",
-    "quality1desc": "I can communicate clearly. A must-have quality that enhances the entire team working experience.",
+    "quality1desc": "Communication is key to ensure that everyone is on the same page and that the project is going in the right direction.",
     "quality2": "Competent",
-    "quality2desc": "I'm dedicated. Another must-have trait that significantly enhances the overall working experience.",
+    "quality2desc": "An essential quality for a software engineer, as it ensures that the code is clean and efficient.",
     "quality3": "Deital-oriented",
-    "quality3desc": "I'm detail-oriented. This quality is essential for a software engineer, as it ensures that the code is clean and efficient."
+    "quality3desc": "Paying attention to details is crucial to ensure that the code is clean and efficient."
   },
 
   "NavBar": {

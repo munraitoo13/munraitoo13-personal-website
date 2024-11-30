@@ -22,15 +22,15 @@
 
 /* headings and similars */
 .title {
-  @apply text-6xl font-extrabold text-neutral-900 dark:text-white;
+  @apply text-6xl font-black text-neutral-900 dark:text-white;
 }
 
 .section-title {
-  @apply text-xl font-extrabold text-neutral-900 dark:text-white;
+  @apply text-xl font-bold text-neutral-900 dark:text-white;
 }
 
 .pre-title {
-  @apply text-lg font-bold text-red-500;
+  @apply text-lg text-red-500;
 }
 
 .bold {

@@ -15,12 +15,12 @@ export function Qualities() {
       variants={qualitiesVariants}
       initial="hidden"
       animate="visible"
-      className="mx-auto flex flex-col gap-5 md:flex-row"
+      className="mx-auto mt-36 flex flex-col gap-5 lg:flex-row"
     >
       {/* comunicative */}
       <MotionDiv
         variants={revealVariants}
-        className="max-w-sm rounded-xl border border-neutral-200/50 p-3 dark:border-neutral-900/25"
+        className="flex-1 rounded-xl border border-neutral-200/50 p-3 dark:border-neutral-900/25"
       >
         <div className="flex items-center">
           <IconBrandHipchat
@@ -40,7 +40,7 @@ export function Qualities() {
       {/* competent */}
       <MotionDiv
         variants={revealVariants}
-        className="max-w-sm rounded-xl border border-neutral-200/50 p-3 dark:border-neutral-900/25"
+        className="flex-1 rounded-xl border border-neutral-200/50 p-3 dark:border-neutral-900/25"
       >
         <div className="flex items-center">
           <IconBriefcase2
@@ -60,7 +60,7 @@ export function Qualities() {
       {/* detail-oriented */}
       <MotionDiv
         variants={revealVariants}
-        className="max-w-sm rounded-xl border border-neutral-200/50 p-3 dark:border-neutral-900/25"
+        className="flex-1 rounded-xl border border-neutral-200/50 p-3 dark:border-neutral-900/25"
       >
         <div className="flex items-center">
           <IconStars
