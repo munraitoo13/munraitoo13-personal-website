@@ -14,7 +14,7 @@ export function Phrase() {
       animate="visible"
     >
       <IconQuoteFilled
-        className="-mr-24 hidden -scale-100 text-neutral-200/50 md:block dark:text-neutral-900/25"
+        className="-mr-24 hidden -scale-100 text-neutral-100/50 md:block dark:text-neutral-900/25"
         size={256}
       />
 
@@ -33,7 +33,7 @@ export function Phrase() {
         </div>
 
         {/* inside */}
-        <span className="bold w-fit self-end rounded-xl bg-neutral-200/50 px-2 py-1 dark:bg-neutral-900/25">
+        <span className="bold w-fit self-end rounded-xl bg-neutral-100/50 px-2 py-1 dark:bg-neutral-900/25">
           {t("insideAndOut")}
         </span>
       </div>

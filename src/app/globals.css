@@ -17,7 +17,7 @@ html {
   @apply cursor-pointer rounded-full bg-red-500 px-5 py-3 text-white hover:bg-red-600;
 }
 .button-disabled {
-  @apply cursor-not-allowed rounded-full bg-neutral-200/50 px-5 py-3 text-neutral-300 dark:bg-neutral-900/25 dark:text-neutral-700;
+  @apply cursor-not-allowed rounded-full bg-neutral-100/50 px-5 py-3 text-neutral-300 dark:bg-neutral-900/25 dark:text-neutral-700;
 }
 
 /* headings and similars */
@@ -36,31 +36,27 @@ html {
 
 /* inputs */
 .form-input {
-  @apply appearance-none rounded-xl bg-neutral-200/50 p-5 dark:bg-neutral-900/25;
+  @apply appearance-none rounded-xl bg-neutral-100/50 p-5 dark:bg-neutral-900/25;
 }
 
 /* badges */
 .tag-badge {
-  @apply rounded-full bg-neutral-200/50 px-3 py-1 capitalize dark:bg-neutral-900/25;
+  @apply rounded-full bg-neutral-100/50 px-3 py-1 capitalize dark:bg-neutral-900/25;
 }
-
 .category-badge {
-  @apply cursor-context-menu text-nowrap rounded-full bg-neutral-200/50 px-5 py-2 dark:bg-neutral-900/25;
+  @apply cursor-context-menu text-nowrap rounded-full bg-neutral-100/50 px-5 py-2 dark:bg-neutral-900/25;
 }
 
 /* other */
 .divider {
-  @apply h-0 self-center border-t border-neutral-400 dark:border-neutral-700;
+  @apply h-0 self-center border-t border-neutral-200 dark:border-neutral-900;
 }
-
 .markdown {
   @apply prose prose-sm prose-neutral max-w-none dark:prose-invert;
 }
-
 .card-divider {
-  @apply mr-5 hidden h-0 w-14 self-center border-t border-neutral-400 md:flex dark:border-neutral-700;
+  @apply mr-5 hidden h-0 w-14 self-center border-t border-neutral-200 md:flex dark:border-neutral-900;
 }
-
 .bg-gradient {
   @apply bg-white bg-radial-custom bg-16 dark:bg-neutral-950 dark:bg-radial-custom-dark;
 }

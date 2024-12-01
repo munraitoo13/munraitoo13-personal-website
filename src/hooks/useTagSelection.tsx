@@ -20,7 +20,7 @@ export function useTagSelection(tags: Tags[]) {
   const tagColor = (name: string) =>
     selectedTags.includes(name)
       ? "bg-red-500 text-white"
-      : "bg-neutral-200/50 dark:bg-neutral-900/25";
+      : "bg-neutral-100/50 dark:bg-neutral-900/25";
 
   // handle tag input change
   const handleTagInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
