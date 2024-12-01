@@ -32,7 +32,7 @@ export function Presentation() {
       variants={presentationVariants}
       initial="hidden"
       animate="visible"
-      className="mt-48 flex max-w-xl flex-col"
+      className="mt-48 flex flex-col"
     >
       {/* greet */}
       <MotionP variants={revealVariants} className="text-xl">
@@ -65,6 +65,7 @@ export function Presentation() {
         <IconBrandFigma stroke={1.25} className="hover:text-red-500" />
       </MotionDiv>
 
+      {/* contact and resume */}
       <MotionSection className="mt-10 flex gap-5" variants={revealVariants}>
         <Link className="button" href="/personal/contact">
           {t("contact")}
