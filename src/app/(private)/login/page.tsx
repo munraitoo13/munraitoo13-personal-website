@@ -2,7 +2,7 @@ import { login } from "@/actions/login";
 
 export default function Login() {
   return (
-    <div className="flex flex-col items-center justify-center gap-10 rounded-xl bg-neutral-200/50 p-10 dark:bg-neutral-900/25">
+    <div className="flex flex-col items-center justify-center gap-10 rounded-xl bg-neutral-50/50 p-10 shadow-md dark:bg-neutral-900/25">
       {/* title */}
       <div className="flex flex-col">
         <h2 className="section-title">Login</h2>
@@ -10,7 +10,7 @@ export default function Login() {
       </div>
 
       {/* horizontal line */}
-      <hr className="w-full border-neutral-100 dark:border-neutral-900/25" />
+      <div className="divider w-full"></div>
 
       {/* login form */}
       <form
@@ -21,14 +21,14 @@ export default function Login() {
           type="email"
           name="email"
           placeholder="Email"
-          className="rounded-full bg-neutral-100 px-5 py-3 dark:bg-neutral-900/25"
+          className="form-input !rounded-full"
         />
 
         <input
           type="password"
           name="password"
           placeholder="Password"
-          className="rounded-full bg-neutral-100 px-5 py-3 dark:bg-neutral-900/25"
+          className="form-input !rounded-full"
         />
 
         <button type="submit" className="button">
