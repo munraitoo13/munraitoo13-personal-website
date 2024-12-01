@@ -1,12 +1,15 @@
 import { Header } from "@/components/common/Header";
 import { Projects } from "@/components/projects/Projects";
-import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Projects | munraitoo13",
-  description: "munraitoo13's projects",
-};
+export async function generateMetadata() {
+  const t = await getTranslations("Metadata");
+
+  return {
+    title: t("projects"),
+    description: t("projectsDesc"),
+  };
+}
 
 export default async function Page() {
   const repos = await fetch(

@@ -40,7 +40,7 @@ export function Presentation() {
       </MotionP>
 
       {/* title */}
-      <MotionH1 variants={revealVariants} className="title mb-5">
+      <MotionH1 variants={revealVariants} className="h1 mb-5">
         {t("presentation")}
       </MotionH1>
 

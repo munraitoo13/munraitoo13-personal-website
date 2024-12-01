@@ -32,7 +32,7 @@ export function BlogHeader({ title, description, language, date }: BlogHeader) {
       </MotionDiv>
 
       {/* title */}
-      <MotionH1 variants={revealVariants} className="title mt-5">
+      <MotionH1 variants={revealVariants} className="h1 mt-5">
         {title}
       </MotionH1>
 

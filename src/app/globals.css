@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 * {
-  scroll-behavior: smooth;
-  scroll-margin-top: 7rem;
+  @apply scroll-m-28;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .dark {
   color-scheme: dark;
 }
@@ -15,24 +16,20 @@
 .button {
   @apply cursor-pointer rounded-full bg-red-500 px-5 py-3 text-white hover:bg-red-600;
 }
-
 .button-disabled {
   @apply cursor-not-allowed rounded-full bg-neutral-200/50 px-5 py-3 text-neutral-300 dark:bg-neutral-900/25 dark:text-neutral-700;
 }
 
 /* headings and similars */
-.title {
-  @apply text-6xl font-black text-neutral-900 dark:text-white;
+.h1 {
+  @apply text-7xl font-black text-neutral-900 dark:text-white;
 }
-
 .section-title {
   @apply text-xl font-bold text-neutral-900 dark:text-white;
 }
-
 .pre-title {
   @apply text-lg text-red-500;
 }
-
 .bold {
   @apply font-bold text-neutral-900 dark:text-white;
 }

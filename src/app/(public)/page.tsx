@@ -2,13 +2,16 @@ import { Phrase } from "@/components/home/Phrase";
 import { PhraseDescription } from "@/components/home/PhraseDescription";
 import { Presentation } from "@/components/home/Presentation";
 import { Qualities } from "@/components/home/Qualities";
+import { getTranslations } from "next-intl/server";
 
-import { Metadata } from "next";
+export async function generateMetadata() {
+  const t = await getTranslations("Metadata");
 
-export const metadata: Metadata = {
-  title: "Home | munraitoo13",
-  description: "munraitoo13's personal website home page.",
-};
+  return {
+    title: t("home"),
+    description: t("homeDesc"),
+  };
+}
 
 export default function Page() {
   return (

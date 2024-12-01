@@ -122,5 +122,25 @@
     "emptyFields": "Alguns campos estão vazios.",
 
     "sending": "Enviando..."
+  },
+
+  "Metadata": {
+    "home": "Início | munraitoo13",
+    "homeDesc": "Página inicial de munraitoo13.",
+
+    "projects": "Projetos | munraitoo13",
+    "projectsDesc": "Projetos de munraitoo13.",
+
+    "contact": "Contato | munraitoo13",
+    "contactDesc": "Contatos de munraitoo13.",
+
+    "blog": "Blog | munraitoo13",
+    "blogDesc": "Blog de munraitoo13.",
+
+    "skills": "Habilidades | munraitoo13",
+    "skillsDesc": "Habilidades de munraitoo13.",
+
+    "experiences": "Experiências | munraitoo13",
+    "experiencesDesc": "Experiências de munraitoo13."
   }
 }

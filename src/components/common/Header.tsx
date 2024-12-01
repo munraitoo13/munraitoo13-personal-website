@@ -15,7 +15,7 @@ export function Header({ pageTitle, pageDescription, category }: Header) {
       </MotionP>
 
       {/* title */}
-      <MotionH1 variants={revealVariants} className="title">
+      <MotionH1 variants={revealVariants} className="h1">
         {pageTitle}
       </MotionH1>
 

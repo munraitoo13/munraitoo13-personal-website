@@ -15,7 +15,7 @@ export const getPersonalLinks = (t: (key: string) => string) => [
   { name: t("blog"), href: "/personal/blog" },
 ];
 export const getProfessionalLinks = (t: (key: string) => string) => [
-  { name: t("skills"), href: "/professional/skills-and-tools" },
+  { name: t("skills"), href: "/professional/skills" },
   { name: t("experiences"), href: "/professional/experiences" },
 ];
 
