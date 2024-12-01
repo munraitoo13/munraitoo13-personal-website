@@ -5,7 +5,7 @@ export default function Login() {
     <div className="flex flex-col items-center justify-center gap-10 rounded-xl bg-neutral-50/50 p-10 shadow-md dark:bg-neutral-900/25">
       {/* title */}
       <div className="flex flex-col">
-        <h2 className="section-title">Login</h2>
+        <h1 className="h1">Login</h1>
         <p>Identify yourself, curious peasant.</p>
       </div>
 

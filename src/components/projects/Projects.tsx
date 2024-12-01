@@ -30,7 +30,7 @@ export function Projects({ repos }: ProjectsProps) {
             <small className="text-red-500">{full_name}</small>
 
             {/* project title */}
-            <p className="section-title">{name}</p>
+            <h2 className="h2">{name}</h2>
 
             {/* project description */}
             <p className="text-lg">{description}</p>

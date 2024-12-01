@@ -32,7 +32,7 @@ export async function FeaturedPost({ featuredPost }: FeaturedPost) {
       </small>
 
       {/* title */}
-      <h2 className="section-title">{featuredPost.title}</h2>
+      <h2 className="h2">{featuredPost.title}</h2>
 
       {/* description */}
       <p className="text-lg">{featuredPost.description}</p>

@@ -8,13 +8,13 @@ export function Phrase() {
 
   return (
     <MotionBlockquote
-      className="mx-auto mt-36 flex w-fit text-3xl font-light md:text-5xl"
+      className="mx-auto mt-36 flex w-fit text-2xl font-light md:text-3xl lg:text-5xl"
       variants={phraseVariants}
       initial="hidden"
       animate="visible"
     >
       <IconQuoteFilled
-        className="-mr-24 hidden -scale-100 text-neutral-100/50 md:block dark:text-neutral-900/25"
+        className="-mr-24 hidden -scale-100 text-neutral-100/50 lg:block dark:text-neutral-900/25"
         size={256}
       />
 
@@ -24,7 +24,7 @@ export function Phrase() {
         <span className="italic">{t("simple")} </span>
 
         {/* yet */}
-        <div className="flex gap-5">
+        <div className="flex items-center gap-5">
           —
           <span>
             {t("yet")} <span className="bold">{t("stunning")}</span>

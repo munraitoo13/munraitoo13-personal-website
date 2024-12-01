@@ -19,7 +19,7 @@ export function TableOfContents() {
       animate="visible"
       className="flex h-fit w-full flex-col gap-5 text-nowrap rounded-xl border border-red-500 p-10 lg:w-fit"
     >
-      <h2 className="section-title">{t("contents")}</h2>
+      <h2 className="h2">{t("contents")}</h2>
 
       {headings.map(({ text, id, headingLevel }) => (
         <MotionLink

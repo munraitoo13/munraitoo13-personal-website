@@ -41,7 +41,7 @@ export async function Posts({ posts }: Posts) {
               </small>
 
               {/* title */}
-              <h2 className="section-title">{title}</h2>
+              <h2 className="h2">{title}</h2>
 
               {/* description */}
               <p className="text-lg">{description}</p>

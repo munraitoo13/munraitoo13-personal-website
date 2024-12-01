@@ -7,10 +7,10 @@ export function Header({ pageTitle, pageDescription, category }: Header) {
       variants={headerVariants}
       initial="hidden"
       animate="visible"
-      className="mb-24 mt-48 flex w-full flex-col justify-center"
+      className="mb-24 mt-48 flex w-full flex-col justify-center gap-3"
     >
       {/* pre-title */}
-      <MotionP variants={revealVariants} className="pre-title">
+      <MotionP variants={revealVariants} className="text-lg text-red-500">
         {category}
       </MotionP>
 
@@ -20,7 +20,7 @@ export function Header({ pageTitle, pageDescription, category }: Header) {
       </MotionH1>
 
       {/* description */}
-      <MotionP variants={revealVariants} className="mt-5 text-lg">
+      <MotionP variants={revealVariants} className="text-lg">
         {pageDescription}
       </MotionP>
     </MotionHeader>

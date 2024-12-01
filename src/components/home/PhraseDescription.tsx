@@ -22,9 +22,7 @@ export function PhraseDescription() {
         <div className="flex flex-col gap-3">
           <p className="text-lg text-red-500">{t("whySimple")}</p>
 
-          <h3 className="text-3xl font-bold text-neutral-900 dark:text-white">
-            {t("whySimpleTitle")}
-          </h3>
+          <h2 className="h2">{t("whySimpleTitle")}</h2>
 
           <p>{t("whySimpleDesc")}</p>
         </div>
@@ -37,9 +35,7 @@ export function PhraseDescription() {
         <div className="flex flex-col gap-3">
           <p className="text-lg text-red-500">{t("yetStunning")}</p>
 
-          <h3 className="text-3xl font-bold text-neutral-900 dark:text-white">
-            {t("yetStunningTitle")}
-          </h3>
+          <h2 className="h2">{t("yetStunningTitle")}</h2>
 
           <p>{t("yetStunningDesc")}</p>
         </div>
@@ -52,9 +48,7 @@ export function PhraseDescription() {
         <div className="flex flex-col gap-3">
           <p className="text-lg text-red-500">{t("insideAndOutExpl")}</p>
 
-          <h3 className="text-3xl font-bold text-neutral-900 dark:text-white">
-            {t("insideAndOutExplTitle")}
-          </h3>
+          <h2 className="h2">{t("insideAndOutExplTitle")}</h2>
 
           <p>{t("insideAndOutExplDesc")}</p>
         </div>
