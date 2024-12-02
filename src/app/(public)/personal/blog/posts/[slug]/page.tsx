@@ -5,6 +5,7 @@ import { formatDate } from "@/utils/formatDate";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { LikesViews } from "@/components/blog/LikesViews";
 import { LikeShare } from "@/components/blog/LikeShare";
+import { CustomMDX } from "@/components/blog/customMDX";
 
 export default async function Page({ params }: Params) {
   const post = await prisma.post.findUnique({
@@ -47,7 +48,7 @@ export default async function Page({ params }: Params) {
       <LikesViews likes={likes} views={views} />
 
       <Markdown>
-        <MDXRemote source={content} />
+        <CustomMDX source={content} />
       </Markdown>
 
       <LikeShare likes={likes} id={id} />

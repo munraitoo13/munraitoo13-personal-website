@@ -4,12 +4,9 @@ import {
   MotionP,
   MotionHeader,
 } from "@/components/common/Motion";
-import { useTranslations } from "next-intl";
 import { headerVariants, revealVariants } from "@/animations/motionVariants";
 
 export function BlogHeader({ title, description, language, date }: BlogHeader) {
-  const t = useTranslations("BlogHeader");
-
   return (
     <MotionHeader
       variants={headerVariants}
