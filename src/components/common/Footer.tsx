@@ -10,39 +10,28 @@ export function Footer() {
   const professionalLinks = getProfessionalLinks(t);
 
   return (
-    <footer className="flex w-full flex-col items-center bg-gradient-to-b from-white px-10 pb-20 pt-48 dark:from-neutral-950">
-      <div className="flex w-full max-w-screen-lg flex-col justify-between gap-10 lg:flex-row">
+    <footer className="layout flex flex-col justify-between gap-10 pb-5 pt-48">
+      {/* top */}
+      <div className="flex flex-col justify-between gap-10 lg:flex-row">
         {/* navigation */}
-        <div className="flex flex-col gap-10 lg:flex-row">
+        <div className="flex gap-10">
           {/* personal */}
-          <div className="flex flex-col items-center gap-3">
-            <p className="w-fit text-nowrap rounded-full bg-neutral-100/50 px-5 py-2 dark:bg-neutral-900/25">
-              {t("personal")}
-            </p>
+          <div className="flex flex-col gap-3">
+            <p className="text-lg text-primary">{t("personal")}</p>
 
             {personalLinks.map(({ name, href }) => (
-              <Link
-                key={name}
-                href={href}
-                className="text-neutral-900 hover:text-red-500 dark:text-white"
-              >
+              <Link key={name} href={href} className="hover:text-primary">
                 {name}
               </Link>
             ))}
           </div>
 
           {/* professional */}
-          <div className="flex flex-col items-center gap-3">
-            <p className="w-fit text-nowrap rounded-full bg-neutral-100/50 px-5 py-2 dark:bg-neutral-900/25">
-              {t("professional")}
-            </p>
+          <div className="flex flex-col gap-3">
+            <p className="text-lg text-primary">{t("professional")}</p>
 
             {professionalLinks.map(({ name, href }) => (
-              <Link
-                key={name}
-                href={href}
-                className="text-neutral-900 hover:text-red-500 dark:text-white"
-              >
+              <Link key={name} href={href} className="hover:text-primary">
                 {name}
               </Link>
             ))}
@@ -50,23 +39,24 @@ export function Footer() {
         </div>
 
         {/* about-me */}
-        <div className="mx-auto flex max-w-lg flex-col items-center gap-2 lg:mx-0">
+        <div className="mx-auto flex max-w-lg flex-col gap-2 lg:mx-0">
           {/* title */}
-          <p className="w-fit rounded-full bg-neutral-100/50 px-5 py-2 dark:bg-neutral-900/25">
-            {t("about")}
-          </p>
+          <p className="text-lg text-primary">{t("about")}</p>
 
           {/* phrase */}
-          <p className="text-center text-neutral-900 dark:text-white">
-            {t("aboutPhrase")}
-          </p>
-
-          {/* socials */}
-          <Socials />
-
-          {/* copy */}
-          <p className="mx-auto">&copy; 2024, munraitoo13</p>
+          <p>{t("aboutPhrase")}</p>
         </div>
+      </div>
+
+      {/* bottom */}
+      <div className="flex justify-between">
+        {/* socials */}
+        <div className="flex gap-1">
+          <Socials />
+        </div>
+
+        {/* copy */}
+        <p>&copy; 2024, munraitoo13</p>
       </div>
     </footer>
   );

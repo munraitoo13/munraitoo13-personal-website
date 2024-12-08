@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.min.css";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default async function RootLayout({
   children,
@@ -18,9 +18,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body
-        className={`${inter.className} bg-gradient text-sm text-neutral-700 dark:text-neutral-300`}
-      >
+      <body className={`${montserrat.className} bg-background text-text`}>
         <NextIntlClientProvider messages={messages}>
           <ToastContainer
             position="top-right"

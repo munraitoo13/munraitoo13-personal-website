@@ -17,7 +17,7 @@ export function TableOfContents() {
       variants={tableOfContentsVariants}
       initial="hidden"
       animate="visible"
-      className="flex h-fit w-full flex-col gap-5 text-nowrap rounded-xl border border-red-500 p-10 lg:w-fit"
+      className="flex h-fit w-full flex-col gap-5 text-nowrap rounded-xl border p-10 lg:w-fit"
     >
       <h2 className="h2">{t("contents")}</h2>
 
@@ -27,7 +27,7 @@ export function TableOfContents() {
           whileHover="hover"
           whileTap="tap"
           key={text}
-          className={`${headingLevel === "H2" ? "font-bold text-neutral-900 dark:text-white" : "ml-3 text-inherit hover:opacity-100"} hover:text-red-500`}
+          className={`${headingLevel === "H2" ? "font-bold" : "text-inherit ml-3 hover:opacity-100"} `}
           href={`#${id}`}
         >
           {text}

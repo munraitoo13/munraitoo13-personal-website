@@ -12,13 +12,13 @@ export function ThemeToggle() {
         <IconSun
           stroke={1.25}
           onClick={() => setTheme("light")}
-          className="cursor-pointer text-neutral-700 hover:text-white"
+          className="cursor-pointer"
         />
       ) : (
         <IconMoon
           stroke={1.25}
           onClick={() => setTheme("dark")}
-          className="cursor-pointer text-neutral-300 hover:text-neutral-900"
+          className="cursor-pointer"
         />
       )}
     </div>

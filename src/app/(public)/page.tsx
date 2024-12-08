@@ -1,6 +1,6 @@
 import { Phrase } from "@/components/home/Phrase";
 import { PhraseDescription } from "@/components/home/PhraseDescription";
-import { Presentation } from "@/components/home/Presentation";
+import { Header } from "@/components/home/Header";
 import { Qualities } from "@/components/home/Qualities";
 import { getTranslations } from "next-intl/server";
 
@@ -16,7 +16,7 @@ export async function generateMetadata() {
 export default function Page() {
   return (
     <>
-      <Presentation />
+      <Header />
       <Qualities />
       <Phrase />
       <PhraseDescription />

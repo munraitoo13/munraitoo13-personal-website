@@ -1,42 +1,37 @@
-import { MotionBlockquote } from "@/components/common/Motion";
+"use client";
+
 import { useTranslations } from "next-intl";
-import { phraseVariants } from "@/animations/motionVariants";
-import { IconQuoteFilled } from "@tabler/icons-react";
+import { motion } from "framer-motion";
 
 export function Phrase() {
   const t = useTranslations("HomePage");
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1, delay: 0.8 } },
+  };
 
   return (
-    <MotionBlockquote
-      className="mx-auto mt-36 flex w-fit text-2xl font-light md:text-3xl lg:text-5xl"
-      variants={phraseVariants}
+    <motion.blockquote
+      variants={variants}
       initial="hidden"
       animate="visible"
+      className="mx-auto mt-48 flex w-fit flex-col gap-1 text-3xl font-light md:text-5xl"
     >
-      <IconQuoteFilled
-        className="-mr-24 hidden -scale-100 text-neutral-100/50 lg:block dark:text-neutral-900/25"
-        size={256}
-      />
+      {/* simple */}
+      <span className="italic">{t("simple")} </span>
 
-      {/* flex */}
-      <div className="z-10 flex w-fit flex-col gap-1">
-        {/* simple */}
-        <span className="italic">{t("simple")} </span>
-
-        {/* yet */}
-        <div className="flex items-center gap-5">
-          —
-          <span>
-            {t("yet")} <span className="bold">{t("stunning")}</span>
-          </span>
-          —
-        </div>
-
-        {/* inside */}
-        <span className="bold w-fit self-end rounded-xl bg-neutral-100/50 px-2 py-1 dark:bg-neutral-900/25">
-          {t("insideAndOut")}
+      {/* yet */}
+      <div className="flex items-center gap-5">
+        <span>
+          {t("yet")}{" "}
+          <span className="font-bold text-primary">{t("stunning")}</span>
         </span>
       </div>
-    </MotionBlockquote>
+
+      {/* inside */}
+      <span className="bg-secondary/50 w-fit self-end rounded-xl px-2 py-1 font-bold text-primary">
+        {t("insideAndOut")}
+      </span>
+    </motion.blockquote>
   );
 }

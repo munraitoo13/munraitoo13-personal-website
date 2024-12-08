@@ -1,62 +1,23 @@
-import {
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconBrandInstagram,
-  IconBrandX,
-} from "@tabler/icons-react";
-import { linkVariants } from "@/animations/motionVariants";
-import { MotionLink } from "@/components/common/Motion";
+"use client";
+
+import { motion } from "framer-motion";
+import { SOCIALS } from "@/constants/constants";
 
 export function Socials() {
   return (
-    <div className="flex gap-1">
-      {/* github */}
-      <MotionLink
-        variants={linkVariants}
-        whileHover={{ scale: 1.1 }}
-        whileTap="tap"
-        href="https://github.com/munraitoo13"
-        target="_blank"
-        className="hover:text-red-500"
-      >
-        <IconBrandGithub stroke={1.25} />
-      </MotionLink>
-
-      {/* linkedin */}
-      <MotionLink
-        variants={linkVariants}
-        whileHover={{ scale: 1.1 }}
-        whileTap="tap"
-        href="https://www.linkedin.com/in/munraitoo13/"
-        target="_blank"
-        className="hover:text-red-500"
-      >
-        <IconBrandLinkedin stroke={1.25} />
-      </MotionLink>
-
-      {/* instagram */}
-      <MotionLink
-        variants={linkVariants}
-        whileHover={{ scale: 1.1 }}
-        whileTap="tap"
-        href="https://www.instagram.com/munraitoo13/"
-        target="_blank"
-        className="hover:text-red-500"
-      >
-        <IconBrandInstagram stroke={1.25} />
-      </MotionLink>
-
-      {/* twitter */}
-      <MotionLink
-        variants={linkVariants}
-        whileHover={{ scale: 1.1 }}
-        whileTap="tap"
-        href="https://twitter.com/munraitoo13"
-        target="_blank"
-        className="hover:text-red-500"
-      >
-        <IconBrandX stroke={1.25} />
-      </MotionLink>
-    </div>
+    <>
+      {SOCIALS.map(({ href, Icon }) => (
+        <motion.a
+          key={href}
+          href={href}
+          target="_blank"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="hover:text-primary"
+        >
+          <Icon stroke={1} />
+        </motion.a>
+      ))}
+    </>
   );
 }

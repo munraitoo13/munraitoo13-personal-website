@@ -36,7 +36,7 @@ export async function Posts({ posts }: Posts) {
 
             <div className="flex w-full flex-col gap-2">
               {/* date and lang */}
-              <small className="text-red-500">
+              <small className="">
                 {await formatDate(createdAt)}, {language}
               </small>
 

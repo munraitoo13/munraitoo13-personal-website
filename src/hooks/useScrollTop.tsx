@@ -11,6 +11,13 @@ export function useScrollTop() {
     }
   }, []);
 
+  function scrollTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
@@ -19,5 +26,5 @@ export function useScrollTop() {
     };
   }, [handleScroll]);
 
-  return { isVisible, setIsVisible };
+  return { isVisible, setIsVisible, scrollTop };
 }

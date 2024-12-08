@@ -18,10 +18,10 @@ export async function FeaturedPost({ featuredPost }: FeaturedPost) {
       whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
       whileTap={{ scale: 0.98 }}
       href={`/personal/blog/posts/${featuredPost.id}`}
-      className="mb-14 flex w-full flex-col gap-2 rounded-3xl border p-10 dark:border-neutral-900"
+      className="mb-14 flex w-full flex-col gap-2 rounded-3xl border p-10"
     >
       {/* pinned icon */}
-      <div className="flex items-center gap-1 text-red-500">
+      <div className="flex items-center gap-1">
         <IconPinnedFilled size={24} />
         <span className="text-lg font-semibold">{t("featured")}</span>
       </div>

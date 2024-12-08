@@ -58,29 +58,26 @@ export function PostManager({ posts }: ManagerProps) {
               <div className="flex gap-3">
                 {/* pin/unpin */}
                 <IconPinFilled
-                  className={`${isFeatured && "text-red-500"} cursor-pointer hover:text-red-500`}
+                  className={`${isFeatured && ""} cursor-pointer`}
                   onClick={() => handlePin(id, isFeatured)}
                 />
 
                 {/* edit */}
-                <Link
-                  className="hover:text-red-500"
-                  href={`/admin/update-post/${id}`}
-                >
+                <Link className="" href={`/admin/update-post/${id}`}>
                   <IconSettingsFilled />
                 </Link>
 
                 {/* delete */}
                 <IconTrashFilled
                   onClick={() => handleDelete(id)}
-                  className="cursor-pointer hover:text-red-500"
+                  className="cursor-pointer"
                 />
               </div>
 
               {/* published and lang */}
               <small className="flex flex-col">
                 {/* published */}
-                <p className={`${published && "text-red-500"}`}>
+                <p className={`${published && ""}`}>
                   {published ? "Published" : "Not published"}
                 </p>
 

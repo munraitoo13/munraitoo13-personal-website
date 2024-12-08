@@ -2,7 +2,7 @@ import { login } from "@/actions/login";
 
 export default function Login() {
   return (
-    <div className="flex flex-col items-center justify-center gap-10 rounded-xl bg-neutral-50/50 p-10 shadow-md dark:bg-neutral-900/25">
+    <div className="bg-neutral-50 flex flex-col items-center justify-center gap-10 rounded-xl p-10 shadow-md">
       {/* title */}
       <div className="flex flex-col">
         <h1 className="h1">Login</h1>
@@ -37,7 +37,7 @@ export default function Login() {
       </form>
 
       <div>
-        <a href="/" className="hover:text-red-500">
+        <a href="/" className="">
           Home
         </a>
       </div>

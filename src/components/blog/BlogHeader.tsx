@@ -17,7 +17,7 @@ export function BlogHeader({ title, description, language, date }: BlogHeader) {
       {/* date and language */}
       <MotionDiv
         variants={revealVariants}
-        className="mt-5 flex items-center gap-5 text-red-500"
+        className="mt-5 flex items-center gap-5"
       >
         {/* date */}
         <small className="flex items-center gap-1">

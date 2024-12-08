@@ -24,10 +24,8 @@ export default async function Admin() {
       {/* content */}
       <div className="flex w-full max-w-screen-lg flex-col gap-5">
         {/* shortcuts */}
-        <div className="mb-10 flex flex-col items-center justify-center gap-5 rounded-xl bg-neutral-100/50 p-5 dark:bg-neutral-900/25">
-          <h2 className="text-xl font-extrabold text-neutral-900 dark:text-white">
-            Shortcuts
-          </h2>
+        <div className="bg-neutral-100 mb-10 flex flex-col items-center justify-center gap-5 rounded-xl p-5">
+          <h2 className="text-xl font-extrabold">Shortcuts</h2>
 
           {/* links */}
           <div className="flex gap-1">

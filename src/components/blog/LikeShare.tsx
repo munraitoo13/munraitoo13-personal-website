@@ -43,7 +43,7 @@ export function LikeShare({ likes, id }: LikeShare) {
             initial={{ scale: 1 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="box-content cursor-pointer rounded-full border-none bg-red-500 p-2 outline-none"
+            className="box-content cursor-pointer rounded-full border-none p-2 outline-none"
             color="white"
             onClick={handleLike}
           />
@@ -58,7 +58,7 @@ export function LikeShare({ likes, id }: LikeShare) {
             initial={{ scale: 1 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="box-content cursor-pointer rounded-full border-none bg-red-500 p-2 outline-none"
+            className="box-content cursor-pointer rounded-full border-none p-2 outline-none"
             color="white"
             onClick={handleShare}
           />
