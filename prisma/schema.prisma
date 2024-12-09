@@ -48,6 +48,7 @@ model Post {
 
   views      Int     @default(0)
   likes      Int     @default(0)
+  shares     Int     @default(0)
   isFeatured Boolean @default(false)
 }
 
