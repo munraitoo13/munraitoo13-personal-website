@@ -42,15 +42,15 @@ export function Header() {
 
           <span>, {t("profession")}</span>
         </motion.p>
+
+        {/* stack */}
+        <motion.div variants={item} className="flex items-center gap-1">
+          <Stacks />
+        </motion.div>
       </div>
 
-      {/* stack */}
-      <motion.div variants={item} className="mt-24 flex items-center gap-1">
-        <Stacks />
-      </motion.div>
-
       {/* contact and resume */}
-      <motion.section className="mt-10 flex gap-5" variants={item}>
+      <motion.section className="mt-24 flex gap-5" variants={item}>
         <motion.div
           initial={{ scale: 1 }}
           whileTap={{ scale: 0.95 }}
