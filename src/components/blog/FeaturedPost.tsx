@@ -25,7 +25,7 @@ export function FeaturedPost({ featuredPost }: FeaturedPost) {
       className="mb-12 flex w-full flex-col rounded-md border border-secondary/50 p-10 text-center"
     >
       {/* pinned icon */}
-      <IconPinnedFilled className="mb-10 self-center" />
+      <IconPinnedFilled className="mb-10 self-center text-primary" />
 
       <div className="flex flex-col">
         {/* title */}
