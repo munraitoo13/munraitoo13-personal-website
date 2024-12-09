@@ -1,12 +1,9 @@
 "use client";
 
 import { IconPinnedFilled } from "@tabler/icons-react";
-import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 export function FeaturedPost({ featuredPost }: FeaturedPost) {
-  const t = useTranslations("Blog");
-
   if (!featuredPost) {
     return null;
   }
