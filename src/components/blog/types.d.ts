@@ -15,6 +15,7 @@ type Post = {
   isFeatured: boolean;
   views: number;
   likes: number;
+  shares: number;
   tags: Tag[];
 };
 
@@ -33,12 +34,9 @@ type BlogHeader = {
   date: string;
 };
 
-type LikesViews = {
-  likes: number;
-  views: number;
-};
-
 type LikeShare = {
   likes: number;
+  shares: number;
+  views: number;
   id: string;
 };

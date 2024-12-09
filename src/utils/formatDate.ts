@@ -1,10 +1,4 @@
-import { getUserLocale } from "@/utils/userLocale";
-
-export async function formatDate(date: Date) {
-  // get the user's locale
-  const locale = await getUserLocale();
-
-  // format the date
+export function formatDate(date: Date, locale: string) {
   return date.toLocaleDateString(locale, {
     year: "numeric",
     month: "long",
