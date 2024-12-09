@@ -17,11 +17,6 @@ const config: Config = {
       secondary: "rgb(var(--secondary))",
     },
 
-    fontFamily: {
-      josefin: ["var(--font-josefin)"],
-      cardo: ["var(--font-cardo)"],
-    },
-
     fontWeight: {
       normal: "400",
       bold: "700",
