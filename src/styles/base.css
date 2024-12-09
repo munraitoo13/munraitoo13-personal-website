@@ -1,0 +1,46 @@
+@tailwind base;
+
+@layer base {
+  :root {
+    --text: 64 64 64;
+    --background: 247 247 247;
+    --primary: 0 0 0;
+    --secondary: 230 230 230;
+  }
+  .dark {
+    color-scheme: dark;
+
+    --text: 191 191 191;
+    --background: 8 8 8;
+    --primary: 255 255 255;
+    --secondary: 26 26 26;
+  }
+
+  * {
+    @apply scroll-m-28 scroll-smooth;
+  }
+  html {
+  }
+
+  body {
+    @apply font-cardo;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply font-josefin;
+    }
+  }
+
+  .prose {
+    img {
+      @apply w-full max-w-[50rem] rounded-xl;
+    }
+    hr {
+      @apply divider;
+    }
+  }
+}

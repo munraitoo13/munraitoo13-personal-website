@@ -1,0 +1,47 @@
+@tailwind components;
+
+@layer components {
+  .button {
+    @apply w-fit rounded-xl px-6 py-2;
+
+    &--solid {
+      @apply bg-primary text-background;
+    }
+
+    &--outline {
+      @apply border border-primary text-primary;
+    }
+
+    &--disabled {
+      @apply cursor-not-allowed bg-secondary text-background;
+    }
+  }
+
+  .mdx-content {
+    --tw-prose-body: var(--text);
+
+    @apply prose prose-neutral max-w-none dark:prose-invert;
+    @apply prose-headings:font-normal;
+    @apply prose-strong:font-josefin prose-strong:font-normal;
+  }
+
+  .layout {
+    @apply mx-auto w-11/12 max-w-[75rem];
+  }
+
+  .divider {
+    @apply border-t border-secondary/50;
+
+    &--card {
+      @apply mr-5 hidden w-12 self-center border-t border-secondary/50 md:flex;
+    }
+  }
+
+  .form {
+    @apply mt-5 flex w-full flex-col gap-2;
+
+    &--input {
+      @apply rounded-xl bg-secondary/50 p-6;
+    }
+  }
+}
