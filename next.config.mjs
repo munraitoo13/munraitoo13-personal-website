@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 import nextMDX from "@next/mdx";
-import remarkSlug from "remark-slug";
 import createNextIntlPlugin from "next-intl/plugin";
+import remarkSlug from "remark-slug";
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,

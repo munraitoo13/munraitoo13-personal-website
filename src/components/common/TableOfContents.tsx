@@ -1,8 +1,8 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { useHeadings } from "@/hooks/useHeadings";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function TableOfContents() {
   const t = useTranslations("TableOfContents");

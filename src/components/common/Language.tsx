@@ -1,7 +1,7 @@
 "use client";
 
-import { setUserLocale } from "@/utils/userLocale";
 import { LANGUAGES } from "@/constants/constants";
+import { setUserLocale } from "@/utils/userLocale";
 import { motion } from "framer-motion";
 
 export function Language() {

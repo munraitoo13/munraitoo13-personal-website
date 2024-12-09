@@ -1,7 +1,6 @@
 import {
   IconBrandFigma,
   IconBrandGithub,
-  IconBrandHipchat,
   IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandMongodb,
@@ -12,10 +11,8 @@ import {
   IconBrandTypescript,
   IconBrandVscode,
   IconBrandX,
-  IconBriefcase2,
-  IconStars,
 } from "@tabler/icons-react";
-import { BR, US, DE, FR } from "country-flag-icons/react/3x2";
+import { BR, DE, FR, US } from "country-flag-icons/react/3x2";
 
 // languages
 export const LANGUAGES = [

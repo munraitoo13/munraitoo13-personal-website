@@ -1,8 +1,8 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { getPhraseDescription } from "@/constants/constants";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function PhraseDescription() {
   const t = useTranslations("HomePage");

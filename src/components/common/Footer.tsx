@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { Socials } from "@/components/common/Socials";
 import { getPersonalLinks, getProfessionalLinks } from "@/constants/constants";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export function Footer() {
   const t = useTranslations("Footer");

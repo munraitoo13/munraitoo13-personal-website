@@ -1,14 +1,14 @@
 "use client";
 
 import { deletePost } from "@/actions/deletePost";
-import {
-  IconTrashFilled,
-  IconSettingsFilled,
-  IconPinFilled,
-} from "@tabler/icons-react";
-import { toast } from "react-toastify";
-import Link from "next/link";
 import { pinPost } from "@/actions/pinPost";
+import {
+  IconPinFilled,
+  IconSettingsFilled,
+  IconTrashFilled,
+} from "@tabler/icons-react";
+import Link from "next/link";
+import { toast } from "react-toastify";
 
 export function PostManager({ posts }: ManagerProps) {
   // handle delete

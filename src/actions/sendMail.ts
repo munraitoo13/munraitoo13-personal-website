@@ -1,6 +1,6 @@
 "use server";
 
-import { transporter, options } from "@/lib/nodemailer";
+import { options, transporter } from "@/lib/nodemailer";
 
 export async function sendMail(formData: FormData) {
   try {

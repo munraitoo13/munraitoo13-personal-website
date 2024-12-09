@@ -1,8 +1,8 @@
 "use client";
 import { Stacks } from "@/components/home/Stacks";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export function Header() {
   const t = useTranslations("HomePage");

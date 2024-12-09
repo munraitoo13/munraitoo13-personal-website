@@ -1,11 +1,11 @@
 "use client";
 
 import { createPost } from "@/actions/createPost";
+import { POST_LANGUAGES } from "@/constants/constants";
 import { useTagSelection } from "@/hooks/useTagSelection";
-import { toast } from "react-toastify";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { POST_LANGUAGES } from "@/constants/constants";
+import { toast } from "react-toastify";
 
 export function NewPostForm({ tags }: NewPostProps) {
   const [content, setContent] = useState("");

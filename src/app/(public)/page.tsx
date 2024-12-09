@@ -1,6 +1,6 @@
+import { Header } from "@/components/home/Header";
 import { Phrase } from "@/components/home/Phrase";
 import { PhraseDescription } from "@/components/home/PhraseDescription";
-import { Header } from "@/components/home/Header";
 import { Qualities } from "@/components/home/Qualities";
 import { getTranslations } from "next-intl/server";
 

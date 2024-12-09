@@ -1,13 +1,12 @@
 "use client";
 
 import { sendMail } from "@/actions/sendMail";
-import { motion } from "framer-motion";
-import { toast } from "react-toastify";
-import { useTranslations } from "next-intl";
-import { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
-import { useRef } from "react";
 import { useCaptcha } from "@/hooks/useCaptcha";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { toast } from "react-toastify";
 
 export function ContactForm() {
   const [pending, setPending] = useState(false);

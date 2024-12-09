@@ -1,10 +1,10 @@
-import { Cormorant } from "next/font/google";
 import { ThemeToggle } from "@/components/common/ThemeToggle";
+import "@/styles/main.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
+import { Cormorant } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.min.css";
-import "@/styles/main.css";
 
 const cormorant = Cormorant({
   subsets: ["latin"],

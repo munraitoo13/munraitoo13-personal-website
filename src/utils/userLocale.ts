@@ -1,7 +1,7 @@
 "use server";
 
-import { cookies } from "next/headers";
 import { defaultLocale } from "@/i18n/config";
+import { cookies } from "next/headers";
 
 export async function getUserLocale() {
   // get the user's locale from the cookies

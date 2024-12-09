@@ -1,14 +1,13 @@
 "use client";
 
-import { getPersonalLinks, getProfessionalLinks } from "@/constants/constants";
+import { Language } from "@/components/common/Language";
 import { Logo } from "@/components/common/Logo";
-import { Socials } from "@/components/common/Socials";
+import { getPersonalLinks, getProfessionalLinks } from "@/constants/constants";
 import { IconMenu2, IconX } from "@tabler/icons-react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useState } from "react";
-import { Language } from "@/components/common/Language";
-import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

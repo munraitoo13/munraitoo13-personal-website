@@ -1,7 +1,7 @@
 "use client";
 
-import { IconMoon, IconSun } from "@tabler/icons-react";
 import { useTheme } from "@/hooks/useTheme";
+import { IconMoon, IconSun } from "@tabler/icons-react";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();

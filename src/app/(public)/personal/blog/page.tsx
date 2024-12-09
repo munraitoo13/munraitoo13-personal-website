@@ -1,8 +1,8 @@
-import { Header } from "@/components/common/Header";
+import { FeaturedPost } from "@/components/blog/FeaturedPost";
 import { Posts } from "@/components/blog/Posts";
+import { Header } from "@/components/common/Header";
 import { prisma } from "@/lib/prisma";
 import { getTranslations } from "next-intl/server";
-import { FeaturedPost } from "@/components/blog/FeaturedPost";
 
 export async function generateMetadata() {
   const t = await getTranslations("Metadata");

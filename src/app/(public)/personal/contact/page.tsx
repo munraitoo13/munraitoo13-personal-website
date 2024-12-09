@@ -1,6 +1,6 @@
-import { ContactForm } from "@/components/contact/ContactForm";
 import { Header } from "@/components/common/Header";
 import { Markdown } from "@/components/common/Markdown";
+import { ContactForm } from "@/components/contact/ContactForm";
 import { getUserLocale } from "@/utils/userLocale";
 import { getTranslations } from "next-intl/server";
 

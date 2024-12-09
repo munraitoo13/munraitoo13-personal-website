@@ -1,16 +1,16 @@
 "use client";
 
+import { likePost } from "@/actions/likePost";
+import { sharePost } from "@/actions/sharePost";
 import {
-  IconThumbUpFilled,
-  IconShare,
   IconEyeFilled,
+  IconShare,
+  IconThumbUpFilled,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
-import { likePost } from "@/actions/likePost";
-import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 import { toast } from "react-toastify";
-import { sharePost } from "@/actions/sharePost";
 
 export function LikeShare({ likes, shares, views, id }: LikeShare) {
   const [localLikes, setLocalLikes] = useState(likes);

@@ -1,5 +1,5 @@
-import { cookies } from "next/headers";
 import { JWTPayload, jwtVerify, SignJWT } from "jose";
+import { cookies } from "next/headers";
 
 // get encoded secret key
 export function getJwtKey(): Uint8Array {

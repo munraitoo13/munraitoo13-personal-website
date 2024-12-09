@@ -1,8 +1,8 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { getQualities } from "@/constants/constants";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function Qualities() {
   const t = useTranslations("HomePage");

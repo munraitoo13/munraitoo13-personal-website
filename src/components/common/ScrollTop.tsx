@@ -1,7 +1,7 @@
 "use client";
 
-import { IconChevronUp } from "@tabler/icons-react";
 import { useScrollTop } from "@/hooks/useScrollTop";
+import { IconChevronUp } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 
 export function ScrollTop() {

@@ -1,9 +1,9 @@
 "use server";
 
-import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
-import { cookies } from "next/headers";
 import { generateJwt } from "@/utils/tokenUtils";
+import bcrypt from "bcryptjs";
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 export async function login(formData: FormData) {

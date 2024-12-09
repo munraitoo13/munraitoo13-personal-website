@@ -1,11 +1,11 @@
 "use client";
 
 import { updatePost } from "@/actions/updatePost";
+import { POST_LANGUAGES } from "@/constants/constants";
 import { useTagSelection } from "@/hooks/useTagSelection";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { toast } from "react-toastify";
-import { POST_LANGUAGES } from "@/constants/constants";
 
 export function UpdatePostForm({ tags, post }: UpdatePostProps) {
   const [content, setContent] = useState(post.content);
