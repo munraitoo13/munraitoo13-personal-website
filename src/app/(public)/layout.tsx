@@ -1,7 +1,7 @@
 import { Footer } from "@/components/common/Footer";
 import { Navbar } from "@/components/common/Navbar";
 import { ScrollTop } from "@/components/common/ScrollTop";
-import "../globals.css";
+import "@/styles/main.css";
 
 export default function PublicLayout({
   children,

@@ -1,12 +1,22 @@
-import { Montserrat } from "next/font/google";
+import { Cardo, Josefin_Sans } from "next/font/google";
 import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.min.css";
-import "./globals.css";
+import "@/styles/main.css";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+export const cardo = Cardo({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-cardo",
+});
+
+export const josefinSans = Josefin_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-josefin",
+});
 
 export default async function RootLayout({
   children,
@@ -18,7 +28,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${montserrat.className} bg-background text-text`}>
+      <body
+        className={`${josefinSans.variable} ${cardo.variable} bg-background text-text`}
+      >
         <NextIntlClientProvider messages={messages}>
           <ToastContainer
             position="top-right"

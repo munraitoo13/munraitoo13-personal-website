@@ -1,15 +1,21 @@
-import { markdownVariants } from "@/animations/motionVariants";
-import { MotionDiv } from "@/components/common/Motion";
+"use client";
+
+import { motion } from "framer-motion";
 
 export function Markdown({ children }: { children: React.ReactNode }) {
+  const variants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.25, delay: 0.2 } },
+  };
+
   return (
-    <MotionDiv
-      className="markdown mdx-content mb-10"
-      variants={markdownVariants}
+    <motion.div
+      className="mdx-content"
+      variants={variants}
       initial="hidden"
       animate="visible"
     >
       {children}
-    </MotionDiv>
+    </motion.div>
   );
 }

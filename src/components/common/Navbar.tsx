@@ -17,23 +17,29 @@ export function Navbar() {
   const personalLinks = getPersonalLinks(t);
   const professionalLinks = getProfessionalLinks(t);
 
+  const variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.25 } },
+    exit: { opacity: 0, y: 50, transition: { duration: 0.25 } },
+  };
+
   return (
     <nav className="fixed inset-x-0 top-5 z-50 mx-auto w-fit">
       {/* logo and menu */}
-      <div className="bg-background/75 flex w-96 items-center justify-between rounded-xl p-5 backdrop-blur-xl">
+      <div className="flex w-96 items-center justify-between rounded-xl bg-background/75 p-5 backdrop-blur-xl">
         {/* logo */}
         <Logo />
 
         {/* menu */}
         {isOpen ? (
           <IconX
-            className="cursor-pointer"
+            className="cursor-pointer text-primary"
             onClick={() => setIsOpen(!isOpen)}
             stroke={1.25}
           />
         ) : (
           <IconMenu2
-            className="cursor-pointer"
+            className="cursor-pointer text-primary"
             onClick={() => setIsOpen(!isOpen)}
             stroke={1.25}
           />
@@ -45,17 +51,20 @@ export function Navbar() {
         {isOpen && (
           <motion.div
             onClick={() => setIsOpen(!isOpen)}
-            initial={{ opacity: 0, y: -50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            className="bg-background/75 mt-5 flex w-96 flex-col items-center justify-center rounded-xl p-5 backdrop-blur-xl"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="mt-5 flex w-96 flex-col items-center justify-center rounded-xl bg-background/75 p-5 backdrop-blur-xl"
           >
             {/* personal links */}
             <div className="flex flex-col items-center justify-center gap-3">
-              <p className="text-lg text-primary">{t("personal")}</p>
+              <p className="font-josefin text-lg text-primary">
+                {t("personal")}
+              </p>
 
               {personalLinks.map(({ name, href }) => (
-                <Link className="" key={name} href={href}>
+                <Link key={name} href={href}>
                   {name}
                 </Link>
               ))}
@@ -63,7 +72,9 @@ export function Navbar() {
 
             {/* professional links */}
             <div className="mt-5 flex flex-col items-center justify-center gap-3">
-              <p className="text-lg text-primary">{t("professional")}</p>
+              <p className="font-josefin text-lg text-primary">
+                {t("professional")}
+              </p>
 
               {professionalLinks.map(({ name, href }) => (
                 <Link className="" key={name} href={href}>
@@ -72,15 +83,8 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* socials */}
-            <div className="mt-5 flex gap-1">
-              <Socials />
-            </div>
-
             {/* language seletor */}
-            <div className="mt-5 flex gap-4">
-              <Language />
-            </div>
+            <Language />
           </motion.div>
         )}
       </AnimatePresence>

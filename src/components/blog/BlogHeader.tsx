@@ -1,42 +1,38 @@
-import {
-  MotionDiv,
-  MotionH1,
-  MotionP,
-  MotionHeader,
-} from "@/components/common/Motion";
-import { headerVariants, revealVariants } from "@/animations/motionVariants";
+"use client";
+
+import { motion } from "framer-motion";
 
 export function BlogHeader({ title, description, language, date }: BlogHeader) {
+  const variants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { staggerChildren: 0.1 } },
+  };
+  const items = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.25 } },
+  };
+
   return (
-    <MotionHeader
-      variants={headerVariants}
+    <motion.header
+      variants={variants}
       initial="hidden"
       animate="visible"
-      className="mb-24 mt-48 flex flex-col"
+      className="mb-24 mt-48 flex flex-col gap-3"
     >
       {/* date and language */}
-      <MotionDiv
-        variants={revealVariants}
-        className="mt-5 flex items-center gap-5"
-      >
-        {/* date */}
-        <small className="flex items-center gap-1">
-          {date}, {language}.
-        </small>
-
-        {/* lang */}
-        <div className="flex items-center gap-1"></div>
-      </MotionDiv>
+      <motion.p variants={items}>
+        {date}, {language}.
+      </motion.p>
 
       {/* title */}
-      <MotionH1 variants={revealVariants} className="h1 mt-5">
+      <motion.h1 variants={items} className="text-3xl text-primary">
         {title}
-      </MotionH1>
+      </motion.h1>
 
       {/* description */}
-      <MotionP variants={revealVariants} className="mt-5 text-lg">
+      <motion.p variants={items} className="text-xl">
         {description}
-      </MotionP>
-    </MotionHeader>
+      </motion.p>
+    </motion.header>
   );
 }

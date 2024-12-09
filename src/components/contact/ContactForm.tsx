@@ -1,20 +1,26 @@
 "use client";
 
 import { sendMail } from "@/actions/sendMail";
+import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef } from "react";
-import { useTheme } from "@/hooks/useTheme";
 import { useCaptcha } from "@/hooks/useCaptcha";
 
 export function ContactForm() {
-  const theme = useTheme();
   const [pending, setPending] = useState(false);
   const { captchaToken, setCaptchaToken, resetCaptcha, captchaRef } =
     useCaptcha();
   const formRef = useRef<HTMLFormElement>(null);
+
+  // variants
+  const buttonVariants = {
+    default: { scale: 1 },
+    hover: { scale: 1.05 },
+    tap: { scale: 0.95 },
+  };
 
   // translations
   const t = useTranslations("Contact");
@@ -61,13 +67,13 @@ export function ContactForm() {
   };
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-3">
+    <form ref={formRef} onSubmit={handleSubmit} className="form">
       {/* name */}
       <input
         type="text"
         id="name"
         name="name"
-        className="form-input"
+        className="form--input"
         placeholder={t("name")}
         maxLength={64}
       />
@@ -77,7 +83,7 @@ export function ContactForm() {
         type="email"
         id="email"
         name="email"
-        className="form-input"
+        className="form--input"
         placeholder={t("email")}
         maxLength={255}
       />
@@ -87,7 +93,7 @@ export function ContactForm() {
         type="text"
         id="subject"
         name="subject"
-        className="form-input"
+        className="form--input"
         placeholder={t("subject")}
         maxLength={64}
       />
@@ -96,28 +102,31 @@ export function ContactForm() {
       <textarea
         id="message"
         name="message"
-        className="form-input h-48 resize-none"
+        className="form--input h-48 resize-none"
         placeholder={t("message")}
       />
 
       {/* send and captcha */}
-      <div className="flex flex-col items-center gap-3 self-center md:flex-row md:self-start">
-        {/* send */}
-        <button
-          type="submit"
-          disabled={pending}
-          className={`${pending ? "button-disabled" : "button"} order-2 md:order-1`}
-        >
-          {pending ? t("sending") : t("send")}
-        </button>
-
+      <div className="flex flex-col gap-2">
         {/* captcha */}
         <ReCAPTCHA
           sitekey={process.env.NEXT_PUBLIC_SITE_KEY || ""}
           onChange={(token) => setCaptchaToken(token)}
           ref={captchaRef}
-          className="order-1 md:order-2"
         />
+
+        {/* send */}
+        <motion.button
+          type="submit"
+          variants={buttonVariants}
+          animate="default"
+          whileHover="hover"
+          whileTap="tap"
+          disabled={pending}
+          className={`${pending ? "button--disabled" : "button--solid"} button`}
+        >
+          {pending ? t("sending") : t("send")}
+        </motion.button>
       </div>
     </form>
   );

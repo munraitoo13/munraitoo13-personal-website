@@ -26,17 +26,13 @@ export function PhraseDescription() {
     >
       {phraseDescriptions.map(({ question, title, description }) => (
         <div className="flex flex-col gap-2" key={question}>
-          <motion.p variants={item} className="">
-            {question}
-          </motion.p>
+          <motion.p variants={item}>{question}</motion.p>
 
           <motion.h3 variants={item} className="text-xl text-primary">
             {title}
           </motion.h3>
 
-          <motion.p variants={item} className="">
-            {description}
-          </motion.p>
+          <motion.p variants={item}>{description}</motion.p>
         </div>
       ))}
     </motion.section>

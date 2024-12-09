@@ -2,22 +2,22 @@ import { BlogHeader } from "@/components/blog/BlogHeader";
 import { Markdown } from "@/components/common/Markdown";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/utils/formatDate";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { LikesViews } from "@/components/blog/LikesViews";
 import { LikeShare } from "@/components/blog/LikeShare";
 import { CustomMDX } from "@/components/blog/customMDX";
+import { getUserLocale } from "@/utils/userLocale";
 
 export default async function Page({ params }: Params) {
   const post = await prisma.post.findUnique({
     where: { id: params.slug },
   });
+  const locale = await getUserLocale();
 
   if (!post) {
     return (
       <BlogHeader
         title="Post not found"
         description="The post you are looking for does not exist."
-        date={await formatDate(new Date())}
+        date={formatDate(new Date(), locale)}
         language={"Easter Egg!"}
       />
     );
@@ -33,25 +33,32 @@ export default async function Page({ params }: Params) {
     },
   });
 
-  const { id, title, description, createdAt, language, content, likes, views } =
-    post;
+  const {
+    id,
+    title,
+    description,
+    createdAt,
+    language,
+    content,
+    likes,
+    shares,
+    views,
+  } = post;
 
   return (
     <>
       <BlogHeader
         title={title}
         description={description}
-        date={await formatDate(createdAt)}
+        date={formatDate(createdAt, locale)}
         language={language}
       />
-
-      <LikesViews likes={likes} views={views} />
 
       <Markdown>
         <CustomMDX source={content} />
       </Markdown>
 
-      <LikeShare likes={likes} id={id} />
+      <LikeShare likes={likes} shares={shares} views={views} id={id} />
     </>
   );
 }

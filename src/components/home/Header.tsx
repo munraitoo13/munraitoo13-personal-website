@@ -21,41 +21,44 @@ export function Header() {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="flex flex-col gap-4 pt-48"
+      className="flex flex-col pt-48"
     >
-      {/* greet */}
-      <motion.p variants={item} className="text-xl">
-        {t("greetings")}
-      </motion.p>
+      <div className="flex flex-col gap-3">
+        {/* greet */}
+        <motion.p variants={item} className="text-xl">
+          {t("greetings")}
+        </motion.p>
 
-      {/* title */}
-      <motion.h1 variants={item} className="text-5xl font-bold text-primary">
-        {t("presentation")}
-      </motion.h1>
+        {/* title */}
+        <motion.h1 variants={item} className="text-5xl text-primary">
+          {t("presentation")}
+        </motion.h1>
 
-      {/* subtitle */}
-      <motion.p variants={item} className="text-xl">
-        <span>{t("aka")} </span>
+        {/* subtitle */}
+        <motion.p variants={item} className="text-xl">
+          <span>{t("aka")} </span>
 
-        <span className="italic">{t("nickname")}</span>
+          <span className="italic">{t("nickname")}</span>
 
-        <span>, {t("profession")}</span>
-      </motion.p>
+          <span>, {t("profession")}</span>
+        </motion.p>
+      </div>
 
       {/* stack */}
-      <motion.div variants={item} className="flex items-center gap-1">
+      <motion.div variants={item} className="mt-24 flex items-center gap-1">
         <Stacks />
       </motion.div>
 
       {/* contact and resume */}
-      <motion.section className="flex gap-5 pt-16" variants={item}>
+      <motion.section className="mt-10 flex gap-5" variants={item}>
         <motion.div
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="hover:bg-primary/95 cursor-pointer rounded-xl bg-primary px-5 py-3 text-background"
         >
-          <Link href="/personal/contact">{t("contact")}</Link>
+          <Link className="button button--solid" href="/personal/contact">
+            {t("contact")}
+          </Link>
         </motion.div>
 
         <Link className="flex items-center gap-1" href="#">

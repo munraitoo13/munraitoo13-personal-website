@@ -15,7 +15,7 @@ export function Phrase() {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="mx-auto mt-48 flex w-fit flex-col gap-1 text-3xl font-light md:text-5xl"
+      className="font-light mx-auto mt-48 flex w-fit flex-col gap-1 font-josefin text-3xl md:text-5xl"
     >
       {/* simple */}
       <span className="italic">{t("simple")} </span>
@@ -23,13 +23,12 @@ export function Phrase() {
       {/* yet */}
       <div className="flex items-center gap-5">
         <span>
-          {t("yet")}{" "}
-          <span className="font-bold text-primary">{t("stunning")}</span>
+          {t("yet")} <span className="text-primary">{t("stunning")}</span>
         </span>
       </div>
 
       {/* inside */}
-      <span className="bg-secondary/50 w-fit self-end rounded-xl px-2 py-1 font-bold text-primary">
+      <span className="w-fit rounded-xl bg-secondary/50 px-2 py-1 text-primary">
         {t("insideAndOut")}
       </span>
     </motion.blockquote>

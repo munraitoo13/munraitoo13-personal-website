@@ -1,4 +1,4 @@
-import "@/app/globals.css";
+import "@/styles/main.css";
 
 type LayoutProps = {
   children: React.ReactNode;

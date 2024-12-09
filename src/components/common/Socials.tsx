@@ -5,7 +5,7 @@ import { SOCIALS } from "@/constants/constants";
 
 export function Socials() {
   return (
-    <>
+    <div className="flex gap-1">
       {SOCIALS.map(({ href, Icon }) => (
         <motion.a
           key={href}
@@ -18,6 +18,6 @@ export function Socials() {
           <Icon stroke={1} />
         </motion.a>
       ))}
-    </>
+    </div>
   );
 }

@@ -1,78 +1,58 @@
-import { formatDate } from "@/utils/formatDate";
-import { MotionA, MotionDiv } from "@/components/common/Motion";
-import { contentVariants, revealVariants } from "@/animations/motionVariants";
-import { getTranslations } from "next-intl/server";
-import { IconChessKnightFilled, IconChevronRight } from "@tabler/icons-react";
+"use client";
 
-export async function Posts({ posts }: Posts) {
-  const t = getTranslations("Blog");
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+
+export function Posts({ posts }: Posts) {
+  const t = useTranslations("Blog");
+
+  const variants = {
+    visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
+  };
+
+  const items = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.25 } },
+    hover: { x: 5 },
+    tap: { scale: 0.95 },
+  };
 
   return (
-    <MotionDiv
-      variants={contentVariants}
+    <motion.div
+      variants={variants}
       initial="hidden"
       animate="visible"
-      className="flex flex-col"
+      className="flex flex-col gap-12"
     >
-      {posts.map(
-        async ({
-          id,
-          createdAt,
-          language,
-          title,
-          description,
-          tags,
-          views,
-          likes,
-        }) => (
-          <MotionA
-            variants={revealVariants}
-            whileHover={{ x: 5 }}
-            className="mb-14 flex"
-            href={`/personal/blog/posts/${id}`}
-            key={id}
-          >
-            <div className="card-divider"></div>
+      {posts.map(({ id, title, description, tags }) => (
+        <motion.a
+          variants={items}
+          whileHover={{ x: 5 }}
+          whileTap={{ scale: 0.95 }}
+          className="flex"
+          href={`/personal/blog/posts/${id}`}
+          key={id}
+        >
+          <div className="divider--card"></div>
 
-            <div className="flex w-full flex-col gap-2">
-              {/* date and lang */}
-              <small className="">
-                {await formatDate(createdAt)}, {language}
-              </small>
+          <div className="flex w-full flex-col gap-2">
+            {/* title */}
+            <h2 className="text-2xl text-primary">{title}</h2>
 
-              {/* title */}
-              <h2 className="h2">{title}</h2>
+            {/* description */}
+            <p>{description}</p>
 
-              {/* description */}
-              <p className="text-lg">{description}</p>
-
-              {/* views and likes */}
-              <div className="flex items-center gap-1">
-                <small className="flex items-center gap-1">
-                  <span>{views}</span>
-                  {(await t)("views")}
-                </small>
-
-                <span>-</span>
-
-                <small className="flex items-center gap-1">
-                  <span>{likes}</span>
-                  {(await t)("likes")}
-                </small>
-              </div>
-
-              {/* tags */}
-              <div className="mt-5 flex flex-wrap items-center gap-1">
-                {tags.map(({ name, id }: Tag) => (
-                  <span key={id} className="tag-badge">
-                    {name}
-                  </span>
-                ))}
-              </div>
+            {/* tags */}
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              {tags.map(({ name, id }: Tag) => (
+                <span key={id} className="capitalize">
+                  {name}
+                </span>
+              ))}
             </div>
-          </MotionA>
-        ),
-      )}
-    </MotionDiv>
+          </div>
+        </motion.a>
+      ))}
+    </motion.div>
   );
 }

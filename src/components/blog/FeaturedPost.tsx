@@ -1,11 +1,11 @@
+"use client";
+
 import { IconPinnedFilled } from "@tabler/icons-react";
 import { MotionLink } from "@/components/common/Motion";
-import { revealVariants } from "@/animations/motionVariants";
-import { formatDate } from "@/utils/formatDate";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
-export async function FeaturedPost({ featuredPost }: FeaturedPost) {
-  const t = await getTranslations("Blog");
+export function FeaturedPost({ featuredPost }: FeaturedPost) {
+  const t = useTranslations("Blog");
 
   if (!featuredPost) {
     return null;
@@ -23,13 +23,8 @@ export async function FeaturedPost({ featuredPost }: FeaturedPost) {
       {/* pinned icon */}
       <div className="flex items-center gap-1">
         <IconPinnedFilled size={24} />
-        <span className="text-lg font-semibold">{t("featured")}</span>
+        <span className="text-lg">{t("featured")}</span>
       </div>
-
-      {/* date and lang */}
-      <small>
-        {await formatDate(featuredPost.createdAt)}, {featuredPost.language}
-      </small>
 
       {/* title */}
       <h2 className="h2">{featuredPost.title}</h2>

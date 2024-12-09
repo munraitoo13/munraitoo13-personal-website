@@ -1,18 +1,33 @@
 "use client";
 
-import { IconThumbUpFilled, IconGhostFilled } from "@tabler/icons-react";
+import {
+  IconThumbUpFilled,
+  IconShare,
+  IconEyeFilled,
+} from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { likePost } from "@/actions/likePost";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { toast } from "react-toastify";
+import { sharePost } from "@/actions/sharePost";
 
-export function LikeShare({ likes, id }: LikeShare) {
+export function LikeShare({ likes, shares, views, id }: LikeShare) {
   const [localLikes, setLocalLikes] = useState(likes);
-  const t = useTranslations("Blog");
+  const [localShares, setLocalShares] = useState(shares);
 
-  const MotionThumb = motion.create(IconThumbUpFilled);
-  const MotionShare = motion.create(IconGhostFilled);
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { delay: 5, duration: 1 } },
+  };
+
+  const item = {
+    default: { scale: 1 },
+    hover: { scale: 1.1 },
+    tap: { scale: 0.9 },
+  };
+
+  const t = useTranslations("Blog");
 
   const handleLike = async () => {
     setLocalLikes(localLikes + 1);
@@ -26,45 +41,63 @@ export function LikeShare({ likes, id }: LikeShare) {
         text: t("shareText"),
         url: window.location.href,
       });
+
+      setLocalShares(localShares + 1);
+      await sharePost(id);
     } else {
       toast.error("Your browser does not support sharing.");
     }
   };
 
   return (
-    <section className="mt-20 flex flex-col items-center gap-5">
-      {/* text */}
-      <span>{t("likeAndShare")}</span>
-
-      <div className="flex items-center gap-5">
-        {/* like */}
-        <div className="flex items-center gap-3">
-          <MotionThumb
-            initial={{ scale: 1 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="box-content cursor-pointer rounded-full border-none p-2 outline-none"
-            color="white"
-            onClick={handleLike}
-          />
-          <span className="select-none">
-            {localLikes} {localLikes === 1 ? t("like") : t("likes")}
-          </span>
-        </div>
-
-        {/* share */}
-        <div className="flex items-center gap-3">
-          <MotionShare
-            initial={{ scale: 1 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="box-content cursor-pointer rounded-full border-none p-2 outline-none"
-            color="white"
-            onClick={handleShare}
-          />
-          <span className="select-none">{t("share")}</span>
-        </div>
+    <motion.section
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      className="fixed inset-x-0 bottom-20 mx-auto flex w-fit gap-10 rounded-xl border border-secondary/50 bg-background/75 px-5 py-3 backdrop-blur-xl"
+    >
+      {/* like */}
+      <div className="flex items-center gap-3">
+        <motion.div
+          onClick={handleLike}
+          variants={item}
+          initial="default"
+          whileHover="hover"
+          whileTap="tap"
+          className="cursor-pointer"
+        >
+          <IconThumbUpFilled />
+        </motion.div>
+        <span>{localLikes}</span>
       </div>
-    </section>
+
+      {/* share */}
+      <div className="flex items-center gap-3">
+        <motion.div
+          onClick={handleShare}
+          variants={item}
+          initial="default"
+          whileHover="hover"
+          whileTap="tap"
+          className="cursor-pointer"
+        >
+          <IconShare />
+        </motion.div>
+        <span>{localShares}</span>
+      </div>
+
+      {/* views */}
+      <div className="flex items-center gap-3">
+        <motion.div
+          variants={item}
+          initial="default"
+          whileHover="hover"
+          whileTap="tap"
+        >
+          <IconEyeFilled />
+        </motion.div>
+        <span>{views}</span>
+      </div>
+    </motion.section>
   );
 }
