@@ -16,6 +16,16 @@ const config: Config = {
       primary: "rgb(var(--primary))",
       secondary: "rgb(var(--secondary))",
     },
+
+    fontFamily: {
+      josefin: ["var(--font-josefin)"],
+      cardo: ["var(--font-cardo)"],
+    },
+
+    fontWeight: {
+      normal: "400",
+      bold: "700",
+    },
   },
 
   plugins: [require("@tailwindcss/typography")],
