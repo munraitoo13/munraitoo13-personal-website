@@ -14,13 +14,13 @@
     "stunning": "impressionante.",
     "insideAndOut": "Por dentro e por fora.",
 
-    "whySimple": "Por que simples? 🤔",
+    "whySimple": "Por que simples?",
     "whySimpleTitle": "Código e design simples funcionam.",
     "whySimpleDesc": "Fácil de ler, entender e manter. Menos propenso a erros e fácil de corrigir.",
-    "yetStunning": "E impressionante? 😮",
+    "yetStunning": "E impressionante?",
     "yetStunningTitle": "Simples não é sem graça.",
     "yetStunningDesc": "O simples pode ser belo, elegante e eficiente.",
-    "insideAndOutExpl": "Por dentro e por fora? 🤨",
+    "insideAndOutExpl": "Por dentro e por fora?",
     "insideAndOutExplTitle": "Bem estruturado, eficiente e eficaz.",
     "insideAndOutExplDesc": "Código e design simples e impressionantes, por dentro e por fora.",
 
@@ -58,25 +58,21 @@
   },
 
   "skills": {
-    "category": "Profissional",
     "title": "Habilidades",
     "description": "Aqui estão algumas das habilidades e ferramentas que adquiri ao longo dos anos."
   },
 
   "Experiences": {
-    "category": "Profissional",
     "title": "Experiências",
     "description": "Aqui estão algumas das experiências que tive ao longo dos anos."
   },
 
   "Projects": {
-    "category": "Pessoal",
     "title": "Projetos",
     "description": "Aqui estão alguns dos projetos em que trabalhei."
   },
 
   "Contact": {
-    "category": "Pessoal",
     "title": "Contato",
     "description": "Fique à vontade para me contatar caso tenha dúvidas ou queira colaborar.",
 
@@ -89,7 +85,6 @@
   },
 
   "Blog": {
-    "category": "Pessoal",
     "title": "Blog",
     "description": "Aqui estão algumas das postagens que escrevi.",
 

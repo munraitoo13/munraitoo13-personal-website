@@ -14,13 +14,13 @@
     "stunning": "beeindruckend.",
     "insideAndOut": "Von innen und außen.",
 
-    "whySimple": "Warum einfach? 🤔",
+    "whySimple": "Warum einfach?",
     "whySimpleTitle": "Einfacher Code und Design funktionieren einfach.",
     "whySimpleDesc": "Leicht zu lesen, zu verstehen und zu warten. Weniger fehleranfällig und leicht zu beheben.",
-    "yetStunning": "Und beeindruckend? 😮",
+    "yetStunning": "Und beeindruckend?",
     "yetStunningTitle": "Einfach bedeutet nicht langweilig.",
     "yetStunningDesc": "Einfach kann beeindruckend sein: schön, elegant und effizient.",
-    "insideAndOutExpl": "Von innen und außen? 🤨",
+    "insideAndOutExpl": "Von innen und außen?",
     "insideAndOutExplTitle": "Gut strukturiert, effizient und effektiv.",
     "insideAndOutExplDesc": "Einfacher und beeindruckender Code und Design, innen wie außen.",
 
@@ -58,25 +58,21 @@
   },
 
   "skills": {
-    "category": "Professionell",
     "title": "Fähigkeiten",
     "description": "Hier sind einige meiner erworbenen Fähigkeiten und Werkzeuge."
   },
 
   "Experiences": {
-    "category": "Professionell",
     "title": "Erfahrungen",
     "description": "Hier sind einige meiner bisherigen Erfahrungen."
   },
 
   "Projects": {
-    "category": "Persönlich",
     "title": "Projekte",
     "description": "Hier sind einige Projekte, an denen ich gearbeitet habe."
   },
 
   "Contact": {
-    "category": "Persönlich",
     "title": "Kontakt",
     "description": "Kontaktieren Sie mich, wenn Sie Fragen haben oder zusammenarbeiten möchten.",
 
@@ -89,7 +85,6 @@
   },
 
   "Blog": {
-    "category": "Persönlich",
     "title": "Blog",
     "description": "Hier sind einige meiner geschriebenen Blogposts.",
 

@@ -14,13 +14,13 @@
     "stunning": "stunning.",
     "insideAndOut": "Inside and out.",
 
-    "whySimple": "Why simple? 🤔",
+    "whySimple": "Why simple?",
     "whySimpleTitle": "Simple code and design just works.",
     "whySimpleDesc": "It's easy to read, understand, and maintain. It is less error-prone and easier to fix. It is more maintainable and extensible.",
-    "yetStunning": "What about yet stunning? 😮",
+    "yetStunning": "What about yet stunning?",
     "yetStunningTitle": "Simple doesn't mean boring.",
     "yetStunningDesc": "Simple can be stunning. It can be beautiful, elegant, and efficient. It can be simple and stunning at the same time.",
-    "insideAndOutExpl": "Inside and out? 🤨",
+    "insideAndOutExpl": "Inside and out?",
     "insideAndOutExplTitle": "Well-structured, efficient, and effective.",
     "insideAndOutExplDesc": "Simple and stunning code and design. Simple and stunning inside and out. That's what I aim for in everything I do.",
 
@@ -58,25 +58,21 @@
   },
 
   "skills": {
-    "category": "Professional",
     "title": "Skills",
     "description": "Here are some of the skills and tools I've acquired over the years."
   },
 
   "Experiences": {
-    "category": "Professional",
     "title": "Experiences",
     "description": "Here are some of the experiences I've had over the years."
   },
 
   "Projects": {
-    "category": "Personal",
     "title": "Projects",
     "description": "Here are some of the projects I've worked on."
   },
 
   "Contact": {
-    "category": "Personal",
     "title": "Contact",
     "description": "Feel free to contact me if you have any questions or would like to work together.",
 
@@ -89,7 +85,6 @@
   },
 
   "Blog": {
-    "category": "Personal",
     "title": "Blog",
     "description": "Here are some of the blog posts I've written.",
 
