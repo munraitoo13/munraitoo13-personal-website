@@ -59,9 +59,7 @@ export function Navbar() {
           >
             {/* personal links */}
             <div className="flex flex-col items-center justify-center gap-3">
-              <p className="font-josefin text-lg text-primary">
-                {t("personal")}
-              </p>
+              <p className="text-lg text-primary">{t("personal")}</p>
 
               {personalLinks.map(({ name, href }) => (
                 <Link key={name} href={href}>
@@ -72,9 +70,7 @@ export function Navbar() {
 
             {/* professional links */}
             <div className="mt-5 flex flex-col items-center justify-center gap-3">
-              <p className="font-josefin text-lg text-primary">
-                {t("professional")}
-              </p>
+              <p className="text-lg text-primary">{t("professional")}</p>
 
               {professionalLinks.map(({ name, href }) => (
                 <Link className="" key={name} href={href}>

@@ -30,7 +30,7 @@ export function Header() {
         </motion.p>
 
         {/* title */}
-        <motion.h1 variants={item} className="text-5xl text-primary">
+        <motion.h1 variants={item} className="text-5xl">
           {t("presentation")}
         </motion.h1>
 
@@ -53,15 +53,13 @@ export function Header() {
       <motion.section className="mt-10 flex gap-5" variants={item}>
         <motion.div
           initial={{ scale: 1 }}
-          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          className="button button--solid"
         >
-          <Link className="button button--solid" href="/personal/contact">
-            {t("contact")}
-          </Link>
+          <Link href="/personal/contact">{t("contact")}</Link>
         </motion.div>
 
-        <Link className="flex items-center gap-1" href="#">
+        <Link className="flex items-center gap-1 hover:text-primary" href="#">
           {t("resume")}
         </Link>
       </motion.section>

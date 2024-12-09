@@ -2,10 +2,10 @@
 
 @layer components {
   .button {
-    @apply w-fit rounded-xl px-6 py-2;
+    @apply w-fit rounded-md px-5 py-3;
 
     &--solid {
-      @apply bg-primary text-background;
+      @apply cursor-pointer bg-primary text-background hover:bg-primary/90;
     }
 
     &--outline {
@@ -18,11 +18,21 @@
   }
 
   .mdx-content {
+    @apply prose prose-neutral max-w-none dark:prose-invert;
+
     --tw-prose-body: var(--text);
 
-    @apply prose prose-neutral max-w-none dark:prose-invert;
-    @apply prose-headings:font-normal;
-    @apply prose-strong:font-josefin prose-strong:font-normal;
+    strong {
+      @apply font-normal text-primary;
+    }
+    img {
+      @apply w-full max-w-[50rem] rounded-xl;
+    }
+    hr {
+      @apply divider;
+    }
+
+    @apply prose-headings:mb-0 prose-headings:font-normal;
   }
 
   .layout {
@@ -41,7 +51,10 @@
     @apply mt-5 flex w-full flex-col gap-2;
 
     &--input {
-      @apply rounded-xl bg-secondary/50 p-6;
+      @apply rounded-lg bg-secondary/50 p-6;
+    }
+    &--select {
+      @apply cursor-pointer appearance-none rounded-lg bg-secondary/50 p-6;
     }
   }
 }

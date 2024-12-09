@@ -17,15 +17,13 @@ export async function login(formData: FormData) {
     // get user from db
     const user = await prisma.user.findUnique({ where: { email: data.email } });
     if (!user || !user.password) {
-      console.error("Credentials not found.");
-      return;
+      return { error: "Invalid credentials." };
     }
 
     // check password
     const passwordCheck = await bcrypt.compare(data.password, user.password);
     if (!passwordCheck) {
-      console.error("Invalid credentials.");
-      return;
+      return { error: "Invalid credentials." };
     }
 
     // set token

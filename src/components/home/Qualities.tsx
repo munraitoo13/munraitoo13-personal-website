@@ -29,7 +29,7 @@ export function Qualities() {
     >
       {qualities.map(({ title, description }) => (
         <motion.div variants={item} key={title} className="flex flex-col gap-2">
-          <h3 className="text-xl text-primary">{title}</h3>
+          <h3 className="text-xl">{title}</h3>
           <p>{description}</p>
         </motion.div>
       ))}

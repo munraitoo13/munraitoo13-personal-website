@@ -25,7 +25,7 @@ export function TableOfContents() {
       animate="visible"
       className="flex h-fit w-full flex-col gap-5 text-nowrap rounded-xl border border-secondary/50 p-10 md:w-fit"
     >
-      <h2 className="text-xl text-primary">{t("contents")}</h2>
+      <h2 className="text-xl">{t("contents")}</h2>
 
       {headings.map(({ text, id, headingLevel }) => (
         <motion.a
@@ -34,7 +34,7 @@ export function TableOfContents() {
           whileHover="hover"
           whileTap="tap"
           key={text}
-          className={`${headingLevel === "H2" ? "font-josefin text-primary" : "ml-3"} `}
+          className={`${headingLevel === "H2" ? "text-lg text-primary" : "ml-3"} `}
           href={`#${id}`}
         >
           {text}

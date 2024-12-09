@@ -20,11 +20,7 @@ export default async function Page() {
 
   return (
     <>
-      <Header
-        category={t("category")}
-        pageTitle={t("title")}
-        pageDescription={t("description")}
-      />
+      <Header pageTitle={t("title")} pageDescription={t("description")} />
 
       <div className="flex flex-col gap-20 lg:flex-row-reverse lg:justify-between">
         <TableOfContents />

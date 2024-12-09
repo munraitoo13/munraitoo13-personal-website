@@ -48,62 +48,60 @@ export function PostManager({ posts }: ManagerProps) {
     <>
       {posts.map(
         ({ id, isFeatured, published, language, title, description, tags }) => (
-          <div key={id} className="mb-14 flex w-full self-center">
+          <div key={id} className="mb-12 flex w-full self-center">
             {/* divider */}
-            <div className="card-divider"></div>
+            <div className="divider--card"></div>
 
             {/* post */}
-            <div className="flex w-full flex-col gap-2">
+            <div className="flex w-full flex-col">
               {/* buttons */}
               <div className="flex gap-3">
                 {/* pin/unpin */}
                 <IconPinFilled
-                  className={`${isFeatured && ""} cursor-pointer`}
+                  className={`${isFeatured && "text-primary"} cursor-pointer hover:text-primary`}
                   onClick={() => handlePin(id, isFeatured)}
                 />
 
                 {/* edit */}
-                <Link className="" href={`/admin/update-post/${id}`}>
+                <Link
+                  className="hover:text-primary"
+                  href={`/admin/update-post/${id}`}
+                >
                   <IconSettingsFilled />
                 </Link>
 
                 {/* delete */}
                 <IconTrashFilled
                   onClick={() => handleDelete(id)}
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:text-primary"
                 />
               </div>
 
               {/* published and lang */}
-              <small className="flex flex-col">
+              <div className="mt-3 flex gap-5">
                 {/* published */}
-                <p className={`${published && ""}`}>
-                  {published ? "Published" : "Not published"}
-                </p>
+                <p>{published ? "Published" : "Not published"}</p>
 
                 {/* lang */}
                 <p>{language}</p>
-              </small>
-
-              {/* title and desc */}
-              <div>
-                {/* title */}
-                <Link
-                  href={`/personal/blog/posts/${id}`}
-                  target="_blank"
-                  className="section-title"
-                >
-                  {title}
-                </Link>
-
-                {/* description */}
-                <p className="text-lg">{description}</p>
               </div>
 
+              {/* title */}
+              <Link
+                href={`/personal/blog/posts/${id}`}
+                target="_blank"
+                className="text-2xl text-primary hover:text-primary/90"
+              >
+                {title}
+              </Link>
+
+              {/* description */}
+              <p>{description}</p>
+
               {/* tags */}
-              <div className="mt-5 flex flex-wrap gap-1">
+              <div className="mt-5 flex flex-wrap items-center gap-3">
                 {tags.map(({ id, name }: Tag) => (
-                  <span key={id} className="tag-badge">
+                  <span key={id} className="capitalize">
                     {name}
                   </span>
                 ))}

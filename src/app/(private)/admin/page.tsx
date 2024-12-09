@@ -14,23 +14,23 @@ export default async function Admin() {
     <>
       {/* title */}
       <div className="text-center">
-        <h1 className="h1">Admin Panel</h1>
+        <h1 className="text-5xl">Admin Panel</h1>
 
-        <p className="mt-5 text-lg">
+        <p className="text-xl">
           Please note that some functions may not work properly!
         </p>
       </div>
 
       {/* content */}
-      <div className="flex w-full max-w-screen-lg flex-col gap-5">
+      <div className="mt-10 flex w-full flex-col gap-5">
         {/* shortcuts */}
-        <div className="bg-neutral-100 mb-10 flex flex-col items-center justify-center gap-5 rounded-xl p-5">
-          <h2 className="text-xl font-extrabold">Shortcuts</h2>
+        <div className="flex flex-col items-center justify-center gap-5">
+          <h2 className="font-extrabold text-2xl">Shortcuts</h2>
 
           {/* links */}
           <div className="flex gap-1">
             {ADMIN_LINKS.map(({ href, title }) => (
-              <Link key={title} href={href} className="button">
+              <Link key={title} href={href} className="button button--solid">
                 {title}
               </Link>
             ))}

@@ -5,5 +5,9 @@ type LayoutProps = {
 };
 
 export default function Layout({ children }: LayoutProps) {
-  return <main className="layout">{children}</main>;
+  return (
+    <main className="layout flex min-h-screen flex-col items-center justify-center">
+      {children}
+    </main>
+  );
 }

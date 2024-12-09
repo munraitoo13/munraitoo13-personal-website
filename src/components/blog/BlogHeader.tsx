@@ -25,7 +25,7 @@ export function BlogHeader({ title, description, language, date }: BlogHeader) {
       </motion.p>
 
       {/* title */}
-      <motion.h1 variants={items} className="text-3xl text-primary">
+      <motion.h1 variants={items} className="text-3xl">
         {title}
       </motion.h1>
 

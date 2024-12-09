@@ -1,8 +1,8 @@
 "use client";
 
 import { IconPinnedFilled } from "@tabler/icons-react";
-import { MotionLink } from "@/components/common/Motion";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 
 export function FeaturedPost({ featuredPost }: FeaturedPost) {
   const t = useTranslations("Blog");
@@ -11,50 +11,38 @@ export function FeaturedPost({ featuredPost }: FeaturedPost) {
     return null;
   }
 
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, scale: 1, transition: { delay: 1, duration: 3 } },
+  };
+
   return (
-    <MotionLink
-      initial={{ opacity: 0, scale: 1, x: -50 }}
-      animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
-      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-      whileTap={{ scale: 0.98 }}
+    <motion.a
+      variants={variants}
+      initial="hidden"
+      animate="visible"
       href={`/personal/blog/posts/${featuredPost.id}`}
-      className="mb-14 flex w-full flex-col gap-2 rounded-3xl border p-10"
+      className="mb-12 flex w-full flex-col rounded-md border border-secondary/50 p-10 text-center"
     >
       {/* pinned icon */}
-      <div className="flex items-center gap-1">
-        <IconPinnedFilled size={24} />
-        <span className="text-lg">{t("featured")}</span>
+      <IconPinnedFilled className="mb-10 self-center" />
+
+      <div className="flex flex-col">
+        {/* title */}
+        <h2 className="text-2xl">{featuredPost.title}</h2>
+
+        {/* description */}
+        <p>{featuredPost.description}</p>
+
+        {/* tags */}
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+          {featuredPost.tags.map(({ name, id }: Tag) => (
+            <span key={id} className="capitalize">
+              {name}
+            </span>
+          ))}
+        </div>
       </div>
-
-      {/* title */}
-      <h2 className="h2">{featuredPost.title}</h2>
-
-      {/* description */}
-      <p className="text-lg">{featuredPost.description}</p>
-
-      {/* views and likes */}
-      <div className="flex items-center gap-1">
-        <small className="flex items-center gap-1">
-          <span>{featuredPost.views}</span>
-          {t("views")}
-        </small>
-
-        <span>-</span>
-
-        <small className="flex items-center gap-1">
-          <span>{featuredPost.likes}</span>
-          {t("likes")}
-        </small>
-      </div>
-
-      {/* tags */}
-      <div className="mt-5 flex flex-wrap items-center gap-1">
-        {featuredPost.tags.map(({ name, id }: Tag) => (
-          <span key={id} className="tag-badge">
-            {name}
-          </span>
-        ))}
-      </div>
-    </MotionLink>
+    </motion.a>
   );
 }

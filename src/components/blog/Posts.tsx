@@ -35,9 +35,9 @@ export function Posts({ posts }: Posts) {
         >
           <div className="divider--card"></div>
 
-          <div className="flex w-full flex-col gap-2">
+          <div className="flex w-full flex-col">
             {/* title */}
-            <h2 className="text-2xl text-primary">{title}</h2>
+            <h2 className="text-2xl">{title}</h2>
 
             {/* description */}
             <p>{description}</p>

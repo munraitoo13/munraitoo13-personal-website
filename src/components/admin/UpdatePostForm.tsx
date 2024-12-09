@@ -17,8 +17,6 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
     handleTagInput,
   } = useTagSelection(tags);
 
-  const languages = ["Português", "English", "Français", "Deutsch"];
-
   // set selectedTags to post tags
   useEffect(() => {
     const postTags = post.tags.map(({ name }: Tag) => name);
@@ -54,14 +52,14 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2">
+    <form onSubmit={handleSubmit} className="my-5 flex w-full flex-col gap-2">
       {/* title */}
       <input
         defaultValue={post.title}
         type="text"
         name="title"
         placeholder="Title"
-        className="form-input"
+        className="form--input"
       />
 
       {/* description */}
@@ -69,7 +67,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
         defaultValue={post.description}
         name="description"
         placeholder="Description"
-        className="form-input h-36 resize-none"
+        className="form--input h-36 resize-none"
       />
 
       {/* language and tags */}
@@ -77,7 +75,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
         {/* tags input and language */}
         <div className="flex gap-2 self-center">
           {/* language */}
-          <select name="language" className="form-input w-fit">
+          <select name="language" className="form--select w-fit">
             {POST_LANGUAGES.map((language) => (
               <option key={language} value={language}>
                 {language}
@@ -88,18 +86,18 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
           {/* tags input */}
           <input
             type="text"
-            className="form-input"
+            className="form--input"
             onKeyDown={handleTagInput}
             placeholder="Add tags (press enter)"
           />
         </div>
 
         {/* tags selector */}
-        <div className="flex flex-wrap gap-1 self-center">
+        <div className="flex flex-wrap gap-3 self-center">
           {tags.map(({ id, name }) => (
             <div
               key={id}
-              className={`${tagColor(name)} cursor-pointer rounded-xl px-3 py-1 capitalize`}
+              className={`${tagColor(name)} cursor-pointer capitalize`}
               onClick={() => handleTagClick(name)}
             >
               {name}
@@ -114,11 +112,11 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
           name="content"
           defaultValue={post.content}
           placeholder="Content"
-          className="form-input h-[50rem] w-full resize-none xl:w-1/2"
+          className="form--input h-[50rem] w-full resize-none xl:w-1/2"
           onChange={(event) => setContent(event.target.value)}
         />
 
-        <ReactMarkdown className="form-input markdown h-[50rem] w-full overflow-y-auto xl:w-1/2">
+        <ReactMarkdown className="form--input mdx-content h-[50rem] w-full overflow-y-auto xl:w-1/2">
           {content}
         </ReactMarkdown>
       </div>
@@ -126,7 +124,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
       {/* submit and published */}
       <div className="mt-5 flex gap-5 self-center">
         {/* submit */}
-        <button type="submit" className="button">
+        <button type="submit" className="button button--solid">
           Update Post
         </button>
 

@@ -17,8 +17,7 @@ export function useTagSelection(tags: Tags[]) {
   };
 
   // tag color
-  const tagColor = (name: string) =>
-    selectedTags.includes(name) ? " " : "bg-neutral-100";
+  const tagColor = (name: string) => selectedTags.includes(name) && "underline";
 
   // handle tag input change
   const handleTagInput = (e: React.KeyboardEvent<HTMLInputElement>) => {

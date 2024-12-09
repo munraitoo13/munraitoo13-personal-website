@@ -28,7 +28,7 @@ export function PhraseDescription() {
         <div className="flex flex-col gap-2" key={question}>
           <motion.p variants={item}>{question}</motion.p>
 
-          <motion.h3 variants={item} className="text-xl text-primary">
+          <motion.h3 variants={item} className="text-xl">
             {title}
           </motion.h3>
 

@@ -19,28 +19,13 @@
   * {
     @apply scroll-m-28 scroll-smooth;
   }
-  html {
-  }
 
-  body {
-    @apply font-cardo;
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      @apply font-josefin;
-    }
-  }
-
-  .prose {
-    img {
-      @apply w-full max-w-[50rem] rounded-xl;
-    }
-    hr {
-      @apply divider;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-primary;
   }
 }
