@@ -60,15 +60,15 @@ export const STACKS = [
 // qualities
 export const getQualities = (t: (key: string) => string) => [
   {
-    title: "🗣️ " + t("quality1"),
+    title: t("quality1"),
     description: t("quality1desc"),
   },
   {
-    title: "🧠 " + t("quality2"),
+    title: t("quality2"),
     description: t("quality2desc"),
   },
   {
-    title: "🔍 " + t("quality3"),
+    title: t("quality3"),
     description: t("quality3desc"),
   },
 ];

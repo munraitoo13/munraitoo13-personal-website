@@ -25,7 +25,7 @@ export function Navbar() {
   return (
     <nav className="fixed inset-x-0 top-5 z-50 mx-auto w-fit">
       {/* logo and menu */}
-      <div className="flex w-96 items-center justify-between rounded-xl bg-background/75 p-5 backdrop-blur-xl">
+      <div className="flex w-96 items-center justify-between rounded-xl border border-secondary/50 bg-background/75 p-5 backdrop-blur-xl">
         {/* logo */}
         <Logo />
 
@@ -34,13 +34,13 @@ export function Navbar() {
           <IconX
             className="cursor-pointer text-primary"
             onClick={() => setIsOpen(!isOpen)}
-            stroke={1.25}
+            stroke={0.5}
           />
         ) : (
           <IconMenu2
             className="cursor-pointer text-primary"
             onClick={() => setIsOpen(!isOpen)}
-            stroke={1.25}
+            stroke={0.5}
           />
         )}
       </div>
@@ -54,14 +54,14 @@ export function Navbar() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="mt-5 flex w-96 flex-col items-center justify-center rounded-xl bg-background/75 p-5 backdrop-blur-xl"
+            className="mt-5 flex w-96 flex-col items-center justify-center rounded-xl border border-secondary/50 bg-background/75 p-5 backdrop-blur-xl"
           >
             {/* personal links */}
             <div className="flex flex-col items-center justify-center gap-3">
               <p className="text-lg text-primary">{t("personal")}</p>
 
               {personalLinks.map(({ name, href }) => (
-                <Link key={name} href={href}>
+                <Link className="hover:text-primary" key={name} href={href}>
                   {name}
                 </Link>
               ))}
@@ -72,7 +72,7 @@ export function Navbar() {
               <p className="text-lg text-primary">{t("professional")}</p>
 
               {professionalLinks.map(({ name, href }) => (
-                <Link className="" key={name} href={href}>
+                <Link className="hover:text-primary" key={name} href={href}>
                   {name}
                 </Link>
               ))}
