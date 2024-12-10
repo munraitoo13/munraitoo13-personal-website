@@ -1,9 +1,9 @@
 import { BlogHeader } from "@/components/blog/BlogHeader";
+import { LikeShare } from "@/components/blog/LikeShare";
+import { CustomMDX } from "@/components/blog/customMDX";
 import { Markdown } from "@/components/common/Markdown";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/utils/formatDate";
-import { LikeShare } from "@/components/blog/LikeShare";
-import { CustomMDX } from "@/components/blog/customMDX";
 import { getUserLocale } from "@/utils/userLocale";
 
 export default async function Page({ params }: Params) {
@@ -53,6 +53,8 @@ export default async function Page({ params }: Params) {
         date={formatDate(createdAt, locale)}
         language={language}
       />
+
+      <div className="divider mb-24"></div>
 
       <Markdown>
         <CustomMDX source={content} />
