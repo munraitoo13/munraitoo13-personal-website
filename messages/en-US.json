@@ -96,8 +96,6 @@
     "likes": "Likes",
     "share": "Share",
 
-    "likeAndShare": "Enjoyed the post? Consider liking and sharing! 😊",
-
     "shareTitle": "Take a look at this post!",
     "shareText": "I found this post and thought you might like it.",
 
@@ -122,8 +120,8 @@
   },
 
   "Metadata": {
-    "home": "munraitoo13",
-    "homeDesc": "What's up! I'm Augusto, a full-stack developer driven by passion, proudly representing Brazil in the world of technology. Want to know more about me? Check out my website!",
+    "home": "munraitoo13 | Software Engineer",
+    "homeDesc": "What's up! I'm Augusto, a software engineer driven by passion, proudly representing Brazil in the world of technology.",
 
     "projects": "Projects | munraitoo13",
     "projectsDesc": "munraitoo13's projects.",

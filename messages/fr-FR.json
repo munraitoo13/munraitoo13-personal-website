@@ -1,35 +1,37 @@
 {
   "HomePage": {
     "greetings": "Salut ! 👋",
-    "presentation": "Je suis Augusto.",
+    "presentation": "Je m'appelle Augusto.",
     "aka": "Aussi connu sous le nom de",
     "nickname": "munraitoo13",
-    "profession": "développeur passionné, représentant fièrement le Brésil.",
+    "profession": "Je suis un développeur passionné, représentant fièrement le Brésil.",
 
-    "contact": "Discutons !",
+    "contact": "Parlons-en !",
     "resume": "CV",
 
     "simple": "Simple,",
     "yet": "mais",
-    "stunning": "éblouissant.",
-    "insideAndOut": "De l'intérieur et l'extérieur.",
+    "stunning": "époustouflant.",
+    "insideAndOut": "De l'intérieur et de l'extérieur.",
 
     "whySimple": "Pourquoi simple ?",
-    "whySimpleTitle": "Un code et un design simples fonctionnent mieux.",
-    "whySimpleDesc": "Facile à lire, comprendre et maintenir. Moins de bugs et facile à corriger.",
-    "yetStunning": "Et éblouissant ?",
-    "yetStunningTitle": "Simple ne signifie pas ennuyeux.",
-    "yetStunningDesc": "Le simple peut être élégant, beau et efficace.",
-    "insideAndOutExpl": "De l'intérieur et l'extérieur ?",
+    "whySimpleTitle": "Un code et un design simples fonctionnent.",
+    "whySimpleDesc": "C'est facile à lire, comprendre et maintenir. Moins sujet aux erreurs et plus facile à corriger. Plus facile à maintenir et à étendre.",
+    "yetStunning": "Et en ce qui concerne l'époustouflant ?",
+    "yetStunningTitle": "Simple ne veut pas dire ennuyeux.",
+    "yetStunningDesc": "Le simple peut être époustouflant. Il peut être beau, élégant et efficace. Il peut être simple et époustouflant en même temps.",
+    "insideAndOutExpl": "De l'intérieur et de l'extérieur ?",
     "insideAndOutExplTitle": "Bien structuré, efficace et performant.",
-    "insideAndOutExplDesc": "Code et design simples et éblouissants, dedans et dehors.",
+    "insideAndOutExplDesc": "Un code et un design simples et époustouflants. Simples et époustouflants à l'intérieur comme à l'extérieur. C'est ce que je cherche dans tout ce que je fais.",
 
+    "myQualities": "Mes qualités",
+    "myQualitiesDesc": "Voici quelques-unes des qualités que je crois essentielles pour un ingénieur logiciel afin d'assurer le succès de tous les projets.",
     "quality1": "Communicatif",
-    "quality1desc": "La communication est essentielle pour que tout le monde reste aligné.",
+    "quality1desc": "La communication est essentielle pour s'assurer que tout le monde est sur la même longueur d'onde et que le projet avance dans la bonne direction.",
     "quality2": "Compétent",
-    "quality2desc": "Une qualité essentielle pour garantir un code propre et efficace.",
+    "quality2desc": "Qualité essentielle pour un ingénieur logiciel, car elle garantit que le code est propre et efficace.",
     "quality3": "Souci du détail",
-    "quality3desc": "L'attention aux détails est cruciale pour un code clair et performant."
+    "quality3desc": "Prêter attention aux détails est crucial pour garantir que le code est propre et efficace."
   },
 
   "NavBar": {
@@ -53,28 +55,28 @@
     "projects": "Projets",
     "contact": "Contact",
 
-    "about": "À propos",
-    "aboutPhrase": "Développeur passionné, représentant fièrement le Brésil dans le monde technologique."
+    "about": "À propos de moi",
+    "aboutPhrase": "Je suis un développeur passionné, représentant fièrement le Brésil dans le monde de la technologie. Je cherche toujours à apprendre et à améliorer mes compétences."
   },
 
   "skills": {
     "title": "Compétences",
-    "description": "Voici certaines des compétences et outils que j'ai acquis."
+    "description": "Voici quelques-unes des compétences et des outils que j'ai acquis au fil des ans."
   },
 
   "Experiences": {
     "title": "Expériences",
-    "description": "Voici certaines de mes expériences."
+    "description": "Voici quelques-unes des expériences que j'ai vécues au fil des ans."
   },
 
   "Projects": {
     "title": "Projets",
-    "description": "Voici quelques projets auxquels j'ai travaillé."
+    "description": "Voici quelques-uns des projets sur lesquels j'ai travaillé."
   },
 
   "Contact": {
     "title": "Contact",
-    "description": "N'hésitez pas à me contacter pour des questions ou collaborations.",
+    "description": "N'hésitez pas à me contacter si vous avez des questions ou si vous souhaitez travailler ensemble.",
 
     "name": "Nom",
     "email": "E-mail",
@@ -86,24 +88,22 @@
 
   "Blog": {
     "title": "Blog",
-    "description": "Voici quelques articles que j'ai écrits.",
+    "description": "Voici quelques-uns des articles de blog que j'ai écrits.",
 
-    "view": "Visualisation",
-    "views": "Visualisations",
+    "view": "Voir",
+    "views": "Vues",
     "like": "J'aime",
-    "likes": "J'aimes",
+    "likes": "J'aime",
     "share": "Partager",
 
-    "likeAndShare": "Vous avez aimé cet article ? Aimez et partagez ! 😊",
-
     "shareTitle": "Regardez cet article !",
-    "shareText": "J'ai trouvé cet article, il pourrait vous intéresser.",
+    "shareText": "J'ai trouvé cet article et je pense que vous allez l'apprécier.",
 
-    "featured": "Article vedette"
+    "featured": "Article en vedette"
   },
 
   "TableOfContents": {
-    "contents": "Sommaire"
+    "contents": "Contenu"
   },
 
   "Toastify": {
@@ -120,22 +120,22 @@
   },
 
   "Metadata": {
-    "home": "Accueil | munraitoo13",
-    "homeDesc": "Page d'accueil de munraitoo13.",
+    "home": "munraitoo13 | Ingénieur logiciel",
+    "homeDesc": "Salut ! Je suis Augusto, un ingénieur logiciel passionné, représentant fièrement le Brésil dans le monde de la technologie.",
 
     "projects": "Projets | munraitoo13",
-    "projectsDesc": "Les projets de munraitoo13.",
+    "projectsDesc": "Projets de munraitoo13.",
 
     "contact": "Contact | munraitoo13",
-    "contactDesc": "Les contacts de munraitoo13.",
+    "contactDesc": "Contacts de munraitoo13.",
 
     "blog": "Blog | munraitoo13",
-    "blogDesc": "Le blog de munraitoo13.",
+    "blogDesc": "Blog de munraitoo13.",
 
     "skills": "Compétences | munraitoo13",
-    "skillsDesc": "Les compétences de munraitoo13.",
+    "skillsDesc": "Compétences de munraitoo13.",
 
     "experiences": "Expériences | munraitoo13",
-    "experiencesDesc": "Les expériences de munraitoo13."
+    "experiencesDesc": "Expériences de munraitoo13."
   }
 }

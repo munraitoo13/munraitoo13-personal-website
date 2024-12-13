@@ -1,35 +1,37 @@
 {
   "HomePage": {
-    "greetings": "Salve! 👋",
+    "greetings": "E aí! 👋",
     "presentation": "Meu nome é Augusto.",
     "aka": "Também conhecido como",
     "nickname": "munraitoo13",
-    "profession": "sou um desenvolvedor apaixonado, representando o Brasil com orgulho.",
+    "profession": "Sou um desenvolvedor movido pela paixão, representando o Brasil com orgulho.",
 
     "contact": "Vamos conversar!",
-    "resume": "Currículo",
+    "resume": "RESUMO",
 
     "simple": "Simples,",
     "yet": "mas",
-    "stunning": "impressionante.",
+    "stunning": "deslumbrante.",
     "insideAndOut": "Por dentro e por fora.",
 
     "whySimple": "Por que simples?",
     "whySimpleTitle": "Código e design simples funcionam.",
-    "whySimpleDesc": "Fácil de ler, entender e manter. Menos propenso a erros e fácil de corrigir.",
-    "yetStunning": "E impressionante?",
-    "yetStunningTitle": "Simples não é sem graça.",
-    "yetStunningDesc": "O simples pode ser belo, elegante e eficiente.",
+    "whySimpleDesc": "É fácil de ler, entender e manter. Menos propenso a erros e mais fácil de corrigir. Mais fácil de manter e expandir.",
+    "yetStunning": "E quanto ao deslumbrante?",
+    "yetStunningTitle": "Simples não significa sem graça.",
+    "yetStunningDesc": "Simples pode ser deslumbrante. Pode ser bonito, elegante e eficiente. Pode ser simples e deslumbrante ao mesmo tempo.",
     "insideAndOutExpl": "Por dentro e por fora?",
     "insideAndOutExplTitle": "Bem estruturado, eficiente e eficaz.",
-    "insideAndOutExplDesc": "Código e design simples e impressionantes, por dentro e por fora.",
+    "insideAndOutExplDesc": "Código e design simples e deslumbrantes. Simples e deslumbrantes por dentro e por fora. Isso é o que busco em tudo o que faço.",
 
+    "myQualities": "Minhas qualidades",
+    "myQualitiesDesc": "Aqui estão algumas das qualidades que acredito serem essenciais para um engenheiro de software garantir o sucesso de todos os projetos.",
     "quality1": "Comunicativo",
-    "quality1desc": "A comunicação é essencial para alinhar todos no projeto.",
+    "quality1desc": "A comunicação é fundamental para garantir que todos estejam alinhados e que o projeto esteja indo na direção certa.",
     "quality2": "Competente",
-    "quality2desc": "Uma qualidade essencial para um código limpo e eficiente.",
-    "quality3": "Detalhista",
-    "quality3desc": "Atenção aos detalhes é crucial para garantir código claro e eficiente."
+    "quality2desc": "Qualidade essencial para um engenheiro de software, pois garante que o código seja limpo e eficiente.",
+    "quality3": "Atento aos detalhes",
+    "quality3desc": "Prestar atenção aos detalhes é crucial para garantir que o código seja limpo e eficiente."
   },
 
   "NavBar": {
@@ -54,7 +56,7 @@
     "contact": "Contato",
 
     "about": "Sobre mim",
-    "aboutPhrase": "Desenvolvedor apaixonado, representando o Brasil no mundo da tecnologia."
+    "aboutPhrase": "Sou um desenvolvedor movido pela paixão, representando o Brasil com orgulho no mundo da tecnologia. Estou sempre buscando aprender mais e melhorar minhas habilidades."
   },
 
   "skills": {
@@ -69,12 +71,12 @@
 
   "Projects": {
     "title": "Projetos",
-    "description": "Aqui estão alguns dos projetos em que trabalhei."
+    "description": "Aqui estão alguns dos projetos nos quais trabalhei."
   },
 
   "Contact": {
     "title": "Contato",
-    "description": "Fique à vontade para me contatar caso tenha dúvidas ou queira colaborar.",
+    "description": "Sinta-se à vontade para entrar em contato comigo se tiver alguma dúvida ou quiser trabalhar junto.",
 
     "name": "Nome",
     "email": "E-mail",
@@ -86,29 +88,27 @@
 
   "Blog": {
     "title": "Blog",
-    "description": "Aqui estão algumas das postagens que escrevi.",
+    "description": "Aqui estão alguns dos posts do blog que escrevi.",
 
-    "view": "Visualização",
+    "view": "Ver",
     "views": "Visualizações",
-    "like": "Curtida",
+    "like": "Curtir",
     "likes": "Curtidas",
     "share": "Compartilhar",
 
-    "likeAndShare": "Gostou do post? Considere curtir e compartilhar! 😊",
+    "shareTitle": "Dê uma olhada neste post!",
+    "shareText": "Eu encontrei este post e pensei que você poderia gostar.",
 
-    "shareTitle": "Dá uma olhada neste post!",
-    "shareText": "Achei este post e pensei que você poderia gostar.",
-
-    "featured": "Postagem em destaque"
+    "featured": "Post em destaque"
   },
 
   "TableOfContents": {
-    "contents": "Conteúdo"
+    "contents": "Conteúdos"
   },
 
   "Toastify": {
     "messageSent": "Mensagem enviada.",
-    "messageError": "Erro ao enviar mensagem.",
+    "messageError": "Erro ao enviar a mensagem.",
 
     "invalidEmail": "E-mail inválido.",
 
@@ -120,8 +120,8 @@
   },
 
   "Metadata": {
-    "home": "Início | munraitoo13",
-    "homeDesc": "Página inicial de munraitoo13.",
+    "home": "munraitoo13 | Engenheiro de Software",
+    "homeDesc": "E aí! Sou Augusto, um engenheiro de software movido pela paixão, representando o Brasil com orgulho no mundo da tecnologia.",
 
     "projects": "Projetos | munraitoo13",
     "projectsDesc": "Projetos de munraitoo13.",

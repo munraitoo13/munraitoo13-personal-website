@@ -1,39 +1,41 @@
 {
   "HomePage": {
-    "greetings": "Was geht! 👋",
-    "presentation": "Ich bin Augusto.",
+    "greetings": "Hallo! 👋",
+    "presentation": "Mein Name ist Augusto.",
     "aka": "Auch bekannt als",
     "nickname": "munraitoo13",
-    "profession": "ich bin ein leidenschaftlicher Entwickler und vertrete stolz Brasilien.",
+    "profession": "Ich bin ein Entwickler, der von Leidenschaft getrieben wird und stolz Brasilien repräsentiert.",
 
     "contact": "Lass uns reden!",
-    "resume": "Lebenslauf",
+    "resume": "LEBENSLAUF",
 
     "simple": "Einfach,",
-    "yet": "und",
+    "yet": "aber",
     "stunning": "beeindruckend.",
     "insideAndOut": "Von innen und außen.",
 
     "whySimple": "Warum einfach?",
-    "whySimpleTitle": "Einfacher Code und Design funktionieren einfach.",
-    "whySimpleDesc": "Leicht zu lesen, zu verstehen und zu warten. Weniger fehleranfällig und leicht zu beheben.",
-    "yetStunning": "Und beeindruckend?",
+    "whySimpleTitle": "Einfacher Code und Design funktionieren.",
+    "whySimpleDesc": "Es ist einfach zu lesen, zu verstehen und zu warten. Weniger fehleranfällig und leichter zu beheben. Es ist wartungsfreundlicher und erweiterbar.",
+    "yetStunning": "Und was ist mit beeindruckend?",
     "yetStunningTitle": "Einfach bedeutet nicht langweilig.",
-    "yetStunningDesc": "Einfach kann beeindruckend sein: schön, elegant und effizient.",
+    "yetStunningDesc": "Einfach kann beeindruckend sein. Es kann schön, elegant und effizient sein. Es kann einfach und beeindruckend zugleich sein.",
     "insideAndOutExpl": "Von innen und außen?",
     "insideAndOutExplTitle": "Gut strukturiert, effizient und effektiv.",
-    "insideAndOutExplDesc": "Einfacher und beeindruckender Code und Design, innen wie außen.",
+    "insideAndOutExplDesc": "Einfacher und beeindruckender Code und Design. Einfach und beeindruckend von innen und außen. Das ist es, was ich in allem anstrebe, was ich tue.",
 
+    "myQualities": "Meine Qualitäten",
+    "myQualitiesDesc": "Hier sind einige der Qualitäten, die ich für wesentlich halte, damit ein Softwareingenieur den Erfolg aller Projekte sicherstellt.",
     "quality1": "Kommunikativ",
-    "quality1desc": "Kommunikation ist entscheidend, um sicherzustellen, dass alle auf dem gleichen Stand sind.",
+    "quality1desc": "Kommunikation ist entscheidend, um sicherzustellen, dass alle auf derselben Seite sind und das Projekt in die richtige Richtung geht.",
     "quality2": "Kompetent",
-    "quality2desc": "Eine wesentliche Eigenschaft für einen Softwareentwickler: sauberen und effizienten Code schreiben.",
+    "quality2desc": "Eine wesentliche Qualität für einen Softwareingenieur, da sie sicherstellt, dass der Code sauber und effizient ist.",
     "quality3": "Detailorientiert",
-    "quality3desc": "Details zu beachten ist wichtig für sauberen und effizienten Code."
+    "quality3desc": "Auf Details zu achten ist entscheidend, um sicherzustellen, dass der Code sauber und effizient ist."
   },
 
   "NavBar": {
-    "professional": "Professionell",
+    "professional": "Beruflich",
     "experiences": "Erfahrungen",
     "skills": "Fähigkeiten",
 
@@ -44,7 +46,7 @@
   },
 
   "Footer": {
-    "professional": "Professionell",
+    "professional": "Beruflich",
     "experiences": "Erfahrungen",
     "skills": "Fähigkeiten",
 
@@ -54,52 +56,50 @@
     "contact": "Kontakt",
 
     "about": "Über mich",
-    "aboutPhrase": "Ich bin ein leidenschaftlicher Entwickler, stolz Brasilien in der Technologie zu vertreten."
+    "aboutPhrase": "Ich bin ein Entwickler, der von Leidenschaft getrieben wird und stolz Brasilien in der Welt der Technologie repräsentiert. Ich bin immer auf der Suche, mehr zu lernen und meine Fähigkeiten zu verbessern."
   },
 
   "skills": {
     "title": "Fähigkeiten",
-    "description": "Hier sind einige meiner erworbenen Fähigkeiten und Werkzeuge."
+    "description": "Hier sind einige der Fähigkeiten und Tools, die ich im Laufe der Jahre erlernt habe."
   },
 
   "Experiences": {
     "title": "Erfahrungen",
-    "description": "Hier sind einige meiner bisherigen Erfahrungen."
+    "description": "Hier sind einige der Erfahrungen, die ich im Laufe der Jahre gesammelt habe."
   },
 
   "Projects": {
     "title": "Projekte",
-    "description": "Hier sind einige Projekte, an denen ich gearbeitet habe."
+    "description": "Hier sind einige der Projekte, an denen ich gearbeitet habe."
   },
 
   "Contact": {
     "title": "Kontakt",
-    "description": "Kontaktieren Sie mich, wenn Sie Fragen haben oder zusammenarbeiten möchten.",
+    "description": "Zögern Sie nicht, mich zu kontaktieren, wenn Sie Fragen haben oder zusammenarbeiten möchten.",
 
     "name": "Name",
     "email": "E-Mail",
     "message": "Nachricht",
     "subject": "Betreff",
     "send": "Senden",
-    "sending": "Senden..."
+    "sending": "Wird gesendet..."
   },
 
   "Blog": {
     "title": "Blog",
-    "description": "Hier sind einige meiner geschriebenen Blogposts.",
+    "description": "Hier sind einige der Blogbeiträge, die ich geschrieben habe.",
 
-    "view": "Ansicht",
+    "view": "Ansehen",
     "views": "Ansichten",
     "like": "Gefällt mir",
-    "likes": "Gefällt mir Angaben",
+    "likes": "Gefällt mir",
     "share": "Teilen",
-
-    "likeAndShare": "Hat Ihnen der Beitrag gefallen? Liken und teilen! 😊",
 
     "shareTitle": "Schau dir diesen Beitrag an!",
     "shareText": "Ich habe diesen Beitrag gefunden und dachte, er könnte dir gefallen.",
 
-    "featured": "Empfohlener Beitrag"
+    "featured": "Ausgewählter Beitrag"
   },
 
   "TableOfContents": {
@@ -116,26 +116,26 @@
 
     "emptyFields": "Einige Felder sind leer.",
 
-    "sending": "Senden..."
+    "sending": "Wird gesendet..."
   },
 
   "Metadata": {
-    "home": "Startseite | munraitoo13",
-    "homeDesc": "munraitoo13s Startseite.",
+    "home": "munraitoo13 | Softwareentwickler",
+    "homeDesc": "Hallo! Ich bin Augusto, ein Softwareentwickler, der von Leidenschaft getrieben wird und stolz Brasilien in der Welt der Technologie repräsentiert.",
 
     "projects": "Projekte | munraitoo13",
-    "projectsDesc": "munraitoo13s Projekte.",
+    "projectsDesc": "Projekte von munraitoo13.",
 
     "contact": "Kontakt | munraitoo13",
-    "contactDesc": "munraitoo13s Kontakte.",
+    "contactDesc": "Kontakte von munraitoo13.",
 
     "blog": "Blog | munraitoo13",
-    "blogDesc": "munraitoo13s Blog.",
+    "blogDesc": "Blog von munraitoo13.",
 
     "skills": "Fähigkeiten | munraitoo13",
-    "skillsDesc": "munraitoo13s Fähigkeiten.",
+    "skillsDesc": "Fähigkeiten von munraitoo13.",
 
     "experiences": "Erfahrungen | munraitoo13",
-    "experiencesDesc": "munraitoo13s Erfahrungen."
+    "experiencesDesc": "Erfahrungen von munraitoo13."
   }
 }
