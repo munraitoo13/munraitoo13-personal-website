@@ -24,6 +24,8 @@
     "insideAndOutExplTitle": "Well-structured, efficient, and effective.",
     "insideAndOutExplDesc": "Simple and stunning code and design. Simple and stunning inside and out. That's what I aim for in everything I do.",
 
+    "myQualities": "My qualities",
+    "myQualitiesDesc": "Here are some of the qualities that I believe are essential for a software engineer to ensure that all projects are successful.",
     "quality1": "Communicative",
     "quality1desc": "Communication is key to ensure that everyone is on the same page and that the project is going in the right direction.",
     "quality2": "Competent",
@@ -120,8 +122,8 @@
   },
 
   "Metadata": {
-    "home": "Home | munraitoo13",
-    "homeDesc": "munraitoo13's home page.",
+    "home": "munraitoo13",
+    "homeDesc": "What's up! I'm Augusto, a full-stack developer driven by passion, proudly representing Brazil in the world of technology. Want to know more about me? Check out my website!",
 
     "projects": "Projects | munraitoo13",
     "projectsDesc": "munraitoo13's projects.",

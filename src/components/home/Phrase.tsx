@@ -7,28 +7,28 @@ export function Phrase() {
   const t = useTranslations("HomePage");
   const variants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 1, delay: 0.8 } },
+    visible: { opacity: 1, transition: { duration: 1 } },
   };
 
   return (
     <motion.blockquote
       variants={variants}
       initial="hidden"
-      animate="visible"
-      className="font-light mx-auto mt-48 flex w-fit flex-col gap-1 text-3xl md:text-5xl"
+      whileInView="visible"
+      className="mx-auto flex w-fit flex-col gap-1 py-24 text-center text-3xl md:text-5xl"
     >
       {/* simple */}
       <span className="italic">{t("simple")} </span>
 
       {/* yet */}
-      <div className="flex items-center gap-5">
-        <span>
-          {t("yet")} <span className="text-primary">{t("stunning")}</span>
-        </span>
-      </div>
+
+      <span>
+        {t("yet")}{" "}
+        <span className="text-primary font-medium">{t("stunning")}</span>
+      </span>
 
       {/* inside */}
-      <span className="w-fit rounded-md bg-secondary/50 px-2 py-1 text-primary">
+      <span className="text-primary w-fit rounded-md bg-background-contrast px-2 py-1 font-medium">
         {t("insideAndOut")}
       </span>
     </motion.blockquote>

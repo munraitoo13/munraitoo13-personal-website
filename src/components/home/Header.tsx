@@ -8,12 +8,15 @@ export function Header() {
   const t = useTranslations("HomePage");
 
   const variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+    visible: { transition: { staggerChildren: 0.1 } },
   };
   const item = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.25 } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 1, ease: "anticipate" },
+    },
   };
 
   return (
@@ -21,45 +24,43 @@ export function Header() {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="flex flex-col pt-48"
+      className="layout mb-24 mt-48 flex flex-col items-center gap-2 text-center"
     >
-      <div className="flex flex-col gap-3">
-        {/* greet */}
-        <motion.p variants={item} className="text-xl">
-          {t("greetings")}
-        </motion.p>
+      {/* greet */}
+      <motion.p variants={item}>{t("greetings")}</motion.p>
 
-        {/* title */}
-        <motion.h1 variants={item} className="text-5xl">
-          {t("presentation")}
-        </motion.h1>
+      {/* title */}
+      <motion.h1 variants={item} className="text-primary text-5xl font-medium">
+        {t("presentation")}
+      </motion.h1>
 
-        {/* subtitle */}
-        <motion.p variants={item} className="text-xl">
-          <span>{t("aka")} </span>
+      {/* subtitle */}
+      <motion.p variants={item}>
+        <span>{t("aka")} </span>
 
-          <span className="italic">{t("nickname")}</span>
+        <span className="italic">{t("nickname")}</span>
 
-          <span>, {t("profession")}</span>
-        </motion.p>
+        <span>, {t("profession")}</span>
+      </motion.p>
 
-        {/* stack */}
-        <motion.div variants={item} className="flex items-center gap-1">
-          <Stacks />
-        </motion.div>
-      </div>
+      {/* stack */}
+      <motion.div
+        variants={item}
+        className="mt-4 flex w-fit items-center gap-1"
+      >
+        <Stacks />
+      </motion.div>
 
       {/* contact and resume */}
-      <motion.section className="mt-24 flex gap-5" variants={item}>
-        <motion.div
-          initial={{ scale: 1 }}
-          whileTap={{ scale: 0.95 }}
-          className="button button--solid"
-        >
-          <Link href="/personal/contact">{t("contact")}</Link>
-        </motion.div>
+      <motion.section className="mt-24 flex gap-4" variants={item}>
+        <Link href="/personal/contact" className="button button--solid">
+          {t("contact")}
+        </Link>
 
-        <Link className="flex items-center gap-1 hover:text-primary" href="#">
+        <Link
+          className="flex items-center gap-1 transition-colors duration-500 hover:text-accent"
+          href="#"
+        >
           {t("resume")}
         </Link>
       </motion.section>

@@ -11,15 +11,19 @@ const config: Config = {
 
   theme: {
     colors: {
-      text: "rgb(var(--text))",
-      background: "rgb(var(--background))",
-      primary: "rgb(var(--primary))",
-      secondary: "rgb(var(--secondary))",
-    },
+      background: "hsl(var(--background))",
+      "background-contrast": "hsl(var(--background-contrast))",
 
-    fontWeight: {
-      normal: "400",
-      bold: "700",
+      primary: "hsl(var(--primary))",
+      secondary: "hsl(var(--secondary))",
+      tertiary: "hsl(var(--tertiary))",
+
+      accent: "hsl(var(--accent))",
+      "accent-hover": "hsl(var(--accent-hover))",
+      "accent-constrast": "hsl(var(--accent-contrast))",
+      "accent-disabled": "hsl(var(--accent-disabled))",
+
+      selection: "hsl(var(--selection))",
     },
   },
 

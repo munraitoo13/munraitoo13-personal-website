@@ -2,30 +2,48 @@
 
 @layer base {
   :root {
-    --text: 64 64 64;
-    --background: 247 247 247;
+    ::selection {
+      background-color: hsl(var(--selection));
+      color: hsl(var(--primary));
+    }
+
+    --background: 0 0 98;
+    --background-contrast: 0 0 95;
+
     --primary: 0 0 0;
-    --secondary: 230 230 230;
+    --secondary: 0 0 10;
+    --tertiary: 0 0 50;
+
+    --accent: 0 70 50;
+    --accent-hover: 0 70 60;
+    --accent-contrast: 0 0 100;
+    --accent-disabled: 0 70 85;
+
+    --selection: 50 100 50 / 0.25;
   }
   .dark {
     color-scheme: dark;
 
-    --text: 191 191 191;
-    --background: 8 8 8;
-    --primary: 255 255 255;
-    --secondary: 26 26 26;
+    --background: 0 0 2;
+    --background-contrast: 0 0 5;
+
+    --primary: 0 0 100;
+    --secondary: 0 0 90;
+    --tertiary: 0 0 50;
+
+    --accent: 0 70 50;
+    --accent-hover: 0 70 60;
+    --accent-contrast: 0 0 100;
+    --accent-disabled: 0 70 85;
+
+    --selection: 0 70 50;
   }
 
   * {
     @apply scroll-m-28 scroll-smooth;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply text-primary;
+  html {
+    font-size: 14px;
   }
 }

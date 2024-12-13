@@ -54,7 +54,7 @@ export function LikeShare({ likes, shares, views, id }: LikeShare) {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="sticky inset-x-0 bottom-20 mx-auto mt-24 flex w-fit gap-10 rounded-xl border border-secondary/50 bg-background/75 px-5 py-3 backdrop-blur-xl"
+      className="sticky inset-x-0 bottom-20 mx-auto mt-24 flex w-fit gap-10 rounded-xl bg-background/75 px-5 py-3 backdrop-blur-xl"
     >
       {/* like */}
       <div className="flex items-center gap-3">

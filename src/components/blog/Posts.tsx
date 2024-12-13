@@ -9,12 +9,14 @@ export function Posts({ posts }: Posts) {
   const variants = {
     visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
   };
-
   const items = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.25 } },
-    hover: { x: 5 },
-    tap: { scale: 0.95 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: { duration: 1, ease: "anticipate" },
+    },
   };
 
   return (
@@ -22,7 +24,7 @@ export function Posts({ posts }: Posts) {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="flex flex-col gap-12"
+      className="layout flex flex-col gap-12"
     >
       {posts.map(({ id, title, description, tags }) => (
         <motion.a
@@ -37,7 +39,7 @@ export function Posts({ posts }: Posts) {
 
           <div className="flex w-full flex-col">
             {/* title */}
-            <h2 className="text-2xl">{title}</h2>
+            <h2 className="font-primary text-2xl font-medium">{title}</h2>
 
             {/* description */}
             <p>{description}</p>
@@ -45,7 +47,7 @@ export function Posts({ posts }: Posts) {
             {/* tags */}
             <div className="mt-5 flex flex-wrap items-center gap-3">
               {tags.map(({ name, id }: Tag) => (
-                <span key={id} className="capitalize">
+                <span key={id} className="text-tertiary capitalize">
                   {name}
                 </span>
               ))}

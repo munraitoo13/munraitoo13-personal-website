@@ -2,7 +2,6 @@
 
 import { sendMail } from "@/actions/sendMail";
 import { useCaptcha } from "@/hooks/useCaptcha";
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -17,7 +16,6 @@ export function ContactForm() {
   // variants
   const buttonVariants = {
     default: { scale: 1 },
-    hover: { scale: 1.05 },
     tap: { scale: 0.95 },
   };
 
@@ -66,7 +64,7 @@ export function ContactForm() {
   };
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="form">
+    <form ref={formRef} onSubmit={handleSubmit} className="form layout">
       {/* name */}
       <input
         type="text"
@@ -115,17 +113,13 @@ export function ContactForm() {
         />
 
         {/* send */}
-        <motion.button
+        <button
           type="submit"
-          variants={buttonVariants}
-          animate="default"
-          whileHover="hover"
-          whileTap="tap"
           disabled={pending}
           className={`${pending ? "button--disabled" : "button--solid"} button`}
         >
           {pending ? t("sending") : t("send")}
-        </motion.button>
+        </button>
       </div>
     </form>
   );

@@ -9,13 +9,15 @@ export function TableOfContents() {
   const headings = useHeadings();
 
   const variants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.25, delay: 0.2 } },
-  };
-  const item = {
-    default: { x: 0, transition: { duration: 0.25 } },
-    hover: { x: 5 },
-    tap: { scale: 0.95 },
+    hidden: {
+      x: 50,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { delay: 0.2, duration: 1, ease: "anticipate" },
+    },
   };
 
   return (
@@ -23,22 +25,18 @@ export function TableOfContents() {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="flex h-fit w-full flex-col gap-5 text-nowrap rounded-xl border border-secondary/50 p-10 md:w-fit"
+      className="flex h-fit w-full flex-col gap-5 text-nowrap rounded-xl border border-background-contrast p-10 md:w-fit"
     >
-      <h2 className="text-xl">{t("contents")}</h2>
+      <h2 className="text-primary text-xl font-medium">{t("contents")}</h2>
 
       {headings.map(({ text, id, headingLevel }) => (
-        <motion.a
-          variants={item}
-          animate="default"
-          whileHover="hover"
-          whileTap="tap"
+        <a
           key={text}
-          className={`${headingLevel === "H2" ? "text-lg text-primary" : "ml-3"} `}
+          className={`${headingLevel === "H2" ? "text-primary font-medium" : "ml-3"} transition-colors duration-500 hover:text-accent`}
           href={`#${id}`}
         >
           {text}
-        </motion.a>
+        </a>
       ))}
     </motion.nav>
   );

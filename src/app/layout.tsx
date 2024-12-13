@@ -1,15 +1,12 @@
-import { ThemeToggle } from "@/components/common/ThemeToggle";
 import "@/styles/main.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import { Cormorant } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.min.css";
 
-const cormorant = Cormorant({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default async function RootLayout({
   children,
@@ -21,7 +18,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${cormorant.className} bg-background text-text`}>
+      <body className={`${montserrat.className} text-secondary bg-background`}>
         <NextIntlClientProvider messages={messages}>
           <ToastContainer
             position="top-right"
@@ -37,9 +34,9 @@ export default async function RootLayout({
           />
           {children}
         </NextIntlClientProvider>
-
-        <ThemeToggle />
       </body>
+
+      <GoogleAnalytics gaId="G-D8094R1DSH" />
     </html>
   );
 }

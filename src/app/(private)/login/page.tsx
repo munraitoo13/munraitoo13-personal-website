@@ -32,10 +32,10 @@ export default function Login() {
   };
 
   return (
-    <div className="flex w-fit flex-col items-center justify-center gap-5 rounded-md border border-secondary/50 p-10">
+    <div className="flex w-fit flex-col items-center justify-center gap-5 rounded-md border border-background-contrast p-10">
       {/* title */}
       <div className="flex flex-col">
-        <h1 className="text-5xl">Login</h1>
+        <h1 className="text-primary text-5xl font-medium">Login</h1>
         <p>Identify yourself, curious peasant.</p>
       </div>
 
@@ -69,7 +69,10 @@ export default function Login() {
         </button>
       </form>
 
-      <Link href="/" className="">
+      <Link
+        href="/"
+        className="transition-colors duration-500 hover:text-accent"
+      >
         Home
       </Link>
     </div>

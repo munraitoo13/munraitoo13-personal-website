@@ -1,7 +1,7 @@
 import { BlogHeader } from "@/components/blog/BlogHeader";
 import { LikeShare } from "@/components/blog/LikeShare";
 import { CustomMDX } from "@/components/blog/customMDX";
-import { Markdown } from "@/components/common/Markdown";
+import { BlogMarkdown } from "@/components/common/BlogMarkdown";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/utils/formatDate";
 import { getUserLocale } from "@/utils/userLocale";
@@ -54,11 +54,9 @@ export default async function Page({ params }: Params) {
         language={language}
       />
 
-      <div className="divider mb-24"></div>
-
-      <Markdown>
+      <BlogMarkdown>
         <CustomMDX source={content} />
-      </Markdown>
+      </BlogMarkdown>
 
       <LikeShare likes={likes} shares={shares} views={views} id={id} />
     </>

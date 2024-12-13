@@ -9,32 +9,31 @@ export function PhraseDescription() {
   const phraseDescriptions = getPhraseDescription(t);
 
   const variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-  };
-  const item = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.25 } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 1, ease: "anticipate" },
+    },
   };
 
   return (
-    <motion.section
-      variants={variants}
-      initial="hidden"
-      whileInView="visible"
-      className="flex flex-col gap-12 pt-48"
-    >
+    <section className="layout flex flex-col gap-12 py-24">
       {phraseDescriptions.map(({ question, title, description }) => (
-        <div className="flex flex-col gap-2" key={question}>
-          <motion.p variants={item}>{question}</motion.p>
+        <motion.div
+          variants={variants}
+          initial="hidden"
+          whileInView="visible"
+          className="flex flex-col gap-2"
+          key={question}
+        >
+          <p className="text-accent">{question}</p>
 
-          <motion.h3 variants={item} className="text-xl">
-            {title}
-          </motion.h3>
+          <h3 className="text-primary font-medium">{title}</h3>
 
-          <motion.p variants={item}>{description}</motion.p>
-        </div>
+          <p>{description}</p>
+        </motion.div>
       ))}
-    </motion.section>
+    </section>
   );
 }

@@ -12,6 +12,11 @@ import {
   IconBrandVscode,
   IconBrandX,
 } from "@tabler/icons-react";
+
+import Comunication from "@/images/Communication.jpg";
+import Competence from "@/images/Competence.jpg";
+import Detail from "@/images/Detail.jpg";
+
 import { BR, DE, FR, US } from "country-flag-icons/react/3x2";
 
 // languages
@@ -34,7 +39,10 @@ export const getProfessionalLinks = (t: (key: string) => string) => [
 ];
 
 // admin constant
-export const ADMIN_LINKS = [{ title: "New Post", href: "/admin/new-post" }];
+export const ADMIN_LINKS = [
+  { title: "Home", href: "/" },
+  { title: "New Post", href: "/admin/new-post" },
+];
 export const POST_LANGUAGES = ["Português", "English", "Français", "Deutsch"];
 
 // socials
@@ -60,14 +68,17 @@ export const STACKS = [
 // qualities
 export const getQualities = (t: (key: string) => string) => [
   {
-    title: t("quality1"),
-    description: t("quality1desc"),
-  },
-  {
+    image: Competence,
     title: t("quality2"),
     description: t("quality2desc"),
   },
   {
+    image: Comunication,
+    title: t("quality1"),
+    description: t("quality1desc"),
+  },
+  {
+    image: Detail,
     title: t("quality3"),
     description: t("quality3desc"),
   },
@@ -91,3 +102,10 @@ export const getPhraseDescription = (t: (key: string) => string) => [
     description: t("insideAndOutExplDesc"),
   },
 ];
+
+export const myName = {
+  "pt-br": "Meu nome é Augusto.",
+  "en-us": "My name is Augusto.",
+  "fr-fr": "Je m'appelle Augusto.",
+  "de-de": "Ich heiße Augusto.",
+};

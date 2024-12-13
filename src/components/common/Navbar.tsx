@@ -7,10 +7,21 @@ import { IconMenu2, IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    let handler = (e: MouseEvent) => {
+      if (!menuRef.current?.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+  }, []);
+
   const t = useTranslations("NavBar");
 
   const personalLinks = getPersonalLinks(t);
@@ -25,22 +36,22 @@ export function Navbar() {
   return (
     <nav className="fixed inset-x-0 top-5 z-50 mx-auto w-fit">
       {/* logo and menu */}
-      <div className="flex w-96 items-center justify-between rounded-xl border border-secondary/50 bg-background/75 p-5 backdrop-blur-xl">
+      <div className="flex w-96 items-center justify-between rounded-xl bg-background/75 p-5 backdrop-blur-xl">
         {/* logo */}
         <Logo />
 
         {/* menu */}
         {isOpen ? (
           <IconX
-            className="cursor-pointer text-primary"
+            className="text-primary cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
-            stroke={0.5}
+            size={20}
           />
         ) : (
           <IconMenu2
-            className="cursor-pointer text-primary"
+            className="text-primary cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
-            stroke={0.5}
+            size={20}
           />
         )}
       </div>
@@ -49,19 +60,24 @@ export function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            onClick={() => setIsOpen(!isOpen)}
+            ref={menuRef}
             variants={variants}
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="mt-5 flex w-96 flex-col items-center justify-center rounded-xl border border-secondary/50 bg-background/75 p-5 backdrop-blur-xl"
+            className="mt-5 flex w-96 flex-col items-center justify-center rounded-xl bg-background/75 p-5 backdrop-blur-xl"
           >
             {/* personal links */}
             <div className="flex flex-col items-center justify-center gap-3">
-              <p className="text-lg text-primary">{t("personal")}</p>
+              <p className="text-primary font-medium">{t("personal")}</p>
 
               {personalLinks.map(({ name, href }) => (
-                <Link className="hover:text-primary" key={name} href={href}>
+                <Link
+                  className="transition-colors duration-500 hover:text-accent"
+                  key={name}
+                  href={href}
+                  onClick={() => setIsOpen(false)}
+                >
                   {name}
                 </Link>
               ))}
@@ -69,10 +85,15 @@ export function Navbar() {
 
             {/* professional links */}
             <div className="mt-5 flex flex-col items-center justify-center gap-3">
-              <p className="text-lg text-primary">{t("professional")}</p>
+              <p className="text-primary font-medium">{t("professional")}</p>
 
               {professionalLinks.map(({ name, href }) => (
-                <Link className="hover:text-primary" key={name} href={href}>
+                <Link
+                  className="transition-colors duration-500 hover:text-accent"
+                  key={name}
+                  href={href}
+                  onClick={() => setIsOpen(false)}
+                >
                   {name}
                 </Link>
               ))}

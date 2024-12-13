@@ -52,7 +52,10 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="my-5 flex w-full flex-col gap-2">
+    <form
+      onSubmit={handleSubmit}
+      className="layout my-5 flex w-full flex-col gap-2"
+    >
       {/* title */}
       <input
         defaultValue={post.title}

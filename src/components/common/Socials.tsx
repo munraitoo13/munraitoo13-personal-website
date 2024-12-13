@@ -11,11 +11,12 @@ export function Socials() {
           key={href}
           href={href}
           target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="hover:text-primary"
+          className="hover:text-accent"
         >
-          <Icon stroke={1} />
+          <Icon stroke={1.25} />
         </motion.a>
       ))}
     </div>

@@ -45,10 +45,10 @@ export function PostManager({ posts }: ManagerProps) {
   };
 
   return (
-    <>
+    <div className="layout mt-12 flex flex-col gap-8">
       {posts.map(
         ({ id, isFeatured, published, language, title, description, tags }) => (
-          <div key={id} className="mb-12 flex w-full self-center">
+          <div key={id} className="flex w-full self-center">
             {/* divider */}
             <div className="divider--card"></div>
 
@@ -58,13 +58,13 @@ export function PostManager({ posts }: ManagerProps) {
               <div className="flex gap-3">
                 {/* pin/unpin */}
                 <IconPinFilled
-                  className={`${isFeatured && "text-primary"} cursor-pointer hover:text-primary`}
+                  className={`${isFeatured && "text-accent"} cursor-pointer hover:text-accent`}
                   onClick={() => handlePin(id, isFeatured)}
                 />
 
                 {/* edit */}
                 <Link
-                  className="hover:text-primary"
+                  className="hover:text-accent"
                   href={`/admin/update-post/${id}`}
                 >
                   <IconSettingsFilled />
@@ -73,7 +73,7 @@ export function PostManager({ posts }: ManagerProps) {
                 {/* delete */}
                 <IconTrashFilled
                   onClick={() => handleDelete(id)}
-                  className="cursor-pointer hover:text-primary"
+                  className="cursor-pointer hover:text-accent"
                 />
               </div>
 
@@ -90,7 +90,8 @@ export function PostManager({ posts }: ManagerProps) {
               <Link
                 href={`/personal/blog/posts/${id}`}
                 target="_blank"
-                className="text-2xl text-primary hover:text-primary/90"
+                rel="noopener noreferrer"
+                className="text-primary text-2xl font-medium"
               >
                 {title}
               </Link>
@@ -101,7 +102,7 @@ export function PostManager({ posts }: ManagerProps) {
               {/* tags */}
               <div className="mt-5 flex flex-wrap items-center gap-3">
                 {tags.map(({ id, name }: Tag) => (
-                  <span key={id} className="capitalize">
+                  <span key={id} className="text-tertiary capitalize">
                     {name}
                   </span>
                 ))}
@@ -110,6 +111,6 @@ export function PostManager({ posts }: ManagerProps) {
           </div>
         ),
       )}
-    </>
+    </div>
   );
 }

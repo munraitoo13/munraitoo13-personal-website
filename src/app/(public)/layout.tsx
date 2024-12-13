@@ -1,6 +1,7 @@
 import { Footer } from "@/components/common/Footer";
 import { Navbar } from "@/components/common/Navbar";
 import { ScrollTop } from "@/components/common/ScrollTop";
+import { ThemeToggle } from "@/components/common/ThemeToggle";
 import "@/styles/main.css";
 
 export default function PublicLayout({
@@ -13,9 +14,10 @@ export default function PublicLayout({
       <ScrollTop />
       <Navbar />
 
-      <main className="layout">{children}</main>
+      <main>{children}</main>
 
       <Footer />
+      <ThemeToggle />
     </>
   );
 }

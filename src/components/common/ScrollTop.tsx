@@ -18,7 +18,7 @@ export function ScrollTop() {
       <IconChevronUp
         onClick={scrollTop}
         size={32}
-        className="cursor-pointer rounded-full bg-primary p-2 text-background"
+        className="text-accent-constrast cursor-pointer rounded-full bg-accent p-2"
       />
     </motion.div>
   );

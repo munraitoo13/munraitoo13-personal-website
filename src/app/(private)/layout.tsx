@@ -1,3 +1,4 @@
+import { ThemeToggle } from "@/components/common/ThemeToggle";
 import "@/styles/main.css";
 
 type LayoutProps = {
@@ -6,8 +7,12 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <main className="layout flex min-h-screen flex-col items-center justify-center">
-      {children}
-    </main>
+    <>
+      <main className="flex min-h-screen flex-col items-center justify-center">
+        {children}
+      </main>
+
+      <ThemeToggle />
+    </>
   );
 }

@@ -17,10 +17,14 @@ export function Footer() {
         <div className="flex gap-10">
           {/* personal */}
           <div className="flex flex-col gap-3">
-            <p className="text-lg text-primary">{t("personal")}</p>
+            <p className="text-primary font-medium">{t("personal")}</p>
 
             {personalLinks.map(({ name, href }) => (
-              <Link key={name} href={href} className="hover:text-primary">
+              <Link
+                key={name}
+                href={href}
+                className="transition-colors duration-500 hover:text-accent"
+              >
                 {name}
               </Link>
             ))}
@@ -28,10 +32,14 @@ export function Footer() {
 
           {/* professional */}
           <div className="flex flex-col gap-3">
-            <p className="text-lg text-primary">{t("professional")}</p>
+            <p className="text-primary font-medium">{t("professional")}</p>
 
             {professionalLinks.map(({ name, href }) => (
-              <Link key={name} href={href} className="hover:text-primary">
+              <Link
+                key={name}
+                href={href}
+                className="transition-colors duration-500 hover:text-accent"
+              >
                 {name}
               </Link>
             ))}
@@ -39,9 +47,9 @@ export function Footer() {
         </div>
 
         {/* about-me */}
-        <div className="mx-auto flex max-w-lg flex-col gap-2 lg:mx-0">
+        <div className="flex max-w-lg flex-col gap-2 lg:mx-0">
           {/* title */}
-          <p className="text-lg text-primary">{t("about")}</p>
+          <p className="text-primary font-medium">{t("about")}</p>
 
           {/* phrase */}
           <p>{t("aboutPhrase")}</p>

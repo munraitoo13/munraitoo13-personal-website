@@ -14,18 +14,16 @@ export default async function Admin() {
     <>
       {/* title */}
       <div className="text-center">
-        <h1 className="text-5xl">Admin Panel</h1>
+        <h1 className="text-primary text-5xl font-medium">Admin Panel</h1>
 
-        <p className="text-xl">
-          Please note that some functions may not work properly!
-        </p>
+        <p>Please note that some functions may not work properly!</p>
       </div>
 
       {/* content */}
-      <div className="mt-10 flex w-full flex-col gap-5">
+      <div className="mt-12 flex w-full flex-col gap-4">
         {/* shortcuts */}
         <div className="flex flex-col items-center justify-center gap-5">
-          <h2 className="font-extrabold text-2xl">Shortcuts</h2>
+          <h2 className="">Shortcuts</h2>
 
           {/* links */}
           <div className="flex gap-1">

@@ -2,18 +2,18 @@
 
 @layer components {
   .button {
-    @apply w-fit rounded-md px-5 py-3;
+    @apply h-fit w-fit rounded-xl px-6 py-4 transition-colors duration-500;
 
     &--solid {
-      @apply cursor-pointer bg-primary text-background hover:bg-primary/90;
+      @apply text-accent-constrast cursor-pointer bg-accent hover:bg-accent-hover;
     }
 
     &--outline {
-      @apply border border-primary text-primary;
+      @apply border border-accent text-accent;
     }
 
     &--disabled {
-      @apply cursor-not-allowed bg-secondary text-background;
+      @apply cursor-not-allowed bg-accent-disabled text-background;
     }
   }
 
@@ -22,17 +22,17 @@
 
     --tw-prose-body: var(--text);
 
-    strong {
-      @apply font-normal text-primary;
-    }
     img {
       @apply w-full max-w-[50rem] rounded-xl;
     }
     hr {
       @apply divider;
     }
+    strong {
+      @apply font-medium;
+    }
 
-    @apply prose-headings:mb-0 prose-headings:font-normal;
+    @apply prose-headings:mb-0 prose-headings:font-medium;
   }
 
   .layout {
@@ -40,10 +40,10 @@
   }
 
   .divider {
-    @apply border-t border-secondary/50;
+    @apply border-t border-background-contrast;
 
     &--card {
-      @apply mr-5 hidden w-12 self-center border-t border-secondary/50 md:flex;
+      @apply mr-10 hidden w-12 self-center border-t border-background-contrast md:flex;
     }
   }
 
@@ -51,10 +51,10 @@
     @apply mt-5 flex w-full flex-col gap-2;
 
     &--input {
-      @apply rounded-lg bg-secondary/50 p-6;
+      @apply rounded-lg bg-background-contrast p-6;
     }
     &--select {
-      @apply cursor-pointer appearance-none rounded-lg bg-secondary/50 p-6;
+      @apply cursor-pointer appearance-none rounded-lg bg-background-contrast p-6;
     }
   }
 }

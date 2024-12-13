@@ -19,9 +19,9 @@ export function Stacks() {
             title={name}
             animate="default"
             whileHover="scale"
-            className="flex flex-col hover:text-primary"
+            className="flex flex-col hover:text-accent"
           >
-            <Icon stroke={1} />
+            <Icon stroke={1.25} />
           </motion.div>
         );
       })}
