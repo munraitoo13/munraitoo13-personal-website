@@ -23,7 +23,10 @@ export function Header({ pageTitle, pageDescription }: Header) {
       className="layout mb-24 mt-48 flex flex-col gap-3"
     >
       {/* title */}
-      <motion.h1 variants={item} className="text-primary text-5xl font-medium">
+      <motion.h1
+        variants={item}
+        className="text-5xl font-medium text-primary underline decoration-accent"
+      >
         {pageTitle}
       </motion.h1>
 

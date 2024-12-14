@@ -19,10 +19,10 @@ export function FeaturedPost({ featuredPost }: FeaturedPost) {
       initial="hidden"
       animate="visible"
       href={`/personal/blog/posts/${featuredPost.id}`}
-      className="layout mb-24 flex w-full flex-col rounded-md border border-background-contrast p-10 text-center"
+      className="layout mb-24 flex flex-col rounded-md border border-background-contrast p-10 text-center"
     >
       {/* pinned icon */}
-      <IconPinnedFilled className="text-primary mb-5 self-center" />
+      <IconPinnedFilled className="mb-5 self-center text-primary" />
 
       <div className="flex flex-col">
         {/* title */}
@@ -34,7 +34,7 @@ export function FeaturedPost({ featuredPost }: FeaturedPost) {
         {/* tags */}
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           {featuredPost.tags.map(({ name, id }: Tag) => (
-            <span key={id} className="text-tertiary px-2 py-1 capitalize">
+            <span key={id} className="px-2 py-1 capitalize text-tertiary">
               {name}
             </span>
           ))}

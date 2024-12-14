@@ -5,7 +5,7 @@
     @apply h-fit w-fit rounded-xl px-6 py-4 transition-colors duration-500;
 
     &--solid {
-      @apply text-accent-constrast cursor-pointer bg-accent hover:bg-accent-hover;
+      @apply cursor-pointer bg-accent text-accent-constrast hover:bg-accent-hover;
     }
 
     &--outline {

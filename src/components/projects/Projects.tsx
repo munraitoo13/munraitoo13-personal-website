@@ -41,13 +41,13 @@ export function Projects({ repos }: ProjectsProps) {
           {/* project */}
           <div className="flex w-full flex-col">
             {/* project title */}
-            <h2 className="text-primary text-2xl font-medium">{name}</h2>
+            <h2 className="text-2xl font-medium text-primary">{name}</h2>
 
             {/* project description */}
             <p>{description || "No description"}</p>
 
             {/* lang */}
-            <p className="text-tertiary mt-5">{language || "No language"}</p>
+            <p className="mt-5 text-tertiary">{language || "No language"}</p>
           </div>
         </motion.a>
       ))}

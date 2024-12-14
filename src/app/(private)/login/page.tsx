@@ -35,7 +35,7 @@ export default function Login() {
     <div className="flex w-fit flex-col items-center justify-center gap-5 rounded-md border border-background-contrast p-10">
       {/* title */}
       <div className="flex flex-col">
-        <h1 className="text-primary text-5xl font-medium">Login</h1>
+        <h1 className="text-5xl font-medium text-primary">Login</h1>
         <p>Identify yourself, curious peasant.</p>
       </div>
 
