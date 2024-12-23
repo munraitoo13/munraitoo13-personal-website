@@ -4,7 +4,7 @@
   :root {
     ::selection {
       background-color: hsl(var(--selection));
-      color: hsl(var(--primary));
+      color: hsl(var(--selection-text));
     }
 
     --background: 0 0 98;
@@ -19,7 +19,8 @@
     --accent-contrast: 0 0 100;
     --accent-disabled: 0 70 85;
 
-    --selection: 50 100 50 / 0.25;
+    --selection: 0 70 50;
+    --selection-text: 0 0 100;
   }
   .dark {
     color-scheme: dark;
@@ -37,6 +38,7 @@
     --accent-disabled: 0 70 85;
 
     --selection: 0 70 50;
+    --selection-text: 0 0 100;
   }
 
   * {
