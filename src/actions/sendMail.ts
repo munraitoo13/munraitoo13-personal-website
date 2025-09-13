@@ -34,7 +34,8 @@ export async function sendMail(formData: FormData) {
       },
     );
     const captchaResult = await captchaResponse.json();
-    if (!captchaResult.success) return { error: "Captcha validation failed" };
+    if (!captchaResult.success)
+      return { success: false, error: "Captcha verification failed" };
 
     const sendEmailPromises = [
       transporter.sendMail({

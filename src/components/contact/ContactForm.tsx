@@ -16,54 +16,72 @@ export function ContactForm() {
   const PUBLIC_SITE_KEY = process.env.NEXT_PUBLIC_SITE_KEY;
   if (!PUBLIC_SITE_KEY) throw new Error("Missing reCAPTCHA site key");
 
-  // variants
-  const buttonVariants = {
-    default: { scale: 1 },
-    tap: { scale: 0.95 },
-  };
-
-  // translations
   const t = useTranslations("Contact");
   const tt = useTranslations("Toastify");
 
-  // handle form submit
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const toastId = toast.loading(tt("sending"));
 
-    // create formData
     const formData = new FormData(event.currentTarget);
     formData.append("captchaToken", captchaToken || "");
 
-    // validate empty fields
     if (Array.from(formData.values()).some((value) => !value)) {
-      toast.error(tt("emptyFields"));
+      toast.update(toastId, {
+        render: tt("emptyFields"),
+        type: "error",
+        isLoading: false,
+        autoClose: 5000,
+      });
+
       return;
     }
 
-    // validate email
     const email = formData.get("email") as string;
     if (!/[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/gim.test(email)) {
-      toast.error(tt("invalidEmail"));
+      toast.update(toastId, {
+        render: tt("invalidEmail"),
+        type: "error",
+        isLoading: false,
+        autoClose: 5000,
+      });
+
       return;
     }
 
-    // send email
     try {
+      const { success } = await sendMail(formData);
       setPending(true);
-      toast.loading(tt("sending"));
-      await sendMail(formData);
-      toast.dismiss();
+
+      if (success) {
+        toast.update(toastId, {
+          render: tt("messageSent"),
+          type: "success",
+          isLoading: false,
+          autoClose: 5000,
+        });
+
+        formRef.current?.reset();
+      } else {
+        toast.update(toastId, {
+          render: tt("messageError"),
+          type: "error",
+          isLoading: false,
+          autoClose: 5000,
+        });
+      }
     } catch (error) {
-      console.error("Error sending email", error);
-      toast.error(tt("messageError"));
+      console.error("Error sending email:", error);
+      toast.update(toastId, {
+        render: tt("messageError"),
+        type: "error",
+        isLoading: false,
+        autoClose: 5000,
+      });
+    } finally {
+      setPending(false);
+      resetCaptcha();
     }
-
-    toast.success(tt("messageSent"));
-
-    // reset form and captcha
-    formRef.current?.reset();
-    resetCaptcha();
-    setPending(false);
   };
 
   return (

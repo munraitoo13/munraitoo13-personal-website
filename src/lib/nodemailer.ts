@@ -1,5 +1,3 @@
-"use server";
-
 import nodemailer from "nodemailer";
 
 const EMAIL = process.env.EMAIL;
