@@ -1,44 +1,49 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { generateJwt } from "@/utils/tokenUtils";
+import { signToken } from "@/utils/tokenUtils";
 import bcrypt from "bcryptjs";
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+import { z } from "zod";
+
+const formSchema = z.object({
+  email: z.email("Invalid email address."),
+  password: z.string().min(1, "Password is required."),
+});
 
 export async function login(formData: FormData) {
   try {
-    // form data
-    const data = {
-      email: formData.get("email")?.toString() ?? "",
-      password: formData.get("password")?.toString() ?? "",
-    };
+    const data = Object.fromEntries(formData.entries());
+    const parsedData = formSchema.parse(data);
 
-    // get user from db
-    const user = await prisma.user.findUnique({ where: { email: data.email } });
-    if (!user || !user.password) {
-      return { error: "Invalid credentials." };
-    }
+    const user = await prisma.user.findUnique({
+      where: { email: parsedData.email },
+    });
+    if (!user) return { error: "Invalid credentials." };
 
-    // check password
-    const passwordCheck = await bcrypt.compare(data.password, user.password);
-    if (!passwordCheck) {
-      return { error: "Invalid credentials." };
-    }
+    const passwordCheck = await bcrypt.compare(
+      parsedData.password,
+      user.password!,
+    );
+    if (!passwordCheck) return { error: "Invalid credentials." };
 
-    // set token
-    const { id, name } = user;
-    const token = await generateJwt({ id, name });
+    const { id, name, role } = user;
+    const token = await signToken({ id, name, role });
     cookies().set("token", token, {
       httpOnly: true,
       secure: true,
       path: "/",
       sameSite: "strict",
     });
-  } catch (error) {
-    console.error("Error during login:", error);
-  }
 
-  // redirect to admin page
-  redirect("/admin");
+    return { success: true, message: "Login successful" };
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      console.error("Validation error during login:", error);
+      return { success: false, message: "Invalid form data" };
+    }
+
+    console.error("Error during login:", error);
+    return { success: false, message: "An error occurred during login" };
+  }
 }

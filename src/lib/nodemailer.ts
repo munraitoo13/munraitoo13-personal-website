@@ -1,17 +1,23 @@
+"use server";
+
 import nodemailer from "nodemailer";
 
-const email = process.env.EMAIL;
-const password = process.env.PASSWORD;
+const EMAIL = process.env.EMAIL;
+if (!EMAIL) throw new Error("EMAIL not defined");
+
+const PASSWORD = process.env.PASSWORD;
+if (!PASSWORD) throw new Error("PASSWORD not defined");
 
 export const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
-    user: email,
-    pass: password,
+    user: EMAIL,
+    pass: PASSWORD,
   },
 });
 
 export const options = {
-  from: email,
-  to: email,
+  from: EMAIL,
 };

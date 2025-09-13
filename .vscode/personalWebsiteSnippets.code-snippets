@@ -15,12 +15,9 @@
   // 	],
   // 	"description": "Log output to console"
   // }
+
   "translation i18n": {
     "prefix": "t",
     "body": ["{t('$1')}"],
-  },
-  "index export": {
-    "prefix": "ex",
-    "body": ["export * from './$1';"],
   },
 }

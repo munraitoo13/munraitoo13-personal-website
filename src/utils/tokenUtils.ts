@@ -1,43 +1,38 @@
 import { JWTPayload, jwtVerify, SignJWT } from "jose";
-import { cookies } from "next/headers";
+import { JWTExpired, JWTInvalid } from "jose/errors";
 
-// get encoded secret key
-export function getJwtKey(): Uint8Array {
-  const jwtSecret = process.env.JWT_SECRET;
-  if (!jwtSecret) {
-    throw new Error("Secret is not defined on enviroment varibles.");
-  }
+const SECRET = process.env.JWT_SECRET;
+if (!SECRET) throw new Error("JWT_SECRET not defined");
 
-  return new TextEncoder().encode(jwtSecret);
+export function getSigningKey(): Uint8Array {
+  return new TextEncoder().encode(SECRET);
 }
 
-// get token from cookies
-export function getToken() {
-  const token = cookies().get("token")?.value;
-  if (!token) {
-    throw new Error("Token not found");
-  }
-  return token;
-}
-
-// verify token
 export async function verifyToken(token: string) {
   try {
-    await jwtVerify(token, getJwtKey());
+    const key = getSigningKey();
+    const { payload } = await jwtVerify(token, key);
+
+    return payload;
   } catch (error) {
-    throw new Error("Invalid token");
+    if (error instanceof JWTExpired) {
+      console.error("Token expired", error);
+      throw new Error("Token expired");
+    }
+    if (error instanceof JWTInvalid) {
+      console.error("Token invalid:", error);
+      throw new Error("Token invalid");
+    }
+
+    console.error("Token verification failed", error);
+    throw new Error("Token verification failed");
   }
 }
 
-// generate token
-export async function generateJwt(payload: JWTPayload) {
-  try {
-    return await new SignJWT(payload)
-      .setProtectedHeader({ alg: "HS256" })
-      .setIssuedAt()
-      .setExpirationTime("2h")
-      .sign(getJwtKey());
-  } catch (error) {
-    throw new Error("Failed to generate token");
-  }
+export async function signToken(payload: JWTPayload) {
+  return await new SignJWT(payload)
+    .setProtectedHeader({ alg: "HS256" })
+    .setIssuedAt()
+    .setExpirationTime("8h")
+    .sign(getSigningKey());
 }

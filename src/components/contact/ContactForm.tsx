@@ -13,6 +13,9 @@ export function ContactForm() {
     useCaptcha();
   const formRef = useRef<HTMLFormElement>(null);
 
+  const PUBLIC_SITE_KEY = process.env.NEXT_PUBLIC_SITE_KEY;
+  if (!PUBLIC_SITE_KEY) throw new Error("Missing reCAPTCHA site key");
+
   // variants
   const buttonVariants = {
     default: { scale: 1 },
@@ -107,7 +110,7 @@ export function ContactForm() {
       <div className="flex flex-col gap-2">
         {/* captcha */}
         <ReCAPTCHA
-          sitekey={process.env.NEXT_PUBLIC_SITE_KEY || ""}
+          sitekey={PUBLIC_SITE_KEY}
           onChange={(token) => setCaptchaToken(token)}
           ref={captchaRef}
         />

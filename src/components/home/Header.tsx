@@ -2,6 +2,7 @@
 import { Stacks } from "@/components/home/Stacks";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { IconFile } from "@tabler/icons-react";
 import Link from "next/link";
 
 export function Header() {
@@ -30,7 +31,7 @@ export function Header() {
       <motion.p variants={item}>{t("greetings")}</motion.p>
 
       {/* title */}
-      <motion.h1 variants={item} className="text-primary text-5xl font-medium">
+      <motion.h1 variants={item} className="text-5xl font-medium text-primary">
         {t("presentation")}
       </motion.h1>
 
@@ -53,15 +54,20 @@ export function Header() {
 
       {/* contact and resume */}
       <motion.section className="mt-24 flex gap-4" variants={item}>
-        <Link href="/personal/contact" className="button button--solid">
-          {t("contact")}
+        <Link
+          href="https://docs.google.com/document/d/1wvD0VANx0zDwaHBPVV6v-D3JQe9oTQiXYB_TrHk9tgw"
+          target="_blank"
+          className="button button--solid flex items-center gap-1"
+        >
+          <IconFile size={16} stroke={1.5} />
+          {t("resume")}
         </Link>
 
         <Link
+          href="/personal/contact"
           className="flex items-center gap-1 transition-colors duration-500 hover:text-accent"
-          href="#"
         >
-          {t("resume")}
+          {t("contact")}
         </Link>
       </motion.section>
     </motion.header>

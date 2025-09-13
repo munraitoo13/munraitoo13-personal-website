@@ -3,38 +3,52 @@
 import { createPost } from "@/actions/createPost";
 import { POST_LANGUAGES } from "@/constants/constants";
 import { useTagSelection } from "@/hooks/useTagSelection";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { toast } from "react-toastify";
 
 export function NewPostForm({ tags }: NewPostProps) {
+  const router = useRouter();
   const [content, setContent] = useState("");
   const { selectedTags, handleTagClick, tagColor, handleTagInput } =
     useTagSelection(tags);
 
-  // handle form submit
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // create formdata and append tags
     const formData = new FormData(event.currentTarget);
     selectedTags.forEach((tag) => formData.append("tags", tag));
 
-    // check if all fields are filled
-    if (Array.from(formData.values()).some((value) => value === "")) {
-      toast.error("Please fill all fields");
-      return;
-    }
+    const toastId = toast.loading("Creating post...");
 
-    // create post
     try {
-      toast.loading("Creating post...");
-      await createPost(formData);
-      toast.dismiss();
-      toast.success("Post created successfully!");
+      const { success, message } = await createPost(formData);
+
+      if (success) {
+        toast.update(toastId, {
+          render: message,
+          type: "success",
+          isLoading: false,
+          autoClose: 3000,
+        });
+        router.push("/admin");
+      } else {
+        toast.update(toastId, {
+          render: message,
+          type: "error",
+          isLoading: false,
+          autoClose: 3000,
+        });
+      }
     } catch (error) {
-      toast.error("Error creating post");
       console.error("Error creating post: ", error);
+      toast.update(toastId, {
+        render: "Error creating post",
+        type: "error",
+        isLoading: false,
+        autoClose: 3000,
+      });
     }
   };
 

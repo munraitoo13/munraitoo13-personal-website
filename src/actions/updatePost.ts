@@ -1,45 +1,73 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { redirect } from "next/navigation";
+import { z } from "zod";
+
+const formSchema = z.object({
+  id: z.cuid(),
+  title: z.string().min(1, "Title is required"),
+  description: z.string().min(1, "Description is required"),
+  language: z.string().min(1, "Language is required"),
+  tags: z.array(z.string()).optional(),
+  content: z.string().min(1, "Content is required"),
+  published: z
+    .string()
+    .transform((value) => value === "on")
+    .optional(),
+});
 
 export async function updatePost(formData: FormData) {
   try {
-    // form data
-    const data = {
-      id: formData.get("id")?.toString(),
-      title: formData.get("title")?.toString(),
-      description: formData.get("description")?.toString(),
-      language: formData.get("language")?.toString(),
-      tags: formData.getAll("tags").map((tag) => tag.toString()),
-      content: formData.get("content")?.toString(),
-      published: formData.get("published") === "on",
-    };
+    const data = Object.fromEntries(formData.entries());
+    const parsedData = formSchema.parse({
+      ...data,
+      tags: formData.getAll("tags"),
+    });
 
-    // update post
+    const post = await prisma.post.findUnique({
+      where: { id: parsedData.id },
+      include: { tags: true },
+    });
+
+    if (!post) return { success: false, message: "Post not found" };
+
+    const newTags = parsedData.tags || [];
+    const existingTags = post.tags.map((tag) => tag.name);
+
+    const tagsToDisconnect = existingTags.filter(
+      (tag) => !newTags.includes(tag),
+    );
+    const tagsToConnectOrCreate = newTags.map((tag) => ({
+      where: { name: tag },
+      create: { name: tag },
+    }));
+
     await prisma.post.update({
       where: {
-        id: data.id,
+        id: parsedData.id,
       },
 
       data: {
-        title: data.title,
-        description: data.description,
-        language: data.language,
+        title: parsedData.title,
+        description: parsedData.description,
+        language: parsedData.language,
         tags: {
-          set: [],
-          connectOrCreate: data.tags.map((tag) => ({
-            where: { name: tag },
-            create: { name: tag },
-          })),
+          disconnect: tagsToDisconnect.map((tag) => ({ name: tag })),
+          connectOrCreate: tagsToConnectOrCreate,
         },
-        content: data.content,
-        published: data.published,
+        content: parsedData.content,
+        published: parsedData.published,
       },
     });
-  } catch (error) {
-    console.error("Error updating post", error);
-  }
 
-  redirect("/admin");
+    return { success: true, message: "Post updated successfully" };
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      console.error("Validation error:", error);
+      return { success: false, message: "Failed to update post" };
+    }
+
+    console.error("Unexpected error:", error);
+    return { success: false, message: "Failed to update post" };
+  }
 }

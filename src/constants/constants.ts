@@ -19,7 +19,6 @@ import Detail from "@/images/Detail.jpg";
 
 import { BR, DE, FR, US } from "country-flag-icons/react/3x2";
 
-// languages
 export const LANGUAGES = [
   { Flag: BR, locale: "pt-BR", title: "Português" },
   { Flag: US, locale: "en-US", title: "English" },
@@ -27,7 +26,6 @@ export const LANGUAGES = [
   { Flag: DE, locale: "de-DE", title: "Deutsch" },
 ];
 
-// nav links
 export const getPersonalLinks = (t: (key: string) => string) => [
   { name: t("projects"), href: "/personal/projects" },
   { name: t("contact"), href: "/personal/contact" },
@@ -38,14 +36,12 @@ export const getProfessionalLinks = (t: (key: string) => string) => [
   { name: t("experiences"), href: "/professional/experiences" },
 ];
 
-// admin constant
 export const ADMIN_LINKS = [
   { title: "Home", href: "/" },
   { title: "New Post", href: "/admin/new-post" },
 ];
 export const POST_LANGUAGES = ["Português", "English", "Français", "Deutsch"];
 
-// socials
 export const SOCIALS = [
   { href: "https://github.com/munraitoo13", Icon: IconBrandGithub },
   { href: "https://www.linkedin.com/in/munraitoo13/", Icon: IconBrandLinkedin },
@@ -53,7 +49,6 @@ export const SOCIALS = [
   { href: "https://twitter.com/munraitoo13", Icon: IconBrandX },
 ];
 
-// stacks
 export const STACKS = [
   { name: "TypeScript", Icon: IconBrandTypescript },
   { name: "React", Icon: IconBrandReact },
@@ -65,7 +60,6 @@ export const STACKS = [
   { name: "Figma", Icon: IconBrandFigma },
 ];
 
-// qualities
 export const getQualities = (t: (key: string) => string) => [
   {
     image: Competence,
@@ -84,7 +78,6 @@ export const getQualities = (t: (key: string) => string) => [
   },
 ];
 
-// phrase description
 export const getPhraseDescription = (t: (key: string) => string) => [
   {
     question: t("whySimple"),

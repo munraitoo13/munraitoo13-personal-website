@@ -45,7 +45,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
       toast.dismiss();
     } catch (error) {
       toast.error("Error updating post");
-      console.error("Error creating post: ", error);
+      console.error("Error updating post: ", error);
     }
 
     toast.success("Post updated successfully!");
