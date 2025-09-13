@@ -77,7 +77,7 @@
 1. **Clone the repository**
 
     ```bash
-    git clone [https://github.com/munraitoo13/munraitoo13-personal-website.git](https://github.com/munraitoo13/munraitoo13-personal-website.git)
+    git clone https://github.com/munraitoo13/munraitoo13-personal-website
     cd munraitoo13-personal-website
     ```
 
