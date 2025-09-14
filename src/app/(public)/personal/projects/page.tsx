@@ -12,11 +12,16 @@ export async function generateMetadata() {
 }
 
 export default async function Page() {
-  const repos = await fetch(
-    "https://api.github.com/users/munraitoo13/repos",
-  ).then((res) => res.json());
-
   const t = await getTranslations("Projects");
+
+  const data = await fetch("https://api.github.com/users/munraitoo13/repos", {
+    next: { revalidate: 300 },
+  });
+  if (!data.ok) {
+    throw new Error("Failed to fetch repos");
+  }
+
+  const repos = await data.json();
 
   return (
     <>
