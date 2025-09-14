@@ -16,38 +16,40 @@ export function NewPostForm({ tags }: NewPostProps) {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const toastId = toast.loading("Creating post...");
 
     const formData = new FormData(event.currentTarget);
     selectedTags.forEach((tag) => formData.append("tags", tag));
 
-    const toastId = toast.loading("Creating post...");
+    if (Array.from(formData.values()).some((value) => !value)) {
+      toast.update(toastId, {
+        render: "Please fill in all required fields",
+        type: "error",
+        isLoading: false,
+        autoClose: 5000,
+      });
+
+      return;
+    }
 
     try {
-      const { success, message } = await createPost(formData);
+      const { success } = await createPost(formData);
 
-      if (success) {
-        toast.update(toastId, {
-          render: message,
-          type: "success",
-          isLoading: false,
-          autoClose: 3000,
-        });
-        router.push("/admin");
-      } else {
-        toast.update(toastId, {
-          render: message,
-          type: "error",
-          isLoading: false,
-          autoClose: 3000,
-        });
-      }
+      toast.update(toastId, {
+        render: success ? "Post created successfully!" : "Error creating post",
+        type: success ? "success" : "error",
+        isLoading: false,
+        autoClose: 5000,
+      });
+
+      success && router.push("/admin");
     } catch (error) {
       console.error("Error creating post: ", error);
       toast.update(toastId, {
         render: "Error creating post",
         type: "error",
         isLoading: false,
-        autoClose: 3000,
+        autoClose: 5000,
       });
     }
   };

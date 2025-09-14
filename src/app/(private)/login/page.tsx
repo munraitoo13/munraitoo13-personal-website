@@ -3,31 +3,58 @@
 import { login } from "@/actions/login";
 import Link from "next/link";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const toastId = toast.loading("Logging in...");
 
-    // create formdata
     const formData = new FormData(event.currentTarget);
 
-    // check if all fields are filled
-    if (Array.from(formData.values()).some((value) => value === "")) {
-      toast.error("Please fill all fields.");
+    if (Array.from(formData.values()).some((value) => !value)) {
+      toast.update(toastId, {
+        render: "Please fill in all fields.",
+        type: "error",
+        isLoading: false,
+        autoClose: 5000,
+      });
+
       return;
     }
 
-    // login
-    try {
-      toast.loading("Logging in...");
-      const loginResult = await login(formData);
-      toast.dismiss();
+    const email = formData.get("email") as string;
+    if (!/[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/gim.test(email)) {
+      toast.update(toastId, {
+        render: "Please enter a valid email address.",
+        type: "error",
+        isLoading: false,
+        autoClose: 5000,
+      });
 
-      loginResult?.error
-        ? toast.error(loginResult.error)
-        : toast.success("Logged in.");
+      return;
+    }
+
+    try {
+      const { success, message } = await login(formData);
+      console.error(message);
+      toast.update(toastId, {
+        render: message,
+        type: success ? "success" : "error",
+        isLoading: false,
+        autoClose: 5000,
+      });
+
+      success && router.push("/admin");
     } catch (error) {
-      toast.error("Error logging in.");
+      console.error("Error logging in:", error);
+      toast.update(toastId, {
+        render: "Error logging in.",
+        type: "error",
+        isLoading: false,
+        autoClose: 5000,
+      });
     }
   };
 

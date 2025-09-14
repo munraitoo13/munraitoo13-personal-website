@@ -53,23 +53,14 @@ export function ContactForm() {
       const { success } = await sendMail(formData);
       setPending(true);
 
-      if (success) {
-        toast.update(toastId, {
-          render: tt("messageSent"),
-          type: "success",
-          isLoading: false,
-          autoClose: 5000,
-        });
+      toast.update(toastId, {
+        render: success ? tt("messageSent") : tt("messageError"),
+        type: success ? "success" : "error",
+        isLoading: false,
+        autoClose: 5000,
+      });
 
-        formRef.current?.reset();
-      } else {
-        toast.update(toastId, {
-          render: tt("messageError"),
-          type: "error",
-          isLoading: false,
-          autoClose: 5000,
-        });
-      }
+      success && formRef.current?.reset();
     } catch (error) {
       console.error("Error sending email:", error);
       toast.update(toastId, {
