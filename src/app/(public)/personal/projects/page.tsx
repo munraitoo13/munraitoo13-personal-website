@@ -11,17 +11,30 @@ export async function generateMetadata() {
   };
 }
 
+async function fetchGitHubRepos() {
+  const GITHUB_API_URL = "https://api.github.com/users/munraitoo13/repos";
+
+  try {
+    const res = await fetch(GITHUB_API_URL, {
+      next: { revalidate: 300 },
+    });
+
+    if (!res.ok) {
+      console.error("Failed to fetch GitHub repositories");
+      return [];
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error("Error fetching GitHub repositories:", error);
+    return [];
+  }
+}
+
 export default async function Page() {
   const t = await getTranslations("Projects");
 
-  const data = await fetch("https://api.github.com/users/munraitoo13/repos", {
-    next: { revalidate: 300 },
-  });
-  if (!data.ok) {
-    throw new Error("Failed to fetch repos");
-  }
-
-  const repos = await data.json();
+  const repos = await fetchGitHubRepos();
 
   return (
     <>
