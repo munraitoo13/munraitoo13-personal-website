@@ -7,6 +7,10 @@ export async function middleware(req: NextRequest) {
     if (!token) return NextResponse.redirect(new URL("/login", req.url));
     await verifyToken(token);
 
+    if (req.nextUrl.pathname === "/login") {
+      return NextResponse.redirect(new URL("/admin", req.url));
+    }
+
     return NextResponse.next();
   } catch (error) {
     console.error("Middleware error:", error);
