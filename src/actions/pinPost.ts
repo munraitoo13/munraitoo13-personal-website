@@ -14,9 +14,12 @@ export async function pinPost(id: string) {
       data: { isFeatured: !post.isFeatured },
     });
 
-    return { success: true, message: "Post pinned successfully" };
+    return {
+      success: true,
+      message: post.isFeatured ? "Post unfeatured" : "Post featured",
+    };
   } catch (error) {
-    console.error("Error pinning post", error);
-    return { success: false, message: "Error pinning post" };
+    console.error("Error pinning/unpinning post", error);
+    return { success: false, message: "Error pinning/unpinning post" };
   }
 }
