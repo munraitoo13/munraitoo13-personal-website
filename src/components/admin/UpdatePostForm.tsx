@@ -85,7 +85,11 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
         {/* tags input and language */}
         <div className="flex gap-2 self-center">
           {/* language */}
-          <select name="language" className="form--select w-fit">
+          <select
+            name="language"
+            className="form--select w-fit"
+            defaultValue={post.language}
+          >
             {POST_LANGUAGES.map((language) => (
               <option key={language} value={language}>
                 {language}

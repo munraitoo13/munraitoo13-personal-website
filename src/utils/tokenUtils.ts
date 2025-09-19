@@ -17,15 +17,14 @@ export async function verifyToken(token: string) {
   } catch (error) {
     if (error instanceof JWTExpired) {
       console.error("Token expired", error);
-      throw new Error("Token expired");
+      return null;
     }
     if (error instanceof JWTInvalid) {
       console.error("Token invalid:", error);
-      throw new Error("Token invalid");
+      return null;
     }
-
     console.error("Token verification failed", error);
-    throw new Error("Token verification failed");
+    return null;
   }
 }
 

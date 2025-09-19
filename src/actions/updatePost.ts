@@ -11,10 +11,7 @@ const formSchema = z.object({
   language: z.string().min(1, "Language is required"),
   tags: z.array(z.string()).optional(),
   content: z.string().min(1, "Content is required"),
-  published: z
-    .string()
-    .transform((value) => value === "on")
-    .optional(),
+  published: z.boolean().optional(),
 });
 
 export async function updatePost(formData: FormData) {
@@ -23,6 +20,7 @@ export async function updatePost(formData: FormData) {
     const parsedData = formSchema.parse({
       ...data,
       tags: formData.getAll("tags"),
+      published: data.published === "on",
     });
 
     const post = await prisma.post.findUnique({
