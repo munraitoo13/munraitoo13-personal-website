@@ -32,12 +32,10 @@ export default async function Page({ params }: Params) {
 
   if (!post.published && !isValidToken) return PostNotFound;
 
-  await prisma.$transaction([
-    prisma.post.update({
-      where: { id: params.slug },
-      data: { views: { increment: 1 } },
-    }),
-  ]);
+  await prisma.post.update({
+    where: { id: params.slug },
+    data: { views: { increment: 1 } },
+  });
 
   const {
     id,
