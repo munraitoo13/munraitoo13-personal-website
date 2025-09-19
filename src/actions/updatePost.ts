@@ -1,10 +1,11 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 const formSchema = z.object({
-  id: z.cuid(),
+  id: z.uuid(),
   title: z.string().min(1, "Title is required"),
   description: z.string().min(1, "Description is required"),
   language: z.string().min(1, "Language is required"),
@@ -60,6 +61,7 @@ export async function updatePost(formData: FormData) {
       },
     });
 
+    revalidatePath("/admin");
     return { success: true, message: "Post updated successfully" };
   } catch (error) {
     if (error instanceof z.ZodError) {

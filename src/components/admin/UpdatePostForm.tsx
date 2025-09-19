@@ -1,6 +1,7 @@
 "use client";
 
 import { updatePost } from "@/actions/updatePost";
+import { useRouter } from "next/navigation";
 import { POST_LANGUAGES } from "@/constants/constants";
 import { useTagSelection } from "@/hooks/useTagSelection";
 import { useEffect, useState } from "react";
@@ -8,6 +9,7 @@ import ReactMarkdown from "react-markdown";
 import { toast } from "react-toastify";
 
 export function UpdatePostForm({ tags, post }: UpdatePostProps) {
+  const router = useRouter();
   const [content, setContent] = useState(post.content);
   const {
     selectedTags,
@@ -17,38 +19,43 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
     handleTagInput,
   } = useTagSelection(tags);
 
-  // set selectedTags to post tags
   useEffect(() => {
     const postTags = post.tags.map(({ name }: Tag) => name);
     setSelectedTags(postTags);
   }, []);
 
-  // handle form submit
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // create formdata and append tags
     const formData = new FormData(event.currentTarget);
     formData.append("id", post.id);
     selectedTags.forEach((tag) => formData.append("tags", tag));
 
-    // check if all fields are filled
     if (Array.from(formData.values()).some((value) => value === "")) {
       toast.error("Please fill all fields");
       return;
     }
 
-    // create post
+    const toastId = toast.loading("Updating post...");
     try {
-      toast.loading("Updating post...");
-      await updatePost(formData);
-      toast.dismiss();
-    } catch (error) {
-      toast.error("Error updating post");
-      console.error("Error updating post: ", error);
-    }
+      const { success, message } = await updatePost(formData);
+      toast.update(toastId, {
+        render: message,
+        type: success ? "success" : "error",
+        isLoading: false,
+        autoClose: 3000,
+      });
 
-    toast.success("Post updated successfully!");
+      success && router.push("/admin");
+    } catch (error) {
+      console.error("Error updating post: ", error);
+      toast.update(toastId, {
+        render: "An error occurred while updating the post.",
+        type: "error",
+        isLoading: false,
+        autoClose: 3000,
+      });
+    }
   };
 
   return (
