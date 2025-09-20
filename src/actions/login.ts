@@ -11,9 +11,8 @@ const formSchema = z.object({
   password: z.string().min(1, "Password is required."),
 });
 
-export async function login(formData: FormData) {
+export async function login(data: { email: string; password: string }) {
   try {
-    const data = Object.fromEntries(formData.entries());
     const parsedData = formSchema.parse(data);
 
     const user = await prisma.user.findUnique({
