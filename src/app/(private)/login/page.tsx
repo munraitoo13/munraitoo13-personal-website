@@ -51,21 +51,21 @@ export default function Login() {
 
       <div className="divider"></div>
 
-      <form
-        className="flex flex-col justify-center gap-3"
-        onSubmit={handleSubmit(onSubmit)}
-      >
+      <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register("email", {
             required: true,
-            pattern: /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/gim,
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "Invalid email address",
+            },
           })}
           type="email"
           placeholder="Email"
           className="form--input"
         />
         {errors.email && (
-          <p className="-mt-2 text-accent">Enter a valid email address.</p>
+          <p className="-mt-2 text-accent">{errors.email.message}</p>
         )}
 
         <input
