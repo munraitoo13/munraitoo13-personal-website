@@ -3,23 +3,27 @@
 import { prisma } from "@/lib/prisma";
 import { z } from "zod";
 
+type FormData = {
+  title: string;
+  description: string;
+  language: string;
+  tags: string[];
+  content: string;
+  published: boolean;
+};
+
 const formSchema = z.object({
   title: z.string().min(1, "Title is required"),
   description: z.string().min(1, "Description is required"),
   language: z.string().min(1, "Language is required"),
   tags: z.array(z.string()).optional(),
   content: z.string().min(1, "Content is required"),
-  published: z.boolean().optional(),
+  published: z.boolean(),
 });
 
-export async function createPost(formData: FormData) {
+export async function createPost(data: FormData) {
   try {
-    const data = Object.fromEntries(formData.entries());
-    const parsedData = formSchema.parse({
-      ...data,
-      tags: formData.getAll("tags"),
-      published: data.published === "on",
-    });
+    const parsedData = formSchema.parse(data);
 
     await prisma.post.create({
       data: {

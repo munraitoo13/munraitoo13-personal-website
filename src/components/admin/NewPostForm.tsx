@@ -4,36 +4,41 @@ import { createPost } from "@/actions/createPost";
 import { POST_LANGUAGES } from "@/constants/constants";
 import { useTagSelection } from "@/hooks/useTagSelection";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
+
+type FormData = {
+  title: string;
+  description: string;
+  language: string;
+  tags: string[];
+  content: string;
+  published: boolean;
+};
 
 export function NewPostForm({ tags }: NewPostProps) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch,
+  } = useForm<FormData>();
   const router = useRouter();
-  const [content, setContent] = useState("");
   const { selectedTags, handleTagClick, tagColor, handleTagInput } =
     useTagSelection(tags);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const content = watch("content", "");
+
+  const onSubmit = async (data: FormData) => {
     const toastId = toast.loading("Creating post...");
 
-    const formData = new FormData(event.currentTarget);
-    selectedTags.forEach((tag) => formData.append("tags", tag));
-
-    if (Array.from(formData.values()).some((value) => !value)) {
-      toast.update(toastId, {
-        render: "Please fill in all required fields",
-        type: "error",
-        isLoading: false,
-        autoClose: 5000,
-      });
-
-      return;
-    }
-
     try {
-      const { success } = await createPost(formData);
+      const payload = {
+        ...data,
+        selectedTags,
+      };
+      const { success, message } = await createPost(data);
 
       toast.update(toastId, {
         render: success ? "Post created successfully!" : "Error creating post",
@@ -42,7 +47,9 @@ export function NewPostForm({ tags }: NewPostProps) {
         autoClose: 5000,
       });
 
-      success && router.push("/admin");
+      success
+        ? router.push("/admin")
+        : console.error("Error creating post: ", message);
     } catch (error) {
       console.error("Error creating post: ", error);
       toast.update(toastId, {
@@ -57,36 +64,47 @@ export function NewPostForm({ tags }: NewPostProps) {
   return (
     <>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
         className="layout my-5 flex w-full flex-col gap-2"
       >
         {/* title */}
         <input
+          {...register("title", { required: "Title is required" })}
           type="text"
-          name="title"
           placeholder="Title"
           className="form--input"
         />
+        {errors.title && <p className="text-accent">{errors.title.message}</p>}
 
         {/* description */}
         <textarea
-          name="description"
+          {...register("description", { required: "Description is required" })}
           placeholder="Description"
           className="form--input h-36 resize-none"
         />
+        {errors.description && (
+          <p className="text-accent">{errors.description.message}</p>
+        )}
 
         {/* language and tags */}
         <div className="flex flex-col gap-2">
           {/* tags input and language */}
           <div className="flex gap-2 self-center">
             {/* language */}
-            <select name="language" className="form--select w-fit">
+            <select
+              {...register("language", { required: "Language is required" })}
+              className="form--select w-fit"
+              defaultValue={POST_LANGUAGES[0]}
+            >
               {POST_LANGUAGES.map((language) => (
                 <option key={language} value={language}>
                   {language}
                 </option>
               ))}
             </select>
+            {errors.language && (
+              <p className="text-accent">{errors.language.message}</p>
+            )}
 
             {/* tags input */}
             <input
@@ -114,16 +132,18 @@ export function NewPostForm({ tags }: NewPostProps) {
         {/* content */}
         <div className="flex flex-col gap-2 xl:flex-row">
           <textarea
-            name="content"
+            {...register("content", { required: "Content is required" })}
             placeholder="Content"
             className="form--input h-[50rem] w-full resize-none xl:w-1/2"
-            onChange={(event) => setContent(event.target.value)}
           />
 
           <ReactMarkdown className="form--input mdx-content h-[50rem] w-full overflow-y-auto xl:w-1/2">
             {content}
           </ReactMarkdown>
         </div>
+        {errors.content && (
+          <p className="text-accent">{errors.content.message}</p>
+        )}
 
         {/* submit and published */}
         <div className="mt-5 flex gap-5 self-center">
@@ -134,7 +154,7 @@ export function NewPostForm({ tags }: NewPostProps) {
 
           {/* published */}
           <div className="flex items-center justify-center gap-2">
-            <input type="checkbox" name="published" id="published" />
+            <input type="checkbox" id="published" {...register("published")} />
             <label htmlFor="published" className="cursor-pointer">
               Published
             </label>
