@@ -80,9 +80,6 @@ export function PostManager({ posts }: { posts: Post[] }) {
       {allPosts.map(
         ({ id, isFeatured, published, language, title, description, tags }) => (
           <div key={id} className="flex w-full self-center">
-            {/* divider */}
-            <div className="divider--card"></div>
-
             {/* post */}
             <div className="flex w-full flex-col">
               {/* buttons */}

@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "react-toastify";
+import Button from "@/components/common/Button";
 
 export function ContactForm() {
   const [pending, setPending] = useState(false);
@@ -116,7 +117,7 @@ export function ContactForm() {
       />
 
       {/* send and captcha */}
-      <div className="flex flex-col gap-2">
+      <div className="space-y-2">
         {/* captcha */}
         <ReCAPTCHA
           sitekey={PUBLIC_SITE_KEY}
@@ -125,13 +126,9 @@ export function ContactForm() {
         />
 
         {/* send */}
-        <button
-          type="submit"
-          disabled={pending}
-          className={`${pending ? "button--disabled" : "button--solid"} button`}
-        >
+        <Button type="submit" disabled={pending}>
           {pending ? t("sending") : t("send")}
-        </button>
+        </Button>
       </div>
     </form>
   );

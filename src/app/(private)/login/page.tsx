@@ -4,6 +4,8 @@ import { login } from "@/actions/login";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import Button from "@/components/common/Button";
+import Divider from "@/components/common/Divider";
 
 type FormData = {
   email: string;
@@ -49,7 +51,7 @@ export default function Login() {
         <p>Identify yourself.</p>
       </div>
 
-      <div className="divider"></div>
+      <Divider />
 
       <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
         <input
@@ -78,9 +80,9 @@ export default function Login() {
           <p className="-mt-2 text-accent">Enter your password.</p>
         )}
 
-        <button type="submit" className="button button--solid mt-4 w-full">
+        <Button fullWidth type="submit">
           Login
-        </button>
+        </Button>
       </form>
     </div>
   );

@@ -1,22 +1,6 @@
 @tailwind components;
 
 @layer components {
-  .button {
-    @apply h-fit w-fit rounded-xl px-6 py-4 transition-colors duration-500;
-
-    &--solid {
-      @apply cursor-pointer bg-accent text-accent-constrast hover:bg-accent-hover;
-    }
-
-    &--outline {
-      @apply border border-accent text-accent;
-    }
-
-    &--disabled {
-      @apply cursor-not-allowed bg-accent-disabled text-background;
-    }
-  }
-
   .mdx-content {
     @apply prose prose-neutral max-w-none dark:prose-invert;
 
@@ -24,9 +8,6 @@
 
     img {
       @apply w-full max-w-[50rem] rounded-xl;
-    }
-    hr {
-      @apply divider;
     }
     strong {
       @apply font-medium;
@@ -37,14 +18,6 @@
 
   .layout {
     @apply mx-auto w-11/12 max-w-[75rem];
-  }
-
-  .divider {
-    @apply border-t border-background-contrast;
-
-    &--card {
-      @apply mr-10 hidden w-12 self-center border-t border-background-contrast md:flex;
-    }
   }
 
   .form {

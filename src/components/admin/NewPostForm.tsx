@@ -8,6 +8,7 @@ import ReactMarkdown from "react-markdown";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/common/Input";
+import Button from "@/components/common/Button";
 
 export function NewPostForm({ tags }: { tags: Tag[] }) {
   const {
@@ -140,9 +141,7 @@ export function NewPostForm({ tags }: { tags: Tag[] }) {
         {/* submit and published */}
         <div className="mt-5 flex gap-5 self-center">
           {/* submit */}
-          <button type="submit" className="button button--solid">
-            Create Post
-          </button>
+          <Button type="submit">Create Post</Button>
 
           {/* published */}
           <div className="flex items-center justify-center gap-2">

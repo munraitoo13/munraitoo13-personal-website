@@ -2,6 +2,7 @@ import { Socials } from "@/components/common/Socials";
 import { getPersonalLinks, getProfessionalLinks } from "@/constants/constants";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import Divider from "@/components/common/Divider";
 
 export function Footer() {
   const t = useTranslations("Footer");
@@ -17,7 +18,7 @@ export function Footer() {
         <div className="flex gap-10">
           {/* personal */}
           <div className="flex flex-col gap-3">
-            <p className="text-primary font-medium">{t("personal")}</p>
+            <p className="font-medium text-primary">{t("personal")}</p>
 
             {personalLinks.map(({ name, href }) => (
               <Link
@@ -32,7 +33,7 @@ export function Footer() {
 
           {/* professional */}
           <div className="flex flex-col gap-3">
-            <p className="text-primary font-medium">{t("professional")}</p>
+            <p className="font-medium text-primary">{t("professional")}</p>
 
             {professionalLinks.map(({ name, href }) => (
               <Link
@@ -49,14 +50,14 @@ export function Footer() {
         {/* about-me */}
         <div className="flex max-w-lg flex-col gap-2 lg:mx-0">
           {/* title */}
-          <p className="text-primary font-medium">{t("about")}</p>
+          <p className="font-medium text-primary">{t("about")}</p>
 
           {/* phrase */}
           <p>{t("aboutPhrase")}</p>
         </div>
       </div>
 
-      <div className="divider my-5"></div>
+      <Divider />
 
       {/* bottom */}
       <div className="flex items-center justify-between">

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { IconFile } from "@tabler/icons-react";
 import Link from "next/link";
+import Button from "@/components/common/Button";
 
 export function Header() {
   const t = useTranslations("HomePage");
@@ -57,10 +58,8 @@ export function Header() {
         <Link
           href="https://docs.google.com/document/d/1wvD0VANx0zDwaHBPVV6v-D3JQe9oTQiXYB_TrHk9tgw"
           target="_blank"
-          className="button button--solid flex items-center gap-1"
         >
-          <IconFile size={16} stroke={1.5} />
-          {t("resume")}
+          <Button Icon={IconFile}>{t("resume")}</Button>
         </Link>
 
         <Link

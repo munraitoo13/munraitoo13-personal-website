@@ -35,9 +35,6 @@ export function Projects({ repos }: ProjectsProps) {
           rel="noopener noreferrer"
           className="flex"
         >
-          {/* divider */}
-          <div className="divider--card"></div>
-
           {/* project */}
           <div className="flex w-full flex-col">
             {/* project title */}

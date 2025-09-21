@@ -35,8 +35,6 @@ export function Posts({ posts }: Posts) {
           href={`/personal/blog/posts/${id}`}
           key={id}
         >
-          <div className="divider--card"></div>
-
           <div className="flex w-full flex-col">
             {/* title */}
             <h2 className="font-primary text-2xl font-medium">{title}</h2>
@@ -47,7 +45,7 @@ export function Posts({ posts }: Posts) {
             {/* tags */}
             <div className="mt-5 flex flex-wrap items-center gap-3">
               {tags.map(({ name, id }: Tag) => (
-                <span key={id} className="text-tertiary capitalize">
+                <span key={id} className="capitalize text-tertiary">
                   {name}
                 </span>
               ))}

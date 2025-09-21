@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Divider from "@/components/common/Divider";
 
 export function BlogHeader({ title, description, language, date }: BlogHeader) {
   const variants = {
@@ -28,14 +29,14 @@ export function BlogHeader({ title, description, language, date }: BlogHeader) {
       </motion.p>
 
       {/* title */}
-      <motion.h1 variants={items} className="text-primary text-5xl font-medium">
+      <motion.h1 variants={items} className="text-5xl font-medium text-primary">
         {title}
       </motion.h1>
 
       {/* description */}
       <motion.p variants={items}>{description}</motion.p>
 
-      <div className="divider my-12"></div>
+      <Divider />
     </motion.header>
   );
 }

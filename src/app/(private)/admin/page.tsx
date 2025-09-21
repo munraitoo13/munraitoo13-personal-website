@@ -2,6 +2,7 @@ import { PostManager } from "@/components/admin/PostManager";
 import { ADMIN_LINKS } from "@/constants/constants";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
+import Button from "@/components/common/Button";
 
 export default async function Admin() {
   const posts = await prisma.post.findMany({
@@ -14,7 +15,7 @@ export default async function Admin() {
     <>
       {/* title */}
       <div className="text-center">
-        <h1 className="text-primary text-5xl font-medium">Admin Panel</h1>
+        <h1 className="text-5xl font-medium text-primary">Admin Panel</h1>
 
         <p>Please note that some functions may not work properly!</p>
       </div>
@@ -28,8 +29,8 @@ export default async function Admin() {
           {/* links */}
           <div className="flex gap-1">
             {ADMIN_LINKS.map(({ href, title }) => (
-              <Link key={title} href={href} className="button button--solid">
-                {title}
+              <Link key={title} href={href}>
+                <Button>{title}</Button>
               </Link>
             ))}
           </div>

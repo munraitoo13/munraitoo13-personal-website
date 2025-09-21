@@ -5,9 +5,10 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { POST_LANGUAGES } from "@/constants/constants";
 import { useTagSelection } from "@/hooks/useTagSelection";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import { toast } from "react-toastify";
+import Button from "@/components/common/Button";
 
 export function UpdatePostForm({ tags, post }: UpdatePostProps) {
   const {
@@ -150,9 +151,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
       {/* submit and published */}
       <div className="mt-5 flex gap-5 self-center">
         {/* submit */}
-        <button type="submit" className="button button--solid">
-          Update Post
-        </button>
+        <Button type="submit">Update Post</Button>
 
         {/* published */}
         <div className="flex items-center justify-center gap-2">
