@@ -7,30 +7,22 @@ import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
+import { Input } from "@/components/common/Input";
 
-type FormData = {
-  title: string;
-  description: string;
-  language: string;
-  tags: string[];
-  content: string;
-  published: boolean;
-};
-
-export function NewPostForm({ tags }: NewPostProps) {
+export function NewPostForm({ tags }: { tags: Tag[] }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm<FormData>();
+  } = useForm<PostData>();
   const router = useRouter();
   const { selectedTags, handleTagClick, tagColor, handleTagInput } =
     useTagSelection(tags);
 
   const content = watch("content", "");
 
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = async (data: PostData) => {
     const toastId = toast.loading("Creating post...");
 
     try {
@@ -38,7 +30,7 @@ export function NewPostForm({ tags }: NewPostProps) {
         ...data,
         selectedTags,
       };
-      const { success, message } = await createPost(data);
+      const { success, message } = await createPost(payload);
 
       toast.update(toastId, {
         render: success ? "Post created successfully!" : "Error creating post",
@@ -67,14 +59,14 @@ export function NewPostForm({ tags }: NewPostProps) {
         onSubmit={handleSubmit(onSubmit)}
         className="layout my-5 flex w-full flex-col gap-2"
       >
-        {/* title */}
-        <input
-          {...register("title", { required: "Title is required" })}
-          type="text"
-          placeholder="Title"
-          className="form--input"
+        <Input
+          id="title"
+          label="title"
+          type="title"
+          placeholder="you@example.com"
+          {...register("title")}
+          error={errors.title?.message}
         />
-        {errors.title && <p className="text-accent">{errors.title.message}</p>}
 
         {/* description */}
         <textarea

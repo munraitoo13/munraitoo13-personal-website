@@ -4,6 +4,16 @@ import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
+type FormData = {
+  id: string;
+  title: string;
+  description: string;
+  language: string;
+  tags: string[];
+  content: string;
+  published: boolean;
+};
+
 const formSchema = z.object({
   id: z.uuid(),
   title: z.string().min(1, "Title is required"),
@@ -14,14 +24,9 @@ const formSchema = z.object({
   published: z.boolean().optional(),
 });
 
-export async function updatePost(formData: FormData) {
+export async function updatePost(data: FormData) {
   try {
-    const data = Object.fromEntries(formData.entries());
-    const parsedData = formSchema.parse({
-      ...data,
-      tags: formData.getAll("tags"),
-      published: data.published === "on",
-    });
+    const parsedData = formSchema.parse(data);
 
     const post = await prisma.post.findUnique({
       where: { id: parsedData.id },

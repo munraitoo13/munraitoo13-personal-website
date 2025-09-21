@@ -11,8 +11,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-export function PostManager({ posts: initialPosts }: ManagerProps) {
-  const [posts, setPosts] = useState(initialPosts);
+export function PostManager({ posts }: { posts: Post[] }) {
+  const [allPosts, setAllPosts] = useState(posts);
 
   const handleDelete = async (id: string) => {
     const toastId = toast.loading("Deleting post...");
@@ -20,7 +20,7 @@ export function PostManager({ posts: initialPosts }: ManagerProps) {
     try {
       const { success, message } = await deletePost(id);
       if (success) {
-        setPosts((prev) => prev.filter((post) => post.id !== id));
+        setAllPosts((prev) => prev.filter((post) => post.id !== id));
       }
 
       toast.update(toastId, {
@@ -48,7 +48,7 @@ export function PostManager({ posts: initialPosts }: ManagerProps) {
     try {
       const { success, message } = await pinPost(id);
       if (success) {
-        setPosts((prev) =>
+        setAllPosts((prev) =>
           prev.map((post) =>
             post.id === id ? { ...post, isFeatured: !isFeatured } : post,
           ),
@@ -77,7 +77,7 @@ export function PostManager({ posts: initialPosts }: ManagerProps) {
 
   return (
     <div className="layout mt-12 flex flex-col gap-8">
-      {posts.map(
+      {allPosts.map(
         ({ id, isFeatured, published, language, title, description, tags }) => (
           <div key={id} className="flex w-full self-center">
             {/* divider */}

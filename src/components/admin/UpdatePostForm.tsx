@@ -1,6 +1,7 @@
 "use client";
 
 import { updatePost } from "@/actions/updatePost";
+import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { POST_LANGUAGES } from "@/constants/constants";
 import { useTagSelection } from "@/hooks/useTagSelection";
@@ -9,8 +10,13 @@ import ReactMarkdown from "react-markdown";
 import { toast } from "react-toastify";
 
 export function UpdatePostForm({ tags, post }: UpdatePostProps) {
+  const {
+    formState: { errors },
+    register,
+    watch,
+    handleSubmit,
+  } = useForm<PostData>();
   const router = useRouter();
-  const [content, setContent] = useState(post.content);
   const {
     selectedTags,
     handleTagClick,
@@ -19,26 +25,23 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
     handleTagInput,
   } = useTagSelection(tags);
 
+  const content = watch("content", post.content);
+
   useEffect(() => {
     const postTags = post.tags.map(({ name }: Tag) => name);
     setSelectedTags(postTags);
   }, []);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const formData = new FormData(event.currentTarget);
-    formData.append("id", post.id);
-    selectedTags.forEach((tag) => formData.append("tags", tag));
-
-    if (Array.from(formData.values()).some((value) => value === "")) {
-      toast.error("Please fill all fields");
-      return;
-    }
-
+  const onSubmit = async (data: PostData) => {
     const toastId = toast.loading("Updating post...");
+
     try {
-      const { success, message } = await updatePost(formData);
+      const payload = {
+        ...data,
+        id: post.id,
+        tags: selectedTags,
+      };
+      const { success, message } = await updatePost(payload);
       toast.update(toastId, {
         render: message,
         type: success ? "success" : "error",
@@ -46,7 +49,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
         autoClose: 3000,
       });
 
-      success && router.push("/admin");
+      success ? router.push("/admin") : console.error(message);
     } catch (error) {
       console.error("Error updating post: ", error);
       toast.update(toastId, {
@@ -60,25 +63,29 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
 
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmit(onSubmit)}
       className="layout my-5 flex w-full flex-col gap-2"
     >
       {/* title */}
       <input
         defaultValue={post.title}
         type="text"
-        name="title"
         placeholder="Title"
+        {...register("title", { required: "Title is required" })}
         className="form--input"
       />
+      {errors.title && <p className="text-accent">{errors.title.message}</p>}
 
       {/* description */}
       <textarea
         defaultValue={post.description}
-        name="description"
+        {...register("description", { required: "Description is required" })}
         placeholder="Description"
         className="form--input h-36 resize-none"
       />
+      {errors.description && (
+        <p className="text-accent">{errors.description.message}</p>
+      )}
 
       {/* language and tags */}
       <div className="flex flex-col gap-2">
@@ -86,9 +93,9 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
         <div className="flex gap-2 self-center">
           {/* language */}
           <select
-            name="language"
             className="form--select w-fit"
             defaultValue={post.language}
+            {...register("language", { required: "Language is required" })}
           >
             {POST_LANGUAGES.map((language) => (
               <option key={language} value={language}>
@@ -96,6 +103,9 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
               </option>
             ))}
           </select>
+          {errors.language && (
+            <p className="text-accent">{errors.language.message}</p>
+          )}
 
           {/* tags input */}
           <input
@@ -123,17 +133,19 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
       {/* content */}
       <div className="flex flex-col gap-2 xl:flex-row">
         <textarea
-          name="content"
           defaultValue={post.content}
+          {...register("content", { required: "Content is required" })}
           placeholder="Content"
           className="form--input h-[50rem] w-full resize-none xl:w-1/2"
-          onChange={(event) => setContent(event.target.value)}
         />
 
         <ReactMarkdown className="form--input mdx-content h-[50rem] w-full overflow-y-auto xl:w-1/2">
           {content}
         </ReactMarkdown>
       </div>
+      {errors.content && (
+        <p className="text-accent">{errors.content.message}</p>
+      )}
 
       {/* submit and published */}
       <div className="mt-5 flex gap-5 self-center">
@@ -147,8 +159,8 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
           <input
             defaultChecked={post.published}
             type="checkbox"
-            name="published"
             id="published"
+            {...register("published")}
           />
           <label htmlFor="published" className="cursor-pointer">
             Published

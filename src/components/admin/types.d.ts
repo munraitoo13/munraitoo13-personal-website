@@ -4,18 +4,18 @@ type Tag = {
 };
 
 type Post = {
-  [x: string]: ReactNode;
-  views: ReactNode;
-  tags: any;
   id: string;
   title: string;
   description: string;
   language: string;
   content: string;
-  createdAt: Date;
-  published: boolean;
-  isFeatured: boolean;
   tags: Tag[];
+  published: boolean;
+  createdAt: Date;
+  views: number;
+  likes: number;
+  shares: number;
+  isFeatured: boolean;
 };
 
 type UpdatePostProps = {
@@ -23,10 +23,12 @@ type UpdatePostProps = {
   tags: Tag[];
 };
 
-type ManagerProps = {
-  posts: Post[];
-};
-
-type NewPostProps = {
-  tags: Tag[];
+type PostData = {
+  id?: string;
+  title: string;
+  description: string;
+  language: string;
+  tags: string[];
+  content: string;
+  published: boolean;
 };
