@@ -102,10 +102,6 @@
     "featured": "Post em destaque"
   },
 
-  "TableOfContents": {
-    "contents": "Conteúdos"
-  },
-
   "Toastify": {
     "messageSent": "Mensagem enviada.",
     "messageError": "Erro ao enviar a mensagem.",

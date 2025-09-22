@@ -4,12 +4,28 @@ import { sendMail } from "@/actions/sendMail";
 import { useCaptcha } from "@/hooks/useCaptcha";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
+import { useForm } from "react-hook-form";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "react-toastify";
 import Button from "@/components/common/Button";
+import { Input } from "../common/Input";
+import { Textarea } from "../common/Textarea";
+
+type ContactData = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  captchaToken: string | null;
+};
 
 export function ContactForm() {
-  const [pending, setPending] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<ContactData>();
+
   const { captchaToken, setCaptchaToken, resetCaptcha, captchaRef } =
     useCaptcha();
   const formRef = useRef<HTMLFormElement>(null);
@@ -20,42 +36,16 @@ export function ContactForm() {
   const t = useTranslations("Contact");
   const tt = useTranslations("Toastify");
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const onSubmit = async (data: ContactData) => {
     const toastId = toast.loading(tt("sending"));
 
-    const formData = new FormData(event.currentTarget);
-    formData.append("captchaToken", captchaToken || "");
-
-    if (Array.from(formData.values()).some((value) => !value)) {
-      toast.update(toastId, {
-        render: tt("emptyFields"),
-        type: "error",
-        isLoading: false,
-        autoClose: 5000,
-      });
-
-      return;
-    }
-
-    const email = formData.get("email") as string;
-    if (!/[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/gim.test(email)) {
-      toast.update(toastId, {
-        render: tt("invalidEmail"),
-        type: "error",
-        isLoading: false,
-        autoClose: 5000,
-      });
-
-      return;
-    }
-
     try {
-      const { success } = await sendMail(formData);
-      setPending(true);
+      const { success, message } = await sendMail({ ...data, captchaToken });
 
       toast.update(toastId, {
-        render: success ? tt("messageSent") : tt("messageError"),
+        render: success
+          ? tt("messageSent")
+          : `${tt("messageError")} ${message}`,
         type: success ? "success" : "error",
         isLoading: false,
         autoClose: 5000,
@@ -71,65 +61,55 @@ export function ContactForm() {
         autoClose: 5000,
       });
     } finally {
-      setPending(false);
       resetCaptcha();
     }
   };
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="form layout">
+    <form
+      ref={formRef}
+      onSubmit={handleSubmit(onSubmit)}
+      className="container mt-12 max-w-lg space-y-2"
+    >
       {/* name */}
-      <input
-        type="text"
-        id="name"
-        name="name"
-        className="form--input"
+      <Input
+        {...register("name", { required: true, maxLength: 64 })}
         placeholder={t("name")}
-        maxLength={64}
       />
 
       {/* email */}
-      <input
-        type="email"
-        id="email"
-        name="email"
-        className="form--input"
+      <Input
+        {...register("email", {
+          required: true,
+          maxLength: 255,
+          pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+        })}
         placeholder={t("email")}
-        maxLength={255}
       />
 
       {/* subject */}
-      <input
-        type="text"
-        id="subject"
-        name="subject"
-        className="form--input"
+      <Input
+        {...register("subject", { required: true, maxLength: 64 })}
         placeholder={t("subject")}
-        maxLength={64}
       />
 
       {/* message */}
-      <textarea
-        id="message"
-        name="message"
-        className="form--input h-48 resize-none"
+      <Textarea
+        {...register("message", { required: true, maxLength: 1024 })}
         placeholder={t("message")}
       />
 
-      {/* send and captcha */}
-      <div className="space-y-2">
-        {/* captcha */}
-        <ReCAPTCHA
-          sitekey={PUBLIC_SITE_KEY}
-          onChange={(token) => setCaptchaToken(token)}
-          ref={captchaRef}
-        />
+      {/* captcha */}
+      <ReCAPTCHA
+        sitekey={PUBLIC_SITE_KEY}
+        onChange={(token) => setCaptchaToken(token)}
+        ref={captchaRef}
+      />
 
-        {/* send */}
-        <Button type="submit" disabled={pending}>
-          {pending ? t("sending") : t("send")}
-        </Button>
-      </div>
+      {/* send */}
+      <Button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? t("sending") : t("send")}
+      </Button>
     </form>
   );
 }

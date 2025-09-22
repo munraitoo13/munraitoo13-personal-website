@@ -1,14 +1,14 @@
 import { BlogHeader } from "@/components/blog/BlogHeader";
 import { LikeShare } from "@/components/blog/LikeShare";
 import { CustomMDX } from "@/components/blog/customMDX";
-import { BlogMarkdown } from "@/components/common/BlogMarkdown";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/utils/formatDate";
 import { getUserLocale } from "@/utils/userLocale";
 import { cookies } from "next/headers";
 import { verifyToken } from "@/utils/tokenUtils";
+import { Markdown } from "@/components/common/Markdown";
 
-export default async function Page({ params }: Params) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const locale = await getUserLocale();
   const PostNotFound = (
     <BlogHeader
@@ -58,9 +58,9 @@ export default async function Page({ params }: Params) {
         language={language}
       />
 
-      <BlogMarkdown>
+      <Markdown>
         <CustomMDX source={content} />
-      </BlogMarkdown>
+      </Markdown>
 
       <LikeShare likes={likes} shares={shares} views={views} id={id} />
     </>

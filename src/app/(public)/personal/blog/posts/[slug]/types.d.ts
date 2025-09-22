@@ -1,3 +1,0 @@
-type Params = {
-  slug: string;
-};

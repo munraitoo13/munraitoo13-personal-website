@@ -102,10 +102,6 @@
     "featured": "Ausgewählter Beitrag"
   },
 
-  "TableOfContents": {
-    "contents": "Inhalt"
-  },
-
   "Toastify": {
     "messageSent": "Nachricht gesendet.",
     "messageError": "Fehler beim Senden der Nachricht.",

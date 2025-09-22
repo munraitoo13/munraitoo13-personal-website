@@ -24,8 +24,9 @@ export default async function Page() {
 
       <Markdown>
         <Content />
-        <ContactForm />
       </Markdown>
+
+      <ContactForm />
     </>
   );
 }

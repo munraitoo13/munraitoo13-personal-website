@@ -4,12 +4,20 @@ import { options, transporter } from "@/lib/nodemailer";
 import { z } from "zod";
 import { escapeHtml } from "@/utils/escapeHtml";
 
+type ContactData = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  captchaToken: string | null;
+};
+
 const formSchema = z.object({
   name: z.string().min(1),
   email: z.email(),
   subject: z.string().min(1),
   message: z.string().min(1),
-  captchaToken: z.string().min(1),
+  captchaToken: z.string().nullable(),
 });
 
 const EMAIL = process.env.EMAIL;
@@ -18,9 +26,8 @@ if (!EMAIL) throw new Error("EMAIL not defined");
 const CAPTCHA_SECRET = process.env.CAPTCHA_SECRET;
 if (!CAPTCHA_SECRET) throw new Error("CAPTCHA_SECRET not defined");
 
-export async function sendMail(formData: FormData) {
+export async function sendMail(data: ContactData) {
   try {
-    const data = Object.fromEntries(formData.entries());
     const parsedData = formSchema.parse(data);
 
     const captchaResponse = await fetch(
@@ -34,8 +41,7 @@ export async function sendMail(formData: FormData) {
       },
     );
     const captchaResult = await captchaResponse.json();
-    if (!captchaResult.success)
-      return { success: false, error: "Captcha verification failed" };
+    if (!captchaResult.success) return { success: false, message: "Captcha!" };
 
     const sendEmailPromises = [
       transporter.sendMail({
@@ -70,10 +76,10 @@ export async function sendMail(formData: FormData) {
   } catch (error) {
     if (error instanceof z.ZodError) {
       console.error("Validation error:", error);
-      return { error: "Invalid form data" };
+      return { success: false, message: "Invalid form data" };
     }
 
     console.error("Unexpected error:", error);
-    return { error: "An unexpected error occurred" };
+    return { success: false, message: "An unexpected error occurred" };
   }
 }
