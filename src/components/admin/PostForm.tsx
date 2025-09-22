@@ -32,34 +32,21 @@ export function PostForm({ tags, post }: PostFormProps) {
   const content = watch("content", "");
 
   const onSubmit = async (data: PostData) => {
+    const isEditing = !!post;
     const toastId = toast.loading(
       post ? "Updating post..." : "Creating post...",
     );
 
     try {
-      let result;
-      if (post) {
-        const payload = {
-          ...data,
-          id: post.id,
-          tags: selectedTags,
-        };
-        result = await updatePost(payload);
-      } else {
-        const payload = {
-          ...data,
-          tags: selectedTags,
-        };
-        result = await createPost(payload);
-      }
-
-      const { success, message } = result;
+      const { success, message } = isEditing
+        ? await updatePost({ ...data, id: post.id, tags: selectedTags })
+        : await createPost({ ...data, tags: selectedTags });
 
       toast.update(toastId, {
         render: message,
         type: success ? "success" : "error",
         isLoading: false,
-        autoClose: 3000,
+        autoClose: 5000,
       });
 
       success ? router.push("/admin") : console.error("Error: ", message);

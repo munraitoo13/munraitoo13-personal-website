@@ -22,7 +22,7 @@ export default async function Page() {
     <>
       <Header pageTitle={t("title")} pageDescription={t("description")} />
 
-      <div className="container mx-auto flex flex-col gap-20 lg:flex-row-reverse lg:justify-between">
+      <div className="flex flex-col gap-20 lg:flex-row-reverse lg:justify-between">
         <TableOfContents />
         <Markdown>
           <Content />

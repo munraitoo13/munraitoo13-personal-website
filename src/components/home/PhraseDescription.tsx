@@ -18,7 +18,7 @@ export function PhraseDescription() {
   };
 
   return (
-    <section className="container mx-auto flex flex-col gap-12 py-24">
+    <section className="flex flex-col gap-12 py-24">
       {phraseDescriptions.map(({ question, title, description }) => (
         <motion.div
           variants={variants}
@@ -29,7 +29,7 @@ export function PhraseDescription() {
         >
           <p className="text-accent">{question}</p>
 
-          <h3 className="font-medium text-primary">{title}</h3>
+          <h3 className="text-lg font-medium text-primary">{title}</h3>
 
           <p>{description}</p>
         </motion.div>

@@ -6,6 +6,7 @@ import Button from "@/components/common/Button";
 
 export default async function Admin() {
   const initialPosts = await prisma.post.findMany({
+    orderBy: { createdAt: "desc" },
     include: {
       tags: true,
     },

@@ -22,7 +22,7 @@ export function Projects({ repos }: ProjectsProps) {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="container mx-auto flex flex-col gap-12"
+      className="flex flex-col gap-12"
     >
       {repos.map(({ html_url, id, name, description, language }) => (
         <motion.a

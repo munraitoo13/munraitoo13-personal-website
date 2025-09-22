@@ -19,7 +19,7 @@ export function FeaturedPost({ featuredPost }: FeaturedPost) {
       initial="hidden"
       animate="visible"
       href={`/personal/blog/posts/${featuredPost.id}`}
-      className="container mx-auto mb-24 flex flex-col rounded-md border border-background-contrast p-10 text-center"
+      className="mb-24 flex flex-col rounded-md border border-background-contrast p-10 text-center"
     >
       {/* pinned icon */}
       <IconPinnedFilled className="mb-5 self-center text-primary" />

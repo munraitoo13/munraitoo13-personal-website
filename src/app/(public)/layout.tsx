@@ -14,9 +14,11 @@ export default function PublicLayout({
       <ScrollTop />
       <Navbar />
 
-      <main>{children}</main>
+      <main className="container mx-auto flex min-h-dvh flex-col">
+        {children}
+        <Footer />
+      </main>
 
-      <Footer />
       <ThemeToggle />
     </>
   );

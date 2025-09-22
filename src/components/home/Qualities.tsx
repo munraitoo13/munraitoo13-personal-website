@@ -25,7 +25,7 @@ export function Qualities() {
 
   return (
     <motion.section
-      className="container mx-auto flex flex-col gap-4 pb-24 pt-24"
+      className="flex flex-col gap-4 pb-24 pt-24"
       variants={variants}
       initial="hidden"
       animate="visible"
