@@ -1,4 +1,4 @@
-import { UpdatePostForm } from "@/components/admin/UpdatePostForm";
+import { PostForm } from "@/components/admin/PostForm";
 import { prisma } from "@/lib/prisma";
 
 export default async function UpdatePost({ params }: Params) {
@@ -12,5 +12,5 @@ export default async function UpdatePost({ params }: Params) {
     return <div>Post not found</div>;
   }
 
-  return <UpdatePostForm tags={tags} post={post} />;
+  return <PostForm tags={tags} post={post} />;
 }

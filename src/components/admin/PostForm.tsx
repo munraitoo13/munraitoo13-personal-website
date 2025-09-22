@@ -14,11 +14,6 @@ import Button from "@/components/common/Button";
 import { TagList } from "../common/TagList";
 import { updatePost } from "@/actions/updatePost";
 
-type PostFormProps = {
-  tags: Tag[];
-  post?: Post;
-};
-
 export function PostForm({ tags, post }: PostFormProps) {
   const {
     register,

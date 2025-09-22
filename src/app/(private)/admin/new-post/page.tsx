@@ -1,8 +1,8 @@
-import { NewPostForm } from "@/components/admin/NewPostForm";
+import { PostForm } from "@/components/admin/PostForm";
 import { prisma } from "@/lib/prisma";
 
 export default async function NewPost() {
   const tags = await prisma.tag.findMany();
 
-  return <NewPostForm tags={tags} />;
+  return <PostForm tags={tags} />;
 }

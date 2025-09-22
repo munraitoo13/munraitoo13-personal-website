@@ -11,16 +11,7 @@ type Post = {
   content: string;
   tags: Tag[];
   published: boolean;
-  createdAt: Date;
-  views: number;
-  likes: number;
-  shares: number;
   isFeatured: boolean;
-};
-
-type UpdatePostProps = {
-  post: Post;
-  tags: Tag[];
 };
 
 type PostData = {
@@ -31,4 +22,9 @@ type PostData = {
   tags: string[];
   content: string;
   published: boolean;
+};
+
+type PostFormProps = {
+  tags: Tag[];
+  post?: Post;
 };
