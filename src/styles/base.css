@@ -2,11 +2,6 @@
 
 @layer base {
   :root {
-    ::selection {
-      background-color: hsl(var(--selection));
-      color: hsl(var(--selection-text));
-    }
-
     --background: 0 0 98;
     --background-contrast: 0 0 95;
 
@@ -22,6 +17,7 @@
     --selection: 0 70 50;
     --selection-text: 0 0 100;
   }
+
   .dark {
     color-scheme: dark;
 
@@ -39,9 +35,5 @@
 
     --selection: 0 70 50;
     --selection-text: 0 0 100;
-  }
-
-  * {
-    @apply scroll-m-28 scroll-smooth;
   }
 }
