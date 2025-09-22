@@ -15,19 +15,4 @@
 
     @apply prose-headings:mb-0 prose-headings:font-medium;
   }
-
-  .layout {
-    @apply mx-auto w-11/12 max-w-[75rem];
-  }
-
-  .form {
-    @apply mt-5 flex w-full flex-col gap-2;
-
-    &--input {
-      @apply rounded-lg bg-background-contrast p-6;
-    }
-    &--select {
-      @apply cursor-pointer appearance-none rounded-lg bg-background-contrast p-6;
-    }
-  }
 }

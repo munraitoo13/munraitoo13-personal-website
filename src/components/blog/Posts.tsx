@@ -24,7 +24,7 @@ export function Posts({ posts }: Posts) {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="layout flex flex-col gap-12"
+      className="container mx-auto flex flex-col gap-12"
     >
       {posts.map(({ id, title, description, tags }) => (
         <motion.a

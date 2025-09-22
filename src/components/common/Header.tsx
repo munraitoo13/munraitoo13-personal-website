@@ -20,7 +20,7 @@ export function Header({ pageTitle, pageDescription }: Header) {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="layout mb-24 mt-48 flex flex-col gap-3"
+      className="container mx-auto mb-24 mt-48 flex flex-col gap-3"
     >
       {/* title */}
       <motion.h1

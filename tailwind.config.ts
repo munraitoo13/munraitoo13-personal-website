@@ -10,20 +10,22 @@ const config: Config = {
   darkMode: "selector",
 
   theme: {
-    colors: {
-      background: "hsl(var(--background))",
-      "background-contrast": "hsl(var(--background-contrast))",
+    extend: {
+      colors: {
+        background: "hsl(var(--background))",
+        "background-contrast": "hsl(var(--background-contrast))",
 
-      primary: "hsl(var(--primary))",
-      secondary: "hsl(var(--secondary))",
-      tertiary: "hsl(var(--tertiary))",
+        primary: "hsl(var(--primary))",
+        secondary: "hsl(var(--secondary))",
+        tertiary: "hsl(var(--tertiary))",
 
-      accent: "hsl(var(--accent))",
-      "accent-hover": "hsl(var(--accent-hover))",
-      "accent-constrast": "hsl(var(--accent-contrast))",
-      "accent-disabled": "hsl(var(--accent-disabled))",
+        accent: "hsl(var(--accent))",
+        "accent-hover": "hsl(var(--accent-hover))",
+        "accent-constrast": "hsl(var(--accent-contrast))",
+        "accent-disabled": "hsl(var(--accent-disabled))",
 
-      selection: "hsl(var(--selection))",
+        selection: "hsl(var(--selection))",
+      },
     },
   },
 

@@ -25,7 +25,7 @@ export function Qualities() {
 
   return (
     <motion.section
-      className="layout flex flex-col gap-4 pb-24 pt-24"
+      className="container mx-auto flex flex-col gap-4 pb-24 pt-24"
       variants={variants}
       initial="hidden"
       animate="visible"
@@ -50,7 +50,7 @@ export function Qualities() {
             />
 
             <div className="flex flex-col gap-2">
-              <h3 className="text-primary font-medium">{title}</h3>
+              <h3 className="font-medium text-primary">{title}</h3>
 
               <p>{description}</p>
             </div>

@@ -5,40 +5,29 @@ import Link from "next/link";
 import Button from "@/components/common/Button";
 
 export default async function Admin() {
-  const posts = await prisma.post.findMany({
+  const initialPosts = await prisma.post.findMany({
     include: {
       tags: true,
     },
   });
 
   return (
-    <>
-      {/* title */}
-      <div className="text-center">
-        <h1 className="text-5xl font-medium text-primary">Admin Panel</h1>
+    <div className="container mx-auto space-y-12">
+      <div className="flex flex-col items-center justify-center gap-4">
+        <h1 className="text-center text-5xl font-medium text-primary">
+          Admin Panel
+        </h1>
 
-        <p>Please note that some functions may not work properly!</p>
-      </div>
-
-      {/* content */}
-      <div className="mt-12 flex w-full flex-col gap-4">
-        {/* shortcuts */}
-        <div className="flex flex-col items-center justify-center gap-5">
-          <h2 className="">Shortcuts</h2>
-
-          {/* links */}
-          <div className="flex gap-1">
-            {ADMIN_LINKS.map(({ href, title }) => (
-              <Link key={title} href={href}>
-                <Button>{title}</Button>
-              </Link>
-            ))}
-          </div>
+        <div className="flex gap-2">
+          {ADMIN_LINKS.map(({ href, title }) => (
+            <Link key={title} href={href}>
+              <Button>{title}</Button>
+            </Link>
+          ))}
         </div>
-
-        {/* post manager */}
-        <PostManager posts={posts} />
       </div>
-    </>
+
+      <PostManager initialPosts={initialPosts} />
+    </div>
   );
 }

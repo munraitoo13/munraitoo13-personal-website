@@ -65,7 +65,7 @@ export function UpdatePostForm({ tags, post }: UpdatePostProps) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="layout my-5 flex w-full flex-col gap-2"
+      className="container mx-auto my-5 flex w-full flex-col gap-2"
     >
       {/* title */}
       <input

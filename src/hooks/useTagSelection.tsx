@@ -14,20 +14,22 @@ export function useTagSelection(tags: Tags[]) {
     }
   };
 
-  const tagColor = (name: string) =>
-    selectedTags.includes(name) ? "underline" : "";
+  const tagColor = (name: string): string =>
+    selectedTags.includes(name) ? "text-accent" : "";
 
   const handleTagInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       e.preventDefault();
 
-      const tag = e.currentTarget.value.trim().toLowerCase();
+      const tag = e.currentTarget.value.trim();
 
       if (tag) {
-        if (!selectedTags.some((t) => t === tag)) {
+        if (!selectedTags.includes(tag)) {
           setSelectedTags((prev) => [...prev, tag]);
         } else {
-          toast.error("Tag already added");
+          toast.error("Tag already added", {
+            autoClose: 5000,
+          });
         }
 
         if (!tags.some((t) => t.name === tag)) {

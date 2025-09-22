@@ -12,14 +12,24 @@ import { Textarea } from "@/components/common/Textarea";
 import { Select } from "@/components/common/Select";
 import Button from "@/components/common/Button";
 import { TagList } from "../common/TagList";
+import { updatePost } from "@/actions/updatePost";
 
-export function NewPostForm({ tags }: { tags: Tag[] }) {
+type PostFormProps = {
+  tags: Tag[];
+  post?: Post;
+};
+
+export function PostForm({ tags, post }: PostFormProps) {
   const {
     register,
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm<PostData>();
+  } = useForm<PostData>({
+    defaultValues: post
+      ? { ...post, tags: post.tags.map((tag) => tag.name) }
+      : undefined,
+  });
   const router = useRouter();
   const { selectedTags, handleTagClick, tagColor, handleTagInput } =
     useTagSelection(tags);
@@ -27,27 +37,39 @@ export function NewPostForm({ tags }: { tags: Tag[] }) {
   const content = watch("content", "");
 
   const onSubmit = async (data: PostData) => {
-    const toastId = toast.loading("Creating post...");
+    const toastId = toast.loading(
+      post ? "Updating post..." : "Creating post...",
+    );
 
     try {
-      const payload = {
-        ...data,
-        selectedTags,
-      };
-      const { success, message } = await createPost(payload);
+      let result;
+      if (post) {
+        const payload = {
+          ...data,
+          id: post.id,
+          tags: selectedTags,
+        };
+        result = await updatePost(payload);
+      } else {
+        const payload = {
+          ...data,
+          tags: selectedTags,
+        };
+        result = await createPost(payload);
+      }
+
+      const { success, message } = result;
 
       toast.update(toastId, {
-        render: success ? "Post created successfully!" : "Error creating post",
+        render: message,
         type: success ? "success" : "error",
         isLoading: false,
-        autoClose: 5000,
+        autoClose: 3000,
       });
 
-      success
-        ? router.push("/admin")
-        : console.error("Error creating post: ", message);
+      success ? router.push("/admin") : console.error("Error: ", message);
     } catch (error) {
-      console.error("Error creating post: ", error);
+      console.error("Error: ", error);
       toast.update(toastId, {
         render: "Error creating post",
         type: "error",
@@ -105,7 +127,7 @@ export function NewPostForm({ tags }: { tags: Tag[] }) {
       </div>
 
       <div className="flex items-center space-x-2">
-        <Button type="submit">Create Post</Button>
+        <Button type="submit">{post ? "Update Post" : "Create Post"}</Button>
 
         <input type="checkbox" id="published" {...register("published")} />
         <label htmlFor="published">Published</label>

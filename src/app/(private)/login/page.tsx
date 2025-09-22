@@ -6,8 +6,9 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import Button from "@/components/common/Button";
 import Divider from "@/components/common/Divider";
+import { Input } from "@/components/common/Input";
 
-type FormData = {
+type LoginData = {
   email: string;
   password: string;
 };
@@ -17,10 +18,10 @@ export default function Login() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<LoginData>();
   const router = useRouter();
 
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = async (data: LoginData) => {
     const toastId = toast.loading("Logging in...");
 
     try {
@@ -45,18 +46,18 @@ export default function Login() {
   };
 
   return (
-    <div className="flex w-fit flex-col justify-center gap-5 rounded-md border border-background-contrast p-10">
-      <div className="flex flex-col gap-2">
+    <div className="my-auto flex flex-col gap-4 rounded-xl border border-background-contrast p-10">
+      <div className="space-y-2">
         <h1 className="text-5xl font-medium text-primary">Login</h1>
         <p>Identify yourself.</p>
       </div>
 
       <Divider />
 
-      <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
-        <input
+      <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
+        <Input
           {...register("email", {
-            required: true,
+            required: "Email is required",
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
               message: "Invalid email address",
@@ -64,21 +65,17 @@ export default function Login() {
           })}
           type="email"
           placeholder="Email"
-          className="form--input"
+          error={errors.email?.message}
         />
-        {errors.email && (
-          <p className="-mt-2 text-accent">{errors.email.message}</p>
-        )}
 
-        <input
-          {...register("password", { required: true })}
+        <Input
+          {...register("password", {
+            required: "Password is required",
+          })}
           type="password"
           placeholder="Password"
-          className="form--input"
+          error={errors.password?.message}
         />
-        {errors.password && (
-          <p className="-mt-2 text-accent">Enter your password.</p>
-        )}
 
         <Button fullWidth type="submit">
           Login

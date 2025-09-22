@@ -11,7 +11,7 @@ export function Footer() {
   const professionalLinks = getProfessionalLinks(t);
 
   return (
-    <footer className="layout flex flex-col justify-between pb-5 pt-48">
+    <footer className="container mx-auto flex flex-col justify-between pb-5 pt-48">
       {/* top */}
       <div className="flex flex-col justify-between gap-10 lg:flex-row">
         {/* navigation */}

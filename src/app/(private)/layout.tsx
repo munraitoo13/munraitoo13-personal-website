@@ -8,7 +8,7 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
-      <main className="flex min-h-dvh flex-col items-center justify-center">
+      <main className="flex max-h-dvh min-h-dvh flex-col items-center py-4">
         {children}
       </main>
 

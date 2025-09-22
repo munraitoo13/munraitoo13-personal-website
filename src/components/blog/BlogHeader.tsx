@@ -21,7 +21,7 @@ export function BlogHeader({ title, description, language, date }: BlogHeader) {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="layout mt-48 flex flex-col gap-3"
+      className="container mx-auto mt-48 flex flex-col gap-3"
     >
       {/* date and language */}
       <motion.p variants={items}>

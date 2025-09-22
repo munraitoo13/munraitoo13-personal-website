@@ -26,7 +26,7 @@ export function Header() {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="layout mb-24 mt-48 flex flex-col items-center gap-2 text-center"
+      className="container mx-auto mb-24 mt-48 flex flex-col items-center gap-2 text-center"
     >
       {/* greet */}
       <motion.p variants={item}>{t("greetings")}</motion.p>
