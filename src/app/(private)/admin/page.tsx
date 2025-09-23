@@ -13,11 +13,9 @@ export default async function Admin() {
   });
 
   return (
-    <div className="container mx-auto space-y-12">
+    <div className="container space-y-12">
       <div className="flex flex-col items-center justify-center gap-4">
-        <h1 className="text-center text-5xl font-medium text-primary">
-          Admin Panel
-        </h1>
+        <h1 className="text-center text-5xl">Admin Panel</h1>
 
         <div className="flex gap-2">
           {ADMIN_LINKS.map(({ href, title }) => (

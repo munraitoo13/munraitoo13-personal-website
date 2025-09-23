@@ -46,9 +46,9 @@ export default function Login() {
   };
 
   return (
-    <div className="my-auto flex flex-col gap-4 rounded-xl border border-background-contrast p-10">
+    <div className="border-background-contrast my-auto flex flex-col gap-4 rounded-xl border p-10">
       <div className="space-y-2">
-        <h1 className="text-5xl font-medium text-primary">Login</h1>
+        <h1 className="text-5xl">Login</h1>
         <p>Identify yourself.</p>
       </div>
 

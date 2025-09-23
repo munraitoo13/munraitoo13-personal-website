@@ -29,7 +29,7 @@ export function PhraseDescription() {
         >
           <p className="text-accent">{question}</p>
 
-          <h3 className="text-lg font-medium text-primary">{title}</h3>
+          <h3 className="text-lg">{title}</h3>
 
           <p>{description}</p>
         </motion.div>

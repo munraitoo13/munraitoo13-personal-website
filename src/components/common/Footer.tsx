@@ -11,20 +11,20 @@ export function Footer() {
   const professionalLinks = getProfessionalLinks(t);
 
   return (
-    <footer className="flex flex-col justify-between pb-5 pt-48">
+    <footer className="flex flex-col justify-between pt-48 pb-5">
       {/* top */}
       <div className="flex flex-col justify-between gap-10 lg:flex-row">
         {/* navigation */}
         <div className="flex gap-10">
           {/* personal */}
           <div className="flex flex-col gap-3">
-            <p className="font-medium text-primary">{t("personal")}</p>
+            <b className="">{t("personal")}</b>
 
             {personalLinks.map(({ name, href }) => (
               <Link
                 key={name}
                 href={href}
-                className="transition-colors duration-500 hover:text-accent"
+                className="hover:text-accent transition-colors duration-500"
               >
                 {name}
               </Link>
@@ -33,13 +33,13 @@ export function Footer() {
 
           {/* professional */}
           <div className="flex flex-col gap-3">
-            <p className="font-medium text-primary">{t("professional")}</p>
+            <b className="">{t("professional")}</b>
 
             {professionalLinks.map(({ name, href }) => (
               <Link
                 key={name}
                 href={href}
-                className="transition-colors duration-500 hover:text-accent"
+                className="hover:text-accent transition-colors duration-500"
               >
                 {name}
               </Link>
@@ -50,7 +50,7 @@ export function Footer() {
         {/* about-me */}
         <div className="flex max-w-lg flex-col gap-2 lg:mx-0">
           {/* title */}
-          <p className="font-medium text-primary">{t("about")}</p>
+          <b className="">{t("about")}</b>
 
           {/* phrase */}
           <p>{t("aboutPhrase")}</p>

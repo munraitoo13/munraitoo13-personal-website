@@ -36,7 +36,7 @@ export function Navbar() {
   return (
     <nav className="fixed inset-x-0 top-5 z-50 mx-auto w-fit">
       {/* logo and menu */}
-      <div className="flex w-96 items-center justify-between rounded-xl bg-background/75 p-5 backdrop-blur-xl">
+      <div className="bg-background/75 flex w-96 items-center justify-between rounded-xl p-5 backdrop-blur-xl">
         {/* logo */}
         <Logo />
 
@@ -65,15 +65,15 @@ export function Navbar() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="mt-5 flex w-96 flex-col items-center justify-center rounded-xl bg-background/75 p-5 backdrop-blur-xl"
+            className="bg-background/75 mt-5 flex w-96 flex-col items-center justify-center rounded-xl p-5 backdrop-blur-xl"
           >
             {/* personal links */}
             <div className="flex flex-col items-center justify-center gap-3">
-              <p className="text-primary font-medium">{t("personal")}</p>
+              <b className="">{t("personal")}</b>
 
               {personalLinks.map(({ name, href }) => (
                 <Link
-                  className="transition-colors duration-500 hover:text-accent"
+                  className="hover:text-accent transition-colors duration-500"
                   key={name}
                   href={href}
                   onClick={() => setIsOpen(false)}
@@ -85,11 +85,11 @@ export function Navbar() {
 
             {/* professional links */}
             <div className="mt-5 flex flex-col items-center justify-center gap-3">
-              <p className="text-primary font-medium">{t("professional")}</p>
+              <b className="">{t("professional")}</b>
 
               {professionalLinks.map(({ name, href }) => (
                 <Link
-                  className="transition-colors duration-500 hover:text-accent"
+                  className="hover:text-accent transition-colors duration-500"
                   key={name}
                   href={href}
                   onClick={() => setIsOpen(false)}

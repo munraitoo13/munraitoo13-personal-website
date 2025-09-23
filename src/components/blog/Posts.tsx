@@ -37,7 +37,7 @@ export function Posts({ posts }: Posts) {
         >
           <div className="flex w-full flex-col">
             {/* title */}
-            <h2 className="font-primary text-2xl font-medium">{title}</h2>
+            <h2 className="text-2xl">{title}</h2>
 
             {/* description */}
             <p>{description}</p>
@@ -45,7 +45,7 @@ export function Posts({ posts }: Posts) {
             {/* tags */}
             <div className="mt-5 flex flex-wrap items-center gap-3">
               {tags.map(({ name, id }: Tag) => (
-                <span key={id} className="capitalize text-tertiary">
+                <span key={id} className="text-tertiary capitalize">
                   {name}
                 </span>
               ))}

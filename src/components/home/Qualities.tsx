@@ -25,13 +25,13 @@ export function Qualities() {
 
   return (
     <motion.section
-      className="flex flex-col gap-4 pb-24 pt-24"
+      className="flex flex-col gap-4 pt-24 pb-24"
       variants={variants}
       initial="hidden"
       animate="visible"
     >
       <motion.div variants={item} className="flex w-96 flex-col gap-2">
-        <h2 className="text-2xl font-medium">{t("myQualities")}</h2>
+        <h2 className="text-2xl">{t("myQualities")}</h2>
         <p>{t("myQualitiesDesc")}</p>
       </motion.div>
 
@@ -50,7 +50,7 @@ export function Qualities() {
             />
 
             <div className="flex flex-col gap-2">
-              <h3 className="font-medium text-primary">{title}</h3>
+              <h3 className="">{title}</h3>
 
               <p>{description}</p>
             </div>

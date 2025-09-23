@@ -14,7 +14,7 @@ export function Markdown({ children }: { children: React.ReactNode }) {
 
   return (
     <motion.div
-      className="mdx-content container prose prose-neutral mx-auto max-w-none dark:prose-invert prose-headings:font-medium"
+      className="prose prose-neutral dark:prose-invert max-w-none pt-24"
       variants={variants}
       initial="hidden"
       animate="visible"

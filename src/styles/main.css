@@ -1,4 +1,86 @@
-@import "tailwindcss/base";
-@import "./base.css";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/preflight" layer(base);
+@import "tailwindcss/utilities" layer(utilities);
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: oklch(100% 0 0);
+  --color-background-contrast: oklch(98% 0 0);
+
+  --color-primary: oklch(0% 0 0);
+  --color-secondary: oklch(20% 0 0);
+  --color-tertiary: oklch(60% 0 0);
+
+  --color-accent: oklch(55% 0.2 30);
+  --color-accent-hover: oklch(60% 0.2 30);
+  --color-accent-contrast: oklch(100% 0 0);
+}
+
+.dark {
+  --color-background: oklch(10% 0 0);
+  --color-background-contrast: oklch(15% 0 0);
+
+  --color-primary: oklch(100% 0 0);
+  --color-secondary: oklch(80% 0 0);
+  --color-tertiary: oklch(40% 0 0);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  b,
+  strong {
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+}
+
+@utility prose-neutral {
+  --tw-prose-body: var(--color-secondary);
+  --tw-prose-headings: var(--color-primary);
+  --tw-prose-links: var(--color-accent);
+  --tw-prose-bold: var(--color-primary);
+  --tw-prose-counters: var(--color-primary);
+  --tw-prose-bullets: var(--color-primary);
+  --tw-prose-hr: var(--color-tertiary);
+}
+
+@utility container {
+  width: 90%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+@utility prose {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  b,
+  strong {
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+
+  pre {
+    color: var(--color-secondary);
+    background-color: var(--color-background-contrast);
+    border-radius: 0.75rem;
+    padding: 1.5rem 2rem;
+  }
+
+  code {
+    background-color: var(--color-background-contrast);
+    border-radius: 0.375rem;
+    padding: 0.2rem 0.4rem;
+  }
+}

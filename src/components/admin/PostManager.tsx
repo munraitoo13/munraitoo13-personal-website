@@ -15,7 +15,7 @@ export function PostManager({ initialPosts }: { initialPosts: Post[] }) {
     const IconComponent = isFeatured ? IconPinFilled : IconPin;
     return (
       <IconComponent
-        className="cursor-pointer hover:text-accent-hover"
+        className="hover:text-accent-hover cursor-pointer"
         onClick={onClick}
       />
     );
@@ -27,9 +27,9 @@ export function PostManager({ initialPosts }: { initialPosts: Post[] }) {
         ({ id, isFeatured, published, language, title, description, tags }) => (
           <div
             key={id}
-            className="flex flex-col rounded-xl bg-background-contrast p-8"
+            className="bg-background-contrast flex flex-col rounded-xl p-8"
           >
-            <div className="flex gap-2 text-primary">
+            <div className="text-primary flex gap-2">
               <PinIcon
                 isFeatured={isFeatured}
                 onClick={() => handlePin(id, isFeatured)}
@@ -44,11 +44,11 @@ export function PostManager({ initialPosts }: { initialPosts: Post[] }) {
 
               <IconTrash
                 onClick={() => handleDelete(id)}
-                className="cursor-pointer hover:text-accent-hover"
+                className="hover:text-accent-hover cursor-pointer"
               />
             </div>
 
-            <div className="mt-3 space-x-2 text-secondary">
+            <div className="text-secondary mt-3 space-x-2">
               <span
                 className={`${published ? "text-green-500" : "text-accent"}`}
               >
@@ -61,7 +61,7 @@ export function PostManager({ initialPosts }: { initialPosts: Post[] }) {
               href={`/personal/blog/posts/${id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl font-medium text-primary"
+              className="text-2xl"
             >
               {title}
             </Link>
@@ -70,7 +70,7 @@ export function PostManager({ initialPosts }: { initialPosts: Post[] }) {
 
             <div className="mt-5 flex flex-wrap items-center gap-2">
               {tags.map(({ id, name }: Tag) => (
-                <span key={id} className="capitalize text-tertiary">
+                <span key={id} className="text-tertiary capitalize">
                   {name}
                 </span>
               ))}

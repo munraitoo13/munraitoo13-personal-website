@@ -20,12 +20,12 @@ export function Header({ pageTitle, pageDescription }: Header) {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="flex flex-col gap-3 pb-24 pt-48"
+      className="flex flex-col gap-3 pt-48 pb-24"
     >
       {/* title */}
       <motion.h1
         variants={item}
-        className="text-5xl font-medium text-primary underline decoration-accent"
+        className="decoration-accent text-5xl underline"
       >
         {pageTitle}
       </motion.h1>

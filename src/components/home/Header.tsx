@@ -26,13 +26,13 @@ export function Header() {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="flex flex-col items-center gap-2 pb-24 pt-48 text-center"
+      className="flex flex-col items-center gap-2 pt-48 pb-24 text-center"
     >
       {/* greet */}
       <motion.p variants={item}>{t("greetings")}</motion.p>
 
       {/* title */}
-      <motion.h1 variants={item} className="text-5xl font-medium text-primary">
+      <motion.h1 variants={item} className="text-5xl">
         {t("presentation")}
       </motion.h1>
 
@@ -64,7 +64,7 @@ export function Header() {
 
         <Link
           href="/personal/contact"
-          className="flex items-center gap-1 transition-colors duration-500 hover:text-accent"
+          className="hover:text-accent flex items-center gap-1 transition-colors duration-500"
         >
           {t("contact")}
         </Link>

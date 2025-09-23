@@ -14,7 +14,7 @@ export default function PublicLayout({
       <ScrollTop />
       <Navbar />
 
-      <main className="container mx-auto flex min-h-dvh flex-col">
+      <main className="container flex min-h-dvh flex-col">
         {children}
         <Footer />
       </main>

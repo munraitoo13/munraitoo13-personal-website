@@ -12,6 +12,9 @@ type Post = {
   tags: Tag[];
   published: boolean;
   isFeatured: boolean;
+  views: number;
+  likes: number;
+  shares: number;
 };
 
 type PostData = {

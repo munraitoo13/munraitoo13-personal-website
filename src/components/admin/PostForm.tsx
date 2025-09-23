@@ -64,7 +64,7 @@ export function PostForm({ tags, post }: PostFormProps) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="container mx-auto flex min-h-0 w-full flex-1 flex-col gap-2"
+      className="container flex min-h-0 w-full flex-1 flex-col gap-2"
     >
       <Input
         {...register("title", { required: "Title is required" })}
@@ -103,7 +103,7 @@ export function PostForm({ tags, post }: PostFormProps) {
           className="flex-1 resize-none"
         />
 
-        <ReactMarkdown className="prose max-h-full max-w-none overflow-y-auto rounded-xl bg-background-contrast px-5 py-4">
+        <ReactMarkdown className="prose bg-background-contrast max-h-full max-w-none overflow-y-auto rounded-xl px-5 py-4">
           {content}
         </ReactMarkdown>
       </div>

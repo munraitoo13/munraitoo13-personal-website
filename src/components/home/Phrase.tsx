@@ -17,20 +17,15 @@ export function Phrase() {
       whileInView="visible"
       className="mx-auto flex w-fit flex-col gap-1 py-24 text-center text-3xl md:text-5xl"
     >
-      {/* simple */}
       <span className="italic">{t("simple")} </span>
 
-      {/* yet */}
-
       <span>
-        {t("yet")}{" "}
-        <span className="text-primary font-medium">{t("stunning")}</span>
+        {t("yet")} <b className="">{t("stunning")}</b>
       </span>
 
-      {/* inside */}
-      <span className="text-primary w-fit rounded-md bg-background-contrast px-2 py-1 font-medium">
+      <b className="bg-background-contrast w-fit rounded-xl px-2 py-1">
         {t("insideAndOut")}
-      </span>
+      </b>
     </motion.blockquote>
   );
 }
