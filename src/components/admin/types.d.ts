@@ -15,6 +15,7 @@ type Post = {
   views: number;
   likes: number;
   shares: number;
+  createdAt: Date;
 };
 
 type PostData = {
