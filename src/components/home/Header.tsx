@@ -28,15 +28,12 @@ export function Header() {
       animate="visible"
       className="flex flex-col items-center gap-2 pt-48 pb-24 text-center"
     >
-      {/* greet */}
       <motion.p variants={item}>{t("greetings")}</motion.p>
 
-      {/* title */}
       <motion.h1 variants={item} className="text-5xl">
         {t("presentation")}
       </motion.h1>
 
-      {/* subtitle */}
       <motion.p variants={item}>
         <span>{t("aka")} </span>
 
@@ -45,7 +42,6 @@ export function Header() {
         <span>, {t("profession")}</span>
       </motion.p>
 
-      {/* stack */}
       <motion.div
         variants={item}
         className="mt-4 flex w-fit items-center gap-1"
@@ -53,7 +49,6 @@ export function Header() {
         <Stacks />
       </motion.div>
 
-      {/* contact and resume */}
       <motion.section className="mt-24 flex gap-4" variants={item}>
         <Link
           href="https://docs.google.com/document/d/1wvD0VANx0zDwaHBPVV6v-D3JQe9oTQiXYB_TrHk9tgw"
@@ -64,7 +59,7 @@ export function Header() {
 
         <Link
           href="/personal/contact"
-          className="hover:text-accent flex items-center gap-1 transition-colors duration-500"
+          className="hover:text-accent text-primary flex items-center gap-1 transition-colors duration-500"
         >
           {t("contact")}
         </Link>

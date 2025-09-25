@@ -53,7 +53,7 @@ export function Footer() {
 
       <div className="text-tertiary flex items-center justify-between">
         <Socials />
-        <p>&copy; 2024, munraitoo13</p>
+        <p>&copy; {new Date().getFullYear()}, munraitoo13</p>
       </div>
     </footer>
   );
