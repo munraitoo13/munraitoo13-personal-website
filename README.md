@@ -76,60 +76,60 @@
 
 1. **Clone the repository**
 
-    ```bash
-    git clone https://github.com/munraitoo13/munraitoo13-personal-website
-    cd munraitoo13-personal-website
-    ```
+   ```bash
+   git clone https://github.com/munraitoo13/munraitoo13-personal-website
+   cd munraitoo13-personal-website
+   ```
 
 2. **Install dependencies**
-  
-    ```bash
-    npm install
-    ```
+
+   ```bash
+   npm install
+   ```
 
 3. **Configure environment variables**
 
-    Create a `.env` file in the project root and copy values from `.env.example`. Update with your own keys where necessary.
+   Create a `.env` file in the project root and copy values from `.env.example`. Update with your own keys where necessary.
 
 4. **Set up the database**
 
-  - Generate the Prisma client:
+- Generate the Prisma client:
 
-    ```bash
-    npx prisma generate
-    ```
+  ```bash
+  npx prisma generate
+  ```
 
-  - Apply database migrations:
+- Apply database migrations:
 
-    ```bash
-    npx prisma migrate dev
-    ```
+  ```bash
+  npx prisma migrate dev
+  ```
 
 5. **Configure Vercel (optional for deployment)**
 
-  - Install the Vercel CLI:
+- Install the Vercel CLI:
 
-    ```bash
-    npm i -g vercel
-    ```
-    
-  - Link the project to Vercel:
-    
-    ```bash
-    vercel
-    ```
-    
-    Ensure all environment variables are set in the Vercel dashboard.
+  ```bash
+  npm i -g vercel
+  ```
+
+- Link the project to Vercel:
+
+  ```bash
+  vercel
+  ```
+
+  Ensure all environment variables are set in the Vercel dashboard.
 
 6. **Start the development server**
-  
-    ```bash
-    npm run dev
-    ```
+
+   ```bash
+   npm run dev
+   ```
 
 7. **Access the application**
 
-    Open your browser at: [http://localhost:3000](http://localhost:3000)
+   Open your browser at: [http://localhost:3000](http://localhost:3000)
 
 ---
 
@@ -178,4 +178,3 @@ Augusto Mendes
 **@munraitoo13** on all socials.
 
 Consider giving this project a star and thanks for your attention. Cheers!
-

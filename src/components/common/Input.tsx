@@ -23,13 +23,13 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
           className={cn(
-            "rounded-xl bg-background-contrast px-5 py-4",
+            "bg-background-contrast rounded-xl px-5 py-4",
             fullWidthStyles,
             className,
           )}
         />
 
-        {error && <p className="mt-1 text-xs text-accent">{error}</p>}
+        {error && <p className="text-accent mt-1 text-xs">{error}</p>}
       </div>
     );
   },

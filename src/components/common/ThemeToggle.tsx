@@ -7,7 +7,7 @@ export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 text-tertiary opacity-25">
+    <div className="text-tertiary fixed right-5 bottom-5 z-50 opacity-25">
       {theme === "dark" ? (
         <IconSun
           stroke={1.25}

@@ -19,7 +19,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         <select
           ref={ref}
           {...props}
-          className="appearance-none rounded-xl bg-background-contrast px-5 py-4"
+          className="bg-background-contrast appearance-none rounded-xl px-5 py-4"
         >
           {options.map((option) => (
             <option key={option} value={option}>
@@ -28,7 +28,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           ))}
         </select>
 
-        {error && <p className="mt-1 text-xs text-accent">{error}</p>}
+        {error && <p className="text-accent mt-1 text-xs">{error}</p>}
       </div>
     );
   },

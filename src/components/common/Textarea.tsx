@@ -21,12 +21,12 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           ref={ref}
           {...props}
           className={cn(
-            "h-full w-full rounded-xl bg-background-contrast px-5 py-4",
+            "bg-background-contrast h-full w-full rounded-xl px-5 py-4",
             className,
           )}
         />
 
-        {error && <p className="mt-1 text-xs text-accent">{error}</p>}
+        {error && <p className="text-accent mt-1 text-xs">{error}</p>}
       </div>
     );
   },
