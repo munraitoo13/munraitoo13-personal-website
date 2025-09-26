@@ -2,7 +2,7 @@ import { Stacks } from "@/components/home/Stacks";
 import { getTranslations } from "next-intl/server";
 import { IconFile } from "@tabler/icons-react";
 import Link from "next/link";
-import Button from "@/components/common/Button";
+import { Button } from "@/components/common/Button";
 
 export async function Header() {
   const t = await getTranslations("HomePage");

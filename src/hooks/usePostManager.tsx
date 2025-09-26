@@ -2,21 +2,7 @@ import { deletePost } from "@/actions/deletePost";
 import { pinPost } from "@/actions/pinPost";
 import { useState } from "react";
 import { toast } from "react-toastify";
-
-type Post = {
-  id: string;
-  title: string;
-  description: string;
-  language: string;
-  content: string;
-  tags: Tag[];
-  published: boolean;
-  createdAt: Date;
-  views: number;
-  likes: number;
-  shares: number;
-  isFeatured: boolean;
-};
+import { Post } from "@/types/types";
 
 export function usePostManager(initialPosts: Post[]) {
   const [posts, setPosts] = useState<Post[]>(initialPosts);

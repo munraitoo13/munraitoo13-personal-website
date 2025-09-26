@@ -10,9 +10,15 @@ import { useForm } from "react-hook-form";
 import { Input } from "@/components/common/Input";
 import { Textarea } from "@/components/common/Textarea";
 import { Select } from "@/components/common/Select";
-import Button from "@/components/common/Button";
+import { Button } from "@/components/common/Button";
 import { TagList } from "../common/TagList";
 import { updatePost } from "@/actions/updatePost";
+import { Post, Tag } from "@/types/types";
+
+interface PostFormProps {
+  tags: Tag[];
+  post?: Post;
+}
 
 export function PostForm({ tags, post }: PostFormProps) {
   const {
@@ -20,9 +26,9 @@ export function PostForm({ tags, post }: PostFormProps) {
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm<PostData>({
+  } = useForm<Post>({
     defaultValues: post
-      ? { ...post, tags: post.tags.map((tag) => tag.name) }
+      ? { ...post, tags: post.tags.map((tag) => ({ name: tag.name })) }
       : undefined,
   });
   const router = useRouter();
@@ -31,7 +37,7 @@ export function PostForm({ tags, post }: PostFormProps) {
 
   const content = watch("content", "");
 
-  const onSubmit = async (data: PostData) => {
+  const onSubmit = async (data: Post) => {
     const isEditing = !!post;
     const toastId = toast.loading(
       post ? "Updating post..." : "Creating post...",
@@ -103,7 +109,7 @@ export function PostForm({ tags, post }: PostFormProps) {
           className="flex-1 resize-none"
         />
 
-        <ReactMarkdown className="prose bg-background-contrast max-h-full max-w-none overflow-y-auto rounded-xl px-5 py-4">
+        <ReactMarkdown className="prose prose-neutral dark:prose-invert bg-background-contrast max-h-full max-w-none overflow-y-auto rounded-xl px-5 py-4">
           {content}
         </ReactMarkdown>
       </div>
