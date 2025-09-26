@@ -69,15 +69,13 @@ export function ContactForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit(onSubmit)}
-      className="container mt-12 max-w-lg space-y-2"
+      className="mt-12 max-w-lg space-y-2"
     >
-      {/* name */}
       <Input
         {...register("name", { required: true, maxLength: 64 })}
         placeholder={t("name")}
       />
 
-      {/* email */}
       <Input
         {...register("email", {
           required: true,
@@ -87,26 +85,22 @@ export function ContactForm() {
         placeholder={t("email")}
       />
 
-      {/* subject */}
       <Input
         {...register("subject", { required: true, maxLength: 64 })}
         placeholder={t("subject")}
       />
 
-      {/* message */}
       <Textarea
         {...register("message", { required: true, maxLength: 1024 })}
         placeholder={t("message")}
       />
 
-      {/* captcha */}
       <ReCAPTCHA
         sitekey={PUBLIC_SITE_KEY}
         onChange={(token) => setCaptchaToken(token)}
         ref={captchaRef}
       />
 
-      {/* send */}
       <Button type="submit" disabled={isSubmitting}>
         {isSubmitting ? t("sending") : t("send")}
       </Button>
