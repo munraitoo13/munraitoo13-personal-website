@@ -18,7 +18,7 @@ type Post = {
   isFeatured: boolean;
 };
 
-export function usePostManaer(initialPosts: Post[]) {
+export function usePostManager(initialPosts: Post[]) {
   const [posts, setPosts] = useState<Post[]>(initialPosts);
 
   const handleDelete = async (id: string) => {

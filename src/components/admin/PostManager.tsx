@@ -1,6 +1,6 @@
 "use client";
 
-import { usePostManaer } from "@/hooks/usePostManager";
+import { usePostManager } from "@/hooks/usePostManager";
 import {
   IconPinFilled,
   IconPencil,
@@ -10,7 +10,7 @@ import {
 import Link from "next/link";
 
 export function PostManager({ initialPosts }: { initialPosts: Post[] }) {
-  const { handleDelete, handlePin, posts } = usePostManaer(initialPosts);
+  const { handleDelete, handlePin, posts } = usePostManager(initialPosts);
   const PinIcon = ({ isFeatured, onClick }: any) => {
     const IconComponent = isFeatured ? IconPinFilled : IconPin;
     return (

@@ -2,6 +2,11 @@
 
 import { motion } from "framer-motion";
 
+type Header = {
+  pageTitle: string;
+  pageDescription: string;
+};
+
 export function Header({ pageTitle, pageDescription }: Header) {
   const variants = {
     visible: { transition: { staggerChildren: 0.1 } },
