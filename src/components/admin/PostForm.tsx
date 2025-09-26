@@ -28,7 +28,7 @@ export function PostForm({ tags, post }: PostFormProps) {
     watch,
   } = useForm<Post>({
     defaultValues: post
-      ? { ...post, tags: post.tags.map((tag) => ({ name: tag.name })) }
+      ? { ...post, tags: post.tags.map(({ name }) => ({ name: name })) }
       : undefined,
   });
   const router = useRouter();

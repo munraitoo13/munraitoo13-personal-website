@@ -48,14 +48,14 @@ export function Navbar() {
           <div className="flex flex-col items-center justify-center gap-2">
             <b>{t("personal")}</b>
 
-            {personalLinks.map((link) => (
+            {personalLinks.map(({ href, name }) => (
               <Link
                 className="hover:text-accent"
-                key={link.name}
-                href={link.href}
+                key={name}
+                href={href}
                 onClick={() => setIsOpen(false)}
               >
-                {link.name}
+                {name}
               </Link>
             ))}
           </div>
@@ -63,14 +63,14 @@ export function Navbar() {
           <div className="flex flex-col items-center justify-center gap-2">
             <b>{t("professional")}</b>
 
-            {professionalLinks.map((link) => (
+            {professionalLinks.map(({ href, name }) => (
               <Link
                 className="hover:text-accent"
-                key={link.name}
-                href={link.href}
+                key={name}
+                href={href}
                 onClick={() => setIsOpen(false)}
               >
-                {link.name}
+                {name}
               </Link>
             ))}
           </div>

@@ -20,9 +20,9 @@ export function FeaturedPost({ featuredPost }: { featuredPost: Post | null }) {
         <p>{featuredPost.description}</p>
 
         <div className="mt-4 flex items-center justify-center gap-2">
-          {featuredPost.tags.map((tag) => (
-            <span key={tag.id} className="text-tertiary">
-              {tag.name}
+          {featuredPost.tags.map(({ name, id }) => (
+            <span key={id} className="text-tertiary">
+              {name}
             </span>
           ))}
         </div>
