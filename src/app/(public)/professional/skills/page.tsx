@@ -21,11 +21,9 @@ export default async function Page() {
     <>
       <Header pageTitle={t("title")} pageDescription={t("description")} />
 
-      <div className="flex flex-col gap-20 lg:flex-row-reverse lg:justify-between">
-        <Markdown>
-          <Content />
-        </Markdown>
-      </div>
+      <Markdown>
+        <Content />
+      </Markdown>
     </>
   );
 }
