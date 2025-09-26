@@ -1,45 +1,32 @@
-"use client";
-
 import { IconPinnedFilled } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import { Post } from "@/types/types";
+import Link from "next/link";
 
-export function FeaturedPost({ featuredPost }: FeaturedPost) {
+export function FeaturedPost({ featuredPost }: { featuredPost: Post | null }) {
   if (!featuredPost) {
     return null;
   }
 
-  const variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, scale: 1, transition: { delay: 1, duration: 3 } },
-  };
-
   return (
-    <motion.a
-      variants={variants}
-      initial="hidden"
-      animate="visible"
+    <Link
       href={`/personal/blog/posts/${featuredPost.id}`}
-      className="border-background-contrast mb-24 flex flex-col rounded-xl border p-10 text-center"
+      className="border-background-contrast mb-16 flex flex-col items-center justify-center gap-4 rounded-xl border p-8 text-center"
     >
-      {/* pinned icon */}
-      <IconPinnedFilled className="text-primary mb-5 self-center" />
+      <IconPinnedFilled className="text-primary" />
 
       <div className="flex flex-col">
-        {/* title */}
         <h2 className="text-2xl">{featuredPost.title}</h2>
 
-        {/* description */}
         <p>{featuredPost.description}</p>
 
-        {/* tags */}
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-          {featuredPost.tags.map(({ name, id }: Tag) => (
-            <span key={id} className="text-tertiary px-2 py-1 capitalize">
+        <div className="mt-4 flex items-center justify-center gap-2">
+          {featuredPost.tags.map(({ name, id }) => (
+            <span key={id} className="text-tertiary">
               {name}
             </span>
           ))}
         </div>
       </div>
-    </motion.a>
+    </Link>
   );
 }

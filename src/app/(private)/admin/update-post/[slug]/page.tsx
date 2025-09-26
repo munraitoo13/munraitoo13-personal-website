@@ -1,7 +1,11 @@
 import { PostForm } from "@/components/admin/PostForm";
 import { prisma } from "@/lib/prisma";
 
-export default async function UpdatePost({ params }: Params) {
+export default async function UpdatePost({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const post = await prisma.post.findUnique({
     where: { id: params.slug },
     include: { tags: true },

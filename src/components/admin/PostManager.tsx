@@ -8,6 +8,7 @@ import {
   IconPin,
 } from "@tabler/icons-react";
 import Link from "next/link";
+import { Post } from "@/types/types";
 
 export function PostManager({ initialPosts }: { initialPosts: Post[] }) {
   const { handleDelete, handlePin, posts } = usePostManager(initialPosts);
@@ -68,8 +69,8 @@ export function PostManager({ initialPosts }: { initialPosts: Post[] }) {
 
             <p>{description}</p>
 
-            <div className="mt-5 flex flex-wrap items-center gap-2">
-              {tags.map(({ id, name }: Tag) => (
+            <div className="mt-4 flex flex-wrap items-center gap-2">
+              {tags.map(({ id, name }) => (
                 <span key={id} className="text-tertiary capitalize">
                   {name}
                 </span>

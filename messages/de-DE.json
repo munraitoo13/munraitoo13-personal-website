@@ -96,8 +96,7 @@
     "likes": "Gefällt mir",
     "share": "Teilen",
 
-    "shareTitle": "Schau dir diesen Beitrag an!",
-    "shareText": "Ich habe diesen Beitrag gefunden und dachte, er könnte dir gefallen.",
+    "shared": "Link zum Beitrag in die Zwischenablage kopiert!",
 
     "featured": "Ausgewählter Beitrag"
   },

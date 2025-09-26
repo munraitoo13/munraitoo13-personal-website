@@ -1,53 +1,33 @@
-"use client";
+import Link from "next/link";
 
-import { motion } from "framer-motion";
+interface Repos {
+  id: number;
+  name: string;
+  full_name: string;
+  description: string;
+  html_url: string;
+  language: string;
+}
 
-export function Projects({ repos }: ProjectsProps) {
-  const variants = {
-    visible: {
-      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
-    },
-  };
-  const item = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 1, ease: "anticipate" },
-    },
-  };
-
+export function Projects({ repos }: { repos: Repos[] }) {
   return (
-    <motion.div
-      variants={variants}
-      initial="hidden"
-      animate="visible"
-      className="flex flex-col gap-12"
-    >
+    <section className="max-w-4xl space-y-12">
       {repos.map(({ html_url, id, name, description, language }) => (
-        <motion.a
-          variants={item}
-          whileHover={{ x: 5 }}
-          whileTap={{ scale: 0.95 }}
+        <Link
           href={html_url}
           key={id}
           target="_blank"
-          rel="noopener noreferrer"
-          className="flex"
+          className="flex items-center gap-8"
         >
-          {/* project */}
-          <div className="flex w-full flex-col">
-            {/* project title */}
+          <hr className="border-background-contrast hidden w-12 md:inline" />
+
+          <div className="flex-1">
             <h2 className="text-2xl">{name}</h2>
-
-            {/* project description */}
-            <p>{description || "No description"}</p>
-
-            {/* lang */}
-            <p className="text-tertiary mt-5">{language || "No language"}</p>
+            <p>{description}</p>
+            <p className="text-tertiary pt-4">{language}</p>
           </div>
-        </motion.a>
+        </Link>
       ))}
-    </motion.div>
+    </section>
   );
 }

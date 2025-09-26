@@ -1,5 +1,5 @@
 import { BlogHeader } from "@/components/blog/BlogHeader";
-import { LikeShare } from "@/components/blog/LikeShare";
+import { Interactions } from "@/components/blog/Interactions";
 import { CustomMDX } from "@/components/blog/customMDX";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/utils/formatDate";
@@ -62,7 +62,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <CustomMDX source={content} />
       </Markdown>
 
-      <LikeShare likes={likes} shares={shares} views={views} id={id} />
+      <Interactions likes={likes} shares={shares} views={views} id={id} />
     </>
   );
 }

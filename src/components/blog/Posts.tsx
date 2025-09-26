@@ -1,58 +1,30 @@
-"use client";
+import { Post } from "@/types/types";
+import Link from "next/link";
 
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-
-export function Posts({ posts }: Posts) {
-  const t = useTranslations("Blog");
-
-  const variants = {
-    visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
-  };
-  const items = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: { duration: 1, ease: "anticipate" },
-    },
-  };
-
+export async function Posts({ posts }: { posts: Post[] }) {
   return (
-    <motion.div
-      variants={variants}
-      initial="hidden"
-      animate="visible"
-      className="flex flex-1 flex-col gap-12"
-    >
+    <div className="max-w-4xl flex-1 space-y-12">
       {posts.map(({ id, title, description, tags }) => (
-        <motion.a
-          variants={items}
-          whileHover={{ x: 5 }}
-          whileTap={{ scale: 0.95 }}
-          className="flex"
+        <Link
+          className="flex items-center gap-8"
           href={`/personal/blog/posts/${id}`}
           key={id}
         >
-          <div className="flex w-full flex-col">
-            {/* title */}
+          <hr className="border-background-contrast hidden w-12 md:inline" />
+
+          <div className="flex-1">
             <h2 className="text-2xl">{title}</h2>
-
-            {/* description */}
             <p>{description}</p>
-
-            {/* tags */}
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              {tags.map(({ name, id }: Tag) => (
-                <span key={id} className="text-tertiary capitalize">
+            <div className="mt-4 flex gap-2">
+              {tags.map(({ id, name }) => (
+                <span key={id} className="text-tertiary">
                   {name}
                 </span>
               ))}
             </div>
           </div>
-        </motion.a>
+        </Link>
       ))}
-    </motion.div>
+    </div>
   );
 }

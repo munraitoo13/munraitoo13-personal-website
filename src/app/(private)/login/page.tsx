@@ -4,8 +4,7 @@ import { login } from "@/actions/login";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
-import Button from "@/components/common/Button";
-import Divider from "@/components/common/Divider";
+import { Button } from "@/components/common/Button";
 import { Input } from "@/components/common/Input";
 
 type LoginData = {
@@ -52,7 +51,7 @@ export default function Login() {
         <p>Identify yourself.</p>
       </div>
 
-      <Divider />
+      <hr className="border-background-contrast my-4" />
 
       <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
         <Input

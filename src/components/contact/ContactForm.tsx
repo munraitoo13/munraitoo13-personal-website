@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "react-toastify";
-import Button from "@/components/common/Button";
+import { Button } from "@/components/common/Button";
 import { Input } from "../common/Input";
 import { Textarea } from "../common/Textarea";
 

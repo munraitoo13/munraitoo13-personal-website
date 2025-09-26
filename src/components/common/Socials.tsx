@@ -1,23 +1,18 @@
-"use client";
-
 import { SOCIALS } from "@/constants/constants";
-import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function Socials() {
   return (
-    <div className="flex gap-1">
+    <div className="flex items-center justify-center gap-1">
       {SOCIALS.map(({ href, Icon }) => (
-        <motion.a
+        <Link
           key={href}
           href={href}
           target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
           className="hover:text-accent"
         >
           <Icon stroke={1.25} />
-        </motion.a>
+        </Link>
       ))}
     </div>
   );

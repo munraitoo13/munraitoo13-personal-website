@@ -2,7 +2,7 @@ import { PostManager } from "@/components/admin/PostManager";
 import { ADMIN_LINKS } from "@/constants/constants";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
-import Button from "@/components/common/Button";
+import { Button } from "@/components/common/Button";
 
 export default async function Admin() {
   const initialPosts = await prisma.post.findMany({

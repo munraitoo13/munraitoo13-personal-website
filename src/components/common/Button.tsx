@@ -8,7 +8,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   Icon?: ElementType;
 };
 
-const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   children,
   className,
   variant = "primary",
@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    "w-fit rounded-xl transition-colors duration-500 ease-in-out flex items-center justify-center gap-1";
+    "w-fit rounded-xl ease-in-out flex items-center justify-center gap-1";
 
   const variantStyles = {
     primary: "bg-accent text-accent-contrast hover:bg-accent-hover",
@@ -49,5 +49,3 @@ const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
-
-export default Button;

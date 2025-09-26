@@ -1,62 +1,35 @@
-"use client";
-
 import { getQualities } from "@/constants/constants";
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-export function Qualities() {
-  const t = useTranslations("HomePage");
+export async function Qualities() {
+  const t = await getTranslations("HomePage");
   const qualities = getQualities(t);
 
-  const variants = {
-    visible: {
-      transition: { staggerChildren: 0.1, delayChildren: 0.5 },
-    },
-  };
-  const item = {
-    hidden: { opacity: 0, y: -50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1, ease: "anticipate" },
-    },
-  };
-
   return (
-    <motion.section
-      className="flex flex-col gap-4 pt-24 pb-24"
-      variants={variants}
-      initial="hidden"
-      animate="visible"
-    >
-      <motion.div variants={item} className="flex w-96 flex-col gap-2">
+    <section className="space-y-12 pt-48">
+      <div className="max-w-sm">
         <h2 className="text-2xl">{t("myQualities")}</h2>
         <p>{t("myQualitiesDesc")}</p>
-      </motion.div>
+      </div>
 
-      <div className="mt-8 grid grid-cols-1 gap-24 md:grid-cols-3 md:gap-4">
+      <div className="grid grid-cols-1 grid-rows-3 gap-24 lg:grid-cols-3 lg:grid-rows-1 lg:gap-4">
         {qualities.map(({ title, description, image }) => (
-          <motion.div
-            variants={item}
-            key={title}
-            className="flex flex-col items-center gap-4 text-center"
-          >
+          <div key={title} className="space-y-4 text-center">
             <Image
               src={image}
               alt={title}
-              className="h-[500px] w-full rounded-xl object-cover transition-opacity duration-500 hover:opacity-75"
+              className="h-[500px] w-full rounded-xl object-cover hover:opacity-75"
               placeholder="blur"
             />
 
-            <div className="flex flex-col gap-2">
-              <h3 className="">{title}</h3>
-
+            <div>
+              <h3>{title}</h3>
               <p>{description}</p>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
-    </motion.section>
+    </section>
   );
 }

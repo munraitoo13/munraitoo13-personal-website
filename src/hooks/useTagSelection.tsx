@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { Tag } from "@/types/types";
 
-export function useTagSelection(tags: Tags[]) {
+export function useTagSelection(tags: Tag[]) {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const handleTagClick = (name: string) => {
