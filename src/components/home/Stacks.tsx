@@ -1,30 +1,16 @@
-"use client";
-
 import { STACKS } from "@/constants/constants";
-import { motion } from "framer-motion";
 
 export function Stacks() {
-  const variants = {
-    default: { opacity: 1 },
-    scale: { scale: 1.1 },
-  };
-
   return (
-    <>
-      {STACKS.map(({ name, Icon }) => {
-        return (
-          <motion.div
-            variants={variants}
-            key={name}
-            title={name}
-            animate="default"
-            whileHover="scale"
-            className="hover:text-accent text-primary flex flex-col"
-          >
-            <Icon stroke={1.25} />
-          </motion.div>
-        );
-      })}
-    </>
+    <div className="mt-4 flex items-center gap-4">
+      {STACKS.map(({ name, Icon }) => (
+        <Icon
+          key={name}
+          title={name}
+          className="hover:text-accent flex"
+          stroke={1.25}
+        />
+      ))}
+    </div>
   );
 }

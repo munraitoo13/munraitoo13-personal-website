@@ -15,7 +15,7 @@ export function Footer() {
       <div className="flex flex-col justify-between gap-10 lg:flex-row">
         <div className="flex gap-10">
           <div className="flex flex-col gap-2">
-            <b className="">{t("personal")}</b>
+            <b>{t("personal")}</b>
 
             {personalLinks.map(({ name, href }) => (
               <Link
@@ -29,7 +29,7 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <b className="">{t("professional")}</b>
+            <b>{t("professional")}</b>
 
             {professionalLinks.map(({ name, href }) => (
               <Link

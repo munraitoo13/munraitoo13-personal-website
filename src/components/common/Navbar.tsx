@@ -1,109 +1,83 @@
 "use client";
 
-import { Language } from "@/components/common/Language";
-import { Logo } from "@/components/common/Logo";
+import { LanguageSelector } from "@/components/common/LanguageSelector";
 import { getPersonalLinks, getProfessionalLinks } from "@/constants/constants";
 import { IconMenu2, IconX } from "@tabler/icons-react";
-import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useRef, useState } from "react";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import useClickOutside from "@/hooks/useClickOutside";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    let handler = (e: MouseEvent) => {
-      if (!menuRef.current?.contains(e.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handler);
-  }, []);
+  useClickOutside(menuRef, () => setIsOpen(false));
 
   const t = useTranslations("NavBar");
 
   const personalLinks = getPersonalLinks(t);
   const professionalLinks = getProfessionalLinks(t);
 
-  const variants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.25 } },
-    exit: { opacity: 0, y: 50, transition: { duration: 0.25 } },
-  };
-
   return (
-    <nav className="fixed inset-x-0 top-5 z-50 mx-auto w-fit">
-      {/* logo and menu */}
-      <div className="bg-background/75 flex w-96 items-center justify-between rounded-xl p-5 backdrop-blur-xl">
-        {/* logo */}
-        <Logo />
+    <nav className="fixed inset-x-0 z-50 mt-2">
+      <div className="bg-background/75 mx-auto flex w-96 items-center justify-between rounded-xl p-6 backdrop-blur-md">
+        <Link href="/" className="text-primary text-nowrap">
+          munraitoo13
+        </Link>
 
-        {/* menu */}
         {isOpen ? (
           <IconX
             className="text-primary cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
-            size={20}
+            size={24}
           />
         ) : (
           <IconMenu2
             className="text-primary cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
-            size={20}
+            size={24}
           />
         )}
       </div>
 
-      {/* dropdown */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            ref={menuRef}
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="bg-background/75 mt-5 flex w-96 flex-col items-center justify-center rounded-xl p-5 backdrop-blur-xl"
-          >
-            {/* personal links */}
-            <div className="flex flex-col items-center justify-center gap-3">
-              <b className="">{t("personal")}</b>
+      {isOpen && (
+        <div
+          ref={menuRef}
+          className="bg-background/75 mx-auto mt-2 flex w-96 flex-col items-center justify-center gap-8 rounded-xl p-6 backdrop-blur-md"
+        >
+          <div className="flex flex-col items-center justify-center gap-2">
+            <b>{t("personal")}</b>
 
-              {personalLinks.map(({ name, href }) => (
-                <Link
-                  className="hover:text-accent transition-colors duration-500"
-                  key={name}
-                  href={href}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {name}
-                </Link>
-              ))}
-            </div>
+            {personalLinks.map((link) => (
+              <Link
+                className="hover:text-accent"
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
 
-            {/* professional links */}
-            <div className="mt-5 flex flex-col items-center justify-center gap-3">
-              <b className="">{t("professional")}</b>
+          <div className="flex flex-col items-center justify-center gap-2">
+            <b>{t("professional")}</b>
 
-              {professionalLinks.map(({ name, href }) => (
-                <Link
-                  className="hover:text-accent transition-colors duration-500"
-                  key={name}
-                  href={href}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {name}
-                </Link>
-              ))}
-            </div>
+            {professionalLinks.map((link) => (
+              <Link
+                className="hover:text-accent"
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
 
-            {/* language seletor */}
-            <Language />
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <LanguageSelector />
+        </div>
+      )}
     </nav>
   );
 }

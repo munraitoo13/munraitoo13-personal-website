@@ -96,8 +96,7 @@
     "likes": "Likes",
     "share": "Share",
 
-    "shareTitle": "Take a look at this post!",
-    "shareText": "I found this post and thought you might like it.",
+    "shared": "Link to post copied to clipboard!",
 
     "featured": "Featured post"
   },

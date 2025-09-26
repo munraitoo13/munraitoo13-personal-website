@@ -96,8 +96,7 @@
     "likes": "J'aime",
     "share": "Partager",
 
-    "shareTitle": "Regardez cet article !",
-    "shareText": "J'ai trouvé cet article et je pense que vous allez l'apprécier.",
+    "shared": "Lien de l'article copié dans le presse-papiers !",
 
     "featured": "Article en vedette"
   },

@@ -96,8 +96,7 @@
     "likes": "Curtidas",
     "share": "Compartilhar",
 
-    "shareTitle": "Dê uma olhada neste post!",
-    "shareText": "Eu encontrei este post e pensei que você poderia gostar.",
+    "shared": "Link do post copiado para a área de transferência!",
 
     "featured": "Post em destaque"
   },
