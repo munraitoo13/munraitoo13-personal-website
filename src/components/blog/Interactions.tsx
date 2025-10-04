@@ -39,12 +39,18 @@ export function Interactions({ id, likes, shares, views }: Interactions) {
   return (
     <div className="bg-background/75 sticky bottom-16 mx-auto mt-24 flex gap-12 rounded-xl px-6 py-4 backdrop-blur-md">
       <div className="flex items-center gap-2">
-        <IconThumbUpFilled onClick={handleLike} />
+        <IconThumbUpFilled
+          className="cursor-pointer hover:text-neutral-50 active:text-neutral-300"
+          onClick={handleLike}
+        />
         <span>{localLikes}</span>
       </div>
 
       <div className="flex items-center gap-2">
-        <IconShare onClick={handleShare} />
+        <IconShare
+          className="cursor-pointer hover:text-neutral-50 active:text-neutral-300"
+          onClick={handleShare}
+        />
         <span>{localShares}</span>
       </div>
 
