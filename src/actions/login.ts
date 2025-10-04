@@ -27,8 +27,8 @@ export async function login(data: { email: string; password: string }) {
     if (!passwordCheck)
       return { success: false, message: "Invalid credentials" };
 
-    const { id, name, role } = user;
-    const token = await signToken({ id, name, role });
+    const { id, name } = user;
+    const token = await signToken({ id, name });
     cookies().set("token", token, {
       httpOnly: true,
       secure: true,
