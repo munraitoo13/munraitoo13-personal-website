@@ -5,6 +5,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: "sm" | "md" | "lg";
   variant?: "primary" | "secondary";
   fullWidth?: boolean;
+  rounded?: boolean;
   Icon?: ElementType;
 };
 
@@ -12,17 +13,19 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   className,
   variant = "primary",
+  rounded = false,
   size = "md",
   fullWidth = false,
   Icon,
   ...props
 }) => {
-  const baseStyles =
-    "w-fit rounded-xl ease-in-out flex items-center justify-center gap-1";
+  const baseStyles = "w-fit ease-in-out flex items-center justify-center gap-1";
 
   const variantStyles = {
-    primary: "bg-accent text-accent-contrast hover:bg-accent-hover",
-    secondary: "bg-primary text-background hover:bg-accent-hover",
+    primary:
+      "bg-accent text-accent-contrast hover:bg-accent-hover active:bg-accent",
+    secondary:
+      "border text-primary hover:bg-primary hover:text-background active:bg-secondary",
   };
 
   const sizeStyles = {
@@ -33,6 +36,8 @@ export const Button: React.FC<ButtonProps> = ({
 
   const fullWidthStyles = fullWidth ? "w-full" : "";
 
+  const roundedStyles = rounded ? "rounded-full" : "rounded-xl";
+
   return (
     <button
       className={cn(
@@ -40,6 +45,7 @@ export const Button: React.FC<ButtonProps> = ({
         variantStyles[variant],
         sizeStyles[size],
         fullWidthStyles,
+        roundedStyles,
         className,
       )}
       {...props}

@@ -24,7 +24,7 @@ export async function Header() {
           href="https://docs.google.com/document/d/1wvD0VANx0zDwaHBPVV6v-D3JQe9oTQiXYB_TrHk9tgw"
           target="_blank"
         >
-          <Button className="cursor-pointer" Icon={IconFile}>
+          <Button rounded className="cursor-pointer" Icon={IconFile}>
             {t("resume")}
           </Button>
         </Link>
