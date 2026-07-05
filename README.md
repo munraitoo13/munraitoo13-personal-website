@@ -1,180 +1,133 @@
-<h3 align="center">🌜 Welcome to munraitoo13.dev 🌛</h3>
-<p align="center">My open-source personal website and blog!</p>
+# munraitoo13.dev
+
+Personal website, blog, and portfolio for Augusto Mendes.
+
 <div align="center">
-  <img
-    src="https://i.imgur.com/qbWyu9U.png"
-    alt="Website Preview 1"
-  />
+  <img src="https://i.imgur.com/qbWyu9U.png" alt="Website preview" />
 </div>
 
----
+## Overview
 
-### 🛠️ Built With
+This is a multilingual Next.js application built with the App Router. It combines a public portfolio, a blog powered by MDX, a contact flow with captcha protection, and a private admin area for managing posts.
 
-<img
-  src="https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue"
-  alt="Framer"
-/>
-<img
-  src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white"
-  alt="Next JS"
-/>
-<img
-  src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"
-  alt="React"
-/>
-<img
-  src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"
-  alt="TailwindCSS"
-/>
-<img
-  src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens"
-  alt="JWT"
-/>
-<img
-  src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white"
-  alt="NodeJS"
-/>
-<img
-  src="https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white"
-  alt="Prisma"
-/>
-<img
-  src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white"
-  alt="Postgres"
-/>
-<img
-  src="https://img.shields.io/badge/prettier-%23F7B93E.svg?style=for-the-badge&logo=prettier&logoColor=black"
-  alt="Prettier"
-/>
-<img
-  src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"
-  alt="TypeScript"
-/>
-<img
-  src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"
-  alt="Vercel"
-/>
+## Features
 
----
+- Multilingual content in English, Portuguese, French, and German.
+- SEO-focused pages for home, projects, skills, blog, and contact.
+- MDX-based blog posts and localized page content.
+- Contact form with reCAPTCHA, email delivery, and rate limiting.
+- Private admin routes for creating and editing posts.
+- Prisma + PostgreSQL for persistence.
+- Responsive UI with Tailwind CSS and motion polish.
 
-### ☝️ Special Features
+## Tech Stack
 
-- 🌐 **Multilingual Support**: Supports English, German, French, and Portuguese.
-- 📝 **Blog System**: MDX-based for rich content.
-- 🎨 **Modern Design**: Tailwind CSS + Framer Motion animations.
-- 🌙 **Dark Mode**: Switch between light and dark themes effortlessly.
-- 📊 **GitHub Projects Integration**: Directly showcase your work.
-- 📫 **Contact Form**: reCAPTCHA-enabled for security.
-- 🔒 **Admin Panel**: Manage your content with ease.
-- 🗄️ **Database**: Powered by Prisma + PostgreSQL.
-- 📱 **Responsive Design**: Looks great on any device.
+- Next.js 14
+- React 18
+- TypeScript
+- next-intl
+- Prisma
+- PostgreSQL
+- MDX
+- Tailwind CSS
+- react-hook-form
+- react-google-recaptcha
+- nodemailer
 
----
+## Getting Started
 
-### 💅 Installation Guide
+### Prerequisites
 
-1. **Clone the repository**
+- Node.js 18+
+- `pnpm`
+- PostgreSQL database
 
-   ```bash
-   git clone https://github.com/munraitoo13/munraitoo13-personal-website
-   cd munraitoo13-personal-website
-   ```
+### Install
 
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment variables**
-
-   Create a `.env` file in the project root and copy values from `.env.example`. Update with your own keys where necessary.
-
-4. **Set up the database**
-
-- Generate the Prisma client:
-
-  ```bash
-  npx prisma generate
-  ```
-
-- Apply database migrations:
-
-  ```bash
-  npx prisma migrate dev
-  ```
-
-5. **Configure Vercel (optional for deployment)**
-
-- Install the Vercel CLI:
-
-  ```bash
-  npm i -g vercel
-  ```
-
-- Link the project to Vercel:
-
-  ```bash
-  vercel
-  ```
-
-  Ensure all environment variables are set in the Vercel dashboard.
-
-6. **Start the development server**
-
-   ```bash
-   npm run dev
-   ```
-
-7. **Access the application**
-
-   Open your browser at: [http://localhost:3000](http://localhost:3000)
-
----
-
-### 📂 Project Structure
-
+```bash
+pnpm install
 ```
+
+### Environment variables
+
+Create a `.env.local` file in the project root and set the variables used by the app:
+
+```bash
+CAPTCHA_SECRET=
+EMAIL=
+NEXT_PUBLIC_SITE_KEY=
+POSTGRES_DATABASE=
+POSTGRES_HOST=
+POSTGRES_PASSWORD=
+POSTGRES_PRISMA_URL=
+POSTGRES_URL=
+POSTGRES_URL_NON_POOLING=
+POSTGRES_URL_NO_SSL=
+POSTGRES_USER=
+VERCEL_OIDC_TOKEN=
+```
+
+### Database
+
+Generate Prisma Client and run migrations:
+
+```bash
+pnpm prisma generate
+pnpm prisma migrate dev
+```
+
+### Development
+
+```bash
+pnpm dev
+```
+
+Open `http://localhost:3000`.
+
+## Scripts
+
+- `pnpm dev` - start the development server
+- `pnpm build` - generate Prisma Client and build the app
+- `pnpm start` - start the production server
+- `pnpm lint` - run Next.js linting
+
+## Project Structure
+
+```txt
 src/
-├── actions/       # Server actions
-├── animations/    # Framer Motion animations
-├── app/           # Next.js app router pages
-├── components/    # Reusable React components
-├── constants/     # Constants and configuration files
-├── hooks/         # Custom React hooks
-├── i18n/          # Translation configuration files
-├── lib/           # Shared libraries and utilities
-└── utils/         # Utility functions
+├── actions/     server actions
+├── app/         App Router routes and layouts
+├── components/  reusable UI components
+├── hooks/       shared React hooks
+├── i18n/        locale config and MDX loaders
+├── lib/         shared utilities and clients
+└── utils/       formatting and helper functions
 ```
 
----
+## Public Areas
 
-### 📚 Key Technologies
+- Home
+- Projects
+- Skills
+- Blog
+- Contact
 
-- Next.js and TypeScript as framework and language
-- Tailwind CSS, Framer Motion and Tabler Icons for the beauty
-- MDX for posts and pages
-- PostgreSQL and Prisma as database and ORM
-- JWT and Bcrypt for auth
-- Zod for form validation
-- Vercel for deployment
+## Private Areas
 
----
+- Login
+- Admin dashboard
+- Post creation and editing
 
-### 🤝 Contributing
+## Deployment
 
-Contributions are what make the open source community an amazing place to learn and create. Any contributions will be greatly appreciated.
+The app is set up for Vercel deployment with PostgreSQL and environment variables configured through the platform.
 
-- Fork the repository
-- Submit pull requests
-- Open issues for suggestions or bugs
+## Notes
 
----
+- Blog posts are stored as records and rendered through MDX.
+- The site uses localized metadata and translated page copy for SEO.
+- Private routes are protected and unpublished blog posts are restricted to authenticated access.
 
-### 🤙 Contact
+## License
 
-Augusto Mendes  
-**@munraitoo13** on all socials.
-
-Consider giving this project a star and thanks for your attention. Cheers!
+No license has been specified yet.
