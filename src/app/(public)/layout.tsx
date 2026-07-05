@@ -15,7 +15,7 @@ export default function PublicLayout({
       <Navbar />
 
       <main className="container flex min-h-dvh flex-col">
-        {children}
+        <div className="animate-page-enter">{children}</div>
         <Footer />
       </main>
 

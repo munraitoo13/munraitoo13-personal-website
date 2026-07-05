@@ -1,3 +1,4 @@
+import type { Locale } from "@/i18n/config";
 import {
   IconBrandFigma,
   IconBrandGithub,
@@ -19,7 +20,7 @@ import Detail from "@/images/Detail.jpg";
 
 import { BR, DE, FR, US } from "country-flag-icons/react/3x2";
 
-export const LANGUAGES = [
+export const LANGUAGES: { Flag: typeof BR; locale: Locale; title: string }[] = [
   { Flag: BR, locale: "pt-BR", title: "Português" },
   { Flag: US, locale: "en-US", title: "English" },
   { Flag: FR, locale: "fr-FR", title: "Français" },

@@ -1,37 +1,37 @@
 {
   "HomePage": {
-    "greetings": "What's up! 👋",
-    "presentation": "My name is Augusto.",
-    "aka": "Also known as",
+    "greetings": "Full-Stack Software Engineer",
+    "presentation": "I build fast, scalable web products.",
+    "aka": "I'm Augusto,",
     "nickname": "munraitoo13",
-    "profession": "I'm a developer driven by passion, proudly representing Brazil.",
+    "profession": "a Brazilian developer creating modern web applications with React, Next.js, Node.js, and TypeScript.",
 
-    "contact": "Let's talk!",
+    "contact": "Start a project",
     "resume": "RESUME",
 
     "simple": "Simple,",
     "yet": "yet",
-    "stunning": "stunning.",
-    "insideAndOut": "Inside and out.",
+    "stunning": "powerful.",
+    "insideAndOut": "Front to back.",
 
     "whySimple": "Why simple?",
-    "whySimpleTitle": "Simple code and design just works.",
-    "whySimpleDesc": "It's easy to read, understand, and maintain. It is less error-prone and easier to fix. It is more maintainable and extensible.",
-    "yetStunning": "What about yet stunning?",
-    "yetStunningTitle": "Simple doesn't mean boring.",
-    "yetStunningDesc": "Simple can be stunning. It can be beautiful, elegant, and efficient. It can be simple and stunning at the same time.",
-    "insideAndOutExpl": "Inside and out?",
-    "insideAndOutExplTitle": "Well-structured, efficient, and effective.",
-    "insideAndOutExplDesc": "Simple and stunning code and design. Simple and stunning inside and out. That's what I aim for in everything I do.",
+    "whySimpleTitle": "Clear architecture scales better.",
+    "whySimpleDesc": "Readable code, focused interfaces, and solid structure help products ship faster, stay maintainable, and perform reliably as they grow.",
+    "yetStunning": "Why powerful?",
+    "yetStunningTitle": "Strong products should feel polished.",
+    "yetStunningDesc": "Performance, visual hierarchy, and thoughtful interactions turn complex software into experiences that feel intuitive and memorable.",
+    "insideAndOutExpl": "Why front to back?",
+    "insideAndOutExplTitle": "Built for users and for teams.",
+    "insideAndOutExplDesc": "I care about what people see and what powers it behind the scenes: accessible interfaces, scalable back-end systems, and maintainable code.",
 
-    "myQualities": "My qualities",
-    "myQualitiesDesc": "Here are some of the qualities that I believe are essential for a software engineer to ensure that all projects are successful.",
-    "quality1": "Communicative",
-    "quality1desc": "Communication is key to ensure that everyone is on the same page and that the project is going in the right direction.",
-    "quality2": "Competent",
-    "quality2desc": "An essential quality for a software engineer, as it ensures that the code is clean and efficient.",
-    "quality3": "Deital-oriented",
-    "quality3desc": "Paying attention to details is crucial to ensure that the code is clean and efficient."
+    "myQualities": "Core strengths",
+    "myQualitiesDesc": "These are the qualities I bring to software projects to help teams build better products with clarity, speed, and consistency.",
+    "quality1": "Clear communication",
+    "quality1desc": "I keep discussions direct, organized, and productive so decisions are clear and projects keep moving without unnecessary friction.",
+    "quality2": "Technical execution",
+    "quality2desc": "I focus on clean implementation, scalable architecture, and reliable delivery across front-end and back-end work.",
+    "quality3": "Attention to detail",
+    "quality3desc": "From UX polish to code quality, I pay attention to the small decisions that improve performance, usability, and long-term maintenance."
   },
 
   "NavBar": {
@@ -61,7 +61,11 @@
 
   "skills": {
     "title": "Skills",
-    "description": "Here are some of the skills and tools I've acquired over the years."
+    "description": "Explore my full-stack software engineering skills across React, Next.js, Node.js, TypeScript, front-end, back-end, APIs, PostgreSQL, MongoDB, and cloud-ready web architecture for modern products.",
+    "ctaTitle": "Need these skills on your team or product?",
+    "ctaDescription": "If you are looking for a developer with practical experience across front-end, back-end, databases, and product delivery, send me a message. I am open to freelance work, remote roles, and long-term collaborations.",
+    "contactCta": "Talk about your project",
+    "projectsCta": "See projects"
   },
 
   "Experiences": {
@@ -71,12 +75,33 @@
 
   "Projects": {
     "title": "Projects",
-    "description": "Here are some of the projects I've worked on."
+    "description": "Explore software projects, web applications, experiments, and open-source work built with React, Next.js, Node.js, TypeScript, and modern product thinking.",
+    "introLabel": "Selected work",
+    "introTitle": "Real projects, real product thinking.",
+    "introDescription": "This page highlights repositories that reflect how I build web products: performance-focused front-end work, scalable back-end logic, and practical solutions shaped by real-world use cases.",
+    "fallbackDescription": "Repository available on GitHub.",
+    "fallbackLanguage": "Multiple technologies",
+    "viewProject": "View repository on GitHub",
+    "ctaTitle": "Want something like this for your product or business?",
+    "ctaDescription": "If you're looking for a developer to build, improve, or scale a web product, send me a message. I'm open to freelance projects, collaborations, and remote opportunities.",
+    "contactCta": "Talk about your project",
+    "githubCta": "See GitHub profile"
   },
 
   "Contact": {
     "title": "Contact",
-    "description": "Feel free to contact me if you have any questions or would like to work together.",
+    "description": "Get in touch to discuss freelance work, remote opportunities, product ideas, partnerships, or any project that needs a reliable full-stack software engineer.",
+    "socialLabel": "Direct contact",
+    "socialTitle": "Let's talk through the channel that fits you best.",
+    "socialDescription": "If you want to discuss a project, ask a question, or reach out about an opportunity, you can contact me by email or through social platforms.",
+    "socialSectionTitle": "Social Media",
+    "socialSectionDescription": "For a faster and more casual conversation, feel free to reach out on social media.",
+    "socialSectionHandle": "@munraitoo13 on social platforms, or visit my linktr.ee page.",
+    "emailSectionTitle": "Email",
+    "emailSectionDescription": "If you want to discuss a project, freelance work, a remote role, or a product idea, send me a message through the form and I will get back to you as soon as possible.",
+    "formLabel": "Project inquiry",
+    "formTitle": "Send a message",
+    "formDescription": "Share a few details about your project, company, or idea. I read every message and reply as soon as possible.",
 
     "name": "Name",
     "email": "Email",
@@ -88,7 +113,16 @@
 
   "Blog": {
     "title": "Blog",
-    "description": "Here are some of the blog posts I've written.",
+    "description": "Read articles about software engineering, web development, front-end, back-end architecture, product thinking, and the technical decisions behind the work I do.",
+    "introLabel": "Writing",
+    "introTitle": "Ideas, code, and product thinking in public.",
+    "introDescription": "This blog is where I share software engineering notes, development insights, implementation decisions, and practical lessons from building web applications and digital products.",
+    "readPost": "Read article",
+    "readFeatured": "Read featured article",
+    "ctaTitle": "Need a developer who thinks deeply about product and code?",
+    "ctaDescription": "If the way I write matches the way you want your product built, send me a message. I am open to freelance work, remote roles, and long-term collaborations.",
+    "contactCta": "Talk about your project",
+    "projectsCta": "See projects",
 
     "view": "View",
     "views": "Views",
@@ -115,20 +149,20 @@
   },
 
   "Metadata": {
-    "home": "munraitoo13 | Software Engineer",
-    "homeDesc": "What's up! I'm Augusto, a software engineer driven by passion, proudly representing Brazil in the world of technology.",
+    "home": "Augusto | Full-Stack Software Engineer",
+    "homeDesc": "Augusto, also known as munraitoo13, is a Brazilian full-stack software engineer building scalable web applications with React, Next.js, Node.js, and TypeScript.",
 
-    "projects": "Projects | munraitoo13",
-    "projectsDesc": "munraitoo13's projects.",
+    "projects": "Projects | Augusto - Full-Stack Software Engineer",
+    "projectsDesc": "Explore Augusto's software projects, web applications, and GitHub repositories built with React, Next.js, Node.js, and TypeScript.",
 
-    "contact": "Contact | munraitoo13",
-    "contactDesc": "munraitoo13's contacts.",
+    "contact": "Contact Augusto | Full-Stack Software Engineer",
+    "contactDesc": "Contact Augusto for freelance work, remote opportunities, product collaborations, and full-stack web development projects.",
 
-    "blog": "Blog | munraitoo13",
-    "blogDesc": "munraitoo13's blog.",
+    "blog": "Blog | Augusto - Software Engineering Articles",
+    "blogDesc": "Read Augusto's blog about software engineering, web development, architecture, React, Next.js, Node.js, TypeScript, and product-building insights.",
 
-    "skills": "Skills | munraitoo13",
-    "skillsDesc": "munraitoo13's skills.",
+    "skills": "Skills | Augusto - Full-Stack Software Engineer",
+    "skillsDesc": "Explore Augusto's skills in React, Next.js, Node.js, TypeScript, APIs, PostgreSQL, MongoDB, and full-stack web product development.",
 
     "experiences": "Experiences | munraitoo13",
     "experiencesDesc": "munraitoo13's experiences."

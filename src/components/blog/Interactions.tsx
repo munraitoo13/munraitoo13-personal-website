@@ -37,26 +37,34 @@ export function Interactions({ id, likes, shares, views }: Interactions) {
   };
 
   return (
-    <div className="bg-background/75 sticky bottom-16 mx-auto mt-24 flex gap-12 rounded-xl px-6 py-4 backdrop-blur-md">
+    <div className="sticky bottom-16 z-10 mt-16 flex w-full max-w-4xl justify-center px-4">
       <div className="flex items-center gap-2">
-        <IconThumbUpFilled
-          className="cursor-pointer hover:text-neutral-50 active:text-neutral-300"
-          onClick={handleLike}
-        />
-        <span>{localLikes}</span>
-      </div>
+        <div className="bg-background/40 flex w-fit items-center gap-3 rounded-full px-5 py-2.5 text-sm text-zinc-100 shadow-lg ring-1 shadow-black/15 ring-white/10 backdrop-blur-xl">
+          <button
+            type="button"
+            onClick={handleLike}
+            className="group flex items-center gap-1 rounded-full px-1 py-0.5 text-zinc-100 transition-colors duration-300 hover:cursor-pointer"
+            aria-label="Like post"
+          >
+            <IconThumbUpFilled className="group-hover:text-accent size-3.5 transition-colors duration-300" />
+            <span className="text-zinc-100 tabular-nums">{localLikes}</span>
+          </button>
 
-      <div className="flex items-center gap-2">
-        <IconShare
-          className="cursor-pointer hover:text-neutral-50 active:text-neutral-300"
-          onClick={handleShare}
-        />
-        <span>{localShares}</span>
-      </div>
+          <button
+            type="button"
+            onClick={handleShare}
+            className="group flex items-center gap-1 rounded-full px-1 py-0.5 text-zinc-100 transition-colors duration-300 hover:cursor-pointer"
+            aria-label="Share post"
+          >
+            <IconShare className="group-hover:text-accent size-3.5 transition-colors duration-300" />
+            <span className="text-zinc-100 tabular-nums">{localShares}</span>
+          </button>
+        </div>
 
-      <div className="flex items-center gap-2">
-        <IconEyeFilled />
-        <span>{views}</span>
+        <div className="bg-background/40 flex w-fit items-center gap-1 rounded-full px-4 py-2.5 text-sm text-zinc-100 shadow-lg ring-1 shadow-black/15 ring-white/10 backdrop-blur-xl">
+          <IconEyeFilled className="size-3.5" />
+          <span className="tabular-nums">{views}</span>
+        </div>
       </div>
     </div>
   );

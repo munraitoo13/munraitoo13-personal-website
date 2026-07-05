@@ -1,16 +1,22 @@
 "use server";
 
-import { defaultLocale } from "@/i18n/config";
+import {
+  Locale,
+  localeCookieName,
+  resolveLocale,
+} from "@/i18n/config";
 import { cookies } from "next/headers";
 
 export async function getUserLocale() {
-  return cookies().get("locale")?.value || defaultLocale;
+  return resolveLocale(cookies().get(localeCookieName)?.value);
 }
 
-export async function setUserLocale(locale: string) {
+export async function setUserLocale(locale: Locale) {
   cookies().set({
-    name: "locale",
-    value: locale,
+    name: localeCookieName,
+    value: resolveLocale(locale),
+    maxAge: 60 * 60 * 24 * 365,
     path: "/",
+    sameSite: "lax",
   });
 }

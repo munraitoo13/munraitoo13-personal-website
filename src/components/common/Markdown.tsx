@@ -1,6 +1,19 @@
-export function Markdown({ children }: { children: React.ReactNode }) {
+import { cn } from "@/lib/cn";
+
+export function Markdown({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="prose prose-neutral dark:prose-invert max-w-4xl pt-24">
+    <div
+      className={cn(
+        "prose prose-neutral dark:prose-invert text-secondary max-w-4xl pt-24 leading-8",
+        className,
+      )}
+    >
       {children}
     </div>
   );

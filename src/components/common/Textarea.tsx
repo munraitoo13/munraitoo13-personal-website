@@ -1,3 +1,4 @@
+import { Textarea as ShadcnTextarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/cn";
 import { forwardRef } from "react";
 
@@ -17,11 +18,13 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           </label>
         )}
 
-        <textarea
+        <ShadcnTextarea
           ref={ref}
           {...props}
+          aria-invalid={!!error}
           className={cn(
-            "bg-background-contrast h-full w-full rounded-xl px-5 py-4",
+            "h-full min-h-0 rounded-xl border-0 bg-background-contrast px-5 py-4 text-base shadow-none placeholder:text-tertiary focus-visible:border-transparent focus-visible:ring-0 dark:bg-background-contrast md:text-base",
+            classNameTextarea,
             className,
           )}
         />

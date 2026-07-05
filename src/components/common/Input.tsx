@@ -1,3 +1,4 @@
+import { Input as ShadcnInput } from "@/components/ui/input";
 import { cn } from "@/lib/cn";
 import { forwardRef } from "react";
 
@@ -14,16 +15,17 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div>
         {label && (
-          <label htmlFor="props.id" className="mb-1 block text-sm">
+          <label htmlFor={props.id} className="mb-1 block text-sm">
             {label}
           </label>
         )}
 
-        <input
+        <ShadcnInput
           ref={ref}
           {...props}
+          aria-invalid={!!error}
           className={cn(
-            "bg-background-contrast rounded-xl px-5 py-4",
+            "h-auto rounded-xl border-0 bg-background-contrast px-5 py-4 text-base shadow-none placeholder:text-tertiary focus-visible:border-transparent focus-visible:ring-0 dark:bg-background-contrast md:text-base",
             fullWidthStyles,
             className,
           )}

@@ -11,7 +11,7 @@ export async function Phrase() {
         {t("yet")} <b>{t("stunning")}</b>
       </span>
 
-      <b className="bg-background-contrast rounded-xl px-2 py-1">
+      <b className="bg-background-contrast mx-auto w-fit rounded-xl px-2 py-1">
         {t("insideAndOut")}
       </b>
     </blockquote>

@@ -1,6 +1,7 @@
 "use server";
 
 import { options, transporter } from "@/lib/nodemailer";
+import { consumeRateLimit, getRequestIp } from "@/utils/rateLimit";
 import { z } from "zod";
 import { escapeHtml } from "@/utils/escapeHtml";
 
@@ -29,6 +30,30 @@ if (!CAPTCHA_SECRET) throw new Error("CAPTCHA_SECRET not defined");
 export async function sendMail(data: ContactData) {
   try {
     const parsedData = formSchema.parse(data);
+    const normalizedEmail = parsedData.email.toLowerCase().trim();
+    const requestIp = getRequestIp();
+
+    const [ipLimit, emailLimit] = await Promise.all([
+      consumeRateLimit({
+        action: "contact-ip",
+        key: requestIp,
+        maxAttempts: 3,
+        windowMs: 60 * 60 * 1000,
+      }),
+      consumeRateLimit({
+        action: "contact-email",
+        key: normalizedEmail,
+        maxAttempts: 2,
+        windowMs: 60 * 60 * 1000,
+      }),
+    ]);
+
+    if (!ipLimit.allowed || !emailLimit.allowed) {
+      return {
+        success: false,
+        message: "Too many messages sent. Please try again later.",
+      };
+    }
 
     const captchaResponse = await fetch(
       "https://www.google.com/recaptcha/api/siteverify",
@@ -47,7 +72,7 @@ export async function sendMail(data: ContactData) {
       transporter.sendMail({
         ...options,
 
-        to: parsedData.email,
+        to: normalizedEmail,
         subject: "Confirmation: " + parsedData.subject,
         html: `
           <p>Hi ${escapeHtml(parsedData.name)},</p>

@@ -1,11 +1,14 @@
 import { PostForm } from "@/components/admin/PostForm";
 import { prisma } from "@/lib/prisma";
+import { requireAuthenticatedAdmin } from "@/utils/auth";
 
 export default async function UpdatePost({
   params,
 }: {
   params: { slug: string };
 }) {
+  await requireAuthenticatedAdmin();
+
   const post = await prisma.post.findUnique({
     where: { id: params.slug },
     include: { tags: true },

@@ -1,6 +1,10 @@
+import {
+  NativeSelect,
+  NativeSelectOption,
+} from "@/components/ui/native-select";
 import { forwardRef } from "react";
 
-type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
+type SelectProps = Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "size"> & {
   options: string[];
   label?: string;
   error?: string;
@@ -11,22 +15,23 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     return (
       <div>
         {label && (
-          <label htmlFor="props.id" className="mb-1 block text-sm">
+          <label htmlFor={props.id} className="mb-1 block text-sm">
             {label}
           </label>
         )}
 
-        <select
+        <NativeSelect
           ref={ref}
           {...props}
-          className="bg-background-contrast appearance-none rounded-xl px-5 py-4"
+          aria-invalid={!!error}
+          className={className}
         >
           {options.map((option) => (
-            <option key={option} value={option}>
+            <NativeSelectOption key={option} value={option}>
               {option}
-            </option>
+            </NativeSelectOption>
           ))}
-        </select>
+        </NativeSelect>
 
         {error && <p className="text-accent mt-1 text-xs">{error}</p>}
       </div>

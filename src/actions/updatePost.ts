@@ -1,6 +1,7 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
+import { requireAuthenticatedAdmin } from "@/utils/auth";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
@@ -26,6 +27,8 @@ const formSchema = z.object({
 
 export async function updatePost(data: FormData) {
   try {
+    await requireAuthenticatedAdmin();
+
     const parsedData = formSchema.parse(data);
 
     const post = await prisma.post.findUnique({
@@ -67,6 +70,10 @@ export async function updatePost(data: FormData) {
     revalidatePath("/admin");
     return { success: true, message: "Post updated successfully" };
   } catch (error) {
+    if (error instanceof Error && error.message === "Unauthorized") {
+      return { success: false, message: "Unauthorized" };
+    }
+
     if (error instanceof z.ZodError) {
       console.error("Validation error:", error);
       return { success: false, message: "Failed to update post" };

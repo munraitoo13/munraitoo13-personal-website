@@ -36,3 +36,12 @@ model Tag {
   name  String @unique
   posts Post[]
 }
+
+model RateLimitEvent {
+  id        String   @id @default(uuid())
+  action    String
+  key       String
+  createdAt DateTime @default(now())
+
+  @@index([action, key, createdAt])
+}

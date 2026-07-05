@@ -1,10 +1,13 @@
 import { PostManager } from "@/components/admin/PostManager";
 import { ADMIN_LINKS } from "@/constants/constants";
 import { prisma } from "@/lib/prisma";
+import { requireAuthenticatedAdmin } from "@/utils/auth";
 import Link from "next/link";
 import { Button } from "@/components/common/Button";
 
 export default async function Admin() {
+  await requireAuthenticatedAdmin();
+
   const initialPosts = await prisma.post.findMany({
     orderBy: { createdAt: "desc" },
     include: {

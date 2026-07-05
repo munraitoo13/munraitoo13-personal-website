@@ -1,6 +1,7 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
+import { requireAuthenticatedAdmin } from "@/utils/auth";
 import { z } from "zod";
 
 type FormData = {
@@ -23,6 +24,8 @@ const formSchema = z.object({
 
 export async function createPost(data: FormData) {
   try {
+    await requireAuthenticatedAdmin();
+
     const parsedData = formSchema.parse(data);
 
     await prisma.post.create({
@@ -43,6 +46,10 @@ export async function createPost(data: FormData) {
 
     return { success: true, message: "Post created successfully" };
   } catch (error) {
+    if (error instanceof Error && error.message === "Unauthorized") {
+      return { success: false, message: "Unauthorized" };
+    }
+
     if (error instanceof z.ZodError) {
       console.error("Validation error:", error);
       return { success: false, message: "Invalid form data" };

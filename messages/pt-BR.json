@@ -1,37 +1,37 @@
 {
   "HomePage": {
-    "greetings": "E aí! 👋",
-    "presentation": "Meu nome é Augusto.",
-    "aka": "Também conhecido como",
+    "greetings": "Engenheiro de Software Full-Stack",
+    "presentation": "Eu crio produtos web rápidos e escaláveis.",
+    "aka": "Sou Augusto,",
     "nickname": "munraitoo13",
-    "profession": "sou um desenvolvedor movido pela paixão, representando o Brasil com orgulho.",
+    "profession": "um desenvolvedor brasileiro que cria aplicações web modernas com React, Next.js, Node.js e TypeScript.",
 
-    "contact": "Vamos conversar!",
+    "contact": "Iniciar um projeto",
     "resume": "CURRÍCULO",
 
     "simple": "Simples,",
     "yet": "mas",
-    "stunning": "deslumbrante.",
-    "insideAndOut": "Por dentro e por fora.",
+    "stunning": "poderoso.",
+    "insideAndOut": "De ponta a ponta.",
 
     "whySimple": "Por que simples?",
-    "whySimpleTitle": "Código e design simples funcionam.",
-    "whySimpleDesc": "É fácil de ler, entender e manter. Menos propenso a erros e mais fácil de corrigir. Mais fácil de manter e expandir.",
-    "yetStunning": "E quanto ao deslumbrante?",
-    "yetStunningTitle": "Simples não significa sem graça.",
-    "yetStunningDesc": "Simples pode ser deslumbrante. Pode ser bonito, elegante e eficiente. Pode ser simples e deslumbrante ao mesmo tempo.",
-    "insideAndOutExpl": "Por dentro e por fora?",
-    "insideAndOutExplTitle": "Bem estruturado, eficiente e eficaz.",
-    "insideAndOutExplDesc": "Código e design simples e deslumbrantes. Simples e deslumbrantes por dentro e por fora. Isso é o que busco em tudo o que faço.",
+    "whySimpleTitle": "Arquitetura clara escala melhor.",
+    "whySimpleDesc": "Código legível, interfaces focadas e uma estrutura sólida ajudam produtos a serem lançados mais rápido, evoluírem com segurança e manterem boa performance.",
+    "yetStunning": "Por que poderoso?",
+    "yetStunningTitle": "Produtos fortes também precisam ser refinados.",
+    "yetStunningDesc": "Performance, hierarquia visual e interações bem pensadas transformam softwares complexos em experiências intuitivas e memoráveis.",
+    "insideAndOutExpl": "Por que de ponta a ponta?",
+    "insideAndOutExplTitle": "Feito para usuários e para times.",
+    "insideAndOutExplDesc": "Eu cuido do que as pessoas veem e do que sustenta tudo nos bastidores: interfaces acessíveis, sistemas back-end escaláveis e código de fácil manutenção.",
 
-    "myQualities": "Minhas qualidades",
-    "myQualitiesDesc": "Aqui estão algumas das qualidades que acredito serem essenciais para um engenheiro de software garantir o sucesso de todos os projetos.",
-    "quality1": "Comunicativo",
-    "quality1desc": "A comunicação é fundamental para garantir que todos estejam alinhados e que o projeto esteja indo na direção certa.",
-    "quality2": "Competente",
-    "quality2desc": "Qualidade essencial para um engenheiro de software, pois garante que o código seja limpo e eficiente.",
-    "quality3": "Atento aos detalhes",
-    "quality3desc": "Prestar atenção aos detalhes é crucial para garantir que o código seja limpo e eficiente."
+    "myQualities": "Pontos fortes",
+    "myQualitiesDesc": "Estas são as qualidades que levo para projetos de software para ajudar equipes a criar produtos melhores com clareza, velocidade e consistência.",
+    "quality1": "Comunicação clara",
+    "quality1desc": "Mantenho conversas diretas, organizadas e produtivas para que decisões fiquem claras e os projetos avancem sem atrito desnecessário.",
+    "quality2": "Execução técnica",
+    "quality2desc": "Foco em implementação limpa, arquitetura escalável e entrega confiável em trabalho de front-end e back-end.",
+    "quality3": "Atenção aos detalhes",
+    "quality3desc": "Do acabamento da experiência do usuário à qualidade do código, cuido das pequenas decisões que melhoram performance, usabilidade e manutenção no longo prazo."
   },
 
   "NavBar": {
@@ -61,7 +61,11 @@
 
   "skills": {
     "title": "Habilidades",
-    "description": "Aqui estão algumas das habilidades e ferramentas que adquiri ao longo dos anos."
+    "description": "Explore minhas habilidades em engenharia de software full-stack com React, Next.js, Node.js, TypeScript, front-end, back-end, APIs, PostgreSQL, MongoDB e arquitetura web pronta para cloud.",
+    "ctaTitle": "Precisa dessas habilidades no seu time ou produto?",
+    "ctaDescription": "Se você procura um desenvolvedor com experiência prática em front-end, back-end, bancos de dados e entrega de produto, me envie uma mensagem. Estou aberto a trabalhos freelance, vagas remotas e colaborações de longo prazo.",
+    "contactCta": "Falar sobre seu projeto",
+    "projectsCta": "Ver projetos"
   },
 
   "Experiences": {
@@ -71,12 +75,33 @@
 
   "Projects": {
     "title": "Projetos",
-    "description": "Aqui estão alguns dos projetos nos quais trabalhei."
+    "description": "Explore projetos de software, aplicações web, experimentos e trabalhos open source criados com React, Next.js, Node.js, TypeScript e visão de produto.",
+    "introLabel": "Trabalhos selecionados",
+    "introTitle": "Projetos reais, pensamento real de produto.",
+    "introDescription": "Esta página reúne repositórios que mostram como eu construo produtos web: front-end com foco em performance, back-end escalável e soluções práticas guiadas por casos reais.",
+    "fallbackDescription": "Repositório disponível no GitHub.",
+    "fallbackLanguage": "Múltiplas tecnologias",
+    "viewProject": "Ver repositório no GitHub",
+    "ctaTitle": "Quer algo assim para seu produto ou negócio?",
+    "ctaDescription": "Se você procura um desenvolvedor para criar, melhorar ou escalar um produto web, me envie uma mensagem. Estou aberto a projetos freelance, colaborações e oportunidades remotas.",
+    "contactCta": "Falar sobre seu projeto",
+    "githubCta": "Ver perfil no GitHub"
   },
 
   "Contact": {
     "title": "Contato",
-    "description": "Sinta-se à vontade para entrar em contato comigo se tiver alguma dúvida ou quiser trabalhar junto.",
+    "description": "Entre em contato para falar sobre trabalhos freelance, oportunidades remotas, ideias de produto, parcerias ou qualquer projeto que precise de um engenheiro de software full-stack confiável.",
+    "socialLabel": "Contato direto",
+    "socialTitle": "Vamos conversar pelo canal que fizer mais sentido para você.",
+    "socialDescription": "Se você quer discutir um projeto, tirar uma dúvida ou entrar em contato sobre uma oportunidade, pode falar comigo por e-mail ou pelas redes sociais.",
+    "socialSectionTitle": "Redes Sociais",
+    "socialSectionDescription": "Para uma conversa mais rápida e casual, sinta-se à vontade para me chamar em qualquer uma das minhas redes sociais.",
+    "socialSectionHandle": "@munraitoo13 em plataformas sociais, ou visite minha página no linktr.ee.",
+    "emailSectionTitle": "E-mail",
+    "emailSectionDescription": "Se você quiser conversar sobre um projeto, trabalho freelance, vaga remota ou uma ideia de produto, me envie uma mensagem pelo formulário e responderei o mais rápido possível.",
+    "formLabel": "Solicitação de projeto",
+    "formTitle": "Envie uma mensagem",
+    "formDescription": "Compartilhe alguns detalhes sobre seu projeto, empresa ou ideia. Eu leio toda mensagem e respondo assim que possível.",
 
     "name": "Nome",
     "email": "E-mail",
@@ -88,7 +113,16 @@
 
   "Blog": {
     "title": "Blog",
-    "description": "Aqui estão alguns dos posts do blog que escrevi.",
+    "description": "Leia artigos sobre engenharia de software, desenvolvimento web, front-end, arquitetura back-end, visão de produto e decisões técnicas por trás do meu trabalho.",
+    "introLabel": "Escrita",
+    "introTitle": "Ideias, código e visão de produto em público.",
+    "introDescription": "Este blog é onde compartilho anotações sobre engenharia de software, insights de desenvolvimento, decisões de implementação e aprendizados práticos de aplicações web e produtos digitais.",
+    "readPost": "Ler artigo",
+    "readFeatured": "Ler artigo em destaque",
+    "ctaTitle": "Precisa de um desenvolvedor que pensa profundamente em produto e código?",
+    "ctaDescription": "Se a forma como escrevo combina com a forma como você quer construir seu produto, me envie uma mensagem. Estou aberto a trabalhos freelance, vagas remotas e colaborações de longo prazo.",
+    "contactCta": "Falar sobre seu projeto",
+    "projectsCta": "Ver projetos",
 
     "view": "Ver",
     "views": "Visualizações",
@@ -115,20 +149,20 @@
   },
 
   "Metadata": {
-    "home": "munraitoo13 | Engenheiro de Software",
-    "homeDesc": "E aí! Sou Augusto, um engenheiro de software movido pela paixão, representando o Brasil com orgulho no mundo da tecnologia.",
+    "home": "Augusto | Engenheiro de Software Full-Stack",
+    "homeDesc": "Augusto, também conhecido como munraitoo13, é um engenheiro de software full-stack brasileiro que cria aplicações web escaláveis com React, Next.js, Node.js e TypeScript.",
 
-    "projects": "Projetos | munraitoo13",
-    "projectsDesc": "Projetos de munraitoo13.",
+    "projects": "Projetos | Augusto - Engenheiro de Software Full-Stack",
+    "projectsDesc": "Explore os projetos de software, aplicações web e repositórios no GitHub de Augusto, criados com React, Next.js, Node.js e TypeScript.",
 
-    "contact": "Contato | munraitoo13",
-    "contactDesc": "Contatos de munraitoo13.",
+    "contact": "Contato Augusto | Engenheiro de Software Full-Stack",
+    "contactDesc": "Entre em contato com Augusto para trabalhos freelance, oportunidades remotas, colaborações em produtos e projetos de desenvolvimento web full-stack.",
 
-    "blog": "Blog | munraitoo13",
-    "blogDesc": "Blog de munraitoo13.",
+    "blog": "Blog | Augusto - Artigos sobre Engenharia de Software",
+    "blogDesc": "Leia o blog de Augusto sobre engenharia de software, desenvolvimento web, arquitetura, React, Next.js, Node.js, TypeScript e construção de produtos digitais.",
 
-    "skills": "Habilidades | munraitoo13",
-    "skillsDesc": "Habilidades de munraitoo13.",
+    "skills": "Habilidades | Augusto - Engenheiro de Software Full-Stack",
+    "skillsDesc": "Explore as habilidades de Augusto em React, Next.js, Node.js, TypeScript, APIs, PostgreSQL, MongoDB e desenvolvimento de produtos web full-stack.",
 
     "experiences": "Experiências | munraitoo13",
     "experiencesDesc": "Experiências de munraitoo13."

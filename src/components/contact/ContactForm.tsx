@@ -2,6 +2,7 @@
 
 import { sendMail } from "@/actions/sendMail";
 import { useCaptcha } from "@/hooks/useCaptcha";
+import { useTheme } from "@/hooks/useTheme";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -25,6 +26,7 @@ export function ContactForm() {
     handleSubmit,
     formState: { isSubmitting },
   } = useForm<ContactData>();
+  const { theme } = useTheme();
 
   const { captchaToken, setCaptchaToken, resetCaptcha, captchaRef } =
     useCaptcha();
@@ -35,6 +37,8 @@ export function ContactForm() {
 
   const t = useTranslations("Contact");
   const tt = useTranslations("Toastify");
+  const fieldClassName =
+    "border border-transparent bg-[color-mix(in_oklch,var(--color-background-contrast),white_35%)] dark:bg-[color-mix(in_oklch,var(--color-background-contrast),white_6%)]";
 
   const onSubmit = async (data: ContactData) => {
     const toastId = toast.loading(tt("sending"));
@@ -69,11 +73,12 @@ export function ContactForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit(onSubmit)}
-      className="mt-12 max-w-lg space-y-2"
+      className="w-full space-y-2"
     >
       <Input
         {...register("name", { required: true, maxLength: 64 })}
         placeholder={t("name")}
+        className={fieldClassName}
       />
 
       <Input
@@ -83,25 +88,35 @@ export function ContactForm() {
           pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
         })}
         placeholder={t("email")}
+        className={fieldClassName}
       />
 
       <Input
         {...register("subject", { required: true, maxLength: 64 })}
         placeholder={t("subject")}
+        className={fieldClassName}
       />
 
       <Textarea
         {...register("message", { required: true, maxLength: 1024 })}
         placeholder={t("message")}
+        classNameTextarea={`${fieldClassName} min-h-40`}
       />
 
-      <ReCAPTCHA
-        sitekey={PUBLIC_SITE_KEY}
-        onChange={(token) => setCaptchaToken(token)}
-        ref={captchaRef}
-      />
+      <div className="bg-background-contrast relative inline-flex overflow-hidden rounded-xl">
+        <div className="origin-center scale-x-[1.015] scale-y-[1.045]">
+          <ReCAPTCHA
+            key={theme}
+            theme={theme === "dark" ? "dark" : "light"}
+            sitekey={PUBLIC_SITE_KEY}
+            onChange={(token) => setCaptchaToken(token)}
+            ref={captchaRef}
+          />
+        </div>
+        <div className="bg-background-contrast pointer-events-none absolute inset-x-0 bottom-0 h-[3px]" />
+      </div>
 
-      <Button type="submit" disabled={isSubmitting}>
+      <Button fullWidth type="submit" disabled={isSubmitting}>
         {isSubmitting ? t("sending") : t("send")}
       </Button>
     </form>

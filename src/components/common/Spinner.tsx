@@ -1,7 +1,9 @@
+import { Spinner as ShadcnSpinner } from "@/components/ui/spinner";
+
 export function Spinner() {
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-2">
-      <div className="border-background-contrast border-t-accent h-5 w-5 animate-spin rounded-full border-2 border-t-4"></div>
+      <ShadcnSpinner className="text-accent size-5" />
 
       <p>Loading</p>
     </div>
