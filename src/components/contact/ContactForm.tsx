@@ -16,7 +16,7 @@ type ContactData = {
   website?: string;
 };
 
-export function ContactForm() {
+export function ContactForm({ compact = false }: { compact?: boolean }) {
   const {
     register,
     handleSubmit,
@@ -26,8 +26,7 @@ export function ContactForm() {
 
   const t = useTranslations("Contact");
   const tt = useTranslations("Toastify");
-  const fieldClassName =
-    "border border-transparent bg-[color-mix(in_oklch,var(--color-background-contrast),white_6%)]";
+  const fieldClassName = "bg-background";
 
   const onSubmit = async (data: ContactData) => {
     const toastId = toast.loading(tt("sending"));
@@ -59,7 +58,7 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-2">
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-3">
       <input
         type="text"
         tabIndex={-1}
@@ -69,30 +68,32 @@ export function ContactForm() {
         {...register("website")}
       />
 
-      <Input
-        {...register("name", {
-          required: tt("emptyFields"),
-          maxLength: { value: 64, message: "Max 64 characters" },
-        })}
-        placeholder={t("name")}
-        className={fieldClassName}
-        error={errors.name?.message}
-      />
+      <div className={compact ? "grid gap-3 sm:grid-cols-2" : "space-y-3"}>
+        <Input
+          {...register("name", {
+            required: tt("emptyFields"),
+            maxLength: { value: 64, message: "Max 64 characters" },
+          })}
+          placeholder={t("name")}
+          className={fieldClassName}
+          error={errors.name?.message}
+        />
 
-      <Input
-        {...register("email", {
-          required: tt("emptyFields"),
-          maxLength: { value: 255, message: "Max 255 characters" },
-          pattern: {
-            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-            message: tt("invalidEmail"),
-          },
-        })}
-        type="email"
-        placeholder={t("email")}
-        className={fieldClassName}
-        error={errors.email?.message}
-      />
+        <Input
+          {...register("email", {
+            required: tt("emptyFields"),
+            maxLength: { value: 255, message: "Max 255 characters" },
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: tt("invalidEmail"),
+            },
+          })}
+          type="email"
+          placeholder={t("email")}
+          className={fieldClassName}
+          error={errors.email?.message}
+        />
+      </div>
 
       <Input
         {...register("subject", {
@@ -110,7 +111,7 @@ export function ContactForm() {
           maxLength: { value: 1024, message: "Max 1024 characters" },
         })}
         placeholder={t("message")}
-        classNameTextarea={`${fieldClassName} min-h-40`}
+        classNameTextarea={`${fieldClassName} ${compact ? "min-h-28" : "min-h-40"}`}
         error={errors.message?.message}
       />
 

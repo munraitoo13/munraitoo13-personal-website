@@ -30,10 +30,6 @@ export function LanguageSelector({
     });
   };
 
-  const orderedLanguages = [...LANGUAGES].sort((a) =>
-    a.locale === "en-US" ? -1 : 1,
-  );
-
   return (
     <div
       role="group"
@@ -46,8 +42,7 @@ export function LanguageSelector({
         className,
       )}
     >
-      {orderedLanguages.map(({ title, locale }) => {
-        const shortLabel = locale === "en-US" ? "EN" : "PT";
+      {LANGUAGES.map(({ title, shortLabel, locale }) => {
         const isActive = currentLocale === locale;
 
         return (
@@ -63,7 +58,7 @@ export function LanguageSelector({
               "cursor-pointer px-2.5 py-1.5 transition-colors duration-200 disabled:cursor-wait",
               isActive
                 ? tone === "hero"
-                  ? "bg-white text-[#0b0d0f] font-medium"
+                  ? "bg-white font-medium text-[#0b0d0f]"
                   : "bg-accent text-accent-contrast font-medium"
                 : tone === "hero"
                   ? "text-white/70 hover:text-white"

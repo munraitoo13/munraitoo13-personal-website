@@ -33,14 +33,27 @@ export default async function Page() {
         pageDescription={t("description")}
       />
 
-      <div className="tui-rail px-6 py-16">
-        <FeaturedPost featuredPost={featuredPost} />
+      <div className="tui-rail space-y-10 px-6 py-16">
+        {allPosts.length === 0 ? (
+          <div className="bg-background-contrast border border-[var(--color-border)] p-8">
+            <p className="text-secondary font-mono text-sm">
+              {t("emptyState")}
+            </p>
+          </div>
+        ) : (
+          <>
+            <FeaturedPost featuredPost={featuredPost} />
+            <Posts posts={posts} />
+          </>
+        )}
 
-        <Posts posts={posts} />
-
-        <section className="bg-background-contrast mt-12 flex max-w-4xl flex-col gap-4 border border-[var(--color-border)] p-8">
-          <h2 className="text-primary text-2xl">{t("ctaTitle")}</h2>
-          <p className="text-secondary">{t("ctaDescription")}</p>
+        <section className="bg-background-contrast flex flex-col gap-4 border border-[var(--color-border)] p-6 md:p-8">
+          <h2 className="text-primary text-2xl font-semibold tracking-tight">
+            {t("ctaTitle")}
+          </h2>
+          <p className="text-secondary max-w-2xl leading-relaxed">
+            {t("ctaDescription")}
+          </p>
 
           <div className="flex flex-wrap gap-4 pt-2">
             <Link href="/contact">

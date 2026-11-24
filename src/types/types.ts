@@ -26,3 +26,48 @@ export interface CuratedProject {
   isPrivateRepo: boolean;
   status: string;
 }
+
+export interface WorkExperience {
+  id: string;
+  role: string;
+  company: string;
+  period: string;
+  location: string;
+  summary: string;
+  highlights: string[];
+  stack: string[];
+}
+
+export interface AcademicProject {
+  name: string;
+  description: string;
+  stack: string[];
+}
+
+export interface EducationItem {
+  degree: string;
+  institution: string;
+  period: string;
+  metric: string;
+  projects: AcademicProject[];
+}
+
+export interface SpokenLanguage {
+  name: string;
+  level: string;
+}
+
+export interface ExperiencesData {
+  summary: string;
+  work: WorkExperience[];
+  education: EducationItem;
+  languages: SpokenLanguage[];
+}
+
+export interface SkillCategory {
+  id: string;
+  index: string;
+  title: string;
+  description: string;
+  items: string[];
+}
