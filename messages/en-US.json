@@ -1,37 +1,37 @@
 {
   "HomePage": {
-    "greetings": "Full-Stack Software Engineer",
-    "presentation": "I build fast, scalable web products.",
-    "aka": "I'm Augusto,",
+    "greetings": "Back-End & Full-Stack Software Engineer",
+    "presentation": "I engineer scalable APIs, distributed back-ends, and fast web products.",
+    "aka": "I'm Augusto Mendes,",
     "nickname": "munraitoo13",
-    "profession": "a Brazilian developer creating modern web applications with React, Next.js, Node.js, and TypeScript.",
+    "profession": "a software engineer with 3+ years of production experience across Python, TypeScript, Go, FastAPI, Next.js, and cloud-native infrastructure.",
 
-    "contact": "Start a project",
+    "contact": "Get in touch",
     "resume": "RESUME",
 
-    "simple": "Simple,",
-    "yet": "yet",
-    "stunning": "powerful.",
-    "insideAndOut": "Front to back.",
+    "projectsSectionLabel": "Selected Systems",
+    "projectsSectionTitle": "Production systems and engineering builds.",
+    "viewAllProjects": "All projects",
+    "privateRepo": "Private repository",
+    "visitLive": "Visit live",
 
-    "whySimple": "Why simple?",
-    "whySimpleTitle": "Clear architecture scales better.",
-    "whySimpleDesc": "Readable code, focused interfaces, and solid structure help products ship faster, stay maintainable, and perform reliably as they grow.",
-    "yetStunning": "Why powerful?",
-    "yetStunningTitle": "Strong products should feel polished.",
-    "yetStunningDesc": "Performance, visual hierarchy, and thoughtful interactions turn complex software into experiences that feel intuitive and memorable.",
-    "insideAndOutExpl": "Why front to back?",
-    "insideAndOutExplTitle": "Built for users and for teams.",
-    "insideAndOutExplDesc": "I care about what people see and what powers it behind the scenes: accessible interfaces, scalable back-end systems, and maintainable code.",
+    "experienceSectionLabel": "Track Record",
+    "experienceSectionTitle": "Production experience and academic foundation.",
+    "viewFullTimeline": "Full timeline",
+    "educationLabel": "Education",
+    "languagesLabel": "Languages",
 
-    "myQualities": "Core strengths",
-    "myQualitiesDesc": "These are the qualities I bring to software projects to help teams build better products with clarity, speed, and consistency.",
-    "quality1": "Clear communication",
-    "quality1desc": "I keep discussions direct, organized, and productive so decisions are clear and projects keep moving without unnecessary friction.",
-    "quality2": "Technical execution",
-    "quality2desc": "I focus on clean implementation, scalable architecture, and reliable delivery across front-end and back-end work.",
-    "quality3": "Attention to detail",
-    "quality3desc": "From UX polish to code quality, I pay attention to the small decisions that improve performance, usability, and long-term maintenance."
+    "skillsSectionLabel": "Technical Matrix",
+    "skillsSectionTitle": "Core stack across back-end, front-end, and infrastructure.",
+    "viewAllSkills": "All skills",
+
+    "contactSectionLabel": "Writing & Contact",
+    "contactSectionTitle": "Let's build something solid.",
+    "contactSectionDesc": "Open to remote software engineering roles and select technical collaborations.",
+    "latestArticle": "Latest article",
+    "allArticles": "All articles",
+    "copyEmail": "Copy email",
+    "copiedEmail": "Copied"
   },
 
   "NavBar": {
@@ -55,116 +55,113 @@
     "projects": "Projects",
     "contact": "Contact",
 
-    "about": "About me",
-    "aboutPhrase": "I'm a developer driven by passion, proudly representing Brazil in the world of technology. I'm always looking to learn more and improve my skills."
+    "about": "About",
+    "aboutPhrase": "Back-end & Full-Stack Software Engineer based in Belo Horizonte, Brazil — focused on clean architecture, reliability, and high-throughput web systems."
   },
 
   "skills": {
+    "label": "Capabilities",
     "title": "Skills",
-    "description": "Explore my full-stack software engineering skills across React, Next.js, Node.js, TypeScript, front-end, back-end, APIs, PostgreSQL, MongoDB, and cloud-ready web architecture for modern products.",
-    "ctaTitle": "Need these skills on your team or product?",
-    "ctaDescription": "If you are looking for a developer with practical experience across front-end, back-end, databases, and product delivery, send me a message. I am open to freelance work, remote roles, and long-term collaborations.",
-    "contactCta": "Talk about your project",
+    "description": "Production stack spanning Python, TypeScript, Go, Java, FastAPI, Django, Next.js, PostgreSQL, RabbitMQ, Docker, Kubernetes, and security architecture.",
+    "ctaTitle": "Need these skills on your engineering team?",
+    "ctaDescription": "If you are hiring for remote software engineering roles or need someone to architect and ship resilient web products, let's talk.",
+    "contactCta": "Start a conversation",
     "projectsCta": "See projects"
   },
 
   "Experiences": {
+    "label": "Experience",
     "title": "Experiences",
-    "description": "Here are some of the experiences I've had over the years."
+    "description": "Over 3 years delivering production APIs, microservices, async pipelines, and component-based front-ends alongside Software Engineering studies at FIAP.",
+    "workHeading": "Work Experience",
+    "educationHeading": "Education",
+    "academicProjectsHeading": "Key Academic Systems",
+    "languagesHeading": "Languages",
+    "ctaTitle": "Want the full resume or want to discuss a role?",
+    "ctaDescription": "You can review my formatted resume on Google Drive or reach out directly with details about your team and stack.",
+    "contactCta": "Contact me",
+    "resumeCta": "Open resume"
   },
 
   "Projects": {
+    "label": "Selected Work",
     "title": "Projects",
-    "description": "Explore software projects, web applications, experiments, and open-source work built with React, Next.js, Node.js, TypeScript, and modern product thinking.",
-    "introLabel": "Selected work",
-    "introTitle": "Real projects, real product thinking.",
-    "introDescription": "This page highlights repositories that reflect how I build web products: performance-focused front-end work, scalable back-end logic, and practical solutions shaped by real-world use cases.",
-    "fallbackDescription": "Repository available on GitHub.",
-    "fallbackLanguage": "Multiple technologies",
-    "viewProject": "View repository on GitHub",
-    "ctaTitle": "Want something like this for your product or business?",
-    "ctaDescription": "If you're looking for a developer to build, improve, or scale a web product, send me a message. I'm open to freelance projects, collaborations, and remote opportunities.",
-    "contactCta": "Talk about your project",
+    "description": "Curated systems across web platforms, multi-tenant B2B SaaS ERPs, and offline-first desktop tooling.",
+    "introLabel": "Selected Work",
+    "viewProject": "View on GitHub",
+    "visitLive": "Visit production",
+    "privateRepo": "Private repository",
+    "ctaTitle": "Interested in how these systems are built?",
+    "ctaDescription": "I am open to remote back-end and full-stack roles as well as select technical product collaborations.",
+    "contactCta": "Talk about a role or project",
     "githubCta": "See GitHub profile"
   },
 
   "Contact": {
     "title": "Contact",
-    "description": "Get in touch to discuss freelance work, remote opportunities, product ideas, partnerships, or any project that needs a reliable full-stack software engineer.",
-    "socialLabel": "Direct contact",
-    "socialTitle": "Let's talk through the channel that fits you best.",
-    "socialDescription": "If you want to discuss a project, ask a question, or reach out about an opportunity, you can contact me by email or through social platforms.",
-    "socialSectionTitle": "Social Media",
-    "socialSectionDescription": "For a faster and more casual conversation, feel free to reach out on social media.",
-    "socialSectionHandle": "@munraitoo13 on social platforms, or visit my linktr.ee page.",
+    "description": "Reach out regarding remote software engineering roles, back-end/full-stack opportunities, or technical collaborations.",
+    "socialLabel": "Direct Channels",
+    "socialTitle": "Direct contact without friction.",
+    "socialDescription": "Copy my email address or message me directly through the form. I reply personally to every inquiry.",
+    "socialSectionTitle": "Social Platforms",
+    "socialSectionDescription": "Follow my work or send a direct message on GitHub, LinkedIn, or X.",
+    "socialSectionHandle": "@munraitoo13 across platforms.",
     "emailSectionTitle": "Email",
-    "emailSectionDescription": "If you want to discuss a project, freelance work, a remote role, or a product idea, send me a message through the form and I will get back to you as soon as possible.",
-    "formLabel": "Project inquiry",
+    "emailSectionDescription": "Best channel for engineering roles, interviews, and project inquiries.",
+    "formLabel": "Message Dispatch",
     "formTitle": "Send a message",
-    "formDescription": "Share a few details about your project, company, or idea. I read every message and reply as soon as possible.",
+    "formDescription": "Share context on the role, team, or technical challenge.",
+    "copyEmail": "Copy email",
+    "copiedEmail": "Copied",
 
     "name": "Name",
     "email": "Email",
     "message": "Message",
     "subject": "Subject",
-    "send": "Send",
+    "send": "Send message",
     "sending": "Sending..."
   },
 
   "Blog": {
     "title": "Blog",
-    "description": "Read articles about software engineering, web development, front-end, back-end architecture, product thinking, and the technical decisions behind the work I do.",
-    "introLabel": "Writing",
-    "introTitle": "Ideas, code, and product thinking in public.",
-    "introDescription": "This blog is where I share software engineering notes, development insights, implementation decisions, and practical lessons from building web applications and digital products.",
+    "description": "Technical notes on software architecture, back-end engineering, Next.js, MDX workflows, and lessons from production builds.",
+    "introLabel": "Engineering Notes",
     "readPost": "Read article",
     "readFeatured": "Read featured article",
-    "ctaTitle": "Need a developer who thinks deeply about product and code?",
-    "ctaDescription": "If the way I write matches the way you want your product built, send me a message. I am open to freelance work, remote roles, and long-term collaborations.",
-    "contactCta": "Talk about your project",
+    "backToBlog": "Back to all articles",
+    "emptyState": "No published articles yet.",
+    "ctaTitle": "Want to talk architecture or engineering roles?",
+    "ctaDescription": "If my approach to software design aligns with your team, feel free to send a direct message.",
+    "contactCta": "Get in touch",
     "projectsCta": "See projects",
-
-    "view": "View",
-    "views": "Views",
-    "like": "Like",
-    "likes": "Likes",
-    "share": "Share",
-
-    "shared": "Link to post copied to clipboard!",
-
-    "featured": "Featured post"
+    "featured": "Featured"
   },
 
   "Toastify": {
     "messageSent": "Message sent.",
     "messageError": "Error sending message.",
-
-    "invalidEmail": "Invalid email.",
-
-    "failedCaptcha": "Captcha verification failed.",
-
-    "emptyFields": "Some fields are empty.",
-
+    "invalidEmail": "Invalid email address.",
+    "emptyFields": "This field is required.",
     "sending": "Sending..."
   },
 
   "Metadata": {
-    "home": "Augusto | Full-Stack Software Engineer",
-    "homeDesc": "Augusto, also known as munraitoo13, is a Brazilian full-stack software engineer building scalable web applications with React, Next.js, Node.js, and TypeScript.",
+    "home": "Augusto Mendes | Back-End & Full-Stack Software Engineer",
+    "homeDesc": "Augusto Mendes (munraitoo13) is a Back-End and Full-Stack Software Engineer building scalable APIs, microservices, and web applications with Python, TypeScript, Go, FastAPI, and Next.js.",
 
-    "projects": "Projects | Augusto - Full-Stack Software Engineer",
-    "projectsDesc": "Explore Augusto's software projects, web applications, and GitHub repositories built with React, Next.js, Node.js, and TypeScript.",
+    "projects": "Projects | Augusto Mendes",
+    "projectsDesc": "Curated software engineering systems by Augusto Mendes: Módulo Zero (~2,000 users), Bravo ERP (multi-tenant FastAPI + Next.js), and Gerador de Orçamentos (Electron + FastAPI).",
 
-    "contact": "Contact Augusto | Full-Stack Software Engineer",
-    "contactDesc": "Contact Augusto for freelance work, remote opportunities, product collaborations, and full-stack web development projects.",
+    "contact": "Contact | Augusto Mendes",
+    "contactDesc": "Contact Augusto Mendes (munraitoo13@gmail.com) for remote software engineering roles and technical collaborations.",
 
-    "blog": "Blog | Augusto - Software Engineering Articles",
-    "blogDesc": "Read Augusto's blog about software engineering, web development, architecture, React, Next.js, Node.js, TypeScript, and product-building insights.",
+    "blog": "Blog | Augusto Mendes",
+    "blogDesc": "Technical articles on software architecture, back-end engineering, Python, TypeScript, and web performance by Augusto Mendes.",
 
-    "skills": "Skills | Augusto - Full-Stack Software Engineer",
-    "skillsDesc": "Explore Augusto's skills in React, Next.js, Node.js, TypeScript, APIs, PostgreSQL, MongoDB, and full-stack web product development.",
+    "skills": "Skills | Augusto Mendes",
+    "skillsDesc": "Technical skills in Python, TypeScript, Go, Java, FastAPI, Django, Next.js, PostgreSQL, RabbitMQ, Docker, Kubernetes, and OAuth 2.0.",
 
-    "experiences": "Experiences | munraitoo13",
-    "experiencesDesc": "munraitoo13's experiences."
+    "experiences": "Experiences | Augusto Mendes",
+    "experiencesDesc": "Professional experience at Deeper Systems and Upwork, plus B.Sc. in Software Engineering at FIAP (GPA 9.83/10)."
   }
 }

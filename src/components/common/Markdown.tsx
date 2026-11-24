@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 export function Markdown({
   children,
@@ -10,7 +10,7 @@ export function Markdown({
   return (
     <div
       className={cn(
-        "prose prose-neutral dark:prose-invert text-secondary max-w-4xl pt-24 leading-8",
+        "prose prose-neutral text-secondary max-w-3xl pt-8 leading-7",
         className,
       )}
     >

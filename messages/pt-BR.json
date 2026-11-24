@@ -1,37 +1,37 @@
 {
   "HomePage": {
-    "greetings": "Engenheiro de Software Full-Stack",
-    "presentation": "Eu crio produtos web rápidos e escaláveis.",
-    "aka": "Sou Augusto,",
+    "greetings": "Engenheiro de Software Back-End & Full-Stack",
+    "presentation": "Construo APIs escaláveis, back-ends distribuídos e produtos web rápidos.",
+    "aka": "Sou Augusto Mendes,",
     "nickname": "munraitoo13",
-    "profession": "um desenvolvedor brasileiro que cria aplicações web modernas com React, Next.js, Node.js e TypeScript.",
+    "profession": "engenheiro de software com mais de 3 anos de experiência em produção com Python, TypeScript, Go, FastAPI, Next.js e infraestrutura cloud.",
 
-    "contact": "Iniciar um projeto",
+    "contact": "Entrar em contato",
     "resume": "CURRÍCULO",
 
-    "simple": "Simples,",
-    "yet": "mas",
-    "stunning": "poderoso.",
-    "insideAndOut": "De ponta a ponta.",
+    "projectsSectionLabel": "Sistemas Selecionados",
+    "projectsSectionTitle": "Sistemas em produção e engenharia aplicada.",
+    "viewAllProjects": "Todos os projetos",
+    "privateRepo": "Repositório privado",
+    "visitLive": "Ver em produção",
 
-    "whySimple": "Por que simples?",
-    "whySimpleTitle": "Arquitetura clara escala melhor.",
-    "whySimpleDesc": "Código legível, interfaces focadas e uma estrutura sólida ajudam produtos a serem lançados mais rápido, evoluírem com segurança e manterem boa performance.",
-    "yetStunning": "Por que poderoso?",
-    "yetStunningTitle": "Produtos fortes também precisam ser refinados.",
-    "yetStunningDesc": "Performance, hierarquia visual e interações bem pensadas transformam softwares complexos em experiências intuitivas e memoráveis.",
-    "insideAndOutExpl": "Por que de ponta a ponta?",
-    "insideAndOutExplTitle": "Feito para usuários e para times.",
-    "insideAndOutExplDesc": "Eu cuido do que as pessoas veem e do que sustenta tudo nos bastidores: interfaces acessíveis, sistemas back-end escaláveis e código de fácil manutenção.",
+    "experienceSectionLabel": "Trajetória",
+    "experienceSectionTitle": "Experiência em produção e base acadêmica.",
+    "viewFullTimeline": "Linha do tempo completa",
+    "educationLabel": "Formação",
+    "languagesLabel": "Idiomas",
 
-    "myQualities": "Pontos fortes",
-    "myQualitiesDesc": "Estas são as qualidades que levo para projetos de software para ajudar equipes a criar produtos melhores com clareza, velocidade e consistência.",
-    "quality1": "Comunicação clara",
-    "quality1desc": "Mantenho conversas diretas, organizadas e produtivas para que decisões fiquem claras e os projetos avancem sem atrito desnecessário.",
-    "quality2": "Execução técnica",
-    "quality2desc": "Foco em implementação limpa, arquitetura escalável e entrega confiável em trabalho de front-end e back-end.",
-    "quality3": "Atenção aos detalhes",
-    "quality3desc": "Do acabamento da experiência do usuário à qualidade do código, cuido das pequenas decisões que melhoram performance, usabilidade e manutenção no longo prazo."
+    "skillsSectionLabel": "Matriz Técnica",
+    "skillsSectionTitle": "Stack principal em back-end, front-end e infraestrutura.",
+    "viewAllSkills": "Todas as skills",
+
+    "contactSectionLabel": "Escrita & Contato",
+    "contactSectionTitle": "Vamos construir algo sólido.",
+    "contactSectionDesc": "Aberto a vagas remotas de engenharia de software e colaborações técnicas selecionadas.",
+    "latestArticle": "Último artigo",
+    "allArticles": "Todos os artigos",
+    "copyEmail": "Copiar e-mail",
+    "copiedEmail": "Copiado"
   },
 
   "NavBar": {
@@ -55,116 +55,113 @@
     "projects": "Projetos",
     "contact": "Contato",
 
-    "about": "Sobre mim",
-    "aboutPhrase": "Sou um desenvolvedor movido pela paixão, representando o Brasil com orgulho no mundo da tecnologia. Estou sempre buscando aprender mais e melhorar minhas habilidades."
+    "about": "Sobre",
+    "aboutPhrase": "Engenheiro de Software Back-End & Full-Stack em Belo Horizonte, Brasil — focado em arquitetura limpa, confiabilidade e sistemas web de alta performance."
   },
 
   "skills": {
+    "label": "Competências",
     "title": "Habilidades",
-    "description": "Explore minhas habilidades em engenharia de software full-stack com React, Next.js, Node.js, TypeScript, front-end, back-end, APIs, PostgreSQL, MongoDB e arquitetura web pronta para cloud.",
-    "ctaTitle": "Precisa dessas habilidades no seu time ou produto?",
-    "ctaDescription": "Se você procura um desenvolvedor com experiência prática em front-end, back-end, bancos de dados e entrega de produto, me envie uma mensagem. Estou aberto a trabalhos freelance, vagas remotas e colaborações de longo prazo.",
-    "contactCta": "Falar sobre seu projeto",
+    "description": "Stack de produção envolvendo Python, TypeScript, Go, Java, FastAPI, Django, Next.js, PostgreSQL, RabbitMQ, Docker, Kubernetes e arquitetura de segurança.",
+    "ctaTitle": "Precisa dessas competências no seu time de engenharia?",
+    "ctaDescription": "Se você busca um engenheiro para vagas remotas ou para arquitetar e entregar produtos web resilientes, vamos conversar.",
+    "contactCta": "Iniciar conversa",
     "projectsCta": "Ver projetos"
   },
 
   "Experiences": {
+    "label": "Trajetória",
     "title": "Experiências",
-    "description": "Aqui estão algumas das experiências que tive ao longo dos anos."
+    "description": "Mais de 3 anos entregando APIs em produção, microsserviços, filas assíncronas e interfaces componentizadas, aliados ao bacharelado em Engenharia de Software na FIAP.",
+    "workHeading": "Experiência Profissional",
+    "educationHeading": "Educação",
+    "academicProjectsHeading": "Projetos Acadêmicos de Destaque",
+    "languagesHeading": "Idiomas",
+    "ctaTitle": "Quer ver o currículo completo ou conversar sobre uma vaga?",
+    "ctaDescription": "Você pode acessar a versão formatada no Google Drive ou enviar uma mensagem direta com detalhes do time e da stack.",
+    "contactCta": "Entrar em contato",
+    "resumeCta": "Abrir currículo"
   },
 
   "Projects": {
+    "label": "Trabalhos Selecionados",
     "title": "Projetos",
-    "description": "Explore projetos de software, aplicações web, experimentos e trabalhos open source criados com React, Next.js, Node.js, TypeScript e visão de produto.",
-    "introLabel": "Trabalhos selecionados",
-    "introTitle": "Projetos reais, pensamento real de produto.",
-    "introDescription": "Esta página reúne repositórios que mostram como eu construo produtos web: front-end com foco em performance, back-end escalável e soluções práticas guiadas por casos reais.",
-    "fallbackDescription": "Repositório disponível no GitHub.",
-    "fallbackLanguage": "Múltiplas tecnologias",
-    "viewProject": "Ver repositório no GitHub",
-    "ctaTitle": "Quer algo assim para seu produto ou negócio?",
-    "ctaDescription": "Se você procura um desenvolvedor para criar, melhorar ou escalar um produto web, me envie uma mensagem. Estou aberto a projetos freelance, colaborações e oportunidades remotas.",
-    "contactCta": "Falar sobre seu projeto",
+    "description": "Sistemas curados entre plataformas web em produção, ERPs SaaS B2B multi-tenant e ferramentas desktop offline-first.",
+    "introLabel": "Trabalhos Selecionados",
+    "viewProject": "Ver no GitHub",
+    "visitLive": "Ver em produção",
+    "privateRepo": "Repositório privado",
+    "ctaTitle": "Quer explorar como esses sistemas foram arquitetados?",
+    "ctaDescription": "Estou aberto a oportunidades remotas em back-end e full-stack, além de colaborações técnicas selecionadas.",
+    "contactCta": "Falar sobre vaga ou projeto",
     "githubCta": "Ver perfil no GitHub"
   },
 
   "Contact": {
     "title": "Contato",
-    "description": "Entre em contato para falar sobre trabalhos freelance, oportunidades remotas, ideias de produto, parcerias ou qualquer projeto que precise de um engenheiro de software full-stack confiável.",
-    "socialLabel": "Contato direto",
-    "socialTitle": "Vamos conversar pelo canal que fizer mais sentido para você.",
-    "socialDescription": "Se você quer discutir um projeto, tirar uma dúvida ou entrar em contato sobre uma oportunidade, pode falar comigo por e-mail ou pelas redes sociais.",
-    "socialSectionTitle": "Redes Sociais",
-    "socialSectionDescription": "Para uma conversa mais rápida e casual, sinta-se à vontade para me chamar em qualquer uma das minhas redes sociais.",
-    "socialSectionHandle": "@munraitoo13 em plataformas sociais, ou visite minha página no linktr.ee.",
+    "description": "Entre em contato para vagas remotas de engenharia de software, oportunidades back-end/full-stack ou parcerias técnicas.",
+    "socialLabel": "Canais Diretos",
+    "socialTitle": "Contato direto, sem atrito.",
+    "socialDescription": "Copie meu e-mail ou envie uma mensagem pelo formulário. Leio e respondo pessoalmente cada contato.",
+    "socialSectionTitle": "Redes",
+    "socialSectionDescription": "Acompanhe meu trabalho ou chame diretamente pelo GitHub, LinkedIn ou X.",
+    "socialSectionHandle": "@munraitoo13 nas plataformas.",
     "emailSectionTitle": "E-mail",
-    "emailSectionDescription": "Se você quiser conversar sobre um projeto, trabalho freelance, vaga remota ou uma ideia de produto, me envie uma mensagem pelo formulário e responderei o mais rápido possível.",
-    "formLabel": "Solicitação de projeto",
+    "emailSectionDescription": "Melhor canal para entrevistas, vagas remotas e conversas sobre produto.",
+    "formLabel": "Envio de Mensagem",
     "formTitle": "Envie uma mensagem",
-    "formDescription": "Compartilhe alguns detalhes sobre seu projeto, empresa ou ideia. Eu leio toda mensagem e respondo assim que possível.",
+    "formDescription": "Compartilhe contexto sobre a vaga, equipe ou desafio técnico.",
+    "copyEmail": "Copiar e-mail",
+    "copiedEmail": "Copiado",
 
     "name": "Nome",
     "email": "E-mail",
     "message": "Mensagem",
     "subject": "Assunto",
-    "send": "Enviar",
+    "send": "Enviar mensagem",
     "sending": "Enviando..."
   },
 
   "Blog": {
     "title": "Blog",
-    "description": "Leia artigos sobre engenharia de software, desenvolvimento web, front-end, arquitetura back-end, visão de produto e decisões técnicas por trás do meu trabalho.",
-    "introLabel": "Escrita",
-    "introTitle": "Ideias, código e visão de produto em público.",
-    "introDescription": "Este blog é onde compartilho anotações sobre engenharia de software, insights de desenvolvimento, decisões de implementação e aprendizados práticos de aplicações web e produtos digitais.",
+    "description": "Notas técnicas sobre arquitetura de software, engenharia back-end, Next.js, fluxos com MDX e aprendizados de produção.",
+    "introLabel": "Notas de Engenharia",
     "readPost": "Ler artigo",
     "readFeatured": "Ler artigo em destaque",
-    "ctaTitle": "Precisa de um desenvolvedor que pensa profundamente em produto e código?",
-    "ctaDescription": "Se a forma como escrevo combina com a forma como você quer construir seu produto, me envie uma mensagem. Estou aberto a trabalhos freelance, vagas remotas e colaborações de longo prazo.",
-    "contactCta": "Falar sobre seu projeto",
+    "backToBlog": "Voltar para todos os artigos",
+    "emptyState": "Nenhum artigo publicado ainda.",
+    "ctaTitle": "Quer conversar sobre arquitetura ou vagas de engenharia?",
+    "ctaDescription": "Se a forma como penso software combina com o seu time, envie uma mensagem direta.",
+    "contactCta": "Entrar em contato",
     "projectsCta": "Ver projetos",
-
-    "view": "Ver",
-    "views": "Visualizações",
-    "like": "Curtir",
-    "likes": "Curtidas",
-    "share": "Compartilhar",
-
-    "shared": "Link do post copiado para a área de transferência!",
-
-    "featured": "Post em destaque"
+    "featured": "Destaque"
   },
 
   "Toastify": {
     "messageSent": "Mensagem enviada.",
     "messageError": "Erro ao enviar a mensagem.",
-
     "invalidEmail": "E-mail inválido.",
-
-    "failedCaptcha": "Falha na verificação do captcha.",
-
-    "emptyFields": "Alguns campos estão vazios.",
-
+    "emptyFields": "Este campo é obrigatório.",
     "sending": "Enviando..."
   },
 
   "Metadata": {
-    "home": "Augusto | Engenheiro de Software Full-Stack",
-    "homeDesc": "Augusto, também conhecido como munraitoo13, é um engenheiro de software full-stack brasileiro que cria aplicações web escaláveis com React, Next.js, Node.js e TypeScript.",
+    "home": "Augusto Mendes | Engenheiro de Software Back-End & Full-Stack",
+    "homeDesc": "Augusto Mendes (munraitoo13) é Engenheiro de Software Back-End e Full-Stack construindo APIs escaláveis, microsserviços e aplicações web com Python, TypeScript, Go, FastAPI e Next.js.",
 
-    "projects": "Projetos | Augusto - Engenheiro de Software Full-Stack",
-    "projectsDesc": "Explore os projetos de software, aplicações web e repositórios no GitHub de Augusto, criados com React, Next.js, Node.js e TypeScript.",
+    "projects": "Projetos | Augusto Mendes",
+    "projectsDesc": "Sistemas curados por Augusto Mendes: Módulo Zero (~2.000 usuários), Bravo ERP (FastAPI + Next.js multi-tenant) e Gerador de Orçamentos (Electron + FastAPI).",
 
-    "contact": "Contato Augusto | Engenheiro de Software Full-Stack",
-    "contactDesc": "Entre em contato com Augusto para trabalhos freelance, oportunidades remotas, colaborações em produtos e projetos de desenvolvimento web full-stack.",
+    "contact": "Contato | Augusto Mendes",
+    "contactDesc": "Fale com Augusto Mendes (munraitoo13@gmail.com) sobre vagas remotas de engenharia de software e projetos.",
 
-    "blog": "Blog | Augusto - Artigos sobre Engenharia de Software",
-    "blogDesc": "Leia o blog de Augusto sobre engenharia de software, desenvolvimento web, arquitetura, React, Next.js, Node.js, TypeScript e construção de produtos digitais.",
+    "blog": "Blog | Augusto Mendes",
+    "blogDesc": "Artigos técnicos sobre arquitetura de software, back-end, Python, TypeScript e performance web por Augusto Mendes.",
 
-    "skills": "Habilidades | Augusto - Engenheiro de Software Full-Stack",
-    "skillsDesc": "Explore as habilidades de Augusto em React, Next.js, Node.js, TypeScript, APIs, PostgreSQL, MongoDB e desenvolvimento de produtos web full-stack.",
+    "skills": "Habilidades | Augusto Mendes",
+    "skillsDesc": "Competências técnicas em Python, TypeScript, Go, Java, FastAPI, Django, Next.js, PostgreSQL, RabbitMQ, Docker, Kubernetes e OAuth 2.0.",
 
-    "experiences": "Experiências | munraitoo13",
-    "experiencesDesc": "Experiências de munraitoo13."
+    "experiences": "Experiências | Augusto Mendes",
+    "experiencesDesc": "Experiência profissional na Deeper Systems e Upwork, além do bacharelado em Engenharia de Software na FIAP (CR 9,83/10)."
   }
 }

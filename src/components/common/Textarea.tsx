@@ -1,5 +1,4 @@
-import { Textarea as ShadcnTextarea } from "@/components/ui/textarea";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 
 type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
@@ -11,26 +10,32 @@ type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ label, error, className, classNameTextarea, ...props }, ref) => {
     return (
-      <div className={className}>
+      <div className={cn("w-full", className)}>
         {label && (
-          <label htmlFor={props.id} className="mb-1 block text-sm">
+          <label
+            htmlFor={props.id}
+            className="text-secondary mb-1.5 block font-mono text-[11px] uppercase tracking-[0.16em]"
+          >
             {label}
           </label>
         )}
 
-        <ShadcnTextarea
+        <textarea
           ref={ref}
           {...props}
           aria-invalid={!!error}
           className={cn(
-            "h-full min-h-0 rounded-xl border-0 bg-background-contrast px-5 py-4 text-base shadow-none placeholder:text-tertiary focus-visible:border-transparent focus-visible:ring-0 dark:bg-background-contrast md:text-base",
+            "bg-background-contrast text-primary placeholder:text-tertiary flex min-h-32 w-full rounded-none border border-[var(--color-border)] px-4 py-3 text-sm transition-colors duration-200 outline-none focus-visible:border-accent focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-accent",
             classNameTextarea,
-            className,
           )}
         />
 
-        {error && <p className="text-accent mt-1 text-xs">{error}</p>}
+        {error && (
+          <p className="text-accent mt-1.5 font-mono text-xs">{error}</p>
+        )}
       </div>
     );
   },
 );
+
+Textarea.displayName = "Textarea";

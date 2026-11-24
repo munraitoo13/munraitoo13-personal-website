@@ -2,13 +2,14 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "munraitoo13's website",
+    name: "Augusto Mendes — munraitoo13.dev",
     short_name: "munraitoo13",
-    description: "munraitoo13's personal website and blog",
+    description:
+      "Back-End & Full-Stack Software Engineer — portfolio, curated projects, experience, and technical blog.",
     start_url: "/",
     display: "standalone",
-    background_color: "#000",
-    theme_color: "#000",
+    background_color: "#0b0d0f",
+    theme_color: "#c42828",
     icons: [
       {
         src: "/favicon.ico",

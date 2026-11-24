@@ -5,5 +5,6 @@ export function formatDate(date: Date, locale: Locale = defaultLocale) {
     day: "numeric",
     month: "long",
     year: "numeric",
+    timeZone: "UTC",
   }).format(date);
 }
