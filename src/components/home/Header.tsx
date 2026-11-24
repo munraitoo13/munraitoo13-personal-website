@@ -55,24 +55,39 @@ export async function Header() {
         </div>
       </div>
 
-      <div className="border-t border-white/20">
-        <div className="tui-rail flex flex-wrap items-center justify-between gap-4 border-white/20 px-6 py-3 font-mono text-[11px] uppercase tracking-[0.16em] text-white/85">
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <span>BELO HORIZONTE, BR</span>
-            <span className="text-white/40" aria-hidden="true">
-              /
-            </span>
-            <span>PYTHON · TYPESCRIPT · GO</span>
-            <span className="text-white/40" aria-hidden="true">
-              /
-            </span>
-            <span>3+ YRS PRODUCTION</span>
-          </div>
-
-          <div className="inline-flex items-center gap-2 text-white">
-            <span className="size-2 bg-emerald-300" aria-hidden="true" />
-            <span>AVAILABLE FOR REMOTE ROLES</span>
-          </div>
+      <div className="overflow-hidden border-t border-white/20 py-3">
+        <div className="animate-tui-marquee hover:[animation-play-state:paused]">
+          {[0, 1, 2, 3].map((copyIndex) => (
+            <div
+              key={copyIndex}
+              aria-hidden={copyIndex > 0 ? "true" : undefined}
+              className="flex shrink-0 items-center gap-6 pr-6 font-mono text-[11px] uppercase tracking-[0.16em] whitespace-nowrap text-white/85"
+            >
+              <span>BELO HORIZONTE, BR</span>
+              <span className="text-white/40" aria-hidden="true">
+                /
+              </span>
+              <span>PYTHON · TYPESCRIPT · GO</span>
+              <span className="text-white/40" aria-hidden="true">
+                /
+              </span>
+              <span>3+ YRS PRODUCTION</span>
+              <span className="text-white/40" aria-hidden="true">
+                /
+              </span>
+              <span>FASTAPI · NEXT.JS · POSTGRESQL</span>
+              <span className="text-white/40" aria-hidden="true">
+                /
+              </span>
+              <span className="inline-flex items-center gap-2 text-white">
+                <span className="size-2 bg-emerald-300" aria-hidden="true" />
+                <span>AVAILABLE FOR REMOTE ROLES</span>
+              </span>
+              <span className="text-white/40" aria-hidden="true">
+                /
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

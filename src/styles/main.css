@@ -158,14 +158,34 @@
     }
   }
 
+  @keyframes tui-marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
   .animate-page-enter {
     animation: page-enter 420ms var(--ease-smooth);
+  }
+
+  .animate-tui-marquee {
+    display: flex;
+    width: max-content;
+    animation: tui-marquee 28s linear infinite;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .animate-tui-marquee {
+    animation: none !important;
   }
 
   *,
