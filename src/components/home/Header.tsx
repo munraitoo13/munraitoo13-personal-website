@@ -20,7 +20,7 @@ export async function Header() {
             label={t("greetings")}
           />
 
-          <h1 className="font-serif text-5xl leading-[1.02] font-normal tracking-tight text-white sm:text-6xl md:text-7xl">
+          <h1 className="font-sans text-4xl leading-[1.05] font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
             {t("presentation")}
           </h1>
 

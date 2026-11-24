@@ -24,7 +24,7 @@ export function Header({
           />
         )}
 
-        <h1 className="font-serif text-primary max-w-3xl text-5xl font-normal tracking-tight md:text-6xl">
+        <h1 className="font-sans text-primary max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
           {pageTitle}
         </h1>
 

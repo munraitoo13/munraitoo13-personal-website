@@ -6,11 +6,7 @@ import "@/styles/main.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import {
-  Instrument_Sans,
-  Instrument_Serif,
-  Space_Mono,
-} from "next/font/google";
+import { Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.min.css";
 
@@ -20,18 +16,9 @@ const instrumentSans = Instrument_Sans({
   display: "swap",
 });
 
-const instrumentSerif = Instrument_Serif({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-instrument-serif",
-  display: "swap",
-});
-
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
+  variable: "--font-jetbrains-mono",
   display: "swap",
 });
 
@@ -71,7 +58,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`dark ${instrumentSans.variable} ${instrumentSerif.variable} ${spaceMono.variable}`}
+      className={`dark ${instrumentSans.variable} ${jetbrainsMono.variable}`}
     >
       <body className="bg-background text-secondary selection:bg-accent/30 selection:text-primary font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
