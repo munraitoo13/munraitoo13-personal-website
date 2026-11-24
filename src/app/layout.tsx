@@ -6,11 +6,21 @@ import "@/styles/main.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import { Montserrat } from "next/font/google";
+import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.min.css";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://munraitoo13.dev"),
@@ -46,8 +56,11 @@ export default async function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-D8094R1DSH";
 
   return (
-    <html lang={locale} className="dark">
-      <body className={`${montserrat.className} text-secondary bg-background`}>
+    <html
+      lang={locale}
+      className={`dark ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+    >
+      <body className="bg-background text-secondary selection:bg-accent/30 selection:text-primary font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
           <ToastContainer
             position="top-right"
@@ -62,13 +75,13 @@ export default async function RootLayout({
             theme="dark"
           />
 
-          <ScrollTop />
-          <Navbar />
-
-          <main className="container flex min-h-dvh flex-col">
-            <div className="animate-page-enter flex-1">{children}</div>
+          <div className="flex min-h-dvh flex-col">
+            <Navbar />
+            <main className="animate-page-enter flex-1">{children}</main>
             <Footer />
-          </main>
+          </div>
+
+          <ScrollTop />
         </NextIntlClientProvider>
 
         <GoogleAnalytics gaId={gaId} />

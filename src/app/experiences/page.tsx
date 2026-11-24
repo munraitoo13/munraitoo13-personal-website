@@ -20,11 +20,17 @@ export default async function Page() {
 
   return (
     <>
-      <Header pageTitle={t("title")} pageDescription={t("description")} />
+      <Header
+        sectionIndex="02"
+        pageTitle={t("title")}
+        pageDescription={t("description")}
+      />
 
-      <Markdown className="pt-6">
-        <Content />
-      </Markdown>
+      <div className="tui-rail px-6 py-16">
+        <Markdown className="pt-0">
+          <Content />
+        </Markdown>
+      </div>
     </>
   );
 }

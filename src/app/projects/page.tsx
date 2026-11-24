@@ -20,9 +20,16 @@ export default async function Page() {
 
   return (
     <>
-      <Header pageTitle={t("title")} pageDescription={t("description")} />
+      <Header
+        sectionIndex="01"
+        sectionLabel={t("introLabel")}
+        pageTitle={t("title")}
+        pageDescription={t("description")}
+      />
 
-      <Projects projects={projects} />
+      <div className="tui-rail px-6 py-16">
+        <Projects projects={projects} />
+      </div>
     </>
   );
 }

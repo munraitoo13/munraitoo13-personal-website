@@ -22,28 +22,32 @@ export default async function Page() {
 
   return (
     <>
-      <Header pageTitle={t("title")} pageDescription={t("description")} />
+      <Header
+        sectionIndex="03"
+        pageTitle={t("title")}
+        pageDescription={t("description")}
+      />
 
-      <Markdown className="pt-6">
-        <Content />
-      </Markdown>
+      <div className="tui-rail px-6 py-16">
+        <Markdown className="pt-0">
+          <Content />
+        </Markdown>
 
-      <section className="bg-background-contrast mt-12 flex max-w-4xl flex-col gap-4 rounded-xl p-8">
-        <h2 className="text-2xl">{t("ctaTitle")}</h2>
-        <p className="text-secondary">{t("ctaDescription")}</p>
+        <section className="bg-background-contrast mt-12 flex max-w-3xl flex-col gap-4 border border-[var(--color-border)] p-8">
+          <h2 className="text-primary text-2xl">{t("ctaTitle")}</h2>
+          <p className="text-secondary">{t("ctaDescription")}</p>
 
-        <div className="flex flex-wrap gap-4 pt-2">
-          <Link href="/contact">
-            <Button className="font-normal">{t("contactCta")}</Button>
-          </Link>
+          <div className="flex flex-wrap gap-4 pt-2">
+            <Link href="/contact">
+              <Button>{t("contactCta")}</Button>
+            </Link>
 
-          <Link href="/projects">
-            <Button variant="secondary" className="font-normal">
-              {t("projectsCta")}
-            </Button>
-          </Link>
-        </div>
-      </section>
+            <Link href="/projects">
+              <Button variant="secondary">{t("projectsCta")}</Button>
+            </Link>
+          </div>
+        </section>
+      </div>
     </>
   );
 }

@@ -47,17 +47,19 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const locale = resolveLocale(await getLocale());
 
   return (
-    <article className="mx-auto flex w-full max-w-4xl flex-col px-4 pb-16">
-      <BlogHeader
-        title={post.title}
-        description={post.description}
-        date={formatDate(new Date(post.date), locale)}
-        language={`${post.locale} · ${post.readingTimeMinutes} min`}
-      />
+    <article className="tui-rail px-6 py-16 md:py-20">
+      <div className="mx-auto max-w-3xl">
+        <BlogHeader
+          title={post.title}
+          description={post.description}
+          date={formatDate(new Date(post.date), locale)}
+          language={`${post.locale} · ${post.readingTimeMinutes} min`}
+        />
 
-      <Markdown>
-        <CustomMDX source={post.content} />
-      </Markdown>
+        <Markdown>
+          <CustomMDX source={post.content} />
+        </Markdown>
+      </div>
     </article>
   );
 }

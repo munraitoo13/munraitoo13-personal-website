@@ -17,9 +17,11 @@ export default function Page() {
   return (
     <>
       <Header />
-      <Qualities />
-      <Phrase />
-      <PhraseDescription />
+      <div className="tui-rail px-6 pb-24">
+        <Qualities />
+        <Phrase />
+        <PhraseDescription />
+      </div>
     </>
   );
 }

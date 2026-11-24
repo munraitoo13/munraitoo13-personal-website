@@ -26,28 +26,33 @@ export default async function Page() {
 
   return (
     <>
-      <Header pageTitle={t("title")} pageDescription={t("description")} />
+      <Header
+        sectionIndex="04"
+        sectionLabel={t("introLabel")}
+        pageTitle={t("title")}
+        pageDescription={t("description")}
+      />
 
-      <FeaturedPost featuredPost={featuredPost} />
+      <div className="tui-rail px-6 py-16">
+        <FeaturedPost featuredPost={featuredPost} />
 
-      <Posts posts={posts} />
+        <Posts posts={posts} />
 
-      <section className="bg-background-contrast mt-12 flex max-w-4xl flex-col gap-4 rounded-xl p-8">
-        <h2 className="text-2xl">{t("ctaTitle")}</h2>
-        <p className="text-secondary">{t("ctaDescription")}</p>
+        <section className="bg-background-contrast mt-12 flex max-w-4xl flex-col gap-4 border border-[var(--color-border)] p-8">
+          <h2 className="text-primary text-2xl">{t("ctaTitle")}</h2>
+          <p className="text-secondary">{t("ctaDescription")}</p>
 
-        <div className="flex flex-wrap gap-4 pt-2">
-          <Link href="/contact">
-            <Button className="font-normal">{t("contactCta")}</Button>
-          </Link>
+          <div className="flex flex-wrap gap-4 pt-2">
+            <Link href="/contact">
+              <Button>{t("contactCta")}</Button>
+            </Link>
 
-          <Link href="/projects">
-            <Button variant="secondary" className="font-normal">
-              {t("projectsCta")}
-            </Button>
-          </Link>
-        </div>
-      </section>
+            <Link href="/projects">
+              <Button variant="secondary">{t("projectsCta")}</Button>
+            </Link>
+          </div>
+        </section>
+      </div>
     </>
   );
 }

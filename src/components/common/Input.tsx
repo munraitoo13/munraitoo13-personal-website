@@ -1,4 +1,3 @@
-import { Input as ShadcnInput } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 
@@ -10,29 +9,33 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, error, fullWidth = true, className, ...props }, ref) => {
-    const fullWidthStyles = fullWidth ? "w-full" : "";
-
     return (
-      <div>
+      <div className={fullWidth ? "w-full" : undefined}>
         {label && (
-          <label htmlFor={props.id} className="mb-1 block text-sm">
+          <label
+            htmlFor={props.id}
+            className="text-secondary mb-1.5 block font-mono text-[11px] uppercase tracking-[0.16em]"
+          >
             {label}
           </label>
         )}
 
-        <ShadcnInput
+        <input
           ref={ref}
           {...props}
           aria-invalid={!!error}
           className={cn(
-            "h-auto rounded-xl border-0 bg-background-contrast px-5 py-4 text-base shadow-none placeholder:text-tertiary focus-visible:border-transparent focus-visible:ring-0 dark:bg-background-contrast md:text-base",
-            fullWidthStyles,
+            "bg-background-contrast text-primary placeholder:text-tertiary h-auto w-full rounded-none border border-[var(--color-border)] px-4 py-3 text-sm transition-colors duration-200 outline-none focus-visible:border-accent focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-accent",
             className,
           )}
         />
 
-        {error && <p className="text-accent mt-1 text-xs">{error}</p>}
+        {error && (
+          <p className="text-accent mt-1.5 font-mono text-xs">{error}</p>
+        )}
       </div>
     );
   },
 );
+
+Input.displayName = "Input";
