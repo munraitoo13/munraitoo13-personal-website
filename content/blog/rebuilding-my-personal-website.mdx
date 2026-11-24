@@ -1,0 +1,31 @@
+---
+title: "Rebuilding My Personal Website Around Zero-DB Speed"
+description: "Why I stripped out PostgreSQL, a custom CMS, and multi-theme overhead in favor of static MDX posts, curated case studies, and a focused engineering architecture."
+date: "2026-11-24"
+locale: "en-US"
+tags: ["architecture", "nextjs", "mdx"]
+featured: true
+published: true
+---
+
+Most personal websites quietly grow accidental complexity. Mine started as a straightforward portfolio and accumulated a relational database, an authentication flow, a private admin panel, four locales, and UI dependencies that served maintenance overhead rather than readers.
+
+When you strip a personal engineering site down to what actually matters — **clear technical writing, real work, and fast page loads** — almost none of that runtime machinery earns its keep.
+
+## Why Drop the Database?
+
+Using Prisma and PostgreSQL for a personal blog meant every page request carried database round-trips, cold starts on serverless functions, schema migrations, and a custom admin surface that still lacked a real editor workflow.
+
+Moving articles to versioned `.mdx` files inside the repository solved several problems at once:
+
+- **Git as the source of truth:** drafts, edits, diffs, and rollbacks live in standard commits.
+- **Zero runtime DB latency:** every post renders cleanly at build time via `generateStaticParams()`.
+- **No attack surface to patch:** removing `/admin`, `/login`, JWT handling, and form-based post mutations removes an entire class of security maintenance.
+
+## Curating Work Instead of Mirroring GitHub
+
+An unfiltered feed of public repositories treats quick experiments and config repos the same way it treats production systems. Replacing that feed with curated engineering breakdowns makes it immediately obvious what was built, which constraints shaped the architecture, and how the system behaves in production.
+
+## What Comes Next
+
+With the Zero-DB foundation and direct routes (`/projects`, `/experiences`, `/skills`, `/blog`, `/contact`) in place, the next step is crafting a sharper, dark-only terminal-inspired interface that reflects how I build software from front to back.

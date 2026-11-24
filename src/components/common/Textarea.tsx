@@ -1,5 +1,5 @@
 import { Textarea as ShadcnTextarea } from "@/components/ui/textarea";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 
 type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {

@@ -1,21 +1,24 @@
 import nodemailer from "nodemailer";
 
-const EMAIL = process.env.EMAIL;
-if (!EMAIL) throw new Error("EMAIL not defined");
+export function getMailSender() {
+  return process.env.EMAIL;
+}
 
-const PASSWORD = process.env.PASSWORD;
-if (!PASSWORD) throw new Error("PASSWORD not defined");
+export function getMailTransporter() {
+  const email = process.env.EMAIL;
+  const password = process.env.PASSWORD;
 
-export const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: EMAIL,
-    pass: PASSWORD,
-  },
-});
+  if (!email || !password) {
+    throw new Error("Mail service credentials are not configured.");
+  }
 
-export const options = {
-  from: EMAIL,
-};
+  return nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: email,
+      pass: password,
+    },
+  });
+}

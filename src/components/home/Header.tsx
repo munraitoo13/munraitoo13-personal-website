@@ -1,8 +1,8 @@
-import { Stacks } from "@/components/home/Stacks";
-import { getTranslations } from "next-intl/server";
-import { IconFile } from "@tabler/icons-react";
-import Link from "next/link";
 import { Button } from "@/components/common/Button";
+import { Stacks } from "@/components/home/Stacks";
+import { RESUME_URL } from "@/constants/constants";
+import { getTranslations } from "next-intl/server";
+import Link from "next/link";
 
 export async function Header() {
   const t = await getTranslations("HomePage");
@@ -20,19 +20,13 @@ export async function Header() {
       <Stacks />
 
       <div className="flex items-center gap-4 pt-24">
-        <Link
-          href="https://docs.google.com/document/d/1wvD0VANx0zDwaHBPVV6v-D3JQe9oTQiXYB_TrHk9tgw"
-          target="_blank"
-        >
+        <Link href={RESUME_URL} target="_blank" rel="noopener noreferrer">
           <Button rounded className="cursor-pointer font-normal">
             {t("resume")}
           </Button>
         </Link>
 
-        <Link
-          href="/personal/contact"
-          className="hover:text-accent text-primary"
-        >
+        <Link href="/contact" className="hover:text-accent text-primary">
           {t("contact")}
         </Link>
       </div>

@@ -1,5 +1,5 @@
 import { Input as ShadcnInput } from "@/components/ui/input";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {

@@ -1,101 +1,96 @@
 "use server";
 
-import { options, transporter } from "@/lib/nodemailer";
-import { consumeRateLimit, getRequestIp } from "@/utils/rateLimit";
-import { z } from "zod";
+import { CONTACT_EMAIL } from "@/constants/constants";
+import { getMailSender, getMailTransporter } from "@/lib/nodemailer";
 import { escapeHtml } from "@/utils/escapeHtml";
+import { headers } from "next/headers";
+import { z } from "zod";
 
 type ContactData = {
   name: string;
   email: string;
   subject: string;
   message: string;
-  captchaToken: string | null;
+  website?: string;
 };
 
 const formSchema = z.object({
-  name: z.string().min(1),
-  email: z.email(),
-  subject: z.string().min(1),
-  message: z.string().min(1),
-  captchaToken: z.string().nullable(),
+  name: z.string().trim().min(1, "Name is required").max(64),
+  email: z.email("Invalid email address").max(255),
+  subject: z.string().trim().min(1, "Subject is required").max(64),
+  message: z.string().trim().min(1, "Message is required").max(1024),
+  website: z.string().optional(),
 });
 
-const EMAIL = process.env.EMAIL;
-if (!EMAIL) throw new Error("EMAIL not defined");
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
+const RATE_LIMIT_MAX_ATTEMPTS = 5;
+const ipAttempts = new Map<string, number[]>();
 
-const CAPTCHA_SECRET = process.env.CAPTCHA_SECRET;
-if (!CAPTCHA_SECRET) throw new Error("CAPTCHA_SECRET not defined");
+function getRequestIp() {
+  const forwardedFor = headers().get("x-forwarded-for");
+  if (forwardedFor) {
+    return forwardedFor.split(",")[0]?.trim() || "unknown";
+  }
+
+  return headers().get("x-real-ip")?.trim() || "unknown";
+}
+
+function checkMemoryRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const windowStart = now - RATE_LIMIT_WINDOW_MS;
+  const recent = (ipAttempts.get(ip) ?? []).filter((ts) => ts > windowStart);
+
+  if (recent.length >= RATE_LIMIT_MAX_ATTEMPTS) {
+    ipAttempts.set(ip, recent);
+    return false;
+  }
+
+  recent.push(now);
+  ipAttempts.set(ip, recent);
+
+  if (ipAttempts.size > 500) {
+    ipAttempts.forEach((timestamps, key) => {
+      const valid = timestamps.filter((ts) => ts > windowStart);
+      if (valid.length === 0) ipAttempts.delete(key);
+      else ipAttempts.set(key, valid);
+    });
+  }
+
+  return true;
+}
 
 export async function sendMail(data: ContactData) {
   try {
     const parsedData = formSchema.parse(data);
-    const normalizedEmail = parsedData.email.toLowerCase().trim();
+
+    // Honeypot triggered: silently accept without dispatching email
+    if (parsedData.website && parsedData.website.trim().length > 0) {
+      return { success: true, message: "Email sent successfully" };
+    }
+
     const requestIp = getRequestIp();
-
-    const [ipLimit, emailLimit] = await Promise.all([
-      consumeRateLimit({
-        action: "contact-ip",
-        key: requestIp,
-        maxAttempts: 3,
-        windowMs: 60 * 60 * 1000,
-      }),
-      consumeRateLimit({
-        action: "contact-email",
-        key: normalizedEmail,
-        maxAttempts: 2,
-        windowMs: 60 * 60 * 1000,
-      }),
-    ]);
-
-    if (!ipLimit.allowed || !emailLimit.allowed) {
+    if (!checkMemoryRateLimit(requestIp)) {
       return {
         success: false,
         message: "Too many messages sent. Please try again later.",
       };
     }
 
-    const captchaResponse = await fetch(
-      "https://www.google.com/recaptcha/api/siteverify",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: `secret=${CAPTCHA_SECRET}&response=${parsedData.captchaToken}`,
-      },
-    );
-    const captchaResult = await captchaResponse.json();
-    if (!captchaResult.success) return { success: false, message: "Captcha!" };
+    const transporter = getMailTransporter();
+    const sender = getMailSender() || CONTACT_EMAIL;
 
-    const sendEmailPromises = [
-      transporter.sendMail({
-        ...options,
-
-        to: normalizedEmail,
-        subject: "Confirmation: " + parsedData.subject,
-        html: `
-          <p>Hi ${escapeHtml(parsedData.name)},</p>
-          <p>Thank you for reaching out. I have received your message and will get back to you shortly.</p>
-          <br>
-          <h2>Your Message:</h2>
-          <p>${escapeHtml(parsedData.message)}</p>
-        `,
-      }),
-      transporter.sendMail({
-        ...options,
-
-        to: EMAIL,
-        subject: parsedData.subject,
-        html: `
-          <p>Reply to: ${escapeHtml(parsedData.email)}</p>
-          <br>
-          <h2>Mensagem enviada por ${escapeHtml(parsedData.name)}</h2>
-          <p>${escapeHtml(parsedData.message)}</p>
-        `,
-      }),
-    ];
-    await Promise.all(sendEmailPromises);
+    await transporter.sendMail({
+      from: sender,
+      to: sender,
+      replyTo: parsedData.email.toLowerCase().trim(),
+      subject: `[munraitoo13.dev] ${parsedData.subject}`,
+      html: `
+        <p><strong>From:</strong> ${escapeHtml(parsedData.name)} (${escapeHtml(parsedData.email)})</p>
+        <p><strong>Subject:</strong> ${escapeHtml(parsedData.subject)}</p>
+        <hr />
+        <p>${escapeHtml(parsedData.message).replace(/\n/g, "<br />")}</p>
+      `,
+    });
 
     return { success: true, message: "Email sent successfully" };
   } catch (error) {
@@ -104,7 +99,7 @@ export async function sendMail(data: ContactData) {
       return { success: false, message: "Invalid form data" };
     }
 
-    console.error("Unexpected error:", error);
+    console.error("Unexpected error sending mail:", error);
     return { success: false, message: "An unexpected error occurred" };
   }
 }

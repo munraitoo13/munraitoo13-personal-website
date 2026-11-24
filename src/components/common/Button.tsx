@@ -1,5 +1,5 @@
 import { Button as ShadcnButton } from "@/components/ui/button";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 import React, { ElementType } from "react";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {

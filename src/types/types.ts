@@ -1,19 +1,28 @@
-export interface Post {
-  id: string;
+export interface BlogPostMeta {
+  slug: string;
   title: string;
   description: string;
-  language: string;
-  content: string;
-  createdAt: Date;
+  date: string;
+  locale: string;
+  tags: string[];
+  featured: boolean;
   published: boolean;
-  isFeatured: boolean;
-  views: number;
-  likes: number;
-  shares: number;
-  tags: Tag[];
+  readingTimeMinutes: number;
 }
 
-export interface Tag {
+export interface BlogPost extends BlogPostMeta {
+  content: string;
+}
+
+export interface CuratedProject {
   id: string;
   name: string;
+  tagline: string;
+  summary: string;
+  metrics: string[];
+  stack: string[];
+  repoUrl: string | null;
+  liveUrl: string | null;
+  isPrivateRepo: boolean;
+  status: string;
 }

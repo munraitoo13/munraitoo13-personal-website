@@ -14,40 +14,54 @@ import {
   IconBrandX,
 } from "@tabler/icons-react";
 
-import Comunication from "@/images/Communication.jpg";
+import Communication from "@/images/Communication.jpg";
 import Competence from "@/images/Competence.jpg";
 import Detail from "@/images/Detail.jpg";
 
-import { BR, DE, FR, US } from "country-flag-icons/react/3x2";
+import { BR, US } from "country-flag-icons/react/3x2";
 
-export const LANGUAGES: { Flag: typeof BR; locale: Locale; title: string }[] = [
+export const RESUME_URL =
+  "https://drive.google.com/file/d/1krSImDXFQfqe6gMo8QRtCltPD-eZ8z1P/view?usp=sharing";
+
+export const CONTACT_EMAIL = "munraitoo13@gmail.com";
+
+export const LANGUAGES: { Flag: typeof US; locale: Locale; title: string }[] = [
   { Flag: BR, locale: "pt-BR", title: "Português" },
   { Flag: US, locale: "en-US", title: "English" },
-  { Flag: FR, locale: "fr-FR", title: "Français" },
-  { Flag: DE, locale: "de-DE", title: "Deutsch" },
 ];
 
 export const getPersonalLinks = (t: (key: string) => string) => [
-  { name: t("projects"), href: "/personal/projects" },
-  { name: t("contact"), href: "/personal/contact" },
-  { name: t("blog"), href: "/personal/blog" },
-];
-export const getProfessionalLinks = (t: (key: string) => string) => [
-  { name: t("skills"), href: "/professional/skills" },
-  { name: t("experiences"), href: "/professional/experiences" },
+  { name: t("projects"), href: "/projects" },
+  { name: t("contact"), href: "/contact" },
+  { name: t("blog"), href: "/blog" },
 ];
 
-export const ADMIN_LINKS = [
-  { title: "Home", href: "/" },
-  { title: "New Post", href: "/admin/new-post" },
+export const getProfessionalLinks = (t: (key: string) => string) => [
+  { name: t("skills"), href: "/skills" },
+  { name: t("experiences"), href: "/experiences" },
 ];
-export const POST_LANGUAGES = ["Português", "English", "Français", "Deutsch"];
 
 export const SOCIALS = [
-  { href: "https://github.com/munraitoo13", Icon: IconBrandGithub },
-  { href: "https://www.linkedin.com/in/munraitoo13/", Icon: IconBrandLinkedin },
-  { href: "https://www.instagram.com/munraitoo13/", Icon: IconBrandInstagram },
-  { href: "https://twitter.com/munraitoo13", Icon: IconBrandX },
+  {
+    label: "GitHub",
+    href: "https://github.com/munraitoo13",
+    Icon: IconBrandGithub,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/munraitoo13/",
+    Icon: IconBrandLinkedin,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/munraitoo13/",
+    Icon: IconBrandInstagram,
+  },
+  {
+    label: "X (Twitter)",
+    href: "https://twitter.com/munraitoo13",
+    Icon: IconBrandX,
+  },
 ];
 
 export const STACKS = [
@@ -68,7 +82,7 @@ export const getQualities = (t: (key: string) => string) => [
     description: t("quality2desc"),
   },
   {
-    image: Comunication,
+    image: Communication,
     title: t("quality1"),
     description: t("quality1desc"),
   },
@@ -96,10 +110,3 @@ export const getPhraseDescription = (t: (key: string) => string) => [
     description: t("insideAndOutExplDesc"),
   },
 ];
-
-export const myName = {
-  "pt-br": "Meu nome é Augusto.",
-  "en-us": "My name is Augusto.",
-  "fr-fr": "Je m'appelle Augusto.",
-  "de-de": "Ich heiße Augusto.",
-};

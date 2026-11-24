@@ -1,50 +1,39 @@
 "use client";
 
 import { sendMail } from "@/actions/sendMail";
-import { useCaptcha } from "@/hooks/useCaptcha";
-import { useTheme } from "@/hooks/useTheme";
-import { useTranslations } from "next-intl";
-import { useRef, useState } from "react";
-import { useForm } from "react-hook-form";
-import ReCAPTCHA from "react-google-recaptcha";
-import { toast } from "react-toastify";
 import { Button } from "@/components/common/Button";
-import { Input } from "../common/Input";
-import { Textarea } from "../common/Textarea";
+import { Input } from "@/components/common/Input";
+import { Textarea } from "@/components/common/Textarea";
+import { useTranslations } from "next-intl";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 type ContactData = {
   name: string;
   email: string;
   subject: string;
   message: string;
-  captchaToken: string | null;
+  website?: string;
 };
 
 export function ContactForm() {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitting },
+    reset,
+    formState: { errors, isSubmitting },
   } = useForm<ContactData>();
-  const { theme } = useTheme();
-
-  const { captchaToken, setCaptchaToken, resetCaptcha, captchaRef } =
-    useCaptcha();
-  const formRef = useRef<HTMLFormElement>(null);
-
-  const PUBLIC_SITE_KEY = process.env.NEXT_PUBLIC_SITE_KEY;
-  if (!PUBLIC_SITE_KEY) throw new Error("Missing reCAPTCHA site key");
 
   const t = useTranslations("Contact");
   const tt = useTranslations("Toastify");
   const fieldClassName =
-    "border border-transparent bg-[color-mix(in_oklch,var(--color-background-contrast),white_35%)] dark:bg-[color-mix(in_oklch,var(--color-background-contrast),white_6%)]";
+    "border border-transparent bg-[color-mix(in_oklch,var(--color-background-contrast),white_6%)]";
 
   const onSubmit = async (data: ContactData) => {
     const toastId = toast.loading(tt("sending"));
 
     try {
-      const { success, message } = await sendMail({ ...data, captchaToken });
+      const { success, message } = await sendMail(data);
 
       toast.update(toastId, {
         render: success
@@ -55,7 +44,9 @@ export function ContactForm() {
         autoClose: 5000,
       });
 
-      success && formRef.current?.reset();
+      if (success) {
+        reset();
+      }
     } catch (error) {
       console.error("Error sending email:", error);
       toast.update(toastId, {
@@ -64,57 +55,64 @@ export function ContactForm() {
         isLoading: false,
         autoClose: 5000,
       });
-    } finally {
-      resetCaptcha();
     }
   };
 
   return (
-    <form
-      ref={formRef}
-      onSubmit={handleSubmit(onSubmit)}
-      className="w-full space-y-2"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-2">
+      <input
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+        {...register("website")}
+      />
+
       <Input
-        {...register("name", { required: true, maxLength: 64 })}
+        {...register("name", {
+          required: tt("emptyFields"),
+          maxLength: { value: 64, message: "Max 64 characters" },
+        })}
         placeholder={t("name")}
         className={fieldClassName}
+        error={errors.name?.message}
       />
 
       <Input
         {...register("email", {
-          required: true,
-          maxLength: 255,
-          pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+          required: tt("emptyFields"),
+          maxLength: { value: 255, message: "Max 255 characters" },
+          pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            message: tt("invalidEmail"),
+          },
         })}
+        type="email"
         placeholder={t("email")}
         className={fieldClassName}
+        error={errors.email?.message}
       />
 
       <Input
-        {...register("subject", { required: true, maxLength: 64 })}
+        {...register("subject", {
+          required: tt("emptyFields"),
+          maxLength: { value: 64, message: "Max 64 characters" },
+        })}
         placeholder={t("subject")}
         className={fieldClassName}
+        error={errors.subject?.message}
       />
 
       <Textarea
-        {...register("message", { required: true, maxLength: 1024 })}
+        {...register("message", {
+          required: tt("emptyFields"),
+          maxLength: { value: 1024, message: "Max 1024 characters" },
+        })}
         placeholder={t("message")}
         classNameTextarea={`${fieldClassName} min-h-40`}
+        error={errors.message?.message}
       />
-
-      <div className="bg-background-contrast relative inline-flex overflow-hidden rounded-xl">
-        <div className="origin-center scale-x-[1.015] scale-y-[1.045]">
-          <ReCAPTCHA
-            key={theme}
-            theme={theme === "dark" ? "dark" : "light"}
-            sitekey={PUBLIC_SITE_KEY}
-            onChange={(token) => setCaptchaToken(token)}
-            ref={captchaRef}
-          />
-        </div>
-        <div className="bg-background-contrast pointer-events-none absolute inset-x-0 bottom-0 h-[3px]" />
-      </div>
 
       <Button fullWidth type="submit" disabled={isSubmitting}>
         {isSubmitting ? t("sending") : t("send")}
