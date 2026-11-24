@@ -6,9 +6,10 @@
 
 @theme {
   --font-sans:
-    var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+    var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
   --font-mono:
-    var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+    var(--font-space-mono), ui-monospace, SFMono-Regular, monospace;
 
   --color-background: #0b0d0f;
   --color-background-contrast: #111417;
@@ -20,9 +21,9 @@
   --color-secondary: #9ca3af;
   --color-tertiary: #6b7280;
 
-  --color-accent: #dc2626;
-  --color-accent-hover: #ef4444;
-  --color-accent-contrast: #f8fafc;
+  --color-accent: #e02424;
+  --color-accent-hover: #f23838;
+  --color-accent-contrast: #ffffff;
 
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-fast: 180ms;
@@ -61,41 +62,8 @@
   border-inline: 1px solid var(--color-border);
 }
 
-@utility tui-chamfer {
-  clip-path: polygon(
-    0 0,
-    calc(100% - 10px) 0,
-    100% 10px,
-    100% 100%,
-    0 100%
-  );
-}
-
-@utility tui-grid-pattern {
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
 @utility tui-hero-surface {
-  background-color: #4b0c10;
-  background-image:
-    radial-gradient(
-      ellipse 75% 65% at 80% 25%,
-      rgba(220, 38, 38, 0.28),
-      transparent 70%
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.04) 1px,
-      transparent 1px
-    ),
-    linear-gradient(135deg, #4b0c10 0%, #7a141b 52%, #3a080c 100%);
-  background-size:
-    100% 100%,
-    100% 28px,
-    100% 100%;
+  background-color: var(--color-accent);
 }
 
 @utility prose-neutral {
@@ -114,7 +82,13 @@
   line-height: 1.75;
 
   h1,
-  h2,
+  h2 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    color: var(--color-primary);
+  }
+
   h3,
   h4,
   h5,
@@ -123,11 +97,6 @@
   strong {
     font-weight: 500;
     color: var(--color-primary);
-  }
-
-  h2,
-  h3 {
-    letter-spacing: -0.02em;
   }
 
   p,

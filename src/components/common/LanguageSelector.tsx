@@ -41,7 +41,7 @@ export function LanguageSelector({
       className={cn(
         "inline-flex items-center border font-mono text-[11px] uppercase tracking-[0.16em]",
         tone === "hero"
-          ? "border-white/25 bg-black/20"
+          ? "border-white/30 bg-transparent"
           : "border-[var(--color-border)] bg-background-contrast",
         className,
       )}

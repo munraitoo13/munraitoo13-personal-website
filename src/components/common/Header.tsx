@@ -14,7 +14,7 @@ export function Header({
   sectionIndex,
 }: HeaderProps) {
   return (
-    <header className="bg-background-contrast/40 border-b border-[var(--color-border)]">
+    <header className="bg-background border-b border-[var(--color-border)]">
       <div className="tui-rail flex flex-col gap-5 px-6 py-14 md:py-20">
         {(sectionLabel || sectionIndex) && (
           <SectionLabel
@@ -24,7 +24,7 @@ export function Header({
           />
         )}
 
-        <h1 className="text-primary max-w-3xl text-4xl font-medium tracking-tight md:text-5xl">
+        <h1 className="font-serif text-primary max-w-3xl text-5xl font-normal tracking-tight md:text-6xl">
           {pageTitle}
         </h1>
 

@@ -6,19 +6,32 @@ import "@/styles/main.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import {
+  Instrument_Sans,
+  Instrument_Serif,
+  Space_Mono,
+} from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.min.css";
 
-const spaceGrotesk = Space_Grotesk({
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-instrument-sans",
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+  display: "swap",
+});
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
   display: "swap",
 });
 
@@ -58,7 +71,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`dark ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      className={`dark ${instrumentSans.variable} ${instrumentSerif.variable} ${spaceMono.variable}`}
     >
       <body className="bg-background text-secondary selection:bg-accent/30 selection:text-primary font-sans antialiased">
         <NextIntlClientProvider messages={messages}>

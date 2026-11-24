@@ -18,13 +18,13 @@ export function SectionLabel({
 }: SectionLabelProps) {
   const toneStyles =
     tone === "hero"
-      ? "border-white/25 bg-black/25 text-white/90"
+      ? "border-white/30 bg-transparent text-white"
       : "border-[var(--color-border)] bg-background-contrast text-secondary";
 
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-2 border px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em]",
+        "inline-flex items-center gap-2 border px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em]",
         toneStyles,
         className,
       )}
@@ -47,7 +47,7 @@ export function SectionLabel({
         />
       )}
       {index && (
-        <span className={tone === "hero" ? "text-white/60" : "text-tertiary"}>
+        <span className={tone === "hero" ? "text-white/70" : "text-tertiary"}>
           {index} /
         </span>
       )}

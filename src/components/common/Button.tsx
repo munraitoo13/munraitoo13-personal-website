@@ -5,7 +5,6 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: "sm" | "md" | "lg";
   variant?: "primary" | "secondary" | "dark" | "heroOutline";
   fullWidth?: boolean;
-  chamfer?: boolean;
   Icon?: ElementType;
 };
 
@@ -15,12 +14,11 @@ export const Button: React.FC<ButtonProps> = ({
   variant = "primary",
   size = "md",
   fullWidth = false,
-  chamfer = true,
   Icon,
   ...props
 }) => {
   const baseStyles =
-    "inline-flex h-auto w-fit shrink-0 cursor-pointer items-center justify-center gap-2 rounded-none font-mono text-xs uppercase tracking-[0.16em] whitespace-nowrap transition-colors duration-200 ease-[var(--ease-smooth)] focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50";
+    "inline-flex h-auto w-fit shrink-0 cursor-pointer items-center justify-center gap-2 rounded-none font-mono text-xs uppercase tracking-[0.14em] whitespace-nowrap transition-colors duration-200 ease-[var(--ease-smooth)] focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50";
 
   const variantStyles = {
     primary:
@@ -29,7 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
     secondary:
       "border border-[var(--color-border-strong)] bg-transparent text-primary hover:border-accent hover:text-accent",
     heroOutline:
-      "border border-white/35 bg-transparent text-white hover:border-white hover:bg-white/10",
+      "border border-white/40 bg-transparent text-white hover:border-white hover:bg-white/10",
   };
 
   const sizeStyles = {
@@ -38,16 +36,12 @@ export const Button: React.FC<ButtonProps> = ({
     lg: "px-7 py-3.5 text-xs",
   };
 
-  const useChamfer =
-    chamfer && (variant === "primary" || variant === "dark");
-
   return (
     <button
       className={cn(
         baseStyles,
         variantStyles[variant],
         sizeStyles[size],
-        useChamfer && "tui-chamfer",
         fullWidth && "w-full",
         className,
       )}

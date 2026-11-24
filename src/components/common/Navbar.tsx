@@ -42,14 +42,14 @@ export function Navbar() {
       className={cn(
         "relative z-30 border-b",
         isHome
-          ? "-mb-16 border-white/15 bg-transparent"
+          ? "-mb-16 border-white/20 bg-transparent"
           : "bg-background border-[var(--color-border)]",
       )}
     >
       <div
         className={cn(
           "tui-rail flex h-16 items-center justify-between px-6",
-          isHome && "border-white/15",
+          isHome && "border-white/20",
         )}
       >
         <Link
@@ -114,8 +114,8 @@ export function Navbar() {
           onClick={() => setIsOpen((prev) => !prev)}
           className={cn(
             "inline-flex size-9 cursor-pointer items-center justify-center border md:hidden",
-            isHome
-              ? "border-white/25 bg-black/20 text-white"
+          isHome
+              ? "border-white/30 bg-transparent text-white hover:bg-white/10"
               : "border-[var(--color-border)] bg-background-contrast text-primary",
           )}
         >
