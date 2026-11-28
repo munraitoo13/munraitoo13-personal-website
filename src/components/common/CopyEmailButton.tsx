@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Check, Copy } from "lucide-react";
+import { AlertCircle, Check, Copy } from "lucide-react";
 import { useState } from "react";
 
 type CopyEmailButtonProps = {
@@ -17,15 +17,17 @@ export function CopyEmailButton({
   copiedLabel,
   className,
 }: CopyEmailButtonProps) {
-  const [copied, setCopied] = useState(false);
+  const [status, setStatus] = useState<"idle" | "copied" | "error">("idle");
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setStatus("copied");
+      setTimeout(() => setStatus("idle"), 2000);
     } catch (error) {
       console.error("Failed to copy email:", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 2500);
     }
   };
 
@@ -34,14 +36,19 @@ export function CopyEmailButton({
       type="button"
       onClick={handleCopy}
       className={cn(
-        "bg-background text-secondary hover:border-accent hover:text-primary inline-flex cursor-pointer items-center gap-1.5 border border-[var(--color-border)] px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.14em] transition-colors",
+        "motion-press bg-background text-secondary hover:border-accent-text hover:text-primary inline-flex min-h-11 cursor-pointer items-center gap-2 border border-[var(--color-border)] px-3.5 py-2 font-mono text-xs",
         className,
       )}
     >
-      {copied ? (
+      {status === "copied" ? (
         <>
-          <Check className="text-accent size-3.5" strokeWidth={1.75} />
+          <Check className="text-accent-text size-3.5" strokeWidth={1.75} />
           <span>{copiedLabel}</span>
+        </>
+      ) : status === "error" ? (
+        <>
+          <AlertCircle className="text-accent-text size-3.5" strokeWidth={1.75} />
+          <span>{email}</span>
         </>
       ) : (
         <>

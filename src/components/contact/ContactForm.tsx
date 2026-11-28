@@ -4,7 +4,7 @@ import { sendMail } from "@/actions/sendMail";
 import { Button } from "@/components/common/Button";
 import { Input } from "@/components/common/Input";
 import { Textarea } from "@/components/common/Textarea";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
@@ -26,7 +26,10 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
 
   const t = useTranslations("Contact");
   const tt = useTranslations("Toastify");
+  const locale = useLocale();
+  const isPt = locale === "pt-BR";
   const fieldClassName = "bg-background";
+  const prefix = compact ? "home-contact" : "contact";
 
   const onSubmit = async (data: ContactData) => {
     const toastId = toast.loading(tt("sending"));
@@ -58,7 +61,11 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-3">
+    <form
+      noValidate
+      onSubmit={handleSubmit(onSubmit)}
+      className="w-full space-y-4"
+    >
       <input
         type="text"
         tabIndex={-1}
@@ -68,11 +75,17 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
         {...register("website")}
       />
 
-      <div className={compact ? "grid gap-3 sm:grid-cols-2" : "space-y-3"}>
+      <div className={compact ? "grid gap-4 sm:grid-cols-2" : "space-y-4"}>
         <Input
+          id={`${prefix}-name`}
+          label={t("name")}
+          autoComplete="name"
           {...register("name", {
             required: tt("emptyFields"),
-            maxLength: { value: 64, message: "Max 64 characters" },
+            maxLength: {
+              value: 64,
+              message: isPt ? "Máximo de 64 caracteres." : "Max 64 characters.",
+            },
           })}
           placeholder={t("name")}
           className={fieldClassName}
@@ -80,9 +93,17 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
         />
 
         <Input
+          id={`${prefix}-email`}
+          label={t("email")}
+          autoComplete="email"
           {...register("email", {
             required: tt("emptyFields"),
-            maxLength: { value: 255, message: "Max 255 characters" },
+            maxLength: {
+              value: 255,
+              message: isPt
+                ? "Máximo de 255 caracteres."
+                : "Max 255 characters.",
+            },
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
               message: tt("invalidEmail"),
@@ -96,9 +117,14 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       </div>
 
       <Input
+        id={`${prefix}-subject`}
+        label={t("subject")}
         {...register("subject", {
           required: tt("emptyFields"),
-          maxLength: { value: 64, message: "Max 64 characters" },
+          maxLength: {
+            value: 64,
+            message: isPt ? "Máximo de 64 caracteres." : "Max 64 characters.",
+          },
         })}
         placeholder={t("subject")}
         className={fieldClassName}
@@ -106,9 +132,16 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       />
 
       <Textarea
+        id={`${prefix}-message`}
+        label={t("message")}
         {...register("message", {
           required: tt("emptyFields"),
-          maxLength: { value: 1024, message: "Max 1024 characters" },
+          maxLength: {
+            value: 1024,
+            message: isPt
+              ? "Máximo de 1024 caracteres."
+              : "Max 1024 characters.",
+          },
         })}
         placeholder={t("message")}
         classNameTextarea={`${fieldClassName} ${compact ? "min-h-28" : "min-h-40"}`}

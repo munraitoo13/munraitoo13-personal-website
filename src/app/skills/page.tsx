@@ -1,4 +1,4 @@
-import { Button } from "@/components/common/Button";
+import { buttonClasses } from "@/components/common/Button";
 import { Header } from "@/components/common/Header";
 import { getSkillsData } from "@/data/skills";
 import { resolveLocale } from "@/i18n/config";
@@ -21,61 +21,54 @@ export default async function Page() {
 
   return (
     <>
-      <Header
-        sectionIndex="03"
-        sectionLabel={t("label")}
-        pageTitle={t("title")}
-        pageDescription={t("description")}
-      />
+      <Header pageTitle={t("title")} pageDescription={t("description")} />
 
-      <div className="tui-rail space-y-12 px-6 py-16">
-        <div className="grid border-t border-l border-[var(--color-border)] md:grid-cols-2 lg:grid-cols-3">
+      <div className="tui-rail space-y-14 px-6 py-12 md:py-16">
+        <div className="divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]">
           {categories.map((category) => (
             <section
               key={category.id}
-              className="bg-background-contrast/40 hover:bg-background-contrast flex flex-col justify-between gap-6 border-r border-b border-[var(--color-border)] p-6 transition-colors md:p-7"
+              className="grid gap-4 py-8 lg:grid-cols-12 lg:items-baseline lg:gap-10"
             >
-              <div className="space-y-2.5">
-                <span className="text-accent font-mono text-xs uppercase tracking-[0.16em]">
-                  {category.index} //
-                </span>
+              <div className="space-y-1.5 lg:col-span-5">
                 <h2 className="text-primary text-xl font-semibold tracking-tight">
                   {category.title}
                 </h2>
-                <p className="text-secondary text-sm leading-relaxed">
+                <p className="text-secondary max-w-[48ch] text-sm leading-relaxed">
                   {category.description}
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-1.5">
-                {category.items.map((item) => (
-                  <span
-                    key={item}
-                    className="bg-background text-secondary border border-[var(--color-border)] px-2.5 py-1 font-mono text-[11px]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
+              <p className="text-primary font-mono text-xs leading-relaxed lg:col-span-7">
+                {category.items.join(" · ")}
+              </p>
             </section>
           ))}
         </div>
 
-        <section className="bg-background-contrast flex flex-col gap-4 border border-[var(--color-border)] p-6 md:p-8">
-          <h2 className="text-primary text-2xl font-semibold tracking-tight">
-            {t("ctaTitle")}
-          </h2>
-          <p className="text-secondary max-w-2xl leading-relaxed">
-            {t("ctaDescription")}
-          </p>
+        <section className="flex flex-col justify-between gap-6 border-t border-[var(--color-border)] pt-8 md:flex-row md:items-center">
+          <div className="space-y-1.5">
+            <h2 className="text-primary text-xl font-semibold tracking-tight">
+              {t("ctaTitle")}
+            </h2>
+            <p className="text-secondary max-w-[60ch] text-sm leading-relaxed">
+              {t("ctaDescription")}
+            </p>
+          </div>
 
-          <div className="flex flex-wrap gap-4 pt-2">
-            <Link href="/contact">
-              <Button>{t("contactCta")}</Button>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/contact"
+              className={buttonClasses({ variant: "primary" })}
+            >
+              {t("contactCta")}
             </Link>
 
-            <Link href="/projects">
-              <Button variant="secondary">{t("projectsCta")}</Button>
+            <Link
+              href="/projects"
+              className={buttonClasses({ variant: "secondary" })}
+            >
+              {t("projectsCta")}
             </Link>
           </div>
         </section>

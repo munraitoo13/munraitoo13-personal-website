@@ -20,45 +20,38 @@ export async function FeaturedPost({
   return (
     <Link
       href={`/blog/${featuredPost.slug}`}
-      className="group bg-background-contrast hover:border-accent flex flex-col gap-5 border border-[var(--color-border)] border-l-2 border-l-accent p-6 transition-colors duration-200 md:p-8"
+      className="group bg-background-contrast hover:border-accent-text flex flex-col gap-5 border border-[var(--color-border)] border-l-2 border-l-accent p-6 transition-colors duration-200 md:p-8"
     >
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="text-accent inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em]">
+        <div className="text-accent-text inline-flex items-center gap-2 text-xs font-medium">
           <Pin className="size-3.5" strokeWidth={1.75} />
           <span>{t("featured")}</span>
         </div>
 
-        <span className="text-tertiary font-mono text-xs">
+        <span className="text-tertiary font-mono text-xs tabular-nums">
           {formatDate(new Date(featuredPost.date), locale)} ·{" "}
           {featuredPost.readingTimeMinutes} min
         </span>
       </div>
 
       <div className="space-y-3">
-        <h2 className="text-primary group-hover:text-accent text-2xl font-semibold tracking-tight transition-colors md:text-3xl">
+        <h2 className="text-primary group-hover:text-accent-text text-2xl font-semibold tracking-tight transition-colors md:text-3xl">
           {featuredPost.title}
         </h2>
 
-        <p className="text-secondary max-w-3xl text-base leading-relaxed">
+        <p className="text-secondary max-w-[65ch] text-base leading-relaxed">
           {featuredPost.description}
         </p>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[var(--color-border)] pt-5">
-        <div className="flex flex-wrap gap-2">
-          {featuredPost.tags.map((tag) => (
-            <span
-              key={tag}
-              className="bg-background text-secondary border border-[var(--color-border)] px-2.5 py-1 font-mono text-[11px]"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+      <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[var(--color-border)] pt-4">
+        <p className="text-tertiary font-mono text-xs">
+          {featuredPost.tags.join(" · ")}
+        </p>
 
-        <span className="text-primary group-hover:text-accent inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.14em] transition-colors">
+        <span className="text-primary group-hover:text-accent-text inline-flex items-center gap-1.5 text-sm font-medium transition-colors">
           <span>{t("readFeatured")}</span>
-          <ArrowRight className="size-3.5" strokeWidth={1.75} />
+          <ArrowRight className="size-4" strokeWidth={1.75} />
         </span>
       </div>
     </Link>

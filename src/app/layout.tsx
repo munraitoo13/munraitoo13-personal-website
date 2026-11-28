@@ -6,13 +6,13 @@ import "@/styles/main.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import { Instrument_Sans, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Schibsted_Grotesk } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.min.css";
 
-const instrumentSans = Instrument_Sans({
+const schibstedGrotesk = Schibsted_Grotesk({
   subsets: ["latin"],
-  variable: "--font-instrument-sans",
+  variable: "--font-schibsted-grotesk",
   display: "swap",
 });
 
@@ -58,10 +58,17 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`dark ${instrumentSans.variable} ${jetbrainsMono.variable}`}
+      className={`dark ${schibstedGrotesk.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="bg-background text-secondary selection:bg-accent/30 selection:text-primary font-sans antialiased">
+      <body className="bg-background text-secondary font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
+          <a
+            href="#main-content"
+            className="bg-background-contrast text-primary sr-only z-50 border border-[var(--color-border-strong)] px-4 py-3 font-mono text-xs focus:not-sr-only focus:fixed focus:top-4 focus:left-4"
+          >
+            Skip to main content
+          </a>
+
           <ToastContainer
             position="top-right"
             autoClose={5000}
@@ -73,11 +80,14 @@ export default async function RootLayout({
             draggable
             pauseOnHover
             theme="dark"
+            toastClassName="!rounded-none !bg-background-contrast !text-primary !border !border-[var(--color-border-strong)] !shadow-none !font-sans !text-sm"
           />
 
           <div className="flex min-h-dvh flex-col">
             <Navbar />
-            <main className="animate-page-enter flex-1">{children}</main>
+            <main id="main-content" className="flex-1">
+              {children}
+            </main>
             <Footer />
           </div>
 

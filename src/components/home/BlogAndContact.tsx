@@ -1,12 +1,11 @@
 import { CopyEmailButton } from "@/components/common/CopyEmailButton";
-import { SectionLabel } from "@/components/common/SectionLabel";
 import { Socials } from "@/components/common/Socials";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { CONTACT_EMAIL } from "@/constants/constants";
 import type { Locale } from "@/i18n/config";
 import type { BlogPostMeta } from "@/types/types";
 import { formatDate } from "@/utils/formatDate";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 
@@ -18,20 +17,16 @@ export async function BlogAndContact({
   locale: Locale;
 }) {
   const t = await getTranslations("HomePage");
+  const tContact = await getTranslations("Contact");
 
   return (
     <section>
-      <div className="tui-rail px-6 py-16 md:py-24">
-        <div className="mb-10 space-y-4">
-          <SectionLabel
-            index="04"
-            label={t("contactSectionLabel")}
-            Icon={Mail}
-          />
-          <h2 className="text-primary max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
+      <div className="tui-rail px-6 py-20 md:py-28">
+        <div className="mb-10 space-y-2">
+          <h2 className="text-primary max-w-2xl text-3xl font-semibold tracking-[-0.02em] md:text-4xl">
             {t("contactSectionTitle")}
           </h2>
-          <p className="text-secondary max-w-2xl text-base leading-relaxed">
+          <p className="text-secondary max-w-[65ch] text-base leading-relaxed">
             {t("contactSectionDesc")}
           </p>
         </div>
@@ -41,11 +36,11 @@ export async function BlogAndContact({
             {latestPost && (
               <div className="flex flex-1 flex-col justify-between gap-5 p-6 md:p-8">
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-accent font-mono text-[11px] uppercase tracking-[0.16em]">
-                      // {t("latestArticle")}
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <span className="text-accent-text text-xs font-medium">
+                      {t("latestArticle")}
                     </span>
-                    <span className="text-tertiary font-mono text-[11px]">
+                    <span className="text-tertiary font-mono text-xs tabular-nums">
                       {formatDate(new Date(latestPost.date), locale)} ·{" "}
                       {latestPost.readingTimeMinutes} min
                     </span>
@@ -55,10 +50,10 @@ export async function BlogAndContact({
                     href={`/blog/${latestPost.slug}`}
                     className="group block space-y-2"
                   >
-                    <h3 className="text-primary group-hover:text-accent text-xl font-semibold tracking-tight transition-colors">
+                    <h3 className="text-primary group-hover:text-accent-text text-xl font-semibold tracking-tight transition-colors">
                       {latestPost.title}
                     </h3>
-                    <p className="text-secondary text-sm leading-relaxed">
+                    <p className="text-secondary max-w-[55ch] text-sm leading-relaxed">
                       {latestPost.description}
                     </p>
                   </Link>
@@ -66,11 +61,11 @@ export async function BlogAndContact({
 
                 <Link
                   href="/blog"
-                  className="text-secondary hover:text-primary inline-flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] transition-colors"
+                  className="text-secondary hover:text-primary inline-flex min-h-11 w-fit items-center gap-2 text-sm font-medium transition-colors"
                 >
                   <span>{t("allArticles")}</span>
                   <ArrowRight
-                    className="text-accent size-3.5"
+                    className="text-accent-text size-4"
                     strokeWidth={1.75}
                   />
                 </Link>
@@ -79,13 +74,13 @@ export async function BlogAndContact({
 
             <div className="space-y-5 p-6 md:p-8">
               <div className="space-y-2">
-                <p className="text-tertiary font-mono text-[11px] uppercase tracking-[0.16em]">
-                  // Direct Email
+                <p className="text-tertiary text-xs font-medium">
+                  {tContact("emailSectionTitle")}
                 </p>
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
-                    className="text-primary hover:text-accent font-mono text-sm transition-colors"
+                    className="text-primary hover:text-accent-text font-mono text-sm transition-colors"
                   >
                     {CONTACT_EMAIL}
                   </a>
@@ -98,7 +93,7 @@ export async function BlogAndContact({
                 </div>
               </div>
 
-              <Socials className="justify-start gap-3" />
+              <Socials className="justify-start gap-2" />
             </div>
           </div>
 

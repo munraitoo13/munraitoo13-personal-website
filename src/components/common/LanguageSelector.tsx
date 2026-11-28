@@ -35,9 +35,9 @@ export function LanguageSelector({
       role="group"
       aria-label="Language selector"
       className={cn(
-        "inline-flex items-center border font-mono text-[11px] uppercase tracking-[0.16em]",
+        "inline-flex items-center border font-mono text-xs uppercase tracking-[0.08em]",
         tone === "hero"
-          ? "border-white/30 bg-transparent"
+          ? "border-white/40 bg-transparent"
           : "border-[var(--color-border)] bg-background-contrast",
         className,
       )}
@@ -55,14 +55,14 @@ export function LanguageSelector({
             disabled={isPending}
             onClick={() => handleLocaleChange(locale)}
             className={cn(
-              "cursor-pointer px-2.5 py-1.5 transition-colors duration-200 disabled:cursor-wait",
+              "motion-press inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center px-3 disabled:cursor-wait",
               isActive
                 ? tone === "hero"
-                  ? "bg-white font-medium text-[#0b0d0f]"
-                  : "bg-accent text-accent-contrast font-medium"
+                  ? "bg-white font-semibold text-background"
+                  : "bg-accent text-accent-contrast font-semibold"
                 : tone === "hero"
-                  ? "text-white/70 hover:text-white"
-                  : "text-tertiary hover:text-primary",
+                  ? "text-white/95 hover:bg-white/10 hover:text-white"
+                  : "text-secondary hover:text-primary",
             )}
           >
             {shortLabel}

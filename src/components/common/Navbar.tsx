@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/common/Button";
+import { buttonClasses } from "@/components/common/Button";
 import { LanguageSelector } from "@/components/common/LanguageSelector";
 import {
   RESUME_URL,
@@ -18,6 +18,7 @@ import { useEffect, useRef, useState } from "react";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
   const isHome = pathname === "/";
 
@@ -26,6 +27,20 @@ export function Navbar() {
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
 
   const t = useTranslations("NavBar");
   const th = useTranslations("HomePage");
@@ -42,19 +57,22 @@ export function Navbar() {
       className={cn(
         "relative z-30 border-b",
         isHome
-          ? "-mb-16 border-white/20 bg-transparent"
+          ? "-mb-16 border-white/25 bg-transparent"
           : "bg-background border-[var(--color-border)]",
       )}
     >
       <div
         className={cn(
           "tui-rail flex h-16 items-center justify-between px-6",
-          isHome && "border-white/20",
+          isHome && "border-white/25",
         )}
       >
         <Link
           href="/"
-          className="inline-flex items-center gap-2.5 font-mono text-sm font-medium tracking-[0.08em] text-[#ecebe6]"
+          className={cn(
+            "inline-flex min-h-11 items-center gap-2.5 font-mono text-sm font-medium tracking-[0.04em]",
+            isHome ? "text-white" : "text-primary",
+          )}
         >
           <span
             className={cn("size-2", isHome ? "bg-white" : "bg-accent")}
@@ -75,14 +93,15 @@ export function Navbar() {
               <Link
                 key={href}
                 href={href}
+                aria-current={isActive ? "page" : undefined}
                 className={cn(
-                  "font-mono text-[11px] uppercase tracking-[0.16em] transition-colors duration-200",
+                  "inline-flex min-h-11 items-center text-sm font-medium transition-colors duration-150 ease",
                   isHome
                     ? isActive
-                      ? "text-white"
-                      : "text-white/75 hover:text-white"
+                      ? "text-white underline decoration-white underline-offset-8"
+                      : "text-white/95 hover:text-white hover:underline hover:decoration-white/60 hover:underline-offset-8"
                     : isActive
-                      ? "text-primary underline decoration-accent underline-offset-8"
+                      ? "text-primary underline decoration-accent-text underline-offset-8"
                       : "text-secondary hover:text-primary",
                 )}
               >
@@ -99,23 +118,27 @@ export function Navbar() {
             href={RESUME_URL}
             target="_blank"
             rel="noopener noreferrer"
+            className={buttonClasses({
+              size: "sm",
+              variant: isHome ? "dark" : "primary",
+              className: "group",
+            })}
           >
-            <Button size="sm" variant={isHome ? "dark" : "primary"}>
-              <span>{th("resume")}</span>
-              <ArrowUpRight className="size-3.5" strokeWidth={1.75} />
-            </Button>
+            <span>{th("resume")}</span>
+            <ArrowUpRight className="motion-arrow-up-right size-3.5" strokeWidth={1.75} />
           </Link>
         </div>
 
         <button
+          ref={toggleRef}
           type="button"
           aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((prev) => !prev)}
           className={cn(
-            "inline-flex size-9 cursor-pointer items-center justify-center border md:hidden",
-          isHome
-              ? "border-white/30 bg-transparent text-white hover:bg-white/10"
+            "motion-press inline-flex size-11 cursor-pointer items-center justify-center border md:hidden",
+            isHome
+              ? "border-white/40 bg-transparent text-white hover:bg-white/10"
               : "border-[var(--color-border)] bg-background-contrast text-primary",
           )}
         >
@@ -128,12 +151,12 @@ export function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="bg-background border-t border-[var(--color-border)] px-6 py-6 md:hidden">
+        <div className="motion-drawer bg-background border-t border-[var(--color-border)] px-6 py-6 md:hidden">
           <nav
             aria-label="Mobile navigation"
             className="flex flex-col divide-y divide-[var(--color-border)] border border-[var(--color-border)]"
           >
-            {navLinks.map(({ href, name }, idx) => {
+            {navLinks.map(({ href, name }) => {
               const isActive =
                 pathname === href || pathname.startsWith(`${href}/`);
 
@@ -141,16 +164,23 @@ export function Navbar() {
                 <Link
                   key={href}
                   href={href}
+                  aria-current={isActive ? "page" : undefined}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "flex items-center justify-between px-4 py-3 font-mono text-xs uppercase tracking-[0.16em] transition-colors",
+                    "flex min-h-11 items-center justify-between px-4 py-3 text-sm font-medium transition-colors",
                     isActive
                       ? "bg-background-contrast text-primary"
                       : "text-secondary hover:bg-background-contrast hover:text-primary",
                   )}
                 >
                   <span>{name}</span>
-                  <span className="text-tertiary">0{idx + 1}</span>
+                  <ArrowUpRight
+                    className={cn(
+                      "size-3.5",
+                      isActive ? "text-accent-text" : "text-tertiary",
+                    )}
+                    strokeWidth={1.75}
+                  />
                 </Link>
               );
             })}
@@ -163,11 +193,10 @@ export function Navbar() {
               href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
+              className={buttonClasses({ size: "sm", variant: "primary" })}
             >
-              <Button size="sm">
-                <span>{th("resume")}</span>
-                <ArrowUpRight className="size-3.5" strokeWidth={1.75} />
-              </Button>
+              <span>{th("resume")}</span>
+              <ArrowUpRight className="size-3.5" strokeWidth={1.75} />
             </Link>
           </div>
         </div>

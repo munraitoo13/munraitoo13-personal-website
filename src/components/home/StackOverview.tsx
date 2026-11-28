@@ -1,6 +1,5 @@
-import { SectionLabel } from "@/components/common/SectionLabel";
 import type { SkillCategory } from "@/types/types";
-import { ArrowRight, Cpu } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 
@@ -10,59 +9,46 @@ export async function StackOverview({
   categories: SkillCategory[];
 }) {
   const t = await getTranslations("HomePage");
+  const leadCategories = categories.slice(0, 3);
 
   return (
     <section className="border-b border-[var(--color-border)]">
-      <div className="tui-rail px-6 py-16 md:py-24">
+      <div className="tui-rail px-6 py-14 md:py-20">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
-          <div className="space-y-4">
-            <SectionLabel
-              index="03"
-              label={t("skillsSectionLabel")}
-              Icon={Cpu}
-            />
-            <h2 className="text-primary max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
+          <div className="space-y-2">
+            <h2 className="text-primary max-w-2xl text-3xl font-semibold tracking-[-0.02em] md:text-4xl">
               {t("skillsSectionTitle")}
             </h2>
+            <p className="text-tertiary text-sm">{t("skillsSectionLabel")}</p>
           </div>
 
           <Link
             href="/skills"
-            className="text-secondary hover:text-primary inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] transition-colors"
+            className="text-secondary hover:text-primary inline-flex min-h-11 items-center gap-2 text-sm font-medium transition-colors"
           >
             <span>{t("viewAllSkills")}</span>
-            <ArrowRight className="text-accent size-3.5" strokeWidth={1.75} />
+            <ArrowRight className="text-accent-text size-4" strokeWidth={1.75} />
           </Link>
         </div>
 
-        <div className="grid border-t border-l border-[var(--color-border)] md:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) => (
+        <div className="divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]">
+          {leadCategories.map((category) => (
             <div
               key={category.id}
-              className="hover:bg-background-contrast/60 flex flex-col justify-between gap-5 border-r border-b border-[var(--color-border)] p-6 transition-colors"
+              className="grid gap-4 py-6 lg:grid-cols-12 lg:items-baseline lg:gap-8"
             >
-              <div className="space-y-2">
-                <span className="text-accent font-mono text-[11px] uppercase tracking-[0.16em]">
-                  {category.index} //
-                </span>
+              <div className="space-y-1 lg:col-span-5">
                 <h3 className="text-primary text-lg font-semibold tracking-tight">
                   {category.title}
                 </h3>
-                <p className="text-secondary text-sm leading-relaxed">
+                <p className="text-secondary max-w-[48ch] text-sm leading-relaxed">
                   {category.description}
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-1.5">
-                {category.items.slice(0, 8).map((item) => (
-                  <span
-                    key={item}
-                    className="bg-background-contrast text-secondary border border-[var(--color-border)] px-2 py-0.5 font-mono text-[11px]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
+              <p className="text-primary font-mono text-xs leading-relaxed lg:col-span-7">
+                {category.items.join(" · ")}
+              </p>
             </div>
           ))}
         </div>

@@ -86,7 +86,7 @@
   "Projects": {
     "label": "Selected Work",
     "title": "Projects",
-    "description": "Curated systems across web platforms, multi-tenant B2B SaaS ERPs, and offline-first desktop tooling.",
+    "description": "Curated open-source systems across multi-tenant B2B ERPs, clinical AI triage, and containerized DevSecOps infrastructure.",
     "introLabel": "Selected Work",
     "viewProject": "View on GitHub",
     "visitLive": "Visit production",
@@ -150,7 +150,7 @@
     "homeDesc": "Augusto Mendes (munraitoo13) is a Back-End and Full-Stack Software Engineer building scalable APIs, microservices, and web applications with Python, TypeScript, Go, FastAPI, and Next.js.",
 
     "projects": "Projects | Augusto Mendes",
-    "projectsDesc": "Curated software engineering systems by Augusto Mendes: Módulo Zero (~2,000 users), Bravo ERP (multi-tenant FastAPI + Next.js), and Gerador de Orçamentos (Electron + FastAPI).",
+    "projectsDesc": "Curated software engineering systems by Augusto Mendes: Bravo ERP (multi-tenant FastAPI + Next.js), Iara Chat (clinical AI triage with human handoff), and Vinheria Agnello DevSecOps (Spring Boot + Jenkins + TLS 1.3).",
 
     "contact": "Contact | Augusto Mendes",
     "contactDesc": "Contact Augusto Mendes (munraitoo13@gmail.com) for remote software engineering roles and technical collaborations.",

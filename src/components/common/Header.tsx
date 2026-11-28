@@ -1,37 +1,20 @@
-import { SectionLabel } from "@/components/common/SectionLabel";
-
 interface HeaderProps {
   pageTitle: string;
   pageDescription: string;
-  sectionLabel?: string;
-  sectionIndex?: string;
 }
 
-export function Header({
-  pageTitle,
-  pageDescription,
-  sectionLabel,
-  sectionIndex,
-}: HeaderProps) {
+export function Header({ pageTitle, pageDescription }: HeaderProps) {
   return (
-    <header className="bg-background border-b border-[var(--color-border)]">
-      <div className="tui-rail flex flex-col gap-5 px-6 py-14 md:py-20">
-        {(sectionLabel || sectionIndex) && (
-          <SectionLabel
-            label={sectionLabel ?? pageTitle}
-            index={sectionIndex}
-            className="w-fit"
-          />
-        )}
-
-        <h1 className="font-sans text-primary max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
+    <section className="bg-background border-b border-[var(--color-border)]">
+      <div className="tui-rail flex flex-col gap-4 px-6 pt-16 pb-12 md:pt-24 md:pb-16">
+        <h1 className="font-sans text-primary max-w-3xl text-4xl font-semibold tracking-[-0.03em] md:text-5xl">
           {pageTitle}
         </h1>
 
-        <p className="text-secondary max-w-2xl text-base leading-relaxed md:text-lg">
+        <p className="text-secondary max-w-[65ch] text-base leading-relaxed md:text-lg">
           {pageDescription}
         </p>
       </div>
-    </header>
+    </section>
   );
 }

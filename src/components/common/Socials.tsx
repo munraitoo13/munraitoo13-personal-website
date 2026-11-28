@@ -17,9 +17,13 @@ export function Socials({ className, linkClassName }: SocialsProps) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
-          className={cn("hover:text-accent", linkClassName)}
+          title={label}
+          className={cn(
+            "motion-press text-secondary hover:text-accent-text inline-flex size-11 items-center justify-center border border-[var(--color-border)] hover:border-[var(--color-border-strong)]",
+            linkClassName,
+          )}
         >
-          <Icon stroke={1.25} />
+          <Icon className="size-4" stroke={1.5} />
         </Link>
       ))}
     </div>
